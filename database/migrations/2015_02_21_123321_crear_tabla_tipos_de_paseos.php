@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaPagos extends Migration {
+class CrearTablaTiposDePaseos extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,11 @@ class CrearTablaPagos extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('pagos', function(Blueprint $table)
+		Schema::create('tipos_de_paseos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->date('fecha');
-			$table->float('monto')->default(0);
-			$table->text('descripcion');
+			$table->string('nombre');
+			$table->text('descripcion')->nullable();
 			$table->timestamps();
 		});
 	}
@@ -29,7 +28,7 @@ class CrearTablaPagos extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('pagos');
+		Schema::drop('tipos_de_paseos');
 	}
 
 }

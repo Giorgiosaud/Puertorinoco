@@ -15,10 +15,11 @@ class CrearTablaPrecios extends Migration {
 		Schema::create('precios', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('descripcion');
 			$table->float('adulto');
 			$table->float('mayor');
 			$table->float('nino');
+			$table->timestamp('aplicar_desde')->default(\Carbon\Carbon::now());
+			$table->unsignedInteger('tipo_de_paseo_id');
 			$table->timestamps();
 		});
 	}

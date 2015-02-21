@@ -16,6 +16,10 @@ class CrearTablaReservaciones extends Migration {
 		{
 			$table->increments('id');
 			$table->date('fecha');
+			$table->unsignedInteger('cliente_id');
+			$table->unsignedInteger('embarcacion_id');
+			$table->unsignedInteger('paseo_id');
+			$table->unsignedInteger('estado_del_pago_id');
 			$table->integer('adultos')->default(0);
 			$table->integer('mayores')->default(0);
 			$table->integer('ninos')->default(0);

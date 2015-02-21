@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaNivelesDeAcceso extends Migration {
+class CrearTablaEstadosDeLosPagos extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,13 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('niveles_de_acceso', function(Blueprint $table)
+		Schema::create('estados_de_los_pagos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nombre');
 			$table->text('descripcion');
 			$table->timestamps();
 		});
-
 	}
 
 	/**
@@ -29,7 +28,7 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('niveles_de_acceso');
+		Schema::drop('estados_de_los_pagos');
 	}
 
 }

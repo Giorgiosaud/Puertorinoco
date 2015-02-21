@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaNivelesDeAcceso extends Migration {
+class CrearTablaPagos extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,15 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('niveles_de_acceso', function(Blueprint $table)
+		Schema::create('pagos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('nombre');
-			$table->text('descripcion');
+			$table->float('monto');
+			$table->unsignedInteger('pago_id');
+			$table->unsignedInteger('reservacion_id');
+			$table->string('pago_type');
 			$table->timestamps();
 		});
-
 	}
 
 	/**
@@ -29,7 +30,7 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('niveles_de_acceso');
+		Schema::drop('pagos');
 	}
 
 }

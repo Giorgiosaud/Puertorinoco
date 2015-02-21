@@ -28,11 +28,11 @@ class CrearTablaMercadopagos extends Migration {
 			$table->string('date_approved');
 			$table->string('money_release_date');
 			$table->string('currency_id');
-			$table->string('transaction_amount');
+			$table->float('transaction_amount');
 			$table->string('shipping_cost');
-			$table->string('finance_charge')->nullable();
-			$table->string('total_paid_amount');
-			$table->string('net_received_amount');
+			$table->float('finance_charge')->nullable();
+			$table->float('total_paid_amount');
+			$table->float('net_received_amount');
 			$table->string('reason');
 			$table->string('payerId');
 			$table->string('payerfirst_name');

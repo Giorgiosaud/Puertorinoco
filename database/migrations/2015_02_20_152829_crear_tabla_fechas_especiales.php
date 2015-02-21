@@ -18,6 +18,7 @@ class CrearTablaFechasEspeciales extends Migration {
 			$table->date('fecha');
 			$table->string('clase');
 			$table->boolean('activa');
+
 			$table->text('descripcion');
 			$table->timestamps();
 		});

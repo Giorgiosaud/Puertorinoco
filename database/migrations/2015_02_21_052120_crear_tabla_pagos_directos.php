@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaNivelesDeAcceso extends Migration {
+class CrearTablaPagosDirectos extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,16 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('niveles_de_acceso', function(Blueprint $table)
+		Schema::create('pagos_directos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('nombre');
+			$table->date('fecha');
+			$table->float('monto')->default(0);
 			$table->text('descripcion');
+			$table->unsignedInteger('reservacion_id');
+			$table->unsignedInteger('tipo_de_pago_id');
 			$table->timestamps();
 		});
-
 	}
 
 	/**
@@ -29,7 +31,7 @@ class CrearTablaNivelesDeAcceso extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('niveles_de_acceso');
+		Schema::drop('pagos_directos');
 	}
 
 }

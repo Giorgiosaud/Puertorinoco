@@ -20,6 +20,7 @@ class CrearTablaPasajeros extends Migration {
 			$table->string('identificacion')->nullable();
 			$table->string('email')->nullable();
 			$table->string('telefono')->nullable();
+			$table->unsignedInteger('reservacion_id');
 			$table->timestamps();
 		});
 	}
