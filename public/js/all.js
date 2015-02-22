@@ -13210,3 +13210,9 @@ if (typeof jQuery === 'undefined') {
 		format: "dd/mm/yyyy"
 	};
 }(jQuery));
+
+$(document).ready(function(){
+    $('#incio').on('slide.bs.carousel', function (e) {
+        console.log(e.relatedTarget);
+    });
+});

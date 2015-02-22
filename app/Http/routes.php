@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', ['as'=>'inicio','use'=>'PagesController@index']);
+Route::get('/', ['as'=>'inicio.index', 'uses'=>'PagesController@index']);
+Route::resource('embarcaciones','EmbarcacionesController');
+Route::resource('variables','VariablesController');
 
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+//Route::get('home', 'HomeController@index');
+//
+//Route::controllers([
+//	'auth' => 'Auth\AuthController',
+//	'password' => 'Auth\PasswordController',
+//]);

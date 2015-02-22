@@ -1,15 +1,20 @@
-$azul-puertorinoco:#132571;
-$azul-borde-puertorinoco: #122060;
-$color-de-fuente:#FFF;
+@import 'variables';
 body { padding-top: 50px; }
 .navbar{margin-bottom: 0}
 .navbar-toggle .icon-bar{
   background-color: $color-de-fuente;
 }
 .navbar-puertorinoco{
-  background-color:$azul-puertorinoco ;
-  border-color: $azul-borde-puertorinoco;
+  background-color:$color-nav-puertorinoco;
+  border-color: $nav-borde-puertorinoco;
+  min-height: $navm-h;
   .navbar-nav > li > a,.navbar-brand{
     color:$color-de-fuente;
+    &:hover{
+      background-color:$color-nav-puertorinoco
+    }
   }
+}
+.logoNav{
+  width: $logonav-w;
 }

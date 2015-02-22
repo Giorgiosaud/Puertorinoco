@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 
+use App\Variable;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -12,6 +13,9 @@ class AppServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		//
+		view()->composer('templates.assets.nav',function($view){
+			$view->with('logo',Variable::whereNombre('logo')->get()->first());
+		});
 	}
 
 	/**

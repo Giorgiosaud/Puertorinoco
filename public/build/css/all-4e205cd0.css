@@ -5608,10 +5608,16 @@ body {
   margin-bottom: 0; }
 
 .navbar-toggle .icon-bar {
-  background-color: #FFF; }
+  background-color: #104049; }
 
 .navbar-puertorinoco {
-  background-color: #132571;
-  border-color: #122060; }
+  background-color: #FFF;
+  border-color: #FFF;
+  min-height: 70px; }
   .navbar-puertorinoco .navbar-nav > li > a, .navbar-puertorinoco .navbar-brand {
-    color: #FFF; }
+    color: #104049; }
+    .navbar-puertorinoco .navbar-nav > li > a:hover, .navbar-puertorinoco .navbar-brand:hover {
+      background-color: #FFF; }
+
+.logoNav {
+  width: 230px; }

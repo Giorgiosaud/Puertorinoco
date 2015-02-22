@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		$this->call('ImportarDeLaravel4Seeder');
-		$this->call('eliminarColumnasSeed');
+		$this->call('eliminarColumnasSeed');//solo la primera vez
+		$this->call('NuevasFunccionesSeeder');//solo la primera vez
 	}
 
 }

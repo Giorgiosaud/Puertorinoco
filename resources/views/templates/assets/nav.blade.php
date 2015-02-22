@@ -2,25 +2,13 @@
 Navbar::top()
 ->puertorinoco()
 ->fluid()
-->withBrand('Puertorinoco Catamaran', '#')
+->withBrand('<img class="logoNav" src="'.$logo->valor.'"/>', '#')
 ->withContent(
 	Navigation::links(
 		[
 			[
-				'link' => '#',
-				'title' => 'Home'
-			],
-			[
-				'link' => '#',
-				'title' => 'Link'
-			],
-			[
-				'link' => '#',
-				'title' => 'Link'
-			],
-			[
-				'link' => '#',
-				'title' => 'Link'
+				'link' => URL::route('inicio.index'),
+				'title' => 'Inicio'
 			],
 		]
 	)
