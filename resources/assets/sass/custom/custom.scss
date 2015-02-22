@@ -1,0 +1,15 @@
+$azul-puertorinoco:#132571;
+$azul-borde-puertorinoco: #122060;
+$color-de-fuente:#FFF;
+body { padding-top: 50px; }
+.navbar{margin-bottom: 0}
+.navbar-toggle .icon-bar{
+  background-color: $color-de-fuente;
+}
+.navbar-puertorinoco{
+  background-color:$azul-puertorinoco ;
+  border-color: $azul-borde-puertorinoco;
+  .navbar-nav > li > a,.navbar-brand{
+    color:$color-de-fuente;
+  }
+}
