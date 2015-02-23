@@ -1,5 +1,6 @@
 {!!
-Navbar::top()
+
+\App\NavPto::::top()
 ->puertorinoco()
 ->fluid()
 ->withBrand('<img class="logoNav" src="'.$logo->valor.'"/>', '#')
