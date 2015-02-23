@@ -1,7 +1,6 @@
 {!!
-
-\App\NavPto::::top()
-->puertorinoco()
+Navbar::top()
+->setType('navbar-puertorinoco')
 ->fluid()
 ->withBrand('<img class="logoNav" src="'.$logo->valor.'"/>', '#')
 ->withContent(
