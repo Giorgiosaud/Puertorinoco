@@ -7,7 +7,8 @@ class NuevasFunccionesSeeder extends Seeder {
 
     public function run()
     {
-        Variable::create('nombre'=>'logo','valor'=>'uploads/logo100.png');
+        Variable::create(['nombre'=>'logo',
+                          'valor'=>'uploads/logo100.png']);
     }
 
 }
