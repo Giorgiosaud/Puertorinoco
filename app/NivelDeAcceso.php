@@ -10,4 +10,7 @@ class NivelDeAcceso extends Model {
 		return $this->hasMany('App\User');
 	}
 
+	public function permiso(){
+		return $this->belongsTo('App\Permiso','permiso_id');
+	}
 }

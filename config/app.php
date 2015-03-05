@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone'        => 'UTC',
+    'timezone'        => 'America/Caracas',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale'          => 'en',
+    'locale'          => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,7 @@ return [
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -144,7 +145,10 @@ return [
         'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
-        'Bootstrapper\BootstrapperServiceProvider',
+        'Bootstrapper\BootstrapperL5ServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
+        'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
 
     ],
 
@@ -219,6 +223,9 @@ return [
         'Tabbable'       => 'Bootstrapper\Facades\Tabbable',
         'Table'          => 'Bootstrapper\Facades\Table',
         'Thumbnail'      => 'Bootstrapper\Facades\Thumbnail',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
+        'QrCode' => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
 
     ],
 

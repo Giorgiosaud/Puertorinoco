@@ -27,6 +27,7 @@ class CrearTablaPaseos extends Migration {
 			$table->boolean('sabado')->default(true);
 			$table->boolean('domingo')->default(true);
 			$table->text('descripcion');
+			$table->unsignedInteger('tipo_de_paseo_id');
 			$table->timestamps();
 		});
 	}

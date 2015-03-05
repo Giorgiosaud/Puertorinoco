@@ -1,4 +1,5 @@
 <?php
+use App\Permiso;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,8 @@ class ImportarDeLaravel4Seeder extends Seeder {
             'reservaciones',
             'tipos_de_pagos',
             'users',
-            'variables'];
+            'variables',
+            'permisos',];
         $this->command->info('Deshabilitando foreign_key_checks...');
         DB::statement("SET foreign_key_checks = 0");
         foreach ($tablas as $tabla)
@@ -31,7 +33,9 @@ class ImportarDeLaravel4Seeder extends Seeder {
         }
         $this->command->info('Habilitando foreign_key_checks.....');
         DB::statement("SET foreign_key_checks = 1");
+
         $this->command->info('Migrando Tabla clientes...');
+
         DB::statement('INSERT INTO clientes  (nombre,apellido,identificacion,email,telefono,visitas,
       esAgencia,credito) SELECT name,lastname,identification,email,phone,visitas,esAgencia,credit FROM ptori_lar
       .clients');
@@ -139,13 +143,19 @@ deleted_at,
 concat(LEFT(`date_created` , 10)," ",SUBSTRING(`date_created`, 12, 8)) AS created_at,
 concat(LEFT(`last_modified` , 10)," ",SUBSTRING(`last_modified`, 12, 8)) As updated_at
 FROM `ptori_lar`.`mercadopagos`');
+        $this->command->info('Creando Permisos Completos...');
+        Permiso::create([
+        'esAgencia'=>true,
+            'cuposExtra'=>true,
+            'accesoEdicionDePagina'=>true
+        ]);
         $this->command->info('Migrando Tabla niveles_de_acceso...');
         DB::statement('
 INSERT INTO
 niveles_de_acceso
-(nombre,descripcion,created_at,updated_at)
+(nombre,descripcion,permiso_id, created_at,updated_at)
 SELECT
-name,description,created_at,updated_at
+name,description,1,created_at,updated_at
 FROM
 ptori_lar.accesslevels
 
@@ -172,17 +182,6 @@ ptori_lar.accesslevels
 
         ');
         $this->command->info('Migrando Tabla paseos...');
-        DB::statement('
-        INSERT INTO
-        paseos
-        (horaDeSalida,nombre,orden,publico,lunes,martes,miercoles,jueves,viernes,sabado,domingo,descripcion,
-        created_at,updated_at)
-        SELECT
-        `departure`,`name`,`order`,`public`,`lunes`,`martes`,`miercoles`,`jueves`,`viernes`,`sabado`,`domingo`,`descripcion`,`created_at`,
-        `updated_at`
-        FROM
-        ptori_lar.tours
-        ');
         $this->command->info('Migrando Tabla tipos_de_paseos...');
         DB::statement('INSERT INTO
         tipos_de_paseos
@@ -191,6 +190,17 @@ ptori_lar.accesslevels
         description
          FROM
          ptori_lar.prices');
+        DB::statement('
+        INSERT INTO
+        paseos
+        (horaDeSalida,nombre,orden,publico,lunes,martes,miercoles,jueves,viernes,sabado,domingo,descripcion,
+        tipo_de_paseo_id,created_at,updated_at)
+        SELECT
+        `departure`,`name`,`order`,`public`,`lunes`,`martes`,`miercoles`,`jueves`,`viernes`,`sabado`,`domingo`,
+        `descripcion`,IF(`name`="Playa", 1, 2) as tipo_de_paseo_id,`created_at`,`updated_at`
+        FROM
+        ptori_lar.tours
+        ');
         $this->command->info('Migrando Tabla precios...');
         DB::statement('
         INSERT INTO
@@ -246,14 +256,15 @@ ptori_lar.accesslevels
         DB::statement('
         INSERT INTO
         reservaciones
-        (fecha,cliente_id,embarcacion_id,paseo_id,adultos, mayores, ninos,montoTotal,estado_del_pago_id,confirmado,
+        (id,fecha,cliente_id,embarcacion_id,paseo_id,adultos, mayores, ninos,montoTotal,estado_del_pago_id,confirmado,
         hechoPor,modificadoPor,
         notas,
         deleted_at,
         created_at,
         updated_at)
         SELECT
-        `date`,`client_id`,`boat_id`,`tour_id`,`adults`,`olders`,`childs`,`totalAmmount`,`paymentStatus_id`,`confirmed`,`madeBy`,
+        `id`,`date`,`client_id`,`boat_id`,`tour_id`,`adults`,`olders`,`childs`,`totalAmmount`,`paymentStatus_id`,
+        `confirmed`,`madeBy`,
         `modifiedBy`,
         `references`,
         `deleted_at`,`created_at`,`updated_at`
@@ -274,11 +285,11 @@ ptori_lar.accesslevels
 
         $fechasEspeciales = App\FechaEspecial::all();
         $embarcaciones = App\Embarcacion::lists('id');
-        foreach($embarcaciones as $embarcacion)
+        foreach ($embarcaciones as $embarcacion)
         {
             foreach ($fechasEspeciales as $fecha)
             {
-                $fecha->embarcaciones()->attach([$embarcacion=>['activa' => $fecha->activa]]);
+                $fecha->embarcaciones()->attach([$embarcacion => ['activa' => $fecha->activa]]);
             }
         }
         $this->command->info('Agregando Pagos Directos como Pagos...');
@@ -298,7 +309,6 @@ ptori_lar.accesslevels
                                                             'updated_at'     => $pagoMercadoPago->updated_at,
                                                             'reservacion_id' => $pagoMercadoPago->order_id));
         }
-
 
 
         //DB::statement('

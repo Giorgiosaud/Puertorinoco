@@ -17,7 +17,9 @@ class CrearTablaNivelesDeAcceso extends Migration {
 			$table->increments('id');
 			$table->string('nombre');
 			$table->text('descripcion');
+			$table->unsignedInteger('permiso_id');
 			$table->timestamps();
+
 		});
 
 	}

@@ -8,8 +8,14 @@ class Paseo extends Model {
     {
         return $this->hasMany('App\Reservacion');
     }
+
     public function embarcaciones()
     {
-        return $this->belongsToMany('App\Embarcacion','embarcacion_paseo')->withTimestamps();
+        return $this->belongsToMany('App\Embarcacion', 'embarcacion_paseo')->withTimestamps();
+    }
+
+    public function tipoDePaseo()
+    {
+        return $this->belongsTo('App\TipoDePaseo');
     }
 }
