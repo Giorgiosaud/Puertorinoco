@@ -52,25 +52,11 @@ class ReservacionController extends Controller {
      */
     private function RealizarReserva($datos)
     {
+
         $reserva = Reservacion::create($datos);
         $reserva->actualizaMontoTotal();
 
-        //dd($reserva);
         return $reserva;
-
-    }
-
-    /**
-     * @param $fecha
-     * @param $clienteId
-     * @param $embarcacionId
-     * @param $paseoId
-     * @return mixed
-     */
-    private function vecesReservaRepetida($fecha, $clienteId, $embarcacionId, $paseoId)
-    {
-        return Reservacion::whereFecha($fecha)->whereClienteId($clienteId)->whereEmbarcacionId
-        ($embarcacionId)->wherePaseoId($paseoId)->count();
     }
 
     /**
@@ -81,22 +67,43 @@ class ReservacionController extends Controller {
     public function store(ReservacionesRequest $request)
     {
         $cliente = $this->ActualizarOCrearCliente($request);
-        $vecesRepetida = Reservacion::ObtenerVecesQueSeRepite($request->input('fecha'), $cliente->id,
-            $request->input('embarcacion_id'), $request->input('paseo_id'))->count();
-
-        //dd($vecesRepetida);
+        $vecesRepetida = Reservacion::ObtenerVecesQueSeRepite($request->input('fecha'), $cliente->id, $request->input
+        ('embarcacion_id'), $request->input('paseo_id'))->count();
         if (($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->esAgencia) && $vecesRepetida > 0)
         {
             flash()->error(Lang::get('formulario.reservaDuplicada'));
 
             return redirect()->back()->withInput();
         }
-        //verificar que Hay Cupos
+        $pasajerosReservados = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($request->input('fecha'),
+            $request->input('embarcacion_id'), $request->input('paseo_id'));
+        if (!is_integer($pasajerosReservados))
+        {
+            $pasajerosReservados = 0;
+        }
+        $pasajerosEnReservaActual = $request->input('adultos') + $request->input('mayores') + $request->input
+            ('ninos');
+        $totalConEstaReserva = $pasajerosReservados + $pasajerosEnReservaActual;
+        if ($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->cuposExtra)
+        {
+            $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeNormal;
+        } else
+        {
+            $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeMaximo;
+        }
+        if ($totalConEstaReserva > $maximoEmbarcacion)
+        {
+            flash()->error(Lang::get('reservacion.alguienReservoAntes'));
+
+            return redirect()->back()->withInput();
+        }
         $respuesta = $request->all() + ['cliente_id' => $cliente->id];
 
         $reservacion = $this->RealizarReserva($respuesta);
+        $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
+            $reservacion->embarcacion_id, $reservacion->paseo_id);
+        return view('reservacion.mostrar', compact('reservacion', 'totalCuposEnPaseo'));
 
-        return view('reservacion.mostrar',compact('reservacion','cliente'));
     }
 
     /**
@@ -107,11 +114,12 @@ class ReservacionController extends Controller {
      */
     public function show($id)
     {
-        $reservacion=Reservacion::findOrFail($id);
-        $totalCuposEnPaseo=Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
-            $reservacion->embarcacion_id,$reservacion->paseo_id);
+        $reservacion = Reservacion::findOrFail($id);
+        $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
+            $reservacion->embarcacion_id, $reservacion->paseo_id);
+
         //dd($totalCuposEnPaseo);
-        return view('reservacion.mostrar',compact('reservacion','totalCuposEnPaseo'));
+        return view('reservacion.mostrar', compact('reservacion', 'totalCuposEnPaseo'));
     }
 
     /**

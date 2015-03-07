@@ -9,12 +9,14 @@ class eliminarColumnasSeed extends Seeder {
         Schema::table('pagos_directos', function($table)
         {
             $table->dropColumn('reservacion_id');
+            $table->dropColumn('monto');
         });
         $this->command->info('Eliminando columnas no necesarias de Fechas Especiales...');
         Schema::table('fechas_especiales', function($table)
         {
             $table->dropColumn('activa');
         });
+
     }
 
 }

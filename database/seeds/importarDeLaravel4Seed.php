@@ -36,9 +36,11 @@ class ImportarDeLaravel4Seeder extends Seeder {
 
         $this->command->info('Migrando Tabla clientes...');
 
-        DB::statement('INSERT INTO clientes  (nombre,apellido,identificacion,email,telefono,visitas,
-      esAgencia,credito) SELECT name,lastname,identification,email,phone,visitas,esAgencia,credit FROM ptori_lar
-      .clients');
+        DB::statement('INSERT INTO clientes
+(id,nombre,apellido,identificacion,email,telefono,visitas, esAgencia,credito)
+SELECT
+id,name,lastname,identification, email,phone,visitas,esAgencia,credit
+FROM ptori_lar.clients');
         $this->command->info('Migrando Tabla elementos_de_menu...');
         DB::statement('
 INSERT INTO elementos_de_menu
@@ -145,9 +147,9 @@ concat(LEFT(`last_modified` , 10)," ",SUBSTRING(`last_modified`, 12, 8)) As upda
 FROM `ptori_lar`.`mercadopagos`');
         $this->command->info('Creando Permisos Completos...');
         Permiso::create([
-        'esAgencia'=>true,
-            'cuposExtra'=>true,
-            'accesoEdicionDePagina'=>true
+            'esAgencia'             => true,
+            'cuposExtra'            => true,
+            'accesoEdicionDePagina' => true
         ]);
         $this->command->info('Migrando Tabla niveles_de_acceso...');
         DB::statement('
@@ -174,9 +176,9 @@ ptori_lar.accesslevels
         DB::statement('
         INSERT INTO
         pasajeros
-        (nombre,apellido,identificacion,email,telefono,created_at,updated_at)
+        (id,nombre,apellido,identificacion,email,telefono,created_at,updated_at)
         SELECT
-        name,lastname,identification,email,phone,created_at,updated_at
+        id,name,lastname,identification,email,phone,created_at,updated_at
         FROM
         ptori_lar.passengers
 
@@ -226,9 +228,9 @@ ptori_lar.accesslevels
         DB::statement('
         INSERT INTO
         users
-        (name,email,password,nivel_de_acceso_id)
+        (id,name,email,password,nivel_de_acceso_id)
         SELECT
-        name,email,password,1
+        id,name,email,password,1
         FROM
         ptori_lar.users
         ');

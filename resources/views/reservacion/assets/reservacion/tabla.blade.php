@@ -3,9 +3,10 @@
 		{!!Lang::get('reservacion.DatosEn')!!} {!! $reservacion->embarcacion->nombre!!}
 	</h3>
 	<table class="table table-condensed table-hover">
-		@include('reservacion.assets.reservacion.datosPersonales')
-		@include('reservacion.assets.reservacion.datosCupos')
-		@include('reservacion.assets.reservacion.opcionesDePago')
+		@include('reservacion.assets.reservacion.Datos.Personales')
+		@include('reservacion.assets.reservacion.Datos.Cupos')
+		@include('reservacion.assets.reservacion.Pagos.Opciones')
+		@include('reservacion.assets.reservacion.Datos.Resto')
 
 	</table>
 </div>

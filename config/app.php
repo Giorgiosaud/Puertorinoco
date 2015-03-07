@@ -145,10 +145,12 @@ return [
         'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
+        'App\Providers\MercadoPagoServiceProvider',
         'Bootstrapper\BootstrapperL5ServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
         'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
     ],
 
