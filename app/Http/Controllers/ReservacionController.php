@@ -102,6 +102,7 @@ class ReservacionController extends Controller {
         $reservacion = $this->RealizarReserva($respuesta);
         $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
             $reservacion->embarcacion_id, $reservacion->paseo_id);
+
         return view('reservacion.mostrar', compact('reservacion', 'totalCuposEnPaseo'));
 
     }
@@ -118,7 +119,6 @@ class ReservacionController extends Controller {
         $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
             $reservacion->embarcacion_id, $reservacion->paseo_id);
 
-        //dd($totalCuposEnPaseo);
         return view('reservacion.mostrar', compact('reservacion', 'totalCuposEnPaseo'));
     }
 
@@ -175,5 +175,4 @@ class ReservacionController extends Controller {
 
         return $cliente;
     }
-
 }

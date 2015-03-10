@@ -21,6 +21,9 @@ class Reservacion extends Model {
         'paseo',
         'embarcacion',
     ];
+    protected $dates=[
+        'fecha'
+    ];
 
     public function cliente()
     {

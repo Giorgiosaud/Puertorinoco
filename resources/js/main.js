@@ -19,7 +19,7 @@ $(document).ready(function () {
             $('#ayudaIdentificacion, #ayudaEmbarcacion, #ayudaPaseo, #ayudaFecha, #tipoEmbarcacion, #fechaform, #horaform, #cedulaForm, #nombresForm, #apellidosForm, #emailForm, #telefonoForm, #datosdePrecios, #datosdeCupos, #SaldosyMontos, #groupcondiciones,#botonEnviarForm').slideDown('fast');
             $('.loading,.alert.alert-success').slideUp('slow');
             $("input[name='embarcacion_id']:checked").parent().addClass('active');
-            $("input[name='paseo_id']").parent().removeClass('disabled');
+            $("input[name='paseo_id']").parent().removeClass('disabled hidden');
             $("input[name='paseo_id']:checked").parent().addClass('active');
             if ($("input[name='fecha']").val().length > 0) {
                 $.get("../ObtenerVariables/" + $("input[name='fecha']").val(), function (datosconfecha) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
                             cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
                         }
                         if (cantidad_en_embarcacion[key] > 0) {
-                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled');
+                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden');
                         }
                     }
                     $('#fechaform').children('.col-xs-1').children().slideUp('slow');
@@ -40,7 +40,7 @@ $(document).ready(function () {
                         embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
                         for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
                             if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-                                $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled');
+                                $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
                             }
 
                         }
@@ -92,8 +92,8 @@ $(document).ready(function () {
                 $('#horaform').slideUp('slow');
                 $('#ayudaFecha').slideUp('slow');
                 $('.loading').slideDown('slow');
-                $("input[name='embarcacion_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled');
-                $("input[name='paseo_id']").removeAttr('checked').siblings('.cupos').html('').parent().removeClass('active').addClass('disabled')
+                $("input[name='embarcacion_id']").removeAttr('checked').parent().removeClass('active').addClass('hidden disabled');
+                $("input[name='paseo_id']").removeAttr('checked').siblings('.cupos').html('').parent().removeClass('active').addClass('disabled hidden')
                 $('#fechaform').children('.col-xs-1').children().slideDown('slow');
                 $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
                 $.get("../ObtenerVariables/" + e.format(0, 'yyyy-mm-dd'), function (datosconfecha) {
@@ -106,7 +106,7 @@ $(document).ready(function () {
                             cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
                         }
                         if (cantidad_en_embarcacion[key] > 0) {
-                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled');
+                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden');
                         }
                     }
                     $('#fechaform').children('.col-xs-1').children().slideUp('slow');
@@ -121,7 +121,7 @@ $(document).ready(function () {
             $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active');
             for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
                 if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled');
+                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
                 }
             }
             $('#ayudaEmbarcacion').slideUp('slow');
@@ -194,6 +194,9 @@ $(document).ready(function () {
             if (pasajes > 0) {
                 $('#ayudaNombres,#ayudaCupos').slideUp('slow');
                 $('#SaldosyMontos,#groupcondiciones').slideDown('slow');
+                if($('#condiciones').is(':checked')){
+                    $('#botonEnviarForm').slideDown('slow');
+                }
             }
             else {
 

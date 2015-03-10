@@ -1,5 +1,4 @@
 {{--{!!$mp->get_access_token()!!}--}}
 @if($reservacion->montoTotal>0)
-	<a href="{!! $mp->create_preference($reservacion->PreferenceData)['response'][$mp_sanboxmode]!!}" name="MP-Checkout"
-	   class="blue-L-Rn-VeOn" mp-mode="modal" >Pagar</a>
+	<a href="{!! Mercadopago::create_preference_and_get_url($reservacion->PreferenceData)!!}" name="MP-Checkout" class="blue-L-Rn-VeOn" >Pagar</a>
 @endif

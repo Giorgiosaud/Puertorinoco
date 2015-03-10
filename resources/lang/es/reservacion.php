@@ -26,4 +26,13 @@ return [
     'ninosMenDesc'                  => 'Niños: de 1 A 5 años (1 por grupo de 5 personas) Gratis.',
     'beneficiosDelPago'             => 'El pago de esa tarifa al Club le permite a usted y a su grupo familiar, utilizar todas las instalaciones
 		del Club ( Piscinas, Canchas, restaurantes, sal&oacute;n de juegos, Masajes etc ) el día de su viaje.',
+    'Nombre(s)'                     => 'Nombre(s)',
+    'Apellido(s)'                   => 'Apellido(s)',
+    'Cedula'                        => 'Cedula',
+    'Email'                         => 'Email',
+    'Telefono'                      => 'Telefono',
+    'DatosPersonales'               => 'Datos Personales',
+    'QrCode'                        => 'Codigo Qr Para Ser Presentado en Barra',
+    'Cupos'                        => 'Datos del Cupo',
+
 ];

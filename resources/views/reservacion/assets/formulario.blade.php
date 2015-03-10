@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="col-sm-8 col-xs-12">
+	<div class="col-xs-12">
 		@if($errors->any())
 			<ul class="alert alert-danger">
 				@foreach($errors->all() as $error)
@@ -39,8 +39,22 @@
 			{!!Form::close()!!}
 			<div class="clearfix"></div>
 	</div>
-	<div class="col-sm-4 col-xs-12">
-		Publicidad
-		<div class="clearfix"></div>
+	<div class="modal fade" id="advertencias" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	     aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Advertencias</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

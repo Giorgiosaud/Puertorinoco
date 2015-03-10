@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.13 on 2015-03-05.
+ * Generated for Laravel 5.0.14 on 2015-03-10.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3312,7 +3312,7 @@ namespace {
          * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator 
          * @static 
          */
-        public static function paginate($perPage = 15, $columns = array()){
+        public static function paginate($perPage = null, $columns = array()){
             return \Illuminate\Database\Eloquent\Builder::paginate($perPage, $columns);
         }
         
@@ -4822,6 +4822,17 @@ namespace {
          */
         public static function type($path){
             return \Illuminate\Filesystem\Filesystem::type($path);
+        }
+        
+        /**
+         * Get the mime-type of a given file.
+         *
+         * @param string $path
+         * @return string|false 
+         * @static 
+         */
+        public static function mimeType($path){
+            return \Illuminate\Filesystem\Filesystem::mimeType($path);
         }
         
         /**
@@ -15945,6 +15956,2156 @@ namespace {
          */
         public static function encoding($encoding){
             return \SimpleSoftwareIO\QrCode\BaconQrCodeGenerator::encoding($encoding);
+        }
+        
+    }
+
+
+    class CarbonLoc extends \Zonapro\Carbonlocalizer\src\Facades\Carbonlocalizer{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function saludo(){
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::saludo();
+        }
+        
+        /**
+         * Get the difference in a human readable format.
+         * 
+         * When comparing a value in the past to default now:
+         * 1 hour ago
+         * 5 months ago
+         * 
+         * When comparing a value in the future to default now:
+         * 1 hour from now
+         * 5 months from now
+         * 
+         * When comparing a value in the past to another value:
+         * 1 hour before
+         * 5 months before
+         * 
+         * When comparing a value in the future to another value:
+         * 1 hour after
+         * 5 months after
+         *
+         * @param \Zonapro\Carbonlocalizer\src\Carbon $other
+         * @return string 
+         * @static 
+         */
+        public static function diffForHumans2($other = null){
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffForHumans2($other);
+        }
+        
+        /**
+         * Create a Carbon instance from a DateTime one
+         *
+         * @param \Carbon\DateTime $dt
+         * @return static 
+         * @static 
+         */
+        public static function instance($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::instance($dt);
+        }
+        
+        /**
+         * Create a carbon instance from a string.  This is an alias for the
+         * constructor that allows better fluent syntax as it allows you to do
+         * Carbon::parse('Monday next week')->fn() rather than
+         * (new Carbon('Monday next week'))->fn()
+         *
+         * @param string $time
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function parse($time = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::parse($time, $tz);
+        }
+        
+        /**
+         * Get a Carbon instance for the current date and time
+         *
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function now($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::now($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for today
+         *
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function today($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::today($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for tomorrow
+         *
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function tomorrow($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::tomorrow($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for yesterday
+         *
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function yesterday($tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::yesterday($tz);
+        }
+        
+        /**
+         * Create a Carbon instance for the greatest supported date.
+         *
+         * @return \Carbon\Carbon 
+         * @static 
+         */
+        public static function maxValue(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::maxValue();
+        }
+        
+        /**
+         * Create a Carbon instance for the lowest supported date.
+         *
+         * @return \Carbon\Carbon 
+         * @static 
+         */
+        public static function minValue(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::minValue();
+        }
+        
+        /**
+         * Create a new Carbon instance from a specific date and time.
+         * 
+         * If any of $year, $month or $day are set to null their now() values
+         * will be used.
+         * 
+         * If $hour is null it will be set to its now() value and the default values
+         * for $minute and $second will be their now() values.
+         * If $hour is not null then the default values for $minute and $second
+         * will be 0.
+         *
+         * @param integer $year
+         * @param integer $month
+         * @param integer $day
+         * @param integer $hour
+         * @param integer $minute
+         * @param integer $second
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::create($year, $month, $day, $hour, $minute, $second, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from just a date. The time portion is set to now.
+         *
+         * @param integer $year
+         * @param integer $month
+         * @param integer $day
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromDate($year = null, $month = null, $day = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromDate($year, $month, $day, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from just a time. The date portion is set to today.
+         *
+         * @param integer $hour
+         * @param integer $minute
+         * @param integer $second
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromTime($hour = null, $minute = null, $second = null, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTime($hour, $minute, $second, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from a specific format
+         *
+         * @param string $format
+         * @param string $time
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @throws InvalidArgumentException
+         * @static 
+         */
+        public static function createFromFormat($format, $time, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromFormat($format, $time, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from a timestamp
+         *
+         * @param integer $timestamp
+         * @param \Carbon\DateTimeZone|string $tz
+         * @return static 
+         * @static 
+         */
+        public static function createFromTimestamp($timestamp, $tz = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTimestamp($timestamp, $tz);
+        }
+        
+        /**
+         * Create a Carbon instance from an UTC timestamp
+         *
+         * @param integer $timestamp
+         * @return static 
+         * @static 
+         */
+        public static function createFromTimestampUTC($timestamp){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTimestampUTC($timestamp);
+        }
+        
+        /**
+         * Get a copy of the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function copy(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::copy();
+        }
+        
+        /**
+         * Set the instance's year
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function year($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::year($value);
+        }
+        
+        /**
+         * Set the instance's month
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function month($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::month($value);
+        }
+        
+        /**
+         * Set the instance's day
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function day($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::day($value);
+        }
+        
+        /**
+         * Set the instance's hour
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function hour($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hour($value);
+        }
+        
+        /**
+         * Set the instance's minute
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function minute($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::minute($value);
+        }
+        
+        /**
+         * Set the instance's second
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function second($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::second($value);
+        }
+        
+        /**
+         * Set the date and time all together
+         *
+         * @param integer $year
+         * @param integer $month
+         * @param integer $day
+         * @param integer $hour
+         * @param integer $minute
+         * @param integer $second
+         * @return static 
+         * @static 
+         */
+        public static function setDateTime($year, $month, $day, $hour, $minute, $second = 0){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setDateTime($year, $month, $day, $hour, $minute, $second);
+        }
+        
+        /**
+         * Set the instance's timestamp
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function timestamp($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::timestamp($value);
+        }
+        
+        /**
+         * Alias for setTimezone()
+         *
+         * @param \Carbon\DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function timezone($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::timezone($value);
+        }
+        
+        /**
+         * Alias for setTimezone()
+         *
+         * @param \Carbon\DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function tz($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::tz($value);
+        }
+        
+        /**
+         * Set the instance's timezone from a string or object
+         *
+         * @param \Carbon\DateTimeZone|string $value
+         * @return static 
+         * @static 
+         */
+        public static function setTimezone($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTimezone($value);
+        }
+        
+        /**
+         * Set a Carbon instance (real or mock) to be returned when a "now"
+         * instance is created.  The provided instance will be returned
+         * specifically under the following conditions:
+         *   - A call to the static now() method, ex. Carbon::now()
+         *   - When a null (or blank string) is passed to the constructor or parse(), ex. new Carbon(null)
+         *   - When the string "now" is passed to the constructor or parse(), ex. new Carbon('now')
+         * 
+         * Note the timezone parameter was left out of the examples above and
+         * has no affect as the mock value will be returned regardless of its value.
+         * 
+         * To clear the test instance call this method using the default
+         * parameter of null.
+         *
+         * @param \Carbon\Carbon $testNow
+         * @static 
+         */
+        public static function setTestNow($testNow = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTestNow($testNow);
+        }
+        
+        /**
+         * Get the Carbon instance (real or mock) to be returned when a "now"
+         * instance is created.
+         *
+         * @return static the current instance used for testing
+         * @static 
+         */
+        public static function getTestNow(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTestNow();
+        }
+        
+        /**
+         * Determine if there is a valid test instance set. A valid test instance
+         * is anything that is not null.
+         *
+         * @return boolean true if there is a test instance, otherwise false
+         * @static 
+         */
+        public static function hasTestNow(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hasTestNow();
+        }
+        
+        /**
+         * Determine if there is a relative keyword in the time string, this is to
+         * create dates relative to now for test instances. e.g.: next tuesday
+         *
+         * @param string $time
+         * @return boolean true if there is a keyword, otherwise false
+         * @static 
+         */
+        public static function hasRelativeKeywords($time){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hasRelativeKeywords($time);
+        }
+        
+        /**
+         * Format the instance with the current locale.  You can set the current
+         * locale using setlocale() http://php.net/setlocale.
+         *
+         * @param string $format
+         * @return string 
+         * @static 
+         */
+        public static function formatLocalized($format){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::formatLocalized($format);
+        }
+        
+        /**
+         * Reset the format used to the default when type juggling a Carbon instance to a string
+         *
+         * @static 
+         */
+        public static function resetToStringFormat(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::resetToStringFormat();
+        }
+        
+        /**
+         * Set the default format used when type juggling a Carbon instance to a string
+         *
+         * @param string $format
+         * @static 
+         */
+        public static function setToStringFormat($format){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setToStringFormat($format);
+        }
+        
+        /**
+         * Format the instance as date
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDateString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDateString();
+        }
+        
+        /**
+         * Format the instance as a readable date
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toFormattedDateString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toFormattedDateString();
+        }
+        
+        /**
+         * Format the instance as time
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toTimeString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toTimeString();
+        }
+        
+        /**
+         * Format the instance as date and time
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDateTimeString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDateTimeString();
+        }
+        
+        /**
+         * Format the instance with day, date and time
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toDayDateTimeString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDayDateTimeString();
+        }
+        
+        /**
+         * Format the instance as ATOM
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toAtomString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toAtomString();
+        }
+        
+        /**
+         * Format the instance as COOKIE
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toCookieString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toCookieString();
+        }
+        
+        /**
+         * Format the instance as ISO8601
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toIso8601String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toIso8601String();
+        }
+        
+        /**
+         * Format the instance as RFC822
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc822String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc822String();
+        }
+        
+        /**
+         * Format the instance as RFC850
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc850String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc850String();
+        }
+        
+        /**
+         * Format the instance as RFC1036
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc1036String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc1036String();
+        }
+        
+        /**
+         * Format the instance as RFC1123
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc1123String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc1123String();
+        }
+        
+        /**
+         * Format the instance as RFC2822
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc2822String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc2822String();
+        }
+        
+        /**
+         * Format the instance as RFC3339
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRfc3339String(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc3339String();
+        }
+        
+        /**
+         * Format the instance as RSS
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toRssString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRssString();
+        }
+        
+        /**
+         * Format the instance as W3C
+         *
+         * @return string 
+         * @static 
+         */
+        public static function toW3cString(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toW3cString();
+        }
+        
+        /**
+         * Determines if the instance is equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function eq($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::eq($dt);
+        }
+        
+        /**
+         * Determines if the instance is not equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function ne($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::ne($dt);
+        }
+        
+        /**
+         * Determines if the instance is greater (after) than another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function gt($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::gt($dt);
+        }
+        
+        /**
+         * Determines if the instance is greater (after) than or equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function gte($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::gte($dt);
+        }
+        
+        /**
+         * Determines if the instance is less (before) than another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function lt($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lt($dt);
+        }
+        
+        /**
+         * Determines if the instance is less (before) or equal to another
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function lte($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lte($dt);
+        }
+        
+        /**
+         * Determines if the instance is between two others
+         *
+         * @param \Carbon\Carbon $dt1
+         * @param \Carbon\Carbon $dt2
+         * @param boolean $equal Indicates if a > and < comparison should be used or <= or >=
+         * @return boolean 
+         * @static 
+         */
+        public static function between($dt1, $dt2, $equal = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::between($dt1, $dt2, $equal);
+        }
+        
+        /**
+         * Get the minimum instance between a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return static 
+         * @static 
+         */
+        public static function min($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::min($dt);
+        }
+        
+        /**
+         * Get the maximum instance between a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return static 
+         * @static 
+         */
+        public static function max($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::max($dt);
+        }
+        
+        /**
+         * Determines if the instance is a weekday
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isWeekday(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isWeekday();
+        }
+        
+        /**
+         * Determines if the instance is a weekend day
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isWeekend(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isWeekend();
+        }
+        
+        /**
+         * Determines if the instance is yesterday
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isYesterday(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isYesterday();
+        }
+        
+        /**
+         * Determines if the instance is today
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isToday(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isToday();
+        }
+        
+        /**
+         * Determines if the instance is tomorrow
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isTomorrow(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isTomorrow();
+        }
+        
+        /**
+         * Determines if the instance is in the future, ie. greater (after) than now
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isFuture(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isFuture();
+        }
+        
+        /**
+         * Determines if the instance is in the past, ie. less (before) than now
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isPast(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isPast();
+        }
+        
+        /**
+         * Determines if the instance is a leap year
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isLeapYear(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isLeapYear();
+        }
+        
+        /**
+         * Checks if the passed in date is the same day as the instance current day.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function isSameDay($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isSameDay($dt);
+        }
+        
+        /**
+         * Add years to the instance. Positive $value travel forward while
+         * negative $value travel into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addYears($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addYears($value);
+        }
+        
+        /**
+         * Add a year to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addYear(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addYear();
+        }
+        
+        /**
+         * Remove a year from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subYear(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subYear();
+        }
+        
+        /**
+         * Remove years from the instance.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subYears($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subYears($value);
+        }
+        
+        /**
+         * Add months to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonths($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonths($value);
+        }
+        
+        /**
+         * Add a month to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonth();
+        }
+        
+        /**
+         * Remove a month from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonth();
+        }
+        
+        /**
+         * Remove months from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonths($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonths($value);
+        }
+        
+        /**
+         * Add months without overflowing to the instance. Positive $value
+         * travels forward while negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addMonthsNoOverflow($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonthsNoOverflow($value);
+        }
+        
+        /**
+         * Add a month with no overflow to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addMonthNoOverflow(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonthNoOverflow();
+        }
+        
+        /**
+         * Remove a month with no overflow from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subMonthNoOverflow(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonthNoOverflow();
+        }
+        
+        /**
+         * Remove months with no overflow from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subMonthsNoOverflow($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonthsNoOverflow($value);
+        }
+        
+        /**
+         * Add days to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addDays($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addDays($value);
+        }
+        
+        /**
+         * Add a day to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addDay(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addDay();
+        }
+        
+        /**
+         * Remove a day from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subDay(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subDay();
+        }
+        
+        /**
+         * Remove days from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subDays($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subDays($value);
+        }
+        
+        /**
+         * Add weekdays to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeekdays($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeekdays($value);
+        }
+        
+        /**
+         * Add a weekday to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addWeekday(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeekday();
+        }
+        
+        /**
+         * Remove a weekday from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subWeekday(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeekday();
+        }
+        
+        /**
+         * Remove weekdays from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeekdays($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeekdays($value);
+        }
+        
+        /**
+         * Add weeks to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addWeeks($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeeks($value);
+        }
+        
+        /**
+         * Add a week to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeek();
+        }
+        
+        /**
+         * Remove a week from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeek();
+        }
+        
+        /**
+         * Remove weeks to the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subWeeks($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeeks($value);
+        }
+        
+        /**
+         * Add hours to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addHours($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addHours($value);
+        }
+        
+        /**
+         * Add an hour to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addHour(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addHour();
+        }
+        
+        /**
+         * Remove an hour from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subHour(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subHour();
+        }
+        
+        /**
+         * Remove hours from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subHours($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subHours($value);
+        }
+        
+        /**
+         * Add minutes to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addMinutes($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMinutes($value);
+        }
+        
+        /**
+         * Add a minute to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addMinute(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMinute();
+        }
+        
+        /**
+         * Remove a minute from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subMinute(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMinute();
+        }
+        
+        /**
+         * Remove minutes from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subMinutes($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMinutes($value);
+        }
+        
+        /**
+         * Add seconds to the instance. Positive $value travels forward while
+         * negative $value travels into the past.
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function addSeconds($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addSeconds($value);
+        }
+        
+        /**
+         * Add a second to the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function addSecond(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addSecond();
+        }
+        
+        /**
+         * Remove a second from the instance
+         *
+         * @return static 
+         * @static 
+         */
+        public static function subSecond(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subSecond();
+        }
+        
+        /**
+         * Remove seconds from the instance
+         *
+         * @param integer $value
+         * @return static 
+         * @static 
+         */
+        public static function subSeconds($value){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subSeconds($value);
+        }
+        
+        /**
+         * Get the difference in years
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInYears($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInYears($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in months
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInMonths($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInMonths($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weeks
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInWeeks($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeeks($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in days
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInDays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInDays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in days using a filter closure
+         *
+         * @param \Closure $callback
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInDaysFiltered($callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInDaysFiltered($callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weekdays
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInWeekdays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeekdays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in weekend days using a filter
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInWeekendDays($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeekendDays($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in hours
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInHours($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInHours($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in minutes
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInMinutes($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInMinutes($dt, $abs);
+        }
+        
+        /**
+         * Get the difference in seconds
+         *
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return integer 
+         * @static 
+         */
+        public static function diffInSeconds($dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInSeconds($dt, $abs);
+        }
+        
+        /**
+         * The number of seconds since midnight.
+         *
+         * @return integer 
+         * @static 
+         */
+        public static function secondsSinceMidnight(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::secondsSinceMidnight();
+        }
+        
+        /**
+         * The number of seconds until 23:23:59.
+         *
+         * @return integer 
+         * @static 
+         */
+        public static function secondsUntilEndOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::secondsUntilEndOfDay();
+        }
+        
+        /**
+         * Get the difference in a human readable format.
+         * 
+         * When comparing a value in the past to default now:
+         * 1 hour ago
+         * 5 months ago
+         * 
+         * When comparing a value in the future to default now:
+         * 1 hour from now
+         * 5 months from now
+         * 
+         * When comparing a value in the past to another value:
+         * 1 hour before
+         * 5 months before
+         * 
+         * When comparing a value in the future to another value:
+         * 1 hour after
+         * 5 months after
+         *
+         * @param \Carbon\Carbon $other
+         * @param bool $absolute removes time difference modifiers ago, after, etc
+         * @return string 
+         * @static 
+         */
+        public static function diffForHumans($other = null, $absolute = false){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffForHumans($other, $absolute);
+        }
+        
+        /**
+         * Resets the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfDay();
+        }
+        
+        /**
+         * Resets the time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfDay(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfDay();
+        }
+        
+        /**
+         * Resets the date to the first day of the month and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfMonth();
+        }
+        
+        /**
+         * Resets the date to end of the month and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfMonth(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfMonth();
+        }
+        
+        /**
+         * Resets the date to the first day of the year and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfYear(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfYear();
+        }
+        
+        /**
+         * Resets the date to end of the year and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfYear(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfYear();
+        }
+        
+        /**
+         * Resets the date to the first day of the decade and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfDecade(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfDecade();
+        }
+        
+        /**
+         * Resets the date to end of the decade and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfDecade(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfDecade();
+        }
+        
+        /**
+         * Resets the date to the first day of the century and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfCentury(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfCentury();
+        }
+        
+        /**
+         * Resets the date to end of the century and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfCentury(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfCentury();
+        }
+        
+        /**
+         * Resets the date to the first day of the ISO-8601 week (Monday) and the time to 00:00:00
+         *
+         * @return static 
+         * @static 
+         */
+        public static function startOfWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfWeek();
+        }
+        
+        /**
+         * Resets the date to end of the ISO-8601 week (Sunday) and time to 23:59:59
+         *
+         * @return static 
+         * @static 
+         */
+        public static function endOfWeek(){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfWeek();
+        }
+        
+        /**
+         * Modify to the next occurance of a given day of the week.
+         * 
+         * If no dayOfWeek is provided, modify to the next occurance
+         * of the current day of the week.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function next($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::next($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the previous occurance of a given day of the week.
+         * 
+         * If no dayOfWeek is provided, modify to the previous occurance
+         * of the current day of the week.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function previous($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::previous($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurance of a given day of the week
+         * in the current month. If no dayOfWeek is provided, modify to the
+         * first day of the current month.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function firstOfMonth($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfMonth($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurance of a given day of the week
+         * in the current month. If no dayOfWeek is provided, modify to the
+         * last day of the current month.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function lastOfMonth($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfMonth($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurance of a given day of the week
+         * in the current month. If the calculated occurance is outside the scope
+         * of the current month, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfMonth($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfMonth($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurance of a given day of the week
+         * in the current quarter. If no dayOfWeek is provided, modify to the
+         * first day of the current quarter.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function firstOfQuarter($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfQuarter($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurance of a given day of the week
+         * in the current quarter. If no dayOfWeek is provided, modify to the
+         * last day of the current quarter.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function lastOfQuarter($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfQuarter($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurance of a given day of the week
+         * in the current quarter. If the calculated occurance is outside the scope
+         * of the current quarter, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfQuarter($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfQuarter($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify to the first occurance of a given day of the week
+         * in the current year. If no dayOfWeek is provided, modify to the
+         * first day of the current year.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function firstOfYear($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfYear($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the last occurance of a given day of the week
+         * in the current year. If no dayOfWeek is provided, modify to the
+         * last day of the current year.  Use the supplied consts
+         * to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function lastOfYear($dayOfWeek = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfYear($dayOfWeek);
+        }
+        
+        /**
+         * Modify to the given occurance of a given day of the week
+         * in the current year. If the calculated occurance is outside the scope
+         * of the current year, then return false and no modifications are made.
+         * 
+         * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+         *
+         * @param int $nth
+         * @param int $dayOfWeek
+         * @return mixed 
+         * @static 
+         */
+        public static function nthOfYear($nth, $dayOfWeek){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfYear($nth, $dayOfWeek);
+        }
+        
+        /**
+         * Modify the current instance to the average of a given instance (default now) and the current instance.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return static 
+         * @static 
+         */
+        public static function average($dt = null){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::average($dt);
+        }
+        
+        /**
+         * Check if its the birthday. Compares the date/month values of the two dates.
+         *
+         * @param \Carbon\Carbon $dt
+         * @return boolean 
+         * @static 
+         */
+        public static function isBirthday($dt){
+            //Method inherited from \Carbon\Carbon            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isBirthday($dt);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getLastErrors(){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getLastErrors();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function format($format){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::format($format);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function modify($modify){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::modify($modify);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function add($interval){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::add($interval);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function sub($interval){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::sub($interval);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getTimezone(){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTimezone();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getOffset(){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getOffset();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setTime($hour, $minute, $second = null){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTime($hour, $minute, $second);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setDate($year, $month, $day){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setDate($year, $month, $day);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setISODate($year, $week, $day = null){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setISODate($year, $week, $day);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setTimestamp($unixtimestamp){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTimestamp($unixtimestamp);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function getTimestamp(){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTimestamp();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function diff($object, $absolute = null){
+            //Method inherited from \DateTime            
+            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diff($object, $absolute);
+        }
+        
+    }
+
+
+    class Mercadopago extends \Zonapro\MercadoPago\src\Facades\Mercadopago{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function sandbox_mode($enable = null){
+            return \Zonapro\Mercadopago\src\Mercadopago::sandbox_mode($enable);
+        }
+        
+        /**
+         * Get Access Token for API use
+         *
+         * @static 
+         */
+        public static function get_access_token(){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_access_token();
+        }
+        
+        /**
+         * Get information for specific payment
+         *
+         * @param int $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function get_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_payment($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function get_payment_info($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_payment_info($id);
+        }
+        
+        /**
+         * Get information for specific authorized payment
+         *
+         * @param \Zonapro\Mercadopago\src\id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function get_authorized_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_authorized_payment($id);
+        }
+        
+        /**
+         * Refund accredited payment
+         *
+         * @param int $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function refund_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::refund_payment($id);
+        }
+        
+        /**
+         * Cancel pending payment
+         *
+         * @param int $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function cancel_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::cancel_payment($id);
+        }
+        
+        /**
+         * Cancel preapproval payment
+         *
+         * @param int $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function cancel_preapproval_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::cancel_preapproval_payment($id);
+        }
+        
+        /**
+         * Search payments according to filters, with pagination
+         *
+         * @param array $filters
+         * @param int $offset
+         * @param int $limit
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function search_payment($filters, $offset = 0, $limit = 0){
+            return \Zonapro\Mercadopago\src\Mercadopago::search_payment($filters, $offset, $limit);
+        }
+        
+        /**
+         * Create a checkout preference
+         *
+         * @param array $preference
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function create_preference($preference){
+            return \Zonapro\Mercadopago\src\Mercadopago::create_preference($preference);
+        }
+        
+        /**
+         * Update a checkout preference
+         *
+         * @param string $id
+         * @param array $preference
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function update_preference($id, $preference){
+            return \Zonapro\Mercadopago\src\Mercadopago::update_preference($id, $preference);
+        }
+        
+        /**
+         * Get a checkout preference
+         *
+         * @param string $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function get_preference($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_preference($id);
+        }
+        
+        /**
+         * Create a preapproval payment
+         *
+         * @param array $preapproval_payment
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function create_preapproval_payment($preapproval_payment){
+            return \Zonapro\Mercadopago\src\Mercadopago::create_preapproval_payment($preapproval_payment);
+        }
+        
+        /**
+         * Get a preapproval payment
+         *
+         * @param string $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function get_preapproval_payment($id){
+            return \Zonapro\Mercadopago\src\Mercadopago::get_preapproval_payment($id);
+        }
+        
+        /**
+         * Update a preapproval payment
+         *
+         * @param string $preapproval_payment , $id
+         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @static 
+         */
+        public static function update_preapproval_payment($id, $preapproval_payment){
+            return \Zonapro\Mercadopago\src\Mercadopago::update_preapproval_payment($id, $preapproval_payment);
+        }
+        
+        /**
+         * Generic resource get
+         *
+         * @param \Zonapro\Mercadopago\src\uri
+         * @param \Zonapro\Mercadopago\src\params
+         * @param \Zonapro\Mercadopago\src\authenticate  = true
+         * @static 
+         */
+        public static function get($uri, $params = null, $authenticate = true){
+            return \Zonapro\Mercadopago\src\Mercadopago::get($uri, $params, $authenticate);
+        }
+        
+        /**
+         * Generic resource post
+         *
+         * @param \Zonapro\Mercadopago\src\uri
+         * @param \Zonapro\Mercadopago\src\data
+         * @param \Zonapro\Mercadopago\src\params
+         * @static 
+         */
+        public static function post($uri, $data, $params = null){
+            return \Zonapro\Mercadopago\src\Mercadopago::post($uri, $data, $params);
+        }
+        
+        /**
+         * Generic resource put
+         *
+         * @param \Zonapro\Mercadopago\src\uri
+         * @param \Zonapro\Mercadopago\src\data
+         * @param \Zonapro\Mercadopago\src\params
+         * @static 
+         */
+        public static function put($uri, $data, $params = null){
+            return \Zonapro\Mercadopago\src\Mercadopago::put($uri, $data, $params);
+        }
+        
+        /**
+         * Generic resource delete
+         *
+         * @param \Zonapro\Mercadopago\src\uri
+         * @param \Zonapro\Mercadopago\src\data
+         * @param \Zonapro\Mercadopago\src\params
+         * @static 
+         */
+        public static function delete($uri, $params = null){
+            return \Zonapro\Mercadopago\src\Mercadopago::delete($uri, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function create_preference_and_get_url($preference){
+            return \Zonapro\Mercadopago\src\Mercadopago::create_preference_and_get_url($preference);
         }
         
     }

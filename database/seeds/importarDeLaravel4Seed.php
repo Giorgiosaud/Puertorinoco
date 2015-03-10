@@ -311,25 +311,5 @@ ptori_lar.accesslevels
                                                             'updated_at'     => $pagoMercadoPago->updated_at,
                                                             'reservacion_id' => $pagoMercadoPago->order_id));
         }
-
-
-        //DB::statement('
-        //INSERT INTO
-        //pagos
-        //(monto,pago_id,pago_type,created_at,updated_at)
-        //SELECT
-        //monto,id,"App\\PagoDirecto",created_at,updated_at
-        //FROM
-        //pagos_directos
-        //');
-        //DB::statement('
-        //INSERT INTO
-        //pagos
-        //(monto,pago_id,pago_type,created_at,updated_at)
-        //SELECT
-        //transaction_amount,id,"App\\Mercadopago",date_created,last_modified
-        //FROM
-        //mercadopagos
-        //');
     }
 }
