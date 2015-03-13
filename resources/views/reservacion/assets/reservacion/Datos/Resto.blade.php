@@ -20,4 +20,3 @@
 	</td>
 </tr>
 
-@include('reservacion.assets.reservacion.Datos.Club')

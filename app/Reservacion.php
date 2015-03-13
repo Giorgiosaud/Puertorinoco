@@ -21,7 +21,7 @@ class Reservacion extends Model {
         'paseo',
         'embarcacion',
     ];
-    protected $dates=[
+    protected $dates = [
         'fecha'
     ];
 
@@ -109,12 +109,12 @@ class Reservacion extends Model {
             ]);
             $PagoDirecto->pagos()->save($Pago);
         }
-            $this->attributes['montoTotal'] = $montoAPagar - $credito;
-            $this->cliente->credito = 0;
-            $this->cliente->save();
-            $this->save();
+        $this->attributes['montoTotal'] = $montoAPagar - $credito;
+        $this->cliente->credito = 0;
+        $this->cliente->save();
+        $this->save();
 
-            return $this;
+        return $this;
 
 
     }
@@ -144,9 +144,12 @@ class Reservacion extends Model {
             return 0;
         }
     }
-    public function getTotalPasajerosEnReserva(){
-        return $this->attributes['adultos']+$this->attributes['mayores']+$this->attributes['ninos'];
+
+    public function getTotalPasajerosEnReserva()
+    {
+        return $this->attributes['adultos'] + $this->attributes['mayores'] + $this->attributes['ninos'];
     }
+
     public function getmontoSinIvaAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
@@ -203,38 +206,39 @@ class Reservacion extends Model {
         }
     }
 
-    public function getPreferenceDataAttribute(){
+    public function getPreferenceDataAttribute()
+    {
 
         $preference_data = [
 
-            "items" => [
+            "items"              => [
                 [
-                    "title"       => "Paseo en ".$this->embarcacion->nombre,
+                    "title"       => "Paseo en " . $this->embarcacion->nombre,
                     "quantity"    => 1,
                     "currency_id" => "VEF",
-                    "unit_price"  => $this->attributes['montoTotal']* 1.1,
-                    "description" => "Paquete completo reservado en ".$this->embarcacion->nombre,
+                    "unit_price"  => $this->attributes['montoTotal'] * 1.1,
+                    "description" => "Paquete completo reservado en " . $this->embarcacion->nombre,
                 ],
             ],
-            "payer" => [
+            "payer"              => [
                 [
                     "name"    => $this->cliente->nombre,
                     "surname" => $this->cliente->apellido,
                     "email"   => $this->cliente->email
                 ]
             ],
-            "back_urls" => [
-                "success"  => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/sucess.php?idreserva=".$this->id,
-                "failure"  => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/failure
-                .php?idreserva=".$this->id,
-                "pending"  => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/pending
-                .php?idreserva=".$this->id
+            "back_urls"          => [
+                "success" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/sucess.php?idreserva=" . $this->id,
+                "failure" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/failure
+                .php?idreserva=" . $this->id,
+                "pending" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/pending
+                .php?idreserva=" . $this->id
             ],
-            "payment_methods"           => [
+            "payment_methods"    => [
                 "excluded_payment_methods" => [],
                 "excluded_payment_types"   => [
-                    ["id"                => "ticket"],
-                    ["id"                => "atm"]
+                    ["id" => "ticket"],
+                    ["id" => "atm"]
                 ]
             ],
             "external_reference" => $this->id

@@ -145,6 +145,7 @@ return [
         'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
+        'App\Providers\VariablesServiceProvider',
         'Zonapro\MercadoPago\src\Providers\MercadoPagoServiceProvider',
         'Bootstrapper\BootstrapperL5ServiceProvider',
         'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
@@ -232,6 +233,7 @@ return [
         'CarbonLoc'           => 'Zonapro\Carbonlocalizer\src\Facades\Carbonlocalizer',
         'Mercadopago'         => 'Zonapro\MercadoPago\src\Facades\Mercadopago',
         'PDF'                 => 'Barryvdh\DomPDF\Facade',
+        'Vari'                => 'App\Facades\Vari',
     ],
 
 ];

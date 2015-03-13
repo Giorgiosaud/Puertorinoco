@@ -2,8 +2,8 @@
 	<div class="control-group">
 		<div class="col-xs-8 col-xs-push-4">
 			<div class="pull-left">Aceptar
-				<button class="btn btn-link terminosCondiciones" data-toggle="modal"
-				        data-target="#myModal">Terminos y condiciones
+				<button type="button" class="btn btn-link terminosCondiciones" data-toggle="modal"
+				        data-target="#tyc">Terminos y condiciones
 				</button>
 			</div>
 

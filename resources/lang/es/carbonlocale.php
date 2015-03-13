@@ -18,7 +18,7 @@ return array(
         'second' => 'dentro de :delta segundo|dentro de :delta segundos',
         'minute' => 'dentro de :delta minuto|dentro de :delta minutos',
         'hour'   => 'dentro de :delta hora|dentro de :delta horas',
-        'day'    => '{1} mañana|{2} en dos días|[3,Inf] dentro de :delta días',
+        'day'    => '{1} mañana|{2} dentro de dos días|[3,Inf] dentro de :delta días',
         'week'   => '{1} dentro de :delta semana|[2,Inf] dentro de :delta semanas',
         'month'  => '{1} dentro de :delta mes|[2,Inf] dentro de :delta meses',
         'year'   => 'dentro de :delta año|dentro de :delta años',

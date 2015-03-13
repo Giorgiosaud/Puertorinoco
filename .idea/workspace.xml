@@ -2,35 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/es/carbonlocale.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MercadoPago/MP.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MercadoPago/MPRestClient.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Providers/MercadoPagoServiceProvider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/css/all-081321ef.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/js/all-2b9a5734.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Cupos.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Cupos.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Personales.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Personales.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/TerminosyCondicionesModal.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Facades/Vari.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/ClasesDeApoyo/Variables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/templates/modal.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/notifiacionAlertaModal.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/terminosYCondiciones.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/build/js/all-b279e565.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Reservacion.php" afterPath="$PROJECT_DIR$/app/Reservacion.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Resto.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Resto.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_ide_helper.php" afterPath="$PROJECT_DIR$/_ide_helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css" afterPath="$PROJECT_DIR$/public/css/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VariablesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VariablesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/VariablesServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/VariablesServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js" afterPath="$PROJECT_DIR$/public/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDePrecios.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDePrecios.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/es/carbonlocale.php" afterPath="$PROJECT_DIR$/resources/lang/es/carbonlocale.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosCondicionesyServicios.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosCondicionesyServicios.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/formulario.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/importarDeLaravel4Seed.php" afterPath="$PROJECT_DIR$/database/seeds/importarDeLaravel4Seed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/main.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/js/main.js" afterPath="$PROJECT_DIR$/resources/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/mainSinNav.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/mainSinNav.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/MercadoPago/pagoMP.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/MercadoPago/pagoMP.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/es/reservacion.php" afterPath="$PROJECT_DIR$/resources/lang/es/reservacion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/rev-manifest.json" afterPath="$PROJECT_DIR$/public/build/rev-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/css/sass.css" afterPath="$PROJECT_DIR$/resources/css/sass.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php" afterPath="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
@@ -56,77 +50,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tabla.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php">
+      <file leaf-file-name="VariablesServiceProvider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Providers/VariablesServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="693">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formulario.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7028302" vertical-offset="454" max-vertical-offset="1365">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.47995284" vertical-offset="13" max-vertical-offset="861">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
-                <marker date="1426018906000" expanded="true" signature="254:404" placeholder="..." />
-                <marker date="1426018906000" expanded="true" signature="265:400" placeholder="..." />
-                <marker date="1426018906000" expanded="true" signature="266:399" placeholder="..." />
+                <element signature="e#32#49#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/create.blade.php">
+      <file leaf-file-name="Variables.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/ClasesDeApoyo/Variables.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="189">
+            <state vertical-scroll-proportion="-18.375" vertical-offset="0" max-vertical-offset="567">
+              <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MP.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MP.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7413">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mostrar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php">
+      <file leaf-file-name="MPRestClient.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MPRestClient.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="189">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2079">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReservacionController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-60.708332" vertical-offset="1084" max-vertical-offset="3864">
-              <caret line="121" column="87" selection-start-line="121" selection-start-column="87" selection-end-line="121" selection-end-column="87" />
               <folding>
-                <element signature="e#39#55#0#PHP" expanded="true" />
+                <element signature="e#6#90#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservacion.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion.blade.php">
+      <file leaf-file-name="notifiacionAlertaModal.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/notifiacionAlertaModal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="294">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.125" vertical-offset="0" max-vertical-offset="777">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-26.25" vertical-offset="945" max-vertical-offset="2121">
+              <caret line="75" column="114" selection-start-line="75" selection-start-column="114" selection-end-line="75" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -140,23 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/opcionesDePago.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/resto.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Club.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/es/reservacion.php" />
-        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Cupos.blade.php" />
-        <option value="$PROJECT_DIR$/app/Reservacion.php" />
-        <option value="$PROJECT_DIR$/CarbonLocale/CarbonLocale.php" />
-        <option value="$PROJECT_DIR$/CarbonLocale/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/CarbonLocale/Facade/CarbonLocale.php" />
-        <option value="$PROJECT_DIR$/carbonLocalizer/Facade/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/carbonLocalizer/Facade/carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/Carbonlocalizer/Facade/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/Carbonlocalizer/Facades/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/Carbonlocalizer/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/Carbonlocalizer/src/Carbonlocalizer.php" />
-        <option value="$PROJECT_DIR$/Carbonlocalizer/src/Facades/Carbonlocalizer.php" />
         <option value="$PROJECT_DIR$/app/Providers/CarbonLocaleServiceProvider.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
@@ -167,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/Providers/CarbonlocalizerServiceProvider.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Facades/Carbonlocalizer.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Personales.blade.php" />
-        <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Facades/Mercadopago.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MP.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Mercadopago.php" />
@@ -179,18 +133,36 @@
         <option value="$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Carbonlocalizer.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Providers/MercadoPagoServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDePrecios.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/main.js" />
-        <option value="$PROJECT_DIR$/resources/lang/es/carbonlocale.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/templates/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/mainSinNav.blade.php" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/composer.json" />
         <option value="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/composer.json" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/formulario.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/notifiacionAlertaModal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/main.js" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Resto.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/VariablesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/templates/modal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/terminosYCondiciones.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosCondicionesyServicios.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/TerminosyCondicionesModal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/es/carbonlocale.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Online.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php" />
+        <option value="$PROJECT_DIR$/app/Reservacion.php" />
+        <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Facades/Var.php" />
+        <option value="$PROJECT_DIR$/app/Facades/Vari.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/ClasesDeApoyo/Variables.php" />
+        <option value="$PROJECT_DIR$/resources/views/reservacion/assets/notifiacionAlertaModal.blade.php" />
+        <option value="$PROJECT_DIR$/app/Providers/VariablesServiceProvider.php" />
       </list>
     </option>
   </component>
@@ -230,6 +202,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -258,6 +231,146 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zonapro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MercadoPago" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zonapro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MercadoPago" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zonapro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MercadoPago" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Providers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zonapro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MercadoPago" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Facades" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Zonapro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -327,20 +440,18 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,47 +465,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Datos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="ClasesDeApoyo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,18 +489,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/lang/es" />
+      <recent name="$PROJECT_DIR$/resources/views/reservacion/assets" />
       <recent name="$PROJECT_DIR$/vendor/Zonapro/MercadoPago" />
       <recent name="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Providers" />
       <recent name="$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/ServiceProvider" />
-      <recent name="$PROJECT_DIR$/resources/lang" />
-      <recent name="$PROJECT_DIR$/resources/lang/en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/reservacion/assets" />
       <recent name="$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src" />
       <recent name="$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src" />
       <recent name="$PROJECT_DIR$/vendor/zonapro" />
       <recent name="$PROJECT_DIR$/vendor" />
-      <recent name="$PROJECT_DIR$/Carbonlocalizer/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -469,25 +549,25 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47013888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -538,503 +618,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Providers/ConfigServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+        <state vertical-scroll-proportion="12.738124" vertical-offset="1092" max-vertical-offset="70203">
+          <caret line="573" column="48" selection-start-line="573" selection-start-column="43" selection-end-line="573" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71619976" vertical-offset="16422" max-vertical-offset="28539">
+          <caret line="811" column="36" selection-start-line="811" selection-start-column="36" selection-end-line="811" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/patricktalmadge/bootstrapper/docs/classes/Bootstrapper.Modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="21000">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" Overwrite any vendor / package configuration. ..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VariablesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6232877" vertical-offset="42" max-vertical-offset="1218">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder=" This namespace is applied to the controller routes in your routes file. ..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder=" Define your route model bindings, pattern filters, etc. ..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder=" Define the routes for the application. ..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912909000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.33254716" vertical-offset="5010" max-vertical-offset="6510">
+          <caret line="259" column="20" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Cupos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="876">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Personales.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.91780823" vertical-offset="1308" max-vertical-offset="2184">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425912829000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MPRestClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023972603" vertical-offset="0" max-vertical-offset="1974">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <marker date="1425911723000" expanded="false" signature="-1:-1" placeholder=" Created by jorgelsaud. ..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder=" MercadoPago cURL RestClient ..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425911723000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Online.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8054245" vertical-offset="682" max-vertical-offset="1554">
-          <caret line="65" column="75" selection-start-line="65" selection-start-column="73" selection-end-line="65" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/importarDeLaravel4Seed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2476415" vertical-offset="0" max-vertical-offset="6720">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="e#6#22#0#PHP" expanded="true" />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT id,na..clients..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT name,..menuitems..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT idMer..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT name,..accesslevels..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT id,na..passengers..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="Select DISTI..prices..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT adult..prices..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT name,..paymenttypes..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT id,na..users..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT name,..paymentstatus..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1425939135000" expanded="true" signature="-1:-1" placeholder="SELECT boat_..boat_tour..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/eliminarColumnasSeed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4457547" vertical-offset="0" max-vertical-offset="848">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-126.024086" vertical-offset="109893" max-vertical-offset="116970">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="283416">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/MercadoPago/pagoMP.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0495283" vertical-offset="0" max-vertical-offset="848">
-          <caret line="2" column="112" selection-start-line="2" selection-start-column="112" selection-end-line="2" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3130734" vertical-offset="0" max-vertical-offset="872">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Mercadopago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.905661" vertical-offset="8056" max-vertical-offset="8904">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.495283" vertical-offset="0" max-vertical-offset="7413">
-          <caret line="20" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Providers/MercadoPagoServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="848">
-          <caret line="0" column="50" selection-start-line="0" selection-start-column="50" selection-end-line="0" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Carbonlocalizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0058962" vertical-offset="958" max-vertical-offset="1806">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Provider/CarbonlocalizerServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="756">
-          <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Facades/Mercadopago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="231">
-          <caret line="0" column="48" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Facades/Carbonlocalizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="252">
-          <caret line="0" column="52" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40137616" vertical-offset="3787" max-vertical-offset="6006">
-          <caret line="197" column="60" selection-start-line="197" selection-start-column="60" selection-end-line="197" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDePrecios.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5448113" vertical-offset="0" max-vertical-offset="848">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/es/carbonlocale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.25" vertical-offset="0" max-vertical-offset="651">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/illuminate/html/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1575">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/danielstjules/stringy/composer.json">
+    <entry file="file://$PROJECT_DIR$/vendor/patricktalmadge/bootstrapper/src/config/bootstrapper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/composer.json">
+    <entry file="file://$PROJECT_DIR$/vendor/patricktalmadge/bootstrapper/src/Bootstrapper/Modal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42099056" vertical-offset="0" max-vertical-offset="848">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-82.25" vertical-offset="0" max-vertical-offset="4116">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/composer.json">
+    <entry file="file://$PROJECT_DIR$/resources/views/templates/modal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/illuminate/html/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5695755" vertical-offset="0" max-vertical-offset="848">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="28" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vlucas/phpdotenv/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/mainSinNav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1485849" vertical-offset="0" max-vertical-offset="848">
-          <caret line="6" column="72" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/templates/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07429245" vertical-offset="0" max-vertical-offset="848">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5695755" vertical-offset="0" max-vertical-offset="848">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5200472" vertical-offset="0" max-vertical-offset="848">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="25" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/include/dompdf.cls.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33252132" vertical-offset="19320" max-vertical-offset="22617">
-          <caret line="939" column="63" selection-start-line="939" selection-start-column="59" selection-end-line="939" selection-end-column="63" />
-          <folding>
-            <marker date="1394503192000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394503192000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394503192000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394503192000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1394503192000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5176887" vertical-offset="86" max-vertical-offset="1323">
-          <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="33" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/config/dompdf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5712">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9787736" vertical-offset="3349" max-vertical-offset="4494">
-          <caret line="147" column="44" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="44" />
-          <caret line="149" column="28" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="28" />
-          <caret line="156" column="31" selection-start-line="156" selection-start-column="22" selection-end-line="156" selection-end-column="31" />
-          <caret line="159" column="56" selection-start-line="159" selection-start-column="47" selection-end-line="159" selection-end-column="56" />
-          <caret line="161" column="72" selection-start-line="161" selection-start-column="63" selection-end-line="161" selection-end-column="72" />
-          <caret line="200" column="31" selection-start-line="200" selection-start-column="22" selection-end-line="200" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.583334" vertical-offset="4255" max-vertical-offset="5103">
-          <caret line="233" column="58" selection-start-line="233" selection-start-column="58" selection-end-line="233" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/PDF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33254716" vertical-offset="516" max-vertical-offset="5103">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0495283" vertical-offset="1029" max-vertical-offset="5292">
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/es/reservacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="903">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1425734579000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/Facade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf/src/ServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02476415" vertical-offset="0" max-vertical-offset="1869">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.125" vertical-offset="0" max-vertical-offset="777">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-60.708332" vertical-offset="1084" max-vertical-offset="3864">
-          <caret line="121" column="87" selection-start-line="121" selection-start-column="87" selection-end-line="121" selection-end-column="87" />
-          <folding>
-            <element signature="e#39#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.17334905" vertical-offset="0" max-vertical-offset="848">
+          <caret line="7" column="77" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -1042,34 +671,315 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.25" vertical-offset="0" max-vertical-offset="294">
           <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="693">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/reservacion/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5" vertical-offset="0" max-vertical-offset="252">
+          <caret line="4" column="54" selection-start-line="4" selection-start-column="54" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosCondicionesyServicios.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="525">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/TerminosyCondicionesModal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.375" vertical-offset="0" max-vertical-offset="483">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_ide_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.958333" vertical-offset="335521" max-vertical-offset="380415">
+          <caret line="15998" column="69" selection-start-line="15998" selection-start-column="69" selection-end-line="15998" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/Carbonlocalizer/src/Carbonlocalizer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.166667" vertical-offset="949" max-vertical-offset="1806">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/es/carbonlocale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="651">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5" vertical-offset="0" max-vertical-offset="210">
+          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDeCupo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1554">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDelPaseo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5294118" vertical-offset="27" max-vertical-offset="1596">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDePrecios.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosDeSubmit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosPersonales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="32.372547" vertical-offset="1651" max-vertical-offset="2499">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/datosSaldosyMontos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30660376" vertical-offset="2281" max-vertical-offset="3864">
+          <caret line="121" column="64" selection-start-line="121" selection-start-column="64" selection-end-line="121" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Resto.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5448113" vertical-offset="0" max-vertical-offset="848">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Personales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.007308161" vertical-offset="426" max-vertical-offset="2184">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Cupos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Datos/Club.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario/terminosYCondiciones.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="848">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Oficina.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.032886725" vertical-offset="27" max-vertical-offset="1806">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Online.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1554">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/MercadoPago/pagoMP.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="378">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.625" vertical-offset="2919" max-vertical-offset="5397">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.333333" vertical-offset="11365" max-vertical-offset="13671">
+          <caret line="553" column="13" selection-start-line="553" selection-start-column="13" selection-end-line="553" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33252132" vertical-offset="1134" max-vertical-offset="4935">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.5" vertical-offset="0" max-vertical-offset="777">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.0" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="903">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/BusServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Providers/MercadoPagoServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32193395" vertical-offset="0" max-vertical-offset="848">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/ConfigServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Variable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0990566" vertical-offset="0" max-vertical-offset="848">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Mercadopago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8904">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/Facades/Mercadopago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="231">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Facades/Vari.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0990566" vertical-offset="0" max-vertical-offset="848">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7697929" vertical-offset="4303" max-vertical-offset="5145">
+          <caret line="235" column="52" selection-start-line="235" selection-start-column="52" selection-end-line="235" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MPRestClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2079">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zonapro/MercadoPago/src/MP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7413">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/formulario.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/notifiacionAlertaModal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7028302" vertical-offset="454" max-vertical-offset="1365">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        <state vertical-scroll-proportion="-26.25" vertical-offset="945" max-vertical-offset="2121">
+          <caret line="75" column="114" selection-start-line="75" selection-start-column="114" selection-end-line="75" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/ClasesDeApoyo/Variables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.375" vertical-offset="0" max-vertical-offset="567">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/VariablesServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47995284" vertical-offset="13" max-vertical-offset="861">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <marker date="1426018906000" expanded="true" signature="254:404" placeholder="..." />
-            <marker date="1426018906000" expanded="true" signature="265:400" placeholder="..." />
-            <marker date="1426018906000" expanded="true" signature="266:399" placeholder="..." />
+            <element signature="e#32#49#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

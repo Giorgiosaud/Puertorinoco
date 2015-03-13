@@ -24,14 +24,6 @@ class RouteServiceProvider extends ServiceProvider {
 	public function boot(Router $router)
 	{
 		parent::boot($router);
-        view()->composer('reservacion.assets.reservacion.Datos.Club', function ($view)
-        {
-            $adulTA = Variable::whereNombre('adultosPagoClubTemporadaAlta')->first()->valor;
-            $mayNinTA = Variable::whereNombre('ninosymayoresPagoClubTemporadaAlta')->first()->valor;
-            $adulTB = Variable::whereNombre('adultosPagoClubTemporadaBaja')->first()->valor;
-            $mayNinTB = Variable::whereNombre('ninosymayoresPagoClubTemporadaBaja')->first()->valor;
-            $view->with(compact('mayNinTB', 'adulTB','mayNinTA','adulTA'));
-        });
 		//
 	}
 
