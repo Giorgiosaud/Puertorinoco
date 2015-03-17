@@ -24,6 +24,7 @@ class CrearTablaReservaciones extends Migration {
 			$table->integer('mayores')->default(0);
 			$table->integer('ninos')->default(0);
 			$table->float('montoTotal')->nullable();
+            $table->float('deudaRestante')->default(0);
 			$table->boolean('confirmado')->default(false);
 			$table->string('hechoPor')->default('client');
 			$table->string('modificadoPor')->nullable();

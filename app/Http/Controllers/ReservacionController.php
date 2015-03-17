@@ -13,6 +13,7 @@ class ReservacionController extends Controller {
 
     /**
      * @var Guard
+     * Añade Variable Autenticacion al Controlador
      */
     private $auth;
 
@@ -34,34 +35,31 @@ class ReservacionController extends Controller {
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     *Muestra un Formulario para realizar la Reservacion
      * @return Response
      */
     public function create()
     {
         $embarcaciones = Embarcacion::all();
         $paseos = Paseo::all();
-
         return view('reservacion.create', compact('embarcaciones', 'paseos'));
     }
 
     /**
      * @param ReservacionesRequest $request
      * @return $reserva
+     * Ejecuta la Reserva y devuelve la misma
      */
     private function RealizarReserva($datos)
     {
 
         $reserva = Reservacion::create($datos);
-        $reserva->actualizaMontoTotal();
-
+        $reserva->consumirMontoAFavor();
         return $reserva;
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
+     * Guardar Reservacion
      * @return Response
      */
     public function store(ReservacionesRequest $request)
@@ -100,10 +98,8 @@ class ReservacionController extends Controller {
         $respuesta = $request->all() + ['cliente_id' => $cliente->id];
 
         $reservacion = $this->RealizarReserva($respuesta);
-        $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
-            $reservacion->embarcacion_id, $reservacion->paseo_id);
 
-        return view('reservacion.mostrar', compact('reservacion', 'totalCuposEnPaseo'));
+        return view('reservacion.mostrar', compact('reservacion'));
 
     }
 
@@ -116,8 +112,6 @@ class ReservacionController extends Controller {
     public function show($id)
     {
         $reservacion = Reservacion::findOrFail($id);
-        $totalCuposEnPaseo = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reservacion->fecha,
-            $reservacion->embarcacion_id, $reservacion->paseo_id);
 
         return view('reservacion.mostrar', compact('reservacion'));
     }

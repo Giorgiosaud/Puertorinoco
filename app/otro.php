@@ -2,6 +2,10 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\otro
+ *
+ */
 class otro extends Model {
 
 	//

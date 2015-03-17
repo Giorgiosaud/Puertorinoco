@@ -14,13 +14,13 @@ class EditarTablaEmbarcaciones extends Migration {
 	{
 		Schema::table('embarcaciones', function(Blueprint $table)
 		{
-			$table->boolean('lunes')->default(1)->before('created_at');
-			$table->boolean('martes')->default(1)->before('created_at');
-			$table->boolean('miercoles')->default(1)->before('created_at');
-			$table->boolean('jueves')->default(1)->before('created_at');
-			$table->boolean('viernes')->default(1)->before('created_at');
-			$table->boolean('sabado')->default(1)->before('created_at');
-			$table->boolean('domingo')->default(1)->before('created_at');
+			$table->boolean('lunes')->default(1)->after('abordajeNormal');
+			$table->boolean('martes')->default(1)->after('abordajeNormal');
+			$table->boolean('miercoles')->default(1)->after('abordajeNormal');
+			$table->boolean('jueves')->default(1)->after('abordajeNormal');
+			$table->boolean('viernes')->default(1)->after('abordajeNormal');
+			$table->boolean('sabado')->default(1)->after('abordajeNormal');
+			$table->boolean('domingo')->default(1)->after('abordajeNormal');
 		});
 	}
 

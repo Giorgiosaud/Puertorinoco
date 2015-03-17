@@ -5,10 +5,16 @@
 	<table class="table table-condensed table-hover">
 		@include('reservacion.assets.reservacion.Datos.Personales')
 		@include('reservacion.assets.reservacion.Pagos.Opciones')
-		@include('reservacion.assets.reservacion.Datos.Resto')
-
+		<tr>
+			<td colspan="6" id="mini">
+				{!!Lang::get('reservacion.notificacionCobroDeEntrada')!!}
+				{!!Button::primary(Lang::get('reservacion.tarifasDelClub'))->large()->addAttributes(['class'=>'center-block','data-toggle'=>"modal" , 'data-target'=>"#advertencias"])!!}
+			</td>
+		</tr>
 	</table>
+
 </div>
+@include('reservacion.assets.notifiacionAlertaModal')
 <script type="text/javascript">
 	(function () {
 		function $MPBR_load() {

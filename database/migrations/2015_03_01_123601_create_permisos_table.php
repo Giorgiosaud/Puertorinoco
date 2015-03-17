@@ -20,6 +20,8 @@ class CreatePermisosTable extends Migration {
 			$table->boolean('DisponibilidadTotalDeEmbarcaciones')->default(0);
 			$table->boolean('DisponibilidadTotalDePaseos')->default(0);
 			$table->boolean('accesoEdicionDePagina')->default(0);
+            $table->boolean('editarEmbarcaciones')->default(0);
+            $table->boolean('editarPaseos')->default(0);
 			$table->timestamps();
 		});
 	}

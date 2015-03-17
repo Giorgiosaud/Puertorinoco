@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    if($('#formularioDeReserva').length>=1) {
         $(window).keydown(function (event) {
             if (event.keyCode == 13) {
                 event.preventDefault();
@@ -50,7 +51,7 @@ $(document).ready(function () {
                             $('#precioMayores').text(window.datosconfecha.precios[paseo_id_seleccionada][0].mayor + ' Bs');
                             $('#precioNinos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].nino + ' Bs');
                         }
-                        else{
+                        else {
                             $('#ayudaPaseo').slideDown('slow');
                         }
                     }
@@ -195,7 +196,7 @@ $(document).ready(function () {
             if (pasajes > 0) {
                 $('#ayudaNombres,#ayudaCupos').slideUp('slow');
                 $('#SaldosyMontos,#groupcondiciones').slideDown('slow');
-                if($('#condiciones').is(':checked')){
+                if ($('#condiciones').is(':checked')) {
                     $('#botonEnviarForm').slideDown('slow');
                 }
             }
@@ -212,44 +213,10 @@ $(document).ready(function () {
                 $('#botonEnviarForm').slideUp('slow');
             }
         })
-        //$("input[name='identificacion_number']").on( "change", function(){
-        //    $('#ayudaIdentificacion').slideUp('slow');
-        //    $('#nombresForm').slideDown('slow');
-        //    $('#identificacion').val($('[name="rifInicio"]').val()+"-"+$("input[name='identificacion_number']").val());
-        //    $("input[name='nombre']").focus();
-        //    $.get("../ObtenerDatosClientes/" + $('#identificacion').val(), function (datosClientes) {
-        //
-        //    });
-        //});
-        //$("input[name='nombre']").on( "change", function(){
-        //    $('#ayudaNombres').slideUp('slow');
-        //    $('#apellidosForm').slideDown('slow');
-        //    $("input[name='apellido']").focus();
-        //});
-        //$("input[name='apellido']").on( "change", function(){
-        //    $('#ayudaApellidos').slideUp('slow');
-        //    $('#emailForm').slideDown('slow');
-        //    $("input[name='email']").focus();
-        //
-        //});
-        //$("input[name='email']").on( "change", function(){
-        //    $('#ayudaEmail').slideUp('slow');
-        //    $('#telefonoForm').slideDown('slow');
-        //    $("input[name='telefono']").focus();
-        //
-        //});
-        //$("input[name='telefono']").on( "change", function(){
-        //    $('#ayudaTelefono').slideUp('slow');
-        //    $('#datosdeCupos').slideDown('slow');
-        //});
-
-        //$('#validarCupos').click(function(){
-        //    $('#SaldosyMontos').slideDown('slow');
-        //});
-
     }
-)
-;
+    $(".btswitch").bootstrapSwitch();
+
+});
 function fechasEspecialesx(fechaAComparar) {
 
     var fechas = window.fechasEspeciales;

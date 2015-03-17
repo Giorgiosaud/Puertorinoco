@@ -33,6 +33,7 @@ return [
     'Telefono'                      => 'Telefono',
     'DatosPersonales'               => 'Datos Personales',
     'QrCode'                        => 'Codigo Qr Para Ser Presentado en Barra',
-    'Cupos'                        => 'Datos del Cupo',
+    'Cupos'                         => 'Datos del Cupo',
+    'tarifasDelClub'                => 'Mostrar Tarifas Del Club',
 
 ];

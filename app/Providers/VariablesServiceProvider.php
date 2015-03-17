@@ -1,6 +1,6 @@
 <?php namespace App\Providers;
 
-use App\Variable;
+use App\ClasesDeApoyo\Variables;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +16,7 @@ class VariablesServiceProvider extends ServiceProvider {
 
         App::bind('vari', function ()
         {
-            return Variable::all();
+            return new Variables();
         });
 
 

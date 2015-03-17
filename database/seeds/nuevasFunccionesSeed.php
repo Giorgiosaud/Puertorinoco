@@ -1,6 +1,7 @@
 <?php
 //require "fzaninotto/faker"
 use App\FechaEspecial;
+use App\Precio;
 use App\TipoDePago;
 use App\Variable;
 use Illuminate\Database\Seeder;
@@ -10,7 +11,7 @@ class NuevasFunccionesSeeder extends Seeder {
     public function run()
     {
         Variable::create(['nombre'=>'logo',
-                          'valor'=>'uploads/logo100.png']);
+                          'valor'=>asset('uploads/logo100.png')]);
         FechaEspecial::create([
 
         ]);
@@ -18,6 +19,13 @@ class NuevasFunccionesSeeder extends Seeder {
             'nombre'=>'Credito A Favor',
             'descripcion'=>'Credito A Favor de Cliente',
         ]);
+        $p=Precio::where('tipo_de_paseo_id',1)->first();
+        $p->aplicar_desde=$p->aplicar_desde->subYears(15);
+        $p->save();
+        $p=Precio::where('tipo_de_paseo_id',2)->first();
+        $p->aplicar_desde=$p->aplicar_desde->subYears(15);
+        $p->save();
+
     }
 
 }

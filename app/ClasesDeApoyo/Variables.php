@@ -21,7 +21,10 @@ class Variables {
         $this->variable = Variable::all();
     }
     public function get($nombre){
-        return get_class($this->variable->where('nombre',$nombre)->first()->valor);
+        if($this->variable->where('nombre',$nombre)->count()==0){
+            return null;
+        };
+        return $this->variable->where('nombre',$nombre)->first()->valor;
     }
 
 }

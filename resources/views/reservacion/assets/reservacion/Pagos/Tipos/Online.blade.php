@@ -11,30 +11,13 @@
 			<td>
 				{{ $reservacion->montoSinIva}}
 			</td>
+		</tr>
 		<tr>
 			<td>
 				<strong>IVA: Bs. </strong>
 			</td>
 			<td>
 				{{ $reservacion->montoIVA }}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>Credito Usado: Bs. </strong>
-			</td>
-			<td>
-				{{ number_format($reservacion->pagos()->sum('monto'), 2, ',', '.')." Bs." }}
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<strong>
-					Saldo A Favor Pendiente Cliente: Bs.
-				</strong>
-			</td>
-			<td>
-				{{ number_format($reservacion->cliente->credito, 2, ',', '.')." Bs." }}
 			</td>
 		</tr>
 		<tr>
@@ -47,7 +30,26 @@
 		</tr>
 		<tr>
 			<td>
-				<strong>Servicio: Bs. </strong>
+				<strong>Monto Pagado: Bs. </strong>
+			</td>
+			<td>
+				{{ number_format($reservacion->montoPagado, 2, ',', '.')." Bs." }}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>
+					Saldo a Pagar de Reserva Actual:
+				</strong>
+			</td>
+			<td>
+				{{ number_format($reservacion->deudaRestante, 2, ',', '.')." Bs." }}
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<strong>10% Servicio Web: Bs. </strong>
 			</td>
 			<td>
 				{{ $reservacion->montoServicio}}
@@ -55,7 +57,7 @@
 		</tr>
 		<tr>
 			<td>
-				<strong>Total: Bs. </strong>
+				<strong>Total A Pagar Via Web: Bs. </strong>
 			</td>
 			<td>
 				{{ $reservacion->montoConServicio}}

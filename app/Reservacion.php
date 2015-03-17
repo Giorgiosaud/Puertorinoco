@@ -2,10 +2,72 @@
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Vari;
 
+/**
+ * Class Reservacion
+ *
+ * @package App
+ * @property integer $id 
+ * @property \Carbon\Carbon $fecha 
+ * @property integer $cliente_id 
+ * @property integer $embarcacion_id 
+ * @property integer $paseo_id 
+ * @property integer $estado_del_pago_id 
+ * @property integer $adultos 
+ * @property integer $mayores 
+ * @property integer $ninos 
+ * @property float $montoTotal 
+ * @property boolean $confirmado 
+ * @property string $hechoPor 
+ * @property string $modificadoPor 
+ * @property string $notas 
+ * @property string $deleted_at 
+ * @property \Carbon\Carbon $created_at 
+ * @property \Carbon\Carbon $updated_at 
+ * @property-read \App\Cliente $cliente 
+ * @property-read \App\Embarcacion $embarcacion 
+ * @property-read \App\Paseo $paseo 
+ * @property-read \App\EstadoDelPago $estadoDePago 
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pasajero[] $pasajeros 
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos 
+ * @property-read mixed $monto_total_a_pagar 
+ * @property-read mixed $monto_sin_iva 
+ * @property-read mixed $monto_i_v_a 
+ * @property-read mixed $monto_servicio 
+ * @property-read mixed $monto_con_servicio 
+ * @property-read mixed $preference_data 
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereFecha($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereClienteId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereEmbarcacionId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion wherePaseoId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereEstadoDelPagoId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereAdultos($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereMayores($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereNinos($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereMontoTotal($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereConfirmado($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereHechoPor($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereModificadoPor($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereNotas($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereUpdatedAt($value)
+ * @method static \App\Reservacion reservasDeLaFecha($fecha)
+ * @method static \App\Reservacion pasajerosReservadosDeLaFecha($fecha)
+ * @method static \App\Reservacion pasajerosReservadosDeLaFechaEmbarcacionyPaseo($fecha, $embarcacion_id, $paseo_id)
+ * @method static \App\Reservacion obtenerVecesQueSeRepite($fecha, $clienteId, $embarcacionId, $paseoId)
+ */
 class Reservacion extends Model {
 
+    /**
+     * @var string
+     */
     protected $table = 'reservaciones';
+    /**
+     * @var array
+     */
     protected $fillable = [
         'fecha',
         'cliente_id',
@@ -16,56 +78,97 @@ class Reservacion extends Model {
         'ninos',
 
     ];
+    /**
+     * @var array
+     */
     protected $relations = [
         'cliente',
         'paseo',
         'embarcacion',
     ];
+    /**
+     * @var array
+     */
     protected $dates = [
         'fecha'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function cliente()
     {
         return $this->belongsTo('App\Cliente');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function embarcacion()
     {
         return $this->belongsTo('App\Embarcacion');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function paseo()
     {
         return $this->belongsTo('App\Paseo');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function estadoDePago()
     {
         return $this->belongsTo('App\EstadoDelPago', 'estado_del_pago_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function pasajeros()
     {
         return $this->hasMany('App\Pasajero');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function pagos()
     {
         return $this->hasMany('App\Pago');
     }
 
+    /**
+     * @param $query
+     * @param $fecha
+     * @return mixed
+     */
     public function scopeReservasDeLaFecha($query, $fecha)
     {
         return $query->whereFecha($fecha);
     }
 
+    /**
+     * @param $query
+     * @param $fecha
+     * @return mixed
+     */
     public function scopePasajerosReservadosDeLaFecha($query, $fecha)
     {
         return $query->whereFecha($fecha)->sum('adultos') + $query->whereFecha($fecha)->sum('mayores') + $query->whereFecha
         ($fecha)->sum('ninos');
     }
 
+    /**
+     * @param $query
+     * @param $fecha
+     * @param $embarcacion_id
+     * @param $paseo_id
+     * @return mixed
+     */
     public function scopePasajerosReservadosDeLaFechaEmbarcacionyPaseo($query, $fecha, $embarcacion_id, $paseo_id)
     {
         return $query->whereFecha($fecha)
@@ -74,13 +177,22 @@ class Reservacion extends Model {
             ->sum('adultos') + $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('mayores') + $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('ninos');
     }
 
-    public function actualizaMontoTotal()
+    /**
+     * @return Reservacion $this
+     */
+    public function consumirMontoAFavor()
     {
         $precio = $this->paseo->tipoDePaseo->precios()->PrecioParaLaFecha($this->fecha)->first();
         $montoAPagar = ($precio->adulto * $this->adultos) + ($precio->mayor * $this->mayores) +
             ($precio->nino * $this->ninos);
+        $this->attributes['montoTotal']=$montoAPagar;
+        $this->save();
         $credito = $this->cliente->credito;
-        if ($credito > $montoAPagar)
+        if ($credito == 0)
+        {
+            return $this;
+        }
+        if ($credito >= $montoAPagar)
         {
             $Pago = new Pago();
             $Pago->monto = $montoAPagar;
@@ -91,34 +203,37 @@ class Reservacion extends Model {
                 'tipo_de_pago_id' => '8'
             ]);
             $PagoDirecto->pagos()->save($Pago);
-            $this->attributes['montoTotal'] = 0;
             $this->cliente->credito = $credito - $montoAPagar;
             $this->cliente->save();
-
-            return $this->save();
+            $Pago->procesar();
+            return $this;
         }
-        if ($credito > 0)
-        {
-            $Pago = new Pago();
-            $Pago->monto = $credito;
-            $Pago->reservacion_id = $this->id;
-            $PagoDirecto = PagoDirecto::create([
-                'fecha'           => Carbon::now(),
-                'descripcion'     => 'Credito A Favor',
-                'tipo_de_pago_id' => '8'
-            ]);
-            $PagoDirecto->pagos()->save($Pago);
-        }
-        $this->attributes['montoTotal'] = $montoAPagar - $credito;
+        $Pago = new Pago();
+        $Pago->monto = $credito;
+        $Pago->reservacion_id = $this->id;
+        $PagoDirecto = PagoDirecto::create([
+            'fecha'           => Carbon::now(),
+            'descripcion'     => 'Credito A Favor',
+            'tipo_de_pago_id' => '8'
+        ]);
+        $PagoDirecto->pagos()->save($Pago);
         $this->cliente->credito = 0;
         $this->cliente->save();
-        $this->save();
-
+        $Pago->procesar();
         return $this;
 
 
     }
 
+
+    /**
+     * @param $query
+     * @param $fecha
+     * @param $clienteId
+     * @param $embarcacionId
+     * @param $paseoId
+     * @return mixed
+     */
     public function scopeObtenerVecesQueSeRepite($query, $fecha, $clienteId, $embarcacionId, $paseoId)
     {
         $searcb = [
@@ -133,6 +248,14 @@ class Reservacion extends Model {
         //($embarcacionId)->wherePaseoId($paseoId);
     }
 
+    /**
+     * @return int|string
+     */
+    public function getDeudaAttribute(){
+        $totalAPagar=$this->attributes['montoTotal'];
+        $totalPagado=$this->pagos->sum('monto');
+        return $totalAPagar-$totalPagado;
+    }
     public function getmontoTotalAPagarAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
@@ -145,17 +268,23 @@ class Reservacion extends Model {
         }
     }
 
+    /**
+     * @return mixed
+     */
     public function getTotalPasajerosEnReserva()
     {
         return $this->attributes['adultos'] + $this->attributes['mayores'] + $this->attributes['ninos'];
     }
 
+    /**
+     * @return int|string
+     */
     public function getmontoSinIvaAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto / 1.12;
+            $tmpmonto = $tmpmonto / (1+(Vari::get('iva')/100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
@@ -164,12 +293,15 @@ class Reservacion extends Model {
         }
     }
 
+    /**
+     * @return int|string
+     */
     public function getmontoIVAAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto - ($tmpmonto / 1.12);
+            $tmpmonto = $tmpmonto - ($tmpmonto / (1+(Vari::get('iva')/100)));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
@@ -178,34 +310,47 @@ class Reservacion extends Model {
         }
     }
 
+    public function getmontoPagadoAttribute(){
+        return $this->pagos()->sum('monto');
+    }
+
+    /**
+     * @return int|string
+     */
     public function getmontoServicioAttribute()
     {
-        $tmpmonto = $this->attributes['montoTotal'];
+        $tmpmonto = $this->attributes['deudaRestante'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto * 0.1;
+            $tmpmonto = $tmpmonto * (Vari::get('servicio')/100);
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
         {
-            return 0;
+            return  "0 Bs.";
         }
     }
 
+    /**
+     * @return int|string
+     */
     public function getmontoConServicioAttribute()
     {
-        $tmpmonto = $this->attributes['montoTotal'];
+        $tmpmonto = $this->attributes['deudaRestante'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto * 1.1;
+            $tmpmonto = $tmpmonto * (1+(Vari::get('servicio')/100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
         {
-            return 0;
+            return "0 Bs.";
         }
     }
 
+    /**
+     * @return array
+     */
     public function getPreferenceDataAttribute()
     {
 

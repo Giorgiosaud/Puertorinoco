@@ -22,7 +22,15 @@
 </tr>
 <tr>
 	<td>
-		<strong>Credito Usado: Bs. </strong>
+		<strong>Total A Pagar En Oficina: Bs. </strong>
+	</td>
+	<td>
+		{{ $reservacion->montoTotalAPagar }}
+	</td>
+</tr>
+<tr>
+	<td>
+		<strong>Monto Pagado: Bs. </strong>
 	</td>
 	<td>
 		{{ number_format($reservacion->pagos()->sum('monto'), 2, ',', '.')." Bs." }}
@@ -31,21 +39,14 @@
 <tr>
 	<td>
 		<strong>
-			Saldo A Favor Pendiente Cliente: Bs.
+			Saldo a Pagar de Reserva Actual:
 		</strong>
 	</td>
 	<td>
-		{{ number_format($reservacion->cliente->credito, 2, ',', '.')." Bs." }}
+		{{ number_format($reservacion->deudaRestante, 2, ',', '.')." Bs." }}
 	</td>
 </tr>
-<tr>
-	<td>
-		<strong>Total A Pagar En Oficina: Bs. </strong>
-	</td>
-	<td>
-		{{ $reservacion->montoTotalAPagar }}
-	</td>
-</tr>
+
 <tr>
 <tr>
 	<td>

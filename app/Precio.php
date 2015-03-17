@@ -2,9 +2,34 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Precio
+ *
+ * @property integer $id 
+ * @property float $adulto 
+ * @property float $mayor 
+ * @property float $nino 
+ * @property string $aplicar_desde 
+ * @property integer $tipo_de_paseo_id 
+ * @property \Carbon\Carbon $created_at 
+ * @property \Carbon\Carbon $updated_at 
+ * @property-read \App\TipoDePaseo $tipoDePaseo 
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereAdulto($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereMayor($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereNino($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereAplicarDesde($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereTipoDePaseoId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Precio whereUpdatedAt($value)
+ * @method static \App\Precio precioParaLaFecha($fecha)
+ */
 class Precio extends Model {
 
 	//
+    protected $dates=[
+        'aplicar_desde',
+    ];
     public function tipoDePaseo(){
         return $this->belongsTo('App\TipoDePaseo');
     }

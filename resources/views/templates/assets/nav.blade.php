@@ -2,7 +2,7 @@
 Navbar::top()
 ->setType('navbar-puertorinoco')
 ->fluid()
-->withBrand('<img class="logoNav" src="'.$logo->valor.'"/>', '#')
+->withBrand('<img class="logoNav" src="'.Vari::get('logo').'"/>', '#')
 ->withContent(
 	Navigation::links(
 		[

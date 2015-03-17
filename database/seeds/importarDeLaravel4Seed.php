@@ -149,7 +149,9 @@ FROM `ptori_lar`.`mercadopagos`');
         Permiso::create([
             'esAgencia'             => true,
             'cuposExtra'            => true,
-            'accesoEdicionDePagina' => true
+            'accesoEdicionDePagina' => true,
+            'editarEmbarcaciones'   => true,
+            'editarPaseos'          => true,
         ]);
         $this->command->info('Migrando Tabla niveles_de_acceso...');
         DB::statement('
@@ -228,9 +230,9 @@ ptori_lar.accesslevels
         DB::statement('
         INSERT INTO
         users
-        (id,name,email,password,nivel_de_acceso_id)
+        (id,nombre,usuario,email,password,nivel_de_acceso_id)
         SELECT
-        id,name,email,password,1
+        id,name,name,email,password,1
         FROM
         ptori_lar.users
         ');
@@ -295,21 +297,41 @@ ptori_lar.accesslevels
             }
         }
         $this->command->info('Agregando Pagos Directos como Pagos...');
+        $total = \App\PagoDirecto::max('id');
+        $porcentajeini = 0;
         $pagosDirectos = App\PagoDirecto::all();
         foreach ($pagosDirectos as $pagoDirecto)
         {
+            $porcentaje = $pagoDirecto->id / $total * 100;
+            if (intval($porcentaje) > $porcentajeini)
+            {
+                $this->command->info('Agregando Pagos Directos % ' . intval($porcentaje));
+                $porcentajeini = intval($porcentaje);
+            }
             $pago = $pagoDirecto->pagos()->create(array('monto'          => $pagoDirecto->monto,
                                                         'created_at'     => $pagoDirecto->created_at,
                                                         'updated_at'     => $pagoDirecto->updated_at,
                                                         'reservacion_id' => $pagoDirecto->reservacion_id));
+            $pago->procesar();
         }
         $this->command->info('Agregando Mercadopagos como Pagos...');
+        $total = \App\Mercadopago::max('id');
         $pagosMercadopagos = App\Mercadopago::all();
+        $porcentajeini = 0;
+
         foreach ($pagosMercadopagos as $pagoMercadoPago)
         {
-            $pago = $pagoMercadoPago->pagos()->create(array('monto'          => $pagoMercadoPago->transaction_amount, 'created_at' => $pagoMercadoPago->created_at,
-                                                            'updated_at'     => $pagoMercadoPago->updated_at,
-                                                            'reservacion_id' => $pagoMercadoPago->order_id));
+            $porcentaje = $pagoMercadoPago->id / $total * 100;
+            if (intval($porcentaje) > $porcentajeini)
+            {
+                $this->command->info('Agregando Pagos Mercadopago % ' . intval($porcentaje));
+                $porcentajeini = intval($porcentaje);
+            }
+            //$this->command->info('Agregando Mercadopago % ' . $porcentaje);
+            $pago = $pagoMercadoPago->pagos()->create(['monto'          => $pagoMercadoPago->transaction_amount, 'created_at' => $pagoMercadoPago->created_at,
+                                                       'updated_at'     => $pagoMercadoPago->updated_at,
+                                                       'reservacion_id' => $pagoMercadoPago->order_id,]);
+            $pago->procesar();
         }
     }
 }

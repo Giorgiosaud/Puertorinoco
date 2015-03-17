@@ -20,14 +20,18 @@ elixir(function (mix) {
         .copy('vendor/bower_components/bootstrap-datepicker/less', 'resources/assets/less/bootstrap-datepicker/less')
         .copy('vendor/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js', 'resources/js/bootstrap-datepicker/bootstrap-datepicker.js')
         .copy('vendor/bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js', 'resources/js/bootstrap-datepicker/bootstrap-datepicker.es.js')
+        .copy('vendor/bower_components/bootstrap-switch/src/less/bootstrap3','resources/assets/less/bootstrap-switch')
+        .copy('vendor/bower_components/bootstrap-switch/src/coffee','resources/assets/coffee/bootstrap-switch')
 
         .sass('sass.scss', 'resources/css')
         .less('less.less', 'resources/css')
+        .coffee('bootstrap-switch/bootstrap-switch.coffee','resources/js/bootstrap-switch')
         .scripts([
             'jquery/jquery.js',
             'bootstrap/bootstrap.js',
             'bootstrap-datepicker/bootstrap-datepicker.js',
             'bootstrap-datepicker/bootstrap-datepicker.es.js',
+            'bootstrap-switch/bootstrap-switch.js',
             'main.js'
         ])
         .styles([

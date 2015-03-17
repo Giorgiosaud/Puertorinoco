@@ -26,8 +26,7 @@
 		<a href="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(URL::to
 			('/reservas/informacion/') . '/' .$reservacion->id)) }}"
 		   download="CofigoQRDeReservacion{{$reservacion->id}}.jpg">
-			<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(URL::to
-			('/reservas/informacion/') . '/' .$reservacion->id)) }}"/>
+			<img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(250)->generate(URL::current())) }}"/>
 		</a>
 	</td>
 

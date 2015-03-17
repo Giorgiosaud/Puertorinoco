@@ -8,6 +8,7 @@ use App\Paseo;
 use App\Variable;
 use Carbon\Carbon;
 use Illuminate\Auth\Guard;
+use Vari;
 
 class VariablesController extends Controller {
 
@@ -113,8 +114,8 @@ class VariablesController extends Controller {
 
     public function fechasEspeciales()
     {
-        $minimoDiasAReservar = Variable::whereNombre('minDiasParaReservar')->first()->valor;
-        $TemporadaBaja = Variable::whereNombre('temporadaBaja')->first()->valor;
+        $minimoDiasAReservar = Vari::get('2minDiasParaReservar');
+        $TemporadaBaja = Vari::get('temporadaBaja');
         $diasNoLaborablesDeLaSemana = [];
         $fechasEspecialesFinales = [];
         $embarcacionesDisponiblesPorFecha = [];
