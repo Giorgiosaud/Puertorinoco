@@ -152,6 +152,7 @@ FROM `ptori_lar`.`mercadopagos`');
             'accesoEdicionDePagina' => true,
             'editarEmbarcaciones'   => true,
             'editarPaseos'          => true,
+            'consultarReservas'     => true,
         ]);
         $this->command->info('Migrando Tabla niveles_de_acceso...');
         DB::statement('
@@ -285,6 +286,7 @@ ptori_lar.accesslevels
         FROM
         ptori_lar.boat_tour
         ');
+
         $this->command->info('Agregando Fechas Especiales a Tabla Pivote...');
 
         $fechasEspeciales = App\FechaEspecial::all();
@@ -308,11 +310,10 @@ ptori_lar.accesslevels
                 $this->command->info('Agregando Pagos Directos % ' . intval($porcentaje));
                 $porcentajeini = intval($porcentaje);
             }
-            $pago = $pagoDirecto->pagos()->create(array('monto'          => $pagoDirecto->monto,
-                                                        'created_at'     => $pagoDirecto->created_at,
-                                                        'updated_at'     => $pagoDirecto->updated_at,
-                                                        'reservacion_id' => $pagoDirecto->reservacion_id));
-            $pago->procesar();
+            $pago = $pagoDirecto->pagos()->create(
+                ['monto'          => $pagoDirecto->monto,
+                 'reservacion_id' => $pagoDirecto->reservacion_id]);
+            //$pago->procesar();
         }
         $this->command->info('Agregando Mercadopagos como Pagos...');
         $total = \App\Mercadopago::max('id');
@@ -331,7 +332,8 @@ ptori_lar.accesslevels
             $pago = $pagoMercadoPago->pagos()->create(['monto'          => $pagoMercadoPago->transaction_amount, 'created_at' => $pagoMercadoPago->created_at,
                                                        'updated_at'     => $pagoMercadoPago->updated_at,
                                                        'reservacion_id' => $pagoMercadoPago->order_id,]);
-            $pago->procesar();
+            //$pago->procesar();
         }
+        DB::statement('UPDATE clientes SET credito =0');
     }
 }

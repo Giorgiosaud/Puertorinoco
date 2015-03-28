@@ -1,6 +1,9 @@
 //$bootstrap-sass-asset-helper:true;
 $icon-font-path: "../../assets/fonts/bootstrap/";
+
 @import 'bootstrap/bootstrap';
+@import 'fontawesome/font-awesome';
+$fa-font-path:"../../assets/fonts/fontawesome/";
 @import 'custom/custom';
 
 //@import 'semantic-ui/semantic-ui';

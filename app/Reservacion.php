@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use App\Traits\ProcesarReservacion;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Vari;
@@ -61,6 +62,8 @@ use Vari;
  */
 class Reservacion extends Model {
 
+    use ProcesarReservacion;
+
     /**
      * @var string
      */
@@ -76,6 +79,8 @@ class Reservacion extends Model {
         'adultos',
         'mayores',
         'ninos',
+        'modificadoPor',
+        'hechoPor',
 
     ];
     /**
@@ -180,50 +185,7 @@ class Reservacion extends Model {
     /**
      * @return Reservacion $this
      */
-    public function consumirMontoAFavor()
-    {
-        $precio = $this->paseo->tipoDePaseo->precios()->PrecioParaLaFecha($this->fecha)->first();
-        $montoAPagar = ($precio->adulto * $this->adultos) + ($precio->mayor * $this->mayores) +
-            ($precio->nino * $this->ninos);
-        $this->attributes['montoTotal']=$montoAPagar;
-        $this->save();
-        $credito = $this->cliente->credito;
-        if ($credito == 0)
-        {
-            return $this;
-        }
-        if ($credito >= $montoAPagar)
-        {
-            $Pago = new Pago();
-            $Pago->monto = $montoAPagar;
-            $Pago->reservacion_id = $this->id;
-            $PagoDirecto = PagoDirecto::create([
-                'fecha'           => Carbon::now(),
-                'descripcion'     => 'Credito A Favor',
-                'tipo_de_pago_id' => '8'
-            ]);
-            $PagoDirecto->pagos()->save($Pago);
-            $this->cliente->credito = $credito - $montoAPagar;
-            $this->cliente->save();
-            $Pago->procesar();
-            return $this;
-        }
-        $Pago = new Pago();
-        $Pago->monto = $credito;
-        $Pago->reservacion_id = $this->id;
-        $PagoDirecto = PagoDirecto::create([
-            'fecha'           => Carbon::now(),
-            'descripcion'     => 'Credito A Favor',
-            'tipo_de_pago_id' => '8'
-        ]);
-        $PagoDirecto->pagos()->save($Pago);
-        $this->cliente->credito = 0;
-        $this->cliente->save();
-        $Pago->procesar();
-        return $this;
 
-
-    }
 
 
     /**
@@ -266,6 +228,11 @@ class Reservacion extends Model {
         {
             return 0;
         }
+    }
+    public function getmontDeudaRestanteAttribute()
+    {
+        $tmpmonto = $this->attributes['deudaRestante'];
+            return number_format($tmpmonto, 2, ',', '.') . " Bs.";
     }
 
     /**

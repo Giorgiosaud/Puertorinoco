@@ -32,13 +32,19 @@ class Permiso extends Model {
         'DisponibilidadTotalDePaseos'        => 'boolean',
         'accesoEdicionDePagina'              => 'boolean',
         'editarEmbarcaciones'                => 'boolean',
+        'editarPaseos'                       => 'boolean',
+        'consultarReservas'                  => 'boolean',
 
     ];
     protected $fillable = [
         'esAgencia',
         'cuposExtra',
         'accesoEdicionDePagina',
-        'editarEmbarcaciones',];
+        'DisponibilidadTotalDeEmbarcaciones',
+        'DisponibilidadTotalDePaseos',
+        'editarEmbarcaciones',
+        'editarPaseos',
+        'consultarReservas',];
 
     //
     public function nivelDeAcceso()

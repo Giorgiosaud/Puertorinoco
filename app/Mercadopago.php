@@ -1,5 +1,7 @@
 <?php namespace App;
 
+use App\Traits\RegistrarPago;
+use App\Interfaces\atributosDePago;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -85,12 +87,30 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereUpdatedAt($value)
  */
-class Mercadopago extends Model {
+class Mercadopago extends Model implements atributosDePago {
+    use RegistrarPago;
     protected $dates=[
         'date_created'
     ];
     public function pagos()
     {
         return $this->morphMany('App\Pago', 'pago');
+    }
+
+    public function getNumeroDeReservacionAttribute()
+    {
+        return $this->attributes['external_reference'];
+
+    }
+
+    public function getmontoPagadoAttribute()
+    {
+        return $this->attributes['transaction_amount'];
+
+    }
+
+    public function reserva()
+    {
+        // TODO: Implement reserva() method.
     }
 }

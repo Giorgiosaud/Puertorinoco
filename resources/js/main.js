@@ -1,16 +1,18 @@
 $(document).ready(function () {
     if($('#formularioDeReserva').length>=1) {
+        $.ajaxSetup({
+            headers: {
+                'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         $(window).keydown(function (event) {
             if (event.keyCode == 13) {
                 event.preventDefault();
                 return false;
             }
         });
-        $.ajaxSetup({
-            headers: {
-                'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+
         $('#incio').on('slide.bs.carousel', function (e) {
             console.log(e.relatedTarget);
         });
@@ -214,7 +216,23 @@ $(document).ready(function () {
             }
         })
     }
+    if($('#consultarReserva').length>=1){
+        $('#fecha2').datepicker({
+            format: "DD, d MM , yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: 'es',
+            altField: "#fecha",
+            altFormat: "yy-mm-dd",
+            todayBtn:true,
+            todayHighlight:true,
+        }).on('changeDate', function (e) {
+            $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
+
+        });
+    }
     $(".btswitch").bootstrapSwitch();
+    $('[multiple]').select2();
 
 });
 function fechasEspecialesx(fechaAComparar) {

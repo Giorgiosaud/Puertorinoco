@@ -3,6 +3,5 @@
 		@foreach($errors->all() as $error)
 			<li>{!!$error!!}</li>
 		@endforeach
-		<li>{!!$errors->count()!!}</li>
 	</ul>
 @endif

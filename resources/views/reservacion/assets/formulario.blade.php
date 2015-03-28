@@ -8,7 +8,6 @@
 				<li>{!!$errors->count()!!}</li>
 			</ul>
 		@endif
-
 		{!!Form::open([
 		'id' => 'formularioDeReserva',
 		'role'=>'form',

@@ -1,5 +1,7 @@
 <?php namespace App;
 
+use App\Traits\RegistrarPago;
+use App\Interfaces\atributosDePago;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -20,15 +22,17 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\PagoDirecto whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\PagoDirecto whereUpdatedAt($value)
  */
-class PagoDirecto extends Model {
+class PagoDirecto extends Model implements atributosDePago {
 
-
+    use RegistrarPago;
     protected $table = 'pagos_directos';
     protected $fillable = [
         'fecha',
-        'monto',
         'descripcion',
+        'monto',
         'tipo_de_pago_id',
+        'reservacion_id',
+
     ];
 
     public function pagos()
@@ -41,4 +45,15 @@ class PagoDirecto extends Model {
         return $this->belongsTo('App\TipoDePago', 'tipo_de_pago_id');
     }
 
+    public function getNumeroDeReservacionAttribute()
+    {
+        return $this->attributes['reservacion_id'];
+
+    }
+
+    public function getmontoPagadoAttribute()
+    {
+        return $this->attributes['monto'];
+
+    }
 }

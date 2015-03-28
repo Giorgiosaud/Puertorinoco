@@ -1,6 +1,6 @@
 @extends('templates.mainInterno')
 @section('content')
-	<div class="container-fluid">
+
 		<div class="table-responsive">
 			{!!Table::withContents($paseosTableStyle)
 			->callback('Accion', function ($field, $row) {
@@ -92,5 +92,5 @@
 
 		</div>
 		{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
-	</div>
+
 @endsection

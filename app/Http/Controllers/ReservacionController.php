@@ -54,7 +54,7 @@ class ReservacionController extends Controller {
     {
 
         $reserva = Reservacion::create($datos);
-        $reserva->consumirMontoAFavor();
+        $reserva=Reservacion::find($reserva->id);
         return $reserva;
     }
 

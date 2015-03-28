@@ -27,6 +27,19 @@ Navbar::top()
 				],
 			]
 			],
+			['Reservas',
+			[
+				[
+					'link'=>URL::route('formularioDeConsultaDeReserva'),
+					'title'=>'Consultar'
+				],
+				[
+					'link'=>URL::route('formularioDeConsultaDeAbordaje'),
+					'title'=>'Abordaje'
+				],
+
+			]
+			],
 		]
 	)
 )

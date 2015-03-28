@@ -22,10 +22,14 @@
 @include('templates.assets.navInterno')
 @yield('carrusel')
 <div class="container-fluid">
-@yield('content')
-	</div>
+	@yield('content')
+</div>
 
 <!-- Scripts -->
-<script src="{!! elixir('js/all.js') !!}"></script>
 </body>
+<footer>
+	<script src="{!! elixir('js/all.js') !!}"></script>
+
+	@yield('footer')
+</footer>
 </html>
