@@ -1,52 +1,52 @@
 <?php namespace App;
 
-use App\Traits\RegistrarPago;
 use App\Interfaces\atributosDePago;
+use App\Traits\RegistrarPago;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Mercadopago
  *
- * @property integer $id 
- * @property integer $idMercadoPago 
- * @property string $site_id 
- * @property string $operation_type 
- * @property string $order_id 
- * @property integer $external_reference 
- * @property string $status 
- * @property string $status_detail 
- * @property string $payment_type 
- * @property \Carbon\Carbon $date_created 
- * @property string $last_modified 
- * @property string $date_approved 
- * @property string $money_release_date 
- * @property string $currency_id 
- * @property float $transaction_amount 
- * @property string $shipping_cost 
- * @property float $finance_charge 
- * @property float $total_paid_amount 
- * @property float $net_received_amount 
- * @property string $reason 
- * @property string $payerId 
- * @property string $payerfirst_name 
- * @property string $payerlast_name 
- * @property string $payeremail 
- * @property string $payernickname 
- * @property string $phonearea_code 
- * @property string $phonenumber 
- * @property string $phoneextension 
- * @property string $collectorid 
- * @property string $collectorfirst_name 
- * @property string $collectorlast_name 
- * @property string $collectoremail 
- * @property string $collectornickname 
- * @property string $collectorphonearea_code 
- * @property string $collectorphonenumber 
- * @property string $collectorphoneextension 
- * @property string $deleted_at 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos 
+ * @property integer $id
+ * @property integer $idMercadoPago
+ * @property string $site_id
+ * @property string $operation_type
+ * @property string $order_id
+ * @property integer $external_reference
+ * @property string $status
+ * @property string $status_detail
+ * @property string $payment_type
+ * @property \Carbon\Carbon $date_created
+ * @property string $last_modified
+ * @property string $date_approved
+ * @property string $money_release_date
+ * @property string $currency_id
+ * @property float $transaction_amount
+ * @property string $shipping_cost
+ * @property float $finance_charge
+ * @property float $total_paid_amount
+ * @property float $net_received_amount
+ * @property string $reason
+ * @property string $payerId
+ * @property string $payerfirst_name
+ * @property string $payerlast_name
+ * @property string $payeremail
+ * @property string $payernickname
+ * @property string $phonearea_code
+ * @property string $phonenumber
+ * @property string $phoneextension
+ * @property string $collectorid
+ * @property string $collectorfirst_name
+ * @property string $collectorlast_name
+ * @property string $collectoremail
+ * @property string $collectornickname
+ * @property string $collectorphonearea_code
+ * @property string $collectorphonenumber
+ * @property string $collectorphoneextension
+ * @property string $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereIdMercadoPago($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereSiteId($value)
@@ -88,10 +88,48 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Mercadopago whereUpdatedAt($value)
  */
 class Mercadopago extends Model implements atributosDePago {
+
     use RegistrarPago;
-    protected $dates=[
-        'date_created'
+    protected $fillable = ['idMercadoPago',
+        'site_id',
+        'operation_type',
+        'order_id',
+        'external_reference',
+        'status',
+        'status_detail',
+        'payment_type',
+        'date_created',
+        'last_modified',
+        'date_approved',
+        'money_release_date',
+        'currency_id',
+        'transaction_amount',
+        'shipping_cost',
+        'finance_charge',
+        'total_paid_amount',
+        'net_received_amount',
+        'reason',
+        'payerId',
+        'payerfirst_name',
+        'payerlast_name',
+        'payeremail',
+        'payernickname',
+        'phonearea_code',
+        'phonenumber',
+        'phoneextension',
+        'collectorid',
+        'collectorfirst_name',
+        'collectorlast_name',
+        'collectoremail',
+        'collectornickname',
+        'collectorphonearea_code',
+        'collectorphonenumber',
+        'collectorphoneextension',
     ];
+    //protected $dates = [
+    //    'date_created'
+    //];
+
     public function pagos()
     {
         return $this->morphMany('App\Pago', 'pago');

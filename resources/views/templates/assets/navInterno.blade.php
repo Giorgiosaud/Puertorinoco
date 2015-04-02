@@ -25,6 +25,10 @@ Navbar::top()
 					'link' => URL::route('PanelAdministrativo.fechasEspeciales.index'),
 					'title' => 'Fechas Especiales'
 				],
+				[
+					'link' => URL::route('PanelAdministrativo.precios.index'),
+					'title' => 'Precios'
+				],
 			]
 			],
 			['Reservas',

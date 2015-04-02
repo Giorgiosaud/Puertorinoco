@@ -1,7 +1,6 @@
 <?php namespace App;
 
 use App\Traits\ProcesarReservacion;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Vari;
 
@@ -9,35 +8,35 @@ use Vari;
  * Class Reservacion
  *
  * @package App
- * @property integer $id 
- * @property \Carbon\Carbon $fecha 
- * @property integer $cliente_id 
- * @property integer $embarcacion_id 
- * @property integer $paseo_id 
- * @property integer $estado_del_pago_id 
- * @property integer $adultos 
- * @property integer $mayores 
- * @property integer $ninos 
- * @property float $montoTotal 
- * @property boolean $confirmado 
- * @property string $hechoPor 
- * @property string $modificadoPor 
- * @property string $notas 
- * @property string $deleted_at 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
- * @property-read \App\Cliente $cliente 
- * @property-read \App\Embarcacion $embarcacion 
- * @property-read \App\Paseo $paseo 
- * @property-read \App\EstadoDelPago $estadoDePago 
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pasajero[] $pasajeros 
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos 
- * @property-read mixed $monto_total_a_pagar 
- * @property-read mixed $monto_sin_iva 
- * @property-read mixed $monto_i_v_a 
- * @property-read mixed $monto_servicio 
- * @property-read mixed $monto_con_servicio 
- * @property-read mixed $preference_data 
+ * @property integer $id
+ * @property \Carbon\Carbon $fecha
+ * @property integer $cliente_id
+ * @property integer $embarcacion_id
+ * @property integer $paseo_id
+ * @property integer $estado_del_pago_id
+ * @property integer $adultos
+ * @property integer $mayores
+ * @property integer $ninos
+ * @property float $montoTotal
+ * @property boolean $confirmado
+ * @property string $hechoPor
+ * @property string $modificadoPor
+ * @property string $notas
+ * @property string $deleted_at
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \App\Cliente $cliente
+ * @property-read \App\Embarcacion $embarcacion
+ * @property-read \App\Paseo $paseo
+ * @property-read \App\EstadoDelPago $estadoDePago
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pasajero[] $pasajeros
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos
+ * @property-read mixed $monto_total_a_pagar
+ * @property-read mixed $monto_sin_iva
+ * @property-read mixed $monto_i_v_a
+ * @property-read mixed $monto_servicio
+ * @property-read mixed $monto_con_servicio
+ * @property-read mixed $preference_data
  * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereFecha($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereClienteId($value)
@@ -72,6 +71,7 @@ class Reservacion extends Model {
      * @var array
      */
     protected $fillable = [
+        'id',
         'fecha',
         'cliente_id',
         'embarcacion_id',
@@ -187,7 +187,6 @@ class Reservacion extends Model {
      */
 
 
-
     /**
      * @param $query
      * @param $fecha
@@ -198,26 +197,27 @@ class Reservacion extends Model {
      */
     public function scopeObtenerVecesQueSeRepite($query, $fecha, $clienteId, $embarcacionId, $paseoId)
     {
-        $searcb = [
+        $search= [
             'fecha'          => $fecha,
             'cliente_id'     => $clienteId,
             'embarcacion_id' => $embarcacionId,
             'paseo_id'       => $paseoId,
         ];
 
-        return $query->where($searcb);
-        //->whereFecha($fecha)->whereClienteId($clienteId)->whereEmbarcacionId
-        //($embarcacionId)->wherePaseoId($paseoId);
+        return $query->where($search);
     }
 
     /**
      * @return int|string
      */
-    public function getDeudaAttribute(){
-        $totalAPagar=$this->attributes['montoTotal'];
-        $totalPagado=$this->pagos->sum('monto');
-        return $totalAPagar-$totalPagado;
+    public function getDeudaAttribute()
+    {
+        $totalAPagar = $this->attributes['montoTotal'];
+        $totalPagado = $this->pagos->sum('monto');
+
+        return $totalAPagar - $totalPagado;
     }
+
     public function getmontoTotalAPagarAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
@@ -229,10 +229,25 @@ class Reservacion extends Model {
             return 0;
         }
     }
-    public function getmontDeudaRestanteAttribute()
+    public function getmontoPagadoAttribute()
     {
-        $tmpmonto = $this->attributes['deudaRestante'];
+        $tmpmonto = $this->attributes['montoTotal']-$this->deuda;
+
+        if ($tmpmonto > 0)
+        {
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
+        } else
+        {
+            return "0 Bs.";
+        }
+    }
+
+    public function getmontoDeudaRestanteAttribute()
+    {
+        $tmpmonto = $this->deuda;
+
+
+        return number_format($tmpmonto, 2, ',', '.') . " Bs.";
     }
 
     /**
@@ -251,7 +266,7 @@ class Reservacion extends Model {
         $tmpmonto = $this->attributes['montoTotal'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto / (1+(Vari::get('iva')/100));
+            $tmpmonto = $tmpmonto / (1 + (Vari::get('iva') / 100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
@@ -268,7 +283,7 @@ class Reservacion extends Model {
         $tmpmonto = $this->attributes['montoTotal'];
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto - ($tmpmonto / (1+(Vari::get('iva')/100)));
+            $tmpmonto = $tmpmonto - ($tmpmonto / (1 + (Vari::get('iva') / 100)));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
@@ -277,24 +292,21 @@ class Reservacion extends Model {
         }
     }
 
-    public function getmontoPagadoAttribute(){
-        return $this->pagos()->sum('monto');
-    }
 
     /**
      * @return int|string
      */
     public function getmontoServicioAttribute()
     {
-        $tmpmonto = $this->attributes['deudaRestante'];
+        $tmpmonto = $this->deuda;
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto * (Vari::get('servicio')/100);
+            $tmpmonto = $tmpmonto * (Vari::get('servicio') / 100);
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else
         {
-            return  "0 Bs.";
+            return "0 Bs.";
         }
     }
 
@@ -303,10 +315,10 @@ class Reservacion extends Model {
      */
     public function getmontoConServicioAttribute()
     {
-        $tmpmonto = $this->attributes['deudaRestante'];
+        $tmpmonto = $this->deuda;
         if ($tmpmonto > 0)
         {
-            $tmpmonto = $tmpmonto * (1+(Vari::get('servicio')/100));
+            $tmpmonto = $tmpmonto * (1 + (Vari::get('servicio') / 100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
         } else

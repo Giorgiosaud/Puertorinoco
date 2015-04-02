@@ -64,87 +64,6 @@ name,level,parent_id,url,description,0,created_at,updated_at FROM ptori_lar.menu
         FROM
         ptori_lar.specialdates
         ');
-        $this->command->info('Migrando Tabla mercadopagos...');
-        DB::statement('INSERT INTO mercadopagos
-(
-idMercadoPago,
-site_id,
-operation_type,
-order_id,
-external_reference,
-status,
-status_detail,
-payment_type,
-date_created,
-last_modified,
-date_approved,
-money_release_date,
-currency_id,
-transaction_amount,
-shipping_cost,
-finance_charge,
-total_paid_amount,
-net_received_amount,
-reason,
-payerId,
-payerfirst_name,
-payerlast_name,
-payeremail,
-payernickname,
-phonearea_code,
-phonenumber,
-phoneextension,
-collectorid,
-collectorfirst_name,
-collectorlast_name,
-collectoremail,
-collectornickname,
-collectorphonearea_code,
-collectorphonenumber,
-collectorphoneextension,
-deleted_at,
-created_at,
-updated_at)
- SELECT
-idMercadoPago,
-site_id,
-operation_type,
-order_id,
-external_reference,
-status,
-status_detail,
-payment_type,
-concat(LEFT(`date_created` , 10)," ",SUBSTRING(`date_created`, 12, 8)) AS date_created,
-concat(LEFT(`last_modified` , 10)," ",SUBSTRING(`last_modified`, 12, 8)) As last_modified,
-concat(LEFT(`date_approved` , 10)," ",SUBSTRING(`date_approved`, 12, 8)) As date_approved,
-concat(LEFT(`money_release_date` , 10)," ",SUBSTRING(`money_release_date`, 12, 8)) As money_release_date ,
-currency_id,
-transaction_amount,
-shipping_cost,
-finance_charge,
-total_paid_amount,
-net_received_amount,
-reason,
-payerId,
-payerfirst_name,
-payerlast_name,
-payeremail,
-payernickname,
-phonearea_code,
-phonenumber,
-phoneextension,
-collectorid,
-collectorfirst_name,
-collectorlast_name,
-collectoremail,
-collectornickname,
-collectorphonearea_code,
-collectorphonenumber,
-collectorphoneextension,
-deleted_at,
-concat(LEFT(`date_created` , 10)," ",SUBSTRING(`date_created`, 12, 8)) AS created_at,
-concat(LEFT(`last_modified` , 10)," ",SUBSTRING(`last_modified`, 12, 8)) As updated_at
-FROM `ptori_lar`.`mercadopagos`');
         $this->command->info('Creando Permisos Completos...');
         Permiso::create([
             'esAgencia'             => true,
@@ -153,6 +72,7 @@ FROM `ptori_lar`.`mercadopagos`');
             'editarEmbarcaciones'   => true,
             'editarPaseos'          => true,
             'consultarReservas'     => true,
+            'editarPrecios'         => true,
         ]);
         $this->command->info('Migrando Tabla niveles_de_acceso...');
         DB::statement('
@@ -165,16 +85,8 @@ FROM
 ptori_lar.accesslevels
 
 ');
-        $this->command->info('Migrando Tabla pagos_directos...');
-        DB::statement('
-        INSERT INTO
-        pagos_directos
-        (fecha,monto,descripcion,reservacion_id,tipo_de_pago_id,created_at,updated_at)
-        SELECT
-        date,ammount,description,reservation_id,paymenttype_id,created_at,updated_at
-        FROM
-        ptori_lar.payments
-        ');
+
+
         $this->command->info('Migrando Tabla pasajeros...');
         DB::statement('
         INSERT INTO
@@ -210,9 +122,9 @@ ptori_lar.accesslevels
         DB::statement('
         INSERT INTO
         precios
-        (adulto,mayor,nino,tipo_de_paseo_id,created_at,updated_at)
+        (adulto,mayor,nino,tipo_de_paseo_id,aplicar_desde,created_at,updated_at)
         SELECT
-        adult, older, child,IF(description="1 hora", 2, 1) as tipo_de_paseo_id,created_at,updated_at
+        adult, older, child,IF(description="1 hora", 2, 1) as tipo_de_paseo_id,created_at,created_at,updated_at
         FROM
         ptori_lar.prices
             ');
@@ -258,24 +170,29 @@ ptori_lar.accesslevels
         ptori_lar.paymentstatus
         ');
         $this->command->info('Migrando Tabla reservaciones...');
-        DB::statement('
-        INSERT INTO
-        reservaciones
-        (id,fecha,cliente_id,embarcacion_id,paseo_id,adultos, mayores, ninos,montoTotal,estado_del_pago_id,confirmado,
-        hechoPor,modificadoPor,
-        notas,
-        deleted_at,
-        created_at,
-        updated_at)
-        SELECT
-        `id`,`date`,`client_id`,`boat_id`,`tour_id`,`adults`,`olders`,`childs`,`totalAmmount`,`paymentStatus_id`,
-        `confirmed`,`madeBy`,
-        `modifiedBy`,
-        `references`,
-        `deleted_at`,`created_at`,`updated_at`
-        FROM
-        ptori_lar.reservations
-        ');
+        $reservaciones = DB::table('ptori_lar.reservations')->get();
+        $reservacionesCantidad = DB::table('ptori_lar.reservations')->count();
+        $i = 0;
+        foreach ($reservaciones as $reservacion)
+        {
+            $i++;
+            $this->command->info('Migrando Tabla Reservaciones...' . $i / $reservacionesCantidad . ' % id '
+                . $reservacion->id);
+
+            App\Reservacion::create([
+                'id'             => $reservacion->id,
+                'fecha'          => $reservacion->date,
+                'cliente_id'     => $reservacion->client_id,
+                'embarcacion_id' => $reservacion->boat_id,
+                'paseo_id'       => $reservacion->tour_id,
+                'adultos'        => $reservacion->adults,
+                'mayores'        => $reservacion->olders,
+                'ninos'          => $reservacion->childs,
+                'modificadoPor'  => 'migracion',
+                'hechoPor'       => $reservacion->madeBy,
+            ]);
+        }
+
         $this->command->info('Migrando Tabla embarcacion_paseo...');
         DB::statement('
         INSERT INTO
@@ -298,42 +215,84 @@ ptori_lar.accesslevels
                 $fecha->embarcaciones()->attach([$embarcacion => ['activa' => $fecha->activa]]);
             }
         }
-        $this->command->info('Agregando Pagos Directos como Pagos...');
-        $total = \App\PagoDirecto::max('id');
-        $porcentajeini = 0;
-        $pagosDirectos = App\PagoDirecto::all();
+        $this->command->info('Migrando Tabla mercadopago...');
+
+        $mercadopagos = DB::table('ptori_lar.mercadopagos')->get();
+        $mercadopagosCantidad = DB::table('ptori_lar.mercadopagos')->count();
+        $i = 0;
+        foreach ($mercadopagos as $mercadopago)
+        {
+            $i++;
+            $this->command->info('Migrando Tabla mercadopago...' . $i / $mercadopagosCantidad . ' %');
+            //$this->command->info('Migrando Tabla pagos_directos...' . $mercadopago->id);
+            if ($mercadopago->status == 'approved')
+            {
+                App\Mercadopago::create([
+                    'idMercadoPago'           => $mercadopago->idMercadoPago,
+                    'site_id'                 => $mercadopago->site_id,
+                    'operation_type'          => $mercadopago->operation_type,
+                    'order_id'                => $mercadopago->order_id,
+                    'external_reference'      => $mercadopago->external_reference,
+                    'status'                  => $mercadopago->status,
+                    'status_detail'           => $mercadopago->status_detail,
+                    'payment_type'            => $mercadopago->payment_type,
+                    'date_created'            => $mercadopago->date_created,
+                    'last_modified'           => $mercadopago->last_modified,
+                    'date_approved'           => $mercadopago->date_approved,
+                    'money_release_date'      => $mercadopago->money_release_date,
+                    'currency_id'             => $mercadopago->currency_id,
+                    'transaction_amount'      => $mercadopago->transaction_amount,
+                    'shipping_cost'           => $mercadopago->shipping_cost,
+                    'finance_charge'          => $mercadopago->finance_charge,
+                    'total_paid_amount'       => $mercadopago->total_paid_amount,
+                    'net_received_amount'     => $mercadopago->net_received_amount,
+                    'reason'                  => $mercadopago->reason,
+                    'payerId'                 => $mercadopago->payerId,
+                    'payerfirst_name'         => $mercadopago->payerfirst_name,
+                    'payerlast_name'          => $mercadopago->payerlast_name,
+                    'payeremail'              => $mercadopago->payeremail,
+                    'payernickname'           => $mercadopago->payernickname,
+                    'phonearea_code'          => $mercadopago->phonearea_code,
+                    'phonenumber'             => $mercadopago->phonenumber,
+                    'phoneextension'          => $mercadopago->phoneextension,
+                    'collectorid'             => $mercadopago->collectorid,
+                    'collectorfirst_name'     => $mercadopago->collectorfirst_name,
+                    'collectorlast_name'      => $mercadopago->collectorlast_name,
+                    'collectoremail'          => $mercadopago->collectoremail,
+                    'collectornickname'       => $mercadopago->collectornickname,
+                    'collectorphonearea_code' => $mercadopago->collectorphonearea_code,
+                    'collectorphonenumber'    => $mercadopago->collectorphonenumber,
+                    'collectorphoneextension' => $mercadopago->collectorphoneextension,
+                ]);
+            }
+        }
+        $this->command->info('Migrando Tabla pagos_directos...');
+
+        $pagosDirectos = DB::table('ptori_lar.payments')->get();
+        $pagosDirectosCantidad = DB::table('ptori_lar.payments')->count();
+        $i = 0;
+
+
         foreach ($pagosDirectos as $pagoDirecto)
         {
-            $porcentaje = $pagoDirecto->id / $total * 100;
-            if (intval($porcentaje) > $porcentajeini)
+            $i++;
+            $this->command->info('Migrando Tabla pagos_directos...' . $i / $pagosDirectosCantidad);
+            if (is_null($pagoDirecto->paymenttype_id))
             {
-                $this->command->info('Agregando Pagos Directos % ' . intval($porcentaje));
-                $porcentajeini = intval($porcentaje);
+                $pagoDirecto->paymenttype_id = 1;
             }
-            $pago = $pagoDirecto->pagos()->create(
-                ['monto'          => $pagoDirecto->monto,
-                 'reservacion_id' => $pagoDirecto->reservacion_id]);
-            //$pago->procesar();
+            App\PagoDirecto::create([
+                'fecha'           => $pagoDirecto->date,
+                'monto'           => $pagoDirecto->ammount,
+                'descripcion'     => $pagoDirecto->description,
+                'reservacion_id'  => $pagoDirecto->reservation_id,
+                'tipo_de_pago_id' => $pagoDirecto->paymenttype_id,
+            ]);
         }
-        $this->command->info('Agregando Mercadopagos como Pagos...');
-        $total = \App\Mercadopago::max('id');
-        $pagosMercadopagos = App\Mercadopago::all();
-        $porcentajeini = 0;
 
-        foreach ($pagosMercadopagos as $pagoMercadoPago)
-        {
-            $porcentaje = $pagoMercadoPago->id / $total * 100;
-            if (intval($porcentaje) > $porcentajeini)
-            {
-                $this->command->info('Agregando Pagos Mercadopago % ' . intval($porcentaje));
-                $porcentajeini = intval($porcentaje);
-            }
-            //$this->command->info('Agregando Mercadopago % ' . $porcentaje);
-            $pago = $pagoMercadoPago->pagos()->create(['monto'          => $pagoMercadoPago->transaction_amount, 'created_at' => $pagoMercadoPago->created_at,
-                                                       'updated_at'     => $pagoMercadoPago->updated_at,
-                                                       'reservacion_id' => $pagoMercadoPago->order_id,]);
-            //$pago->procesar();
-        }
+
         DB::statement('UPDATE clientes SET credito =0');
+        DB::statement('update pagos set monto=0 where monto<0');
+        $pagosConmontocero = \App\Pago::whereMonto(0)->delete();
     }
 }

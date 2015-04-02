@@ -3,7 +3,7 @@
 			{!!$cuposDisponibles!!}</span></span></h3>
 </div>
 <div class="panel-body">
-	{!! Form::horizontalModel($reserva,['id'=>'modificarPaseo']) !!}
+	{!! Form::horizontalModel($reserva,['route'=>'modificarPaseo','id'=>'modificarPaseo']) !!}
 	{!!Form::hidden('disponibles',$cuposDisponibles)!!}
 	{!!Form::hidden('id')!!}
 	{!!Form::hidden('modificadoPor',Auth::user()->nombre)!!}
@@ -67,7 +67,7 @@
 	<div class="clearfix"></div>
 	<div class="center-block text-center">
 		{!!Form::Reset('Borrar Cambios',['class'=>'btn btn-danger'])!!}
-		{!! Button::success('Modificar Info')->addAttributes(['id'=>'modificarReserva'])!!}
+		{!! Button::success('Modificar Info')->addAttributes(['id'=>'modificarReserva'])->submit()!!}
 
 	</div>
 	{!!Form::close()!!}

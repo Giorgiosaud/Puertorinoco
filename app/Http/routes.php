@@ -41,22 +41,29 @@ Route::group(['prefix' => '/PanelAdministrativo'], function ()
     Route::resource('embarcaciones', 'EmbarcacionesAdminController');
     Route::resource('paseos', 'PaseosAdminController');
     Route::resource('fechasEspeciales', 'FechasEspecialesAdminController');
+    Route::resource('precios', 'PreciosAdminController');
     Route::get('reservas', ['uses'=>'ConsultarReservasAdminController@mostrarFormulario','as'=>'formularioDeConsultaDeReserva']);
 
     Route::get('reservas/consultar', ['uses'=>'ConsultarReservasAdminController@consultarReservas',
                           'as'=>'consultarReservas']);
     Route::get('reservas/{idreserva}/editar', ['uses'=>'ConsultarReservasAdminController@editarReserva',
                              'as'=>'editarReservas']);
-    Route::post('reservas/{idreserva}/modificarCliente',['uses'=>'ConsultarReservasAdminController@modificarCliente',
-                                              'as'=>'modificarCliente']);
-    Route::post('reservas/{idreserva}/modificarPaseo',['uses'=>'ConsultarReservasAdminController@modificarPaseo',
-                                                         'as'=>'modificarPaseo']);
+    Route::post('reservas/modificarCliente',['uses'=>'ConsultarReservasAdminController@modificarCliente',
+                                                         'as'=>'modificarCliente']);
+    Route::post('reservas/modificarPaseo',['uses'=>'ConsultarReservasAdminController@modificarPaseo',
+                                                       'as'=>'modificarPaseo']);
     Route::post('reservas/{idreserva}/pagar',['uses'=>'ConsultarReservasAdminController@recibirPago',
-                                             'as'=>'recibirPago']);
+                                             'as'=>'recibirPago2']);
+    Route::post('reservas/pagar',['uses'=>'ConsultarReservasAdminController@recibirPago',
+                                              'as'=>'recibirPago']);
     Route::post('reservas/{idreserva}/borrarPago',['uses'=>'ConsultarReservasAdminController@borrarPago',
                                               'as'=>'borrarPago']);
     Route::get('abordaje', ['uses'=>'ConsultarReservasAdminController@mostrarFormularioAbordaje',
                             'as'=>'formularioDeConsultaDeAbordaje']);
+    Route::post('reservas/anadirPasajeros',['uses'=>'ConsultarReservasAdminController@anadirPasajeros',
+                                              'as'=>'anadirPasajeros']);
+    Route::post('reservas/borrarPasajero',['uses'=>'ConsultarReservasAdminController@borrarPasajero',
+                                            'as'=>'borrarPasajero']);
 
 
     //    Route::resource('/tours', 'TourController');

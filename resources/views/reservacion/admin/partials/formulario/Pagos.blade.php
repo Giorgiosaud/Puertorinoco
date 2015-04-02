@@ -24,9 +24,9 @@
 						<td>Pago con {!!$pago->detalles->payment_type!!} y el
 							id de pago de Mercadopago es {!!$pago->detalles->idMercadoPago!!}</td>
 					@endif
-					<td><span class='montoPago'>{!!$pago->monto!!}</span></td>
+					<td><span class='montoPago'>{!!$pago->MontoPagado!!}</span></td>
 					<td>
-						@if($pago->pago_type=='App\PagoDirecto')
+						@if($pago->pago_type=='App\PagoDirecto' && $pago->detalles->tipo_de_pago_id!=8)
 							
 							{!!Form::open(['url'=>route('borrarPago',$reserva->id),'class'=>'borrarPago'])!!}
 							{!!Form::hidden('id',$pago->id)!!}
@@ -42,14 +42,21 @@
 	<div class="table-responsive">
 		<table class="table table-bordered table-condensed">
 			<tr>
+				<th>Fecha</th>
+				<th>Tipo De Pago</th>
+				<th>Descripcion</th>
+				<th>Monto</th>
+				<th>Accion</th>
+			</tr>
+			<tr>
 				{!!Form::inline(['id'=>'formularioDePago','url'=>route('recibirPago')])!!}
-
+				{!!Form::hidden('reservacion_id',$reserva->id)!!}
 				<td>{!! Form::text('fechaPago',\Carbon\Carbon::now(),['id'=>'fechaPago']) !!}
 				<td>{!! Form::select('tipo_de_pago_id',$tiposDePagos) !!}
 				</td>
 				<td>{!!	Form::text('descripcion') !!}</td>
 				<td>{!!	Form::text('monto') !!}{!!	Form::hidden('reservacion_id',$reserva->id) !!}</td>
-				<td>{!! Button::success('Añadir')->addAttributes(['id'=>'anadirPago'])!!}</td>
+				<td>{!! Button::success('Añadir')->addAttributes(['id'=>'anadirPago'])->submit()!!}</td>
 				{!!Form::close()!!}
 			</tr>
 		</table>
@@ -63,9 +70,9 @@
 					<th>Monto Deuda</th>
 				</tr>
 				<tr>
-					<td><span id="montoTotal">{!!$reserva->montoTotal!!}</span></td>
-					<td><span id="montoPagado">{!!$reserva->pagos->sum('monto')!!}</span></td>
-					<td><span id="montoDeuda">{!!$reserva->deudaRestante!!}</span></td>
+					<td><span id="montoTotal">{!!$reserva->montoTotalAPagar!!}</span></td>
+					<td><span id="montoPagado">{!!$reserva->montoPagado!!}</span></td>
+					<td><span id="montoDeuda">{!!$reserva->montoDeudaRestante!!}</span></td>
 				</tr>
 			</table>
 		</div>

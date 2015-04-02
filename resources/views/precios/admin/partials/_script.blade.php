@@ -1,5 +1,5 @@
 <script>
-	$(document).ready(function () {
+	$(document).ready(function(){
 		$('#fecha2').datepicker({
 			format: "DD, d MM , yyyy",
 			autoclose: true,
@@ -11,14 +11,5 @@
 		}).on('changeDate', function (e) {
 			$('#fecha').val((e.format(0, 'yyyy-mm-dd')));
 		});
-		$('#fecha2').datepicker('update', new Date($('#fecha').val()));
-		$('#fechaPago').datepicker();
-		$('select').select2();
-
-
 	});
-	$('#modificarPaseo').on('reset', function (e) {
-		$('#fecha2').datepicker('update', new Date($('#fecha').val()));
-	});
-
 </script>

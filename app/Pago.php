@@ -37,4 +37,9 @@ class Pago extends Model {
     {
         return $this->belongsTo('App\Reservacion', 'reservacion_id');
     }
+    public function getMontoPagadoAttribute(){
+        $monto = $this->attributes['monto'];
+        return number_format($monto, 2, ',', '.') . " Bs.";
+
+    }
 }

@@ -1,5 +1,5 @@
 <tr id="opcionesDePago">
-	@if($reservacion->deudaRestante>0)
+	@if($reservacion->deuda>0)
 		<td colspan="3" id="pagoOnline">
 			<table class="table">
 				@include('reservacion.assets.reservacion.Pagos.Tipos.Online')

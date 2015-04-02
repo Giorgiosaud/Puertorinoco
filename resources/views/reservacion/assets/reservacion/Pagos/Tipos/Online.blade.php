@@ -33,7 +33,7 @@
 				<strong>Monto Pagado: Bs. </strong>
 			</td>
 			<td>
-				{{ number_format($reservacion->montoPagado, 2, ',', '.')." Bs." }}
+				{{ $reservacion->montoPagado }}
 			</td>
 		</tr>
 		<tr>
@@ -43,7 +43,7 @@
 				</strong>
 			</td>
 			<td>
-				{{ number_format($reservacion->deudaRestante, 2, ',', '.')." Bs." }}
+				{{ number_format($reservacion->deuda, 2, ',', '.')." Bs." }}
 			</td>
 		</tr>
 

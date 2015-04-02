@@ -21,7 +21,11 @@
     "phpunit/phpunit": "~4.0",
     "phpspec/phpspec": "~2.1",
     "barryvdh/laravel-ide-helper": "~2.0",
-    "doctrine/dbal": "2.6.*@dev"
+    "doctrine/dbal": "2.6.*@dev",
+    "laracasts/behat-laravel-extension": "~1.0",
+    "behat/behat": "~3.0",
+    "behat/mink": "~1.6",
+    "behat/mink-extension": "~2.0"
   },
   "autoload": {
     "classmap": [

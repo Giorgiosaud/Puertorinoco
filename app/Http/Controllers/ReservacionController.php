@@ -17,21 +17,13 @@ class ReservacionController extends Controller {
      */
     private $auth;
 
+    /**
+     * @param Guard $auth
+     */
     function __construct(Guard $auth)
     {
 
         $this->auth = $auth;
-    }
-
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        //
     }
 
     /**
@@ -42,6 +34,7 @@ class ReservacionController extends Controller {
     {
         $embarcaciones = Embarcacion::all();
         $paseos = Paseo::all();
+
         return view('reservacion.create', compact('embarcaciones', 'paseos'));
     }
 
@@ -54,7 +47,8 @@ class ReservacionController extends Controller {
     {
 
         $reserva = Reservacion::create($datos);
-        $reserva=Reservacion::find($reserva->id);
+        $reserva = Reservacion::find($reserva->id);
+
         return $reserva;
     }
 
@@ -116,42 +110,10 @@ class ReservacionController extends Controller {
         return view('reservacion.mostrar', compact('reservacion'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     /**
      * @param ReservacionesRequest $request
-     * @return static
+     * @return array|static|static[]
      */
     public function ActualizarOCrearCliente(ReservacionesRequest $request)
     {

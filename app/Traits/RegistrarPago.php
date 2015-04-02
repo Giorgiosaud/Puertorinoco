@@ -24,14 +24,12 @@ trait RegistrarPago {
         {
             $pagoDetalle->borrarPago();
         });
+        static::updated(function ($pagoDetalle)
+        {
+            $pagoDetalle->actualizarPago();
+        });
     }
-    private function borrarPago(){
-        $p=Pago::where('pago_id',$this->id)->where('pago_type',get_class($this))->first();
-        $p->delete();
-    }
-    /**
-     *
-     */
+
     private function crearPago()
     {
         $p = Pago::create([
@@ -41,6 +39,31 @@ trait RegistrarPago {
             'pago_id'        => $this->id,
         ]);
     }
+
+    private function borrarPago()
+    {
+        $p = Pago::where('pago_id', $this->id)->where('pago_type', get_class($this))->first();
+        $p->delete();
+    }
+
+    private function actualizarPago()
+    {
+
+        $p = Pago::where('pago_id', $this->id);
+        $p->fill([
+            'monto'          => $this->montoPagado,
+            'reservacion_id' => $this->NumeroDeReservacion,
+            'pago_type'      => get_class($this),
+            'pago_id'        => $this->id,
+        ]);
+        $p->save();
+
+        return $p;
+    }
+
+    /**
+     *
+     */
 
 
 }

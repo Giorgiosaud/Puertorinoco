@@ -5,16 +5,16 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Pasajero
  *
- * @property integer $id 
- * @property string $nombre 
- * @property string $apellido 
- * @property string $identificacion 
- * @property string $email 
- * @property string $telefono 
- * @property integer $reservacion_id 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
- * @property-read \App\Reservacion $reserva 
+ * @property integer $id
+ * @property string $nombre
+ * @property string $apellido
+ * @property string $identificacion
+ * @property string $email
+ * @property string $telefono
+ * @property integer $reservacion_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \App\Reservacion $reserva
  * @method static \Illuminate\Database\Query\Builder|\App\Pasajero whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Pasajero whereNombre($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Pasajero whereApellido($value)
@@ -27,8 +27,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Pasajero extends Model {
 
-	//
-    public function reserva(){
-        return $this->belongsTo('App\Reservacion','reservacion_id');
+    protected $fillable = [
+        'nombre',
+        'apellido',
+        'identificacion',
+        'email',
+        'telefono',
+        'reservacion_id',
+    ];
+
+    //
+    public function reserva()
+    {
+        return $this->belongsTo('App\Reservacion', 'reservacion_id');
     }
 }

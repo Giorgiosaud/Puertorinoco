@@ -2,8 +2,9 @@
 			{!!$reserva->cliente->id!!}</span></h3>
 </div>
 <div class="panel-body">
-	{!! Form::horizontalModel($reserva->cliente,['id'=>'datosDecliente']) !!}
+	{!! Form::horizontalModel($reserva->cliente,['id'=>'datosDecliente','route'=>'modificarCliente']) !!}
 	{!! Form::hidden('id')!!}
+	{!! Form::hidden('reservacion_id',$reserva->id)!!}
 	{!!
 					ControlGroup::generate(
 					Form::label('nombre', 'Nombre: '),
@@ -53,10 +54,20 @@
 			)->withAttributes(['class'=>'col-xs-12 col-md-4'])
 
 	!!}
+	{!!
+			ControlGroup::generate(
+			Form::label('montoCredito', 'Credito: '),
+			Form::text('montoCredito',null,['disabled'=>'disabled']),
+			null,
+			4,
+			8
+			)->withAttributes(['class'=>'col-xs-12 col-md-4'])
+
+	!!}
 	<div class="text-center">
 		{!!Form::Reset('Borrar Cambios',['class'=>'btn btn-danger'])!!}
 
-		{!! Button::success('Modificar Info')->addAttributes(['id'=>'modificarUsuario'])!!}
+		{!! Button::success('Modificar Info')->addAttributes(['id'=>'modificarUsuario'])->submit()!!}
 	</div>
 	{!! Form::close() !!}
 

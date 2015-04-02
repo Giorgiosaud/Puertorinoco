@@ -47,7 +47,7 @@
 						<td>{!!$reservacion->ninos!!}</td>
 						<td>{!!$total=$reservacion->ninos+$reservacion->mayores+$reservacion->adultos!!}</td>
 						<td>{!!$reservacion->montoTotalAPagar!!}</td>
-						<td>{!!$reservacion->montDeudaRestante!!}</td>
+						<td>{!!$reservacion->montoDeudaRestante!!}</td>
 						<td>{!!$reservacion->hechoPor!!}</td>
 						<td>{!!$reservacion->modificadoPor!!}</td>
 					</tr>

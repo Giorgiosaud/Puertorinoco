@@ -43,5 +43,9 @@ class Cliente extends Model {
     {
        return $this->hasMany('App\Reservacion');
     }
+    public function getMontoCreditoAttribute(){
+        $monto = $this->attributes['credito'];
+        return number_format($monto, 2, ',', '.') . " Bs.";
 
+    }
 }

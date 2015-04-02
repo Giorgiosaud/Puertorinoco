@@ -18,107 +18,95 @@ trait ProcesarReservacion {
         parent::boot();
         static::creating(function ($reserva)
         {
-            $reserva->carcularMontoAPagar($reserva);
+            $reserva->carcularMontoTotal($reserva);
         });
         static::created(function ($reserva)
         {
-            $reserva->procesar();
+            $reserva->finalizarCreacion();
         });
-        static::updating(function($reserva){
-           $reserva->actualizar();
+        static::updating(function ($reserva)
+        {
+            $reserva->carcularMontoTotal($reserva);
+        });
+        static::updated(function ($reserva)
+        {
+            $reserva->finalizarActualizacion($reserva);
         });
     }
 
-    private function carcularMontoAPagar($reserva)
+    /**
+     * @param $reserva
+     */
+    private function carcularMontoTotal($reserva)
     {
         $precio = Paseo::find($reserva['paseo_id'])->tipoDePaseo->precios()->PrecioParaLaFecha($reserva['fecha'])->first();
-        $montoAPagar = ($precio->adulto * $reserva['adultos']) + ($precio->mayor * $reserva['mayores']) +
+        $reserva['montoTotal'] = ($precio->adulto * $reserva['adultos']) + ($precio->mayor * $reserva['mayores']) +
             ($precio->nino * $reserva['ninos']);
-        $reserva['montoTotal'] = $montoAPagar;
-        $reserva['deudaRestante'] = $montoAPagar;
-
-
     }
-    private function actualizar(){
-        $precio = Paseo::find($this->paseo_id)->tipoDePaseo->precios()->PrecioParaLaFecha($this->fecha)
-            ->first();
-        $montoAPagar = ($precio->adulto * $this->adultos) + ($precio->mayor * $this->mayores) +
-            ($precio->nino * $this->ninos);
-        $this->montoTotal = $montoAPagar;
-        $montoPagado=$this->pagos->sum('monto');
-        $deuda=$montoAPagar-$montoPagado;
-        $credito = $this->cliente->credito;
-        if($deuda<=0)
-        {
-            $PagoDirecto = PagoDirecto::create([
-                'monto'           => $deuda,
-                'reservacion_id'  => $this->id,
-                'fecha'           => Carbon::now(),
-                'descripcion'     => 'Credito A Favor de Cliente por exceso de Pago',
-                'tipo_de_pago_id' => '8'
-            ]);
-            }
-        else{
-            if($credito>0){
-                if($credito<$deuda){
-                    $PagoDirecto = PagoDirecto::create([
-                        'monto'           =>  $credito,
-                        'reservacion_id'  => $this->id,
-                        'fecha'           => Carbon::now(),
-                        'descripcion'     => 'Credito A Favor',
-                        'tipo_de_pago_id' => '8'
-                    ]);
-                    $this->cliente->credito = 0;
-                    $this->cliente->save();
-                }
-                else{
-                    $PagoDirecto = PagoDirecto::create([
-                        'monto'           => $deuda,
-                        'reservacion_id'  => $this->id,
-                        'fecha'           => Carbon::now(),
-                        'descripcion'     => 'Credito A Favor',
-                        'tipo_de_pago_id' => '8'
-                    ]);
-                    $cliente->credito = $credito - $deuda;
-                    $cliente->save();
 
-                }
-
-            }
-            }
-        return $this;
-
-    }
-    private function procesar()
+    /**
+     * @return $this
+     */
+    private function finalizarCreacion()
     {
-        $cliente = $this->cliente;
-        $credito = $cliente->credito;
-        if ($credito >= $this->montoTotal)
+        $credito = $this->cliente->credito;
+        if ($credito > 0)
         {
-            $PagoDirecto = PagoDirecto::create([
-                'monto'           => $this->montoTotal,
-                'reservacion_id'  => $this->id,
-                'fecha'           => Carbon::now(),
-                'descripcion'     => 'Credito A Favor',
-                'tipo_de_pago_id' => '8'
-            ]);
-            $cliente->credito = $credito - $this->montoTotal;
-            $cliente->save();
-        } else
-        {
-            if ($credito > 0)
-            {
-                $PagoDirecto = PagoDirecto::create([
-                    'monto'           =>  $credito,
-                    'reservacion_id'  => $this->id,
-                    'fecha'           => Carbon::now(),
-                    'descripcion'     => 'Credito A Favor',
-                    'tipo_de_pago_id' => '8'
-                ]);
-            }
-            $cliente->credito = 0;
-            $cliente->save();
+            $this->usarCreditoCliente();
         }
+
         return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    private function usarCreditoCliente()
+    {
+        $credito = $this->cliente->credito;
+        $montoAPagar = $this->montoTotal;
+        if ($credito > $montoAPagar)
+        {
+            $this->generarPagoConCreditoDeCliente($montoAPagar);
+
+            return $this;
+        }
+        $this->generarPagoConCreditoDeCliente($credito);
+
+        return $this;
+
+    }
+
+    /**
+     * @param $montoAPagar
+     */
+    private function generarPagoConCreditoDeCliente($monto)
+    {
+        PagoDirecto::create([
+            'fecha'           => Carbon::now(),
+            'monto'           => $monto,
+            'descripcion'     => 'Uso de credito del cliente',
+            'reservacion_id'  => $this->id,
+            'tipo_de_pago_id' => 8
+        ]);
+    }
+
+    /**
+     * @return $this
+     */
+    private function finalizarActualizacion()
+    {
+        $deuda = $this->deuda;
+        if ($deuda > 0 && $this->cliente->credito > 0)
+        {
+            $this->usarCreditoCliente();
+        }
+        if ($deuda < 0)
+        {
+            $this->generarPagoConCreditoDeCliente($deuda);
+        }
+
+        return $this;
+
     }
 }

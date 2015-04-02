@@ -8,6 +8,7 @@ use App\Http\Requests\ModificarPaseoRequest;
 use App\Http\Requests\PagosRequest;
 use App\Pago;
 use App\PagoDirecto;
+use App\Pasajero;
 use App\Paseo;
 use App\Reservacion;
 use App\TipoDePago;
@@ -118,23 +119,22 @@ class ConsultarReservasAdminController extends Controller {
         return $reservaciones;
     }
 
-    public function recibirPago($id, PagosRequest $r)
+    public function recibirPago(PagosRequest $request)
     {
-        //return $r->all();
-        $pf = PagoDirecto::create($r->all());
-        $pago = $pf->pagos();
-        $pago=$pago->with('reserva')->first();
-        return $pago;
+        $pf = PagoDirecto::create($request->all());
+        $reserva=Reservacion::find($request->input('reservacion_id'))->touch();
+        return redirect()->route('editarReservas', $request->input('reservacion_id'));
+
         //return view('reservacion.admin.partials.recibido.pago', compact('pago'));
     }
 
     public function borrarPago(Request $r)
     {
-        //dd($r->all());
         $pago = Pago::find($r->input('id'));
-        $id=$pago->reserva->id;
+        $id = $pago->reserva->id;
         $pago->delete();
-        return redirect()->route('editarReservas',$id);
+        $reserva=Reservacion::find($id)->touch();
+        return redirect()->route('editarReservas', $id);
     }
 
     public function modificarCliente(ClienteRequest $request)
@@ -143,7 +143,8 @@ class ConsultarReservasAdminController extends Controller {
         $cliente->fill($request->all());
         $cliente->save();
 
-        return $cliente;
+        return redirect()->route('editarReservas', $request->input('reservacion_id'));
+
     }
 
     public function modificarPaseo(ModificarPaseoRequest $request)
@@ -151,8 +152,23 @@ class ConsultarReservasAdminController extends Controller {
         $paseo = Reservacion::find($request->input('id'));
         $paseo->fill($request->all());
         $paseo->save();
-        //dd($paseo);
-        return $paseo;
+
+        return redirect()->route('editarReservas', $request->input('id'));
+    }
+
+    public function anadirPasajeros(Request $request)
+    {
+        $pasajero = Pasajero::create($request->all());
+
+        return redirect()->route('editarReservas', $request->input('reservacion_id'));
+    }
+
+    public function borrarPasajero(Request $request)
+    {
+        $pasajero = Pasajero::find($request->input('id'));
+        $pasajero->delete();
+
+        return redirect()->route('editarReservas', $request->input('reservacion_id'));
 
     }
 }
