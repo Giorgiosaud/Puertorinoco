@@ -106,6 +106,7 @@ class ReservacionController extends Controller {
     public function show($id)
     {
         $reservacion = Reservacion::findOrFail($id);
+        //return view('templates.mainSinNav', compact('reservacion'));
 
         return view('reservacion.mostrar', compact('reservacion'));
     }

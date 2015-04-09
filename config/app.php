@@ -231,7 +231,7 @@ return [
         'LaravelLocalization' => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
         'QrCode'              => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
         'CarbonLoc'           => 'jorgelsaud\Carbonlocalizer\Facades\Carbonlocalizer',
-        'Mercadopago'         => 'jorgelsaud\MercadoPago\Facades\Mercadopago',
+        'Mercadopago'         => 'jorgelsaud\Mercadopago\Facades\Mercadopago',
         'PDF'                 => 'Barryvdh\DomPDF\Facade',
         'Vari'                => 'App\Facades\Vari',
     ],

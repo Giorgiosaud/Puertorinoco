@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "de198d4c1332e723a2312260cf87d774",
+    "hash": "ce7c230e705c0e065ccab60bc25de243",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -587,16 +587,16 @@
         },
         {
             "name": "jorgelsaud/carbonlocalizer",
-            "version": "1.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giorgiosaud/carbonlocalizer.git",
-                "reference": "f71dd0b7511a02b8121fad848aea862ce2fd0660"
+                "reference": "caf573fa3b440fec4f33c676fa72aa3234aa5663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giorgiosaud/carbonlocalizer/zipball/f71dd0b7511a02b8121fad848aea862ce2fd0660",
-                "reference": "f71dd0b7511a02b8121fad848aea862ce2fd0660",
+                "url": "https://api.github.com/repos/giorgiosaud/carbonlocalizer/zipball/caf573fa3b440fec4f33c676fa72aa3234aa5663",
+                "reference": "caf573fa3b440fec4f33c676fa72aa3234aa5663",
                 "shasum": ""
             },
             "require": {
@@ -619,20 +619,20 @@
                 }
             ],
             "description": "Cambiar idioma a fechas Carbon en idioma humano",
-            "time": "2015-04-08 23:58:08"
+            "time": "2015-04-09 00:41:13"
         },
         {
             "name": "jorgelsaud/mercado-pago",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giorgiosaud/mercadopagoLaravel.git",
-                "reference": "5c60321ac60efc6a3089f939bb29f4dec4f3e757"
+                "reference": "1e5c59e566aa6ad4dc1c3afd794bcdfdd4ebe0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giorgiosaud/mercadopagoLaravel/zipball/5c60321ac60efc6a3089f939bb29f4dec4f3e757",
-                "reference": "5c60321ac60efc6a3089f939bb29f4dec4f3e757",
+                "url": "https://api.github.com/repos/giorgiosaud/mercadopagoLaravel/zipball/1e5c59e566aa6ad4dc1c3afd794bcdfdd4ebe0ee",
+                "reference": "1e5c59e566aa6ad4dc1c3afd794bcdfdd4ebe0ee",
                 "shasum": ""
             },
             "require": {
@@ -655,7 +655,7 @@
                 }
             ],
             "description": "Metodo de Pago Mercadopago Para Laravel",
-            "time": "2015-04-08 23:27:56"
+            "time": "2015-04-09 01:13:34"
         },
         {
             "name": "laracasts/flash",

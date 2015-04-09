@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.14 on 2015-03-13.
+ * Generated for Laravel 5.0.27 on 2015-04-08.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -45,7 +45,7 @@ namespace {
         }
         
         /**
-         * Register a callback to run after a bootstrapper.
+         * Register a callback to run before a bootstrapper.
          *
          * @param string $bootstrapper
          * @param \Closure $callback
@@ -127,6 +127,17 @@ namespace {
          */
         public static function databasePath(){
             return \Illuminate\Foundation\Application::databasePath();
+        }
+        
+        /**
+         * Set the database directory.
+         *
+         * @param string $path
+         * @return $this 
+         * @static 
+         */
+        public static function useDatabasePath($path){
+            return \Illuminate\Foundation\Application::useDatabasePath($path);
         }
         
         /**
@@ -437,6 +448,47 @@ namespace {
          */
         public static function getCachedRoutesPath(){
             return \Illuminate\Foundation\Application::getCachedRoutesPath();
+        }
+        
+        /**
+         * Get the path to the cached "compiled.php" file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedCompilePath(){
+            return \Illuminate\Foundation\Application::getCachedCompilePath();
+        }
+        
+        /**
+         * Get the path to the cached services.json file.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCachedServicesPath(){
+            return \Illuminate\Foundation\Application::getCachedServicesPath();
+        }
+        
+        /**
+         * Determine if vendor path is writable.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function vendorIsWritableForOptimizations(){
+            return \Illuminate\Foundation\Application::vendorIsWritableForOptimizations();
+        }
+        
+        /**
+         * Determines if storage directory should be used for optimizations.
+         *
+         * @param bool $value
+         * @return $this 
+         * @static 
+         */
+        public static function useStoragePathForOptimizations($value = true){
+            return \Illuminate\Foundation\Application::useStoragePathForOptimizations($value);
         }
         
         /**
@@ -2073,7 +2125,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -2387,7 +2439,7 @@ namespace {
         }
         
         /**
-         * Get the cookies which have been queued for the next request
+         * Get the cookies which have been queued for the next request.
          *
          * @return array 
          * @static 
@@ -2992,7 +3044,7 @@ namespace {
         /**
          * Get the schema grammar used by the connection.
          *
-         * @return \Illuminate\Database\Query\Grammars\Grammar 
+         * @return \Illuminate\Database\Schema\Grammars\Grammar 
          * @static 
          */
         public static function getSchemaGrammar(){
@@ -3213,13 +3265,13 @@ namespace {
         /**
          * Find a model by its primary key.
          *
-         * @param array $id
+         * @param array $ids
          * @param array $columns
-         * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static 
+         * @return \Illuminate\Database\Eloquent\Collection 
          * @static 
          */
-        public static function findMany($id, $columns = array()){
-            return \Illuminate\Database\Eloquent\Builder::findMany($id, $columns);
+        public static function findMany($ids, $columns = array()){
+            return \Illuminate\Database\Eloquent\Builder::findMany($ids, $columns);
         }
         
         /**
@@ -5000,7 +5052,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -5152,7 +5204,7 @@ namespace {
         /**
          * Get a segment from the URI (1 based index).
          *
-         * @param string $index
+         * @param int $index
          * @param mixed $default
          * @return string 
          * @static 
@@ -5785,8 +5837,8 @@ namespace {
          * The following header keys are supported:
          * 
          *  * Request::HEADER_CLIENT_IP:    defaults to X-Forwarded-For   (see getClientIp())
-         *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getClientHost())
-         *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getClientPort())
+         *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getHost())
+         *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getPort())
          *  * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
          * 
          * Setting an empty value allows to disable the trusted header for the given key.
@@ -6922,7 +6974,7 @@ namespace {
          * Register an error_log handler.
          *
          * @param string $level
-         * @param integer $messageType
+         * @param int $messageType
          * @return void 
          * @static 
          */
@@ -6931,8 +6983,7 @@ namespace {
         }
         
         /**
-         * Register a new callback handler for when
-         * a log event is triggered.
+         * Register a new callback handler for when a log event is triggered.
          *
          * @param \Closure $callback
          * @return void 
@@ -6966,7 +7017,7 @@ namespace {
         /**
          * Set the event dispatcher instance.
          *
-         * @param \Illuminate\Contracts\Events\Dispatcher
+         * @param \Illuminate\Contracts\Events\Dispatcher $dispatcher
          * @return void 
          * @static 
          */
@@ -7502,17 +7553,6 @@ namespace {
         }
         
         /**
-         * Get the current UNIX timestamp.
-         *
-         * @return int 
-         * @static 
-         */
-        public static function getTime(){
-            //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::getTime();
-        }
-        
-        /**
          * Set the IoC container instance.
          *
          * @param \Illuminate\Container\Container $container
@@ -7781,7 +7821,7 @@ namespace {
         /**
          * Get a segment from the URI (1 based index).
          *
-         * @param string $index
+         * @param int $index
          * @param mixed $default
          * @return string 
          * @static 
@@ -8414,8 +8454,8 @@ namespace {
          * The following header keys are supported:
          * 
          *  * Request::HEADER_CLIENT_IP:    defaults to X-Forwarded-For   (see getClientIp())
-         *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getClientHost())
-         *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getClientPort())
+         *  * Request::HEADER_CLIENT_HOST:  defaults to X-Forwarded-Host  (see getHost())
+         *  * Request::HEADER_CLIENT_PORT:  defaults to X-Forwarded-Port  (see getPort())
          *  * Request::HEADER_CLIENT_PROTO: defaults to X-Forwarded-Proto (see getScheme() and isSecure())
          * 
          * Setting an empty value allows to disable the trusted header for the given key.
@@ -9344,7 +9384,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -9713,7 +9753,7 @@ namespace {
         }
         
         /**
-         * Set a global where pattern on all routes
+         * Set a global where pattern on all routes.
          *
          * @param string $key
          * @param string $pattern
@@ -9725,7 +9765,7 @@ namespace {
         }
         
         /**
-         * Set a group of global where patterns on all routes
+         * Set a group of global where patterns on all routes.
          *
          * @param array $patterns
          * @return void 
@@ -9967,7 +10007,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -12233,7 +12273,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -12476,7 +12516,7 @@ namespace {
         }
         
         /**
-         * Checks if macro is registered
+         * Checks if macro is registered.
          *
          * @param string $name
          * @return bool 
@@ -14936,9 +14976,8 @@ namespace {
     class Table extends \Bootstrapper\Facades\Table{
         
         /**
-         * Renders the table
+         * 
          *
-         * @return string 
          * @static 
          */
         public static function render(){
@@ -15961,7 +16000,7 @@ namespace {
     }
 
 
-    class CarbonLoc extends \Zonapro\Carbonlocalizer\src\Facades\Carbonlocalizer{
+    class CarbonLoc extends \jorgelsaud\Carbonlocalizer\Facades\Carbonlocalizer{
         
         /**
          * Get the difference in a human readable format.
@@ -15982,12 +16021,12 @@ namespace {
          * 1 hour after
          * 5 months after
          *
-         * @param \Zonapro\Carbonlocalizer\src\Carbon $other
+         * @param \jorgelsaud\Carbonlocalizer\Carbon $other
          * @return string 
          * @static 
          */
         public static function diffForHumans2($other = null){
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffForHumans2($other);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffForHumans2($other);
         }
         
         /**
@@ -15999,7 +16038,7 @@ namespace {
          */
         public static function instance($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::instance($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::instance($dt);
         }
         
         /**
@@ -16015,7 +16054,7 @@ namespace {
          */
         public static function parse($time = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::parse($time, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::parse($time, $tz);
         }
         
         /**
@@ -16027,7 +16066,7 @@ namespace {
          */
         public static function now($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::now($tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::now($tz);
         }
         
         /**
@@ -16039,7 +16078,7 @@ namespace {
          */
         public static function today($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::today($tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::today($tz);
         }
         
         /**
@@ -16051,7 +16090,7 @@ namespace {
          */
         public static function tomorrow($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::tomorrow($tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::tomorrow($tz);
         }
         
         /**
@@ -16063,7 +16102,7 @@ namespace {
          */
         public static function yesterday($tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::yesterday($tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::yesterday($tz);
         }
         
         /**
@@ -16074,7 +16113,7 @@ namespace {
          */
         public static function maxValue(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::maxValue();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::maxValue();
         }
         
         /**
@@ -16085,7 +16124,7 @@ namespace {
          */
         public static function minValue(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::minValue();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::minValue();
         }
         
         /**
@@ -16111,7 +16150,7 @@ namespace {
          */
         public static function create($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::create($year, $month, $day, $hour, $minute, $second, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::create($year, $month, $day, $hour, $minute, $second, $tz);
         }
         
         /**
@@ -16126,7 +16165,7 @@ namespace {
          */
         public static function createFromDate($year = null, $month = null, $day = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromDate($year, $month, $day, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::createFromDate($year, $month, $day, $tz);
         }
         
         /**
@@ -16141,7 +16180,7 @@ namespace {
          */
         public static function createFromTime($hour = null, $minute = null, $second = null, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTime($hour, $minute, $second, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::createFromTime($hour, $minute, $second, $tz);
         }
         
         /**
@@ -16156,7 +16195,7 @@ namespace {
          */
         public static function createFromFormat($format, $time, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromFormat($format, $time, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::createFromFormat($format, $time, $tz);
         }
         
         /**
@@ -16169,7 +16208,7 @@ namespace {
          */
         public static function createFromTimestamp($timestamp, $tz = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTimestamp($timestamp, $tz);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::createFromTimestamp($timestamp, $tz);
         }
         
         /**
@@ -16181,7 +16220,7 @@ namespace {
          */
         public static function createFromTimestampUTC($timestamp){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::createFromTimestampUTC($timestamp);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::createFromTimestampUTC($timestamp);
         }
         
         /**
@@ -16192,7 +16231,7 @@ namespace {
          */
         public static function copy(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::copy();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::copy();
         }
         
         /**
@@ -16204,7 +16243,7 @@ namespace {
          */
         public static function year($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::year($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::year($value);
         }
         
         /**
@@ -16216,7 +16255,7 @@ namespace {
          */
         public static function month($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::month($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::month($value);
         }
         
         /**
@@ -16228,7 +16267,7 @@ namespace {
          */
         public static function day($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::day($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::day($value);
         }
         
         /**
@@ -16240,7 +16279,7 @@ namespace {
          */
         public static function hour($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hour($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::hour($value);
         }
         
         /**
@@ -16252,7 +16291,7 @@ namespace {
          */
         public static function minute($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::minute($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::minute($value);
         }
         
         /**
@@ -16264,7 +16303,7 @@ namespace {
          */
         public static function second($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::second($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::second($value);
         }
         
         /**
@@ -16281,7 +16320,7 @@ namespace {
          */
         public static function setDateTime($year, $month, $day, $hour, $minute, $second = 0){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setDateTime($year, $month, $day, $hour, $minute, $second);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setDateTime($year, $month, $day, $hour, $minute, $second);
         }
         
         /**
@@ -16293,7 +16332,7 @@ namespace {
          */
         public static function timestamp($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::timestamp($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::timestamp($value);
         }
         
         /**
@@ -16305,7 +16344,7 @@ namespace {
          */
         public static function timezone($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::timezone($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::timezone($value);
         }
         
         /**
@@ -16317,7 +16356,7 @@ namespace {
          */
         public static function tz($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::tz($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::tz($value);
         }
         
         /**
@@ -16329,7 +16368,7 @@ namespace {
          */
         public static function setTimezone($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTimezone($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setTimezone($value);
         }
         
         /**
@@ -16351,7 +16390,7 @@ namespace {
          */
         public static function setTestNow($testNow = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTestNow($testNow);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setTestNow($testNow);
         }
         
         /**
@@ -16363,7 +16402,7 @@ namespace {
          */
         public static function getTestNow(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTestNow();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getTestNow();
         }
         
         /**
@@ -16375,7 +16414,7 @@ namespace {
          */
         public static function hasTestNow(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hasTestNow();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::hasTestNow();
         }
         
         /**
@@ -16388,7 +16427,51 @@ namespace {
          */
         public static function hasRelativeKeywords($time){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::hasRelativeKeywords($time);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::hasRelativeKeywords($time);
+        }
+        
+        /**
+         * Get the translator instance in use
+         *
+         * @return \Carbon\TranslatorInterface 
+         * @static 
+         */
+        public static function getTranslator(){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getTranslator();
+        }
+        
+        /**
+         * Set the translator instance to use
+         *
+         * @param \Carbon\TranslatorInterface $translator
+         * @static 
+         */
+        public static function setTranslator($translator){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setTranslator($translator);
+        }
+        
+        /**
+         * Get the current translator locale
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getLocale(){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getLocale();
+        }
+        
+        /**
+         * Set the current translator locale
+         *
+         * @param string $locale
+         * @static 
+         */
+        public static function setLocale($locale){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setLocale($locale);
         }
         
         /**
@@ -16401,7 +16484,7 @@ namespace {
          */
         public static function formatLocalized($format){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::formatLocalized($format);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::formatLocalized($format);
         }
         
         /**
@@ -16411,7 +16494,7 @@ namespace {
          */
         public static function resetToStringFormat(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::resetToStringFormat();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::resetToStringFormat();
         }
         
         /**
@@ -16422,7 +16505,7 @@ namespace {
          */
         public static function setToStringFormat($format){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setToStringFormat($format);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setToStringFormat($format);
         }
         
         /**
@@ -16433,7 +16516,7 @@ namespace {
          */
         public static function toDateString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDateString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toDateString();
         }
         
         /**
@@ -16444,7 +16527,7 @@ namespace {
          */
         public static function toFormattedDateString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toFormattedDateString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toFormattedDateString();
         }
         
         /**
@@ -16455,7 +16538,7 @@ namespace {
          */
         public static function toTimeString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toTimeString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toTimeString();
         }
         
         /**
@@ -16466,7 +16549,7 @@ namespace {
          */
         public static function toDateTimeString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDateTimeString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toDateTimeString();
         }
         
         /**
@@ -16477,7 +16560,7 @@ namespace {
          */
         public static function toDayDateTimeString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toDayDateTimeString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toDayDateTimeString();
         }
         
         /**
@@ -16488,7 +16571,7 @@ namespace {
          */
         public static function toAtomString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toAtomString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toAtomString();
         }
         
         /**
@@ -16499,7 +16582,7 @@ namespace {
          */
         public static function toCookieString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toCookieString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toCookieString();
         }
         
         /**
@@ -16510,7 +16593,7 @@ namespace {
          */
         public static function toIso8601String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toIso8601String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toIso8601String();
         }
         
         /**
@@ -16521,7 +16604,7 @@ namespace {
          */
         public static function toRfc822String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc822String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc822String();
         }
         
         /**
@@ -16532,7 +16615,7 @@ namespace {
          */
         public static function toRfc850String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc850String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc850String();
         }
         
         /**
@@ -16543,7 +16626,7 @@ namespace {
          */
         public static function toRfc1036String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc1036String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc1036String();
         }
         
         /**
@@ -16554,7 +16637,7 @@ namespace {
          */
         public static function toRfc1123String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc1123String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc1123String();
         }
         
         /**
@@ -16565,7 +16648,7 @@ namespace {
          */
         public static function toRfc2822String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc2822String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc2822String();
         }
         
         /**
@@ -16576,7 +16659,7 @@ namespace {
          */
         public static function toRfc3339String(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRfc3339String();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRfc3339String();
         }
         
         /**
@@ -16587,7 +16670,7 @@ namespace {
          */
         public static function toRssString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toRssString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toRssString();
         }
         
         /**
@@ -16598,7 +16681,7 @@ namespace {
          */
         public static function toW3cString(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::toW3cString();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::toW3cString();
         }
         
         /**
@@ -16610,7 +16693,7 @@ namespace {
          */
         public static function eq($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::eq($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::eq($dt);
         }
         
         /**
@@ -16622,7 +16705,7 @@ namespace {
          */
         public static function ne($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::ne($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::ne($dt);
         }
         
         /**
@@ -16634,7 +16717,7 @@ namespace {
          */
         public static function gt($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::gt($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::gt($dt);
         }
         
         /**
@@ -16646,7 +16729,7 @@ namespace {
          */
         public static function gte($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::gte($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::gte($dt);
         }
         
         /**
@@ -16658,7 +16741,7 @@ namespace {
          */
         public static function lt($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lt($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::lt($dt);
         }
         
         /**
@@ -16670,7 +16753,7 @@ namespace {
          */
         public static function lte($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lte($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::lte($dt);
         }
         
         /**
@@ -16684,7 +16767,7 @@ namespace {
          */
         public static function between($dt1, $dt2, $equal = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::between($dt1, $dt2, $equal);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::between($dt1, $dt2, $equal);
         }
         
         /**
@@ -16696,7 +16779,7 @@ namespace {
          */
         public static function min($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::min($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::min($dt);
         }
         
         /**
@@ -16708,7 +16791,7 @@ namespace {
          */
         public static function max($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::max($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::max($dt);
         }
         
         /**
@@ -16719,7 +16802,7 @@ namespace {
          */
         public static function isWeekday(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isWeekday();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isWeekday();
         }
         
         /**
@@ -16730,7 +16813,7 @@ namespace {
          */
         public static function isWeekend(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isWeekend();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isWeekend();
         }
         
         /**
@@ -16741,7 +16824,7 @@ namespace {
          */
         public static function isYesterday(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isYesterday();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isYesterday();
         }
         
         /**
@@ -16752,7 +16835,7 @@ namespace {
          */
         public static function isToday(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isToday();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isToday();
         }
         
         /**
@@ -16763,7 +16846,7 @@ namespace {
          */
         public static function isTomorrow(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isTomorrow();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isTomorrow();
         }
         
         /**
@@ -16774,7 +16857,7 @@ namespace {
          */
         public static function isFuture(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isFuture();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isFuture();
         }
         
         /**
@@ -16785,7 +16868,7 @@ namespace {
          */
         public static function isPast(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isPast();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isPast();
         }
         
         /**
@@ -16796,7 +16879,7 @@ namespace {
          */
         public static function isLeapYear(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isLeapYear();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isLeapYear();
         }
         
         /**
@@ -16808,7 +16891,7 @@ namespace {
          */
         public static function isSameDay($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isSameDay($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isSameDay($dt);
         }
         
         /**
@@ -16821,7 +16904,7 @@ namespace {
          */
         public static function addYears($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addYears($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addYears($value);
         }
         
         /**
@@ -16830,9 +16913,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addYear(){
+        public static function addYear($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addYear();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addYear($value);
         }
         
         /**
@@ -16841,9 +16924,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subYear(){
+        public static function subYear($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subYear();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subYear($value);
         }
         
         /**
@@ -16855,7 +16938,7 @@ namespace {
          */
         public static function subYears($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subYears($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subYears($value);
         }
         
         /**
@@ -16868,7 +16951,7 @@ namespace {
          */
         public static function addMonths($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonths($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMonths($value);
         }
         
         /**
@@ -16877,9 +16960,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addMonth(){
+        public static function addMonth($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonth();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMonth($value);
         }
         
         /**
@@ -16888,9 +16971,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subMonth(){
+        public static function subMonth($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonth();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMonth($value);
         }
         
         /**
@@ -16902,7 +16985,7 @@ namespace {
          */
         public static function subMonths($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonths($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMonths($value);
         }
         
         /**
@@ -16915,7 +16998,7 @@ namespace {
          */
         public static function addMonthsNoOverflow($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonthsNoOverflow($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMonthsNoOverflow($value);
         }
         
         /**
@@ -16924,9 +17007,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addMonthNoOverflow(){
+        public static function addMonthNoOverflow($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMonthNoOverflow();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMonthNoOverflow($value);
         }
         
         /**
@@ -16935,9 +17018,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subMonthNoOverflow(){
+        public static function subMonthNoOverflow($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonthNoOverflow();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMonthNoOverflow($value);
         }
         
         /**
@@ -16949,7 +17032,7 @@ namespace {
          */
         public static function subMonthsNoOverflow($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMonthsNoOverflow($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMonthsNoOverflow($value);
         }
         
         /**
@@ -16962,7 +17045,7 @@ namespace {
          */
         public static function addDays($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addDays($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addDays($value);
         }
         
         /**
@@ -16971,9 +17054,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addDay(){
+        public static function addDay($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addDay();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addDay($value);
         }
         
         /**
@@ -16982,9 +17065,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subDay(){
+        public static function subDay($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subDay();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subDay($value);
         }
         
         /**
@@ -16996,7 +17079,7 @@ namespace {
          */
         public static function subDays($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subDays($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subDays($value);
         }
         
         /**
@@ -17009,7 +17092,7 @@ namespace {
          */
         public static function addWeekdays($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeekdays($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addWeekdays($value);
         }
         
         /**
@@ -17018,9 +17101,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addWeekday(){
+        public static function addWeekday($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeekday();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addWeekday($value);
         }
         
         /**
@@ -17029,9 +17112,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subWeekday(){
+        public static function subWeekday($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeekday();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subWeekday($value);
         }
         
         /**
@@ -17043,7 +17126,7 @@ namespace {
          */
         public static function subWeekdays($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeekdays($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subWeekdays($value);
         }
         
         /**
@@ -17056,7 +17139,7 @@ namespace {
          */
         public static function addWeeks($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeeks($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addWeeks($value);
         }
         
         /**
@@ -17065,9 +17148,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addWeek(){
+        public static function addWeek($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addWeek();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addWeek($value);
         }
         
         /**
@@ -17076,9 +17159,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subWeek(){
+        public static function subWeek($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeek();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subWeek($value);
         }
         
         /**
@@ -17090,7 +17173,7 @@ namespace {
          */
         public static function subWeeks($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subWeeks($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subWeeks($value);
         }
         
         /**
@@ -17103,7 +17186,7 @@ namespace {
          */
         public static function addHours($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addHours($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addHours($value);
         }
         
         /**
@@ -17112,9 +17195,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addHour(){
+        public static function addHour($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addHour();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addHour($value);
         }
         
         /**
@@ -17123,9 +17206,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subHour(){
+        public static function subHour($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subHour();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subHour($value);
         }
         
         /**
@@ -17137,7 +17220,7 @@ namespace {
          */
         public static function subHours($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subHours($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subHours($value);
         }
         
         /**
@@ -17150,7 +17233,7 @@ namespace {
          */
         public static function addMinutes($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMinutes($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMinutes($value);
         }
         
         /**
@@ -17159,9 +17242,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addMinute(){
+        public static function addMinute($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addMinute();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addMinute($value);
         }
         
         /**
@@ -17170,9 +17253,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subMinute(){
+        public static function subMinute($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMinute();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMinute($value);
         }
         
         /**
@@ -17184,7 +17267,7 @@ namespace {
          */
         public static function subMinutes($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subMinutes($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subMinutes($value);
         }
         
         /**
@@ -17197,7 +17280,7 @@ namespace {
          */
         public static function addSeconds($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addSeconds($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addSeconds($value);
         }
         
         /**
@@ -17206,9 +17289,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function addSecond(){
+        public static function addSecond($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::addSecond();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::addSecond($value);
         }
         
         /**
@@ -17217,9 +17300,9 @@ namespace {
          * @return static 
          * @static 
          */
-        public static function subSecond(){
+        public static function subSecond($value = 1){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subSecond();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subSecond($value);
         }
         
         /**
@@ -17231,7 +17314,7 @@ namespace {
          */
         public static function subSeconds($value){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::subSeconds($value);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::subSeconds($value);
         }
         
         /**
@@ -17244,7 +17327,7 @@ namespace {
          */
         public static function diffInYears($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInYears($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInYears($dt, $abs);
         }
         
         /**
@@ -17257,7 +17340,7 @@ namespace {
          */
         public static function diffInMonths($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInMonths($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInMonths($dt, $abs);
         }
         
         /**
@@ -17270,7 +17353,7 @@ namespace {
          */
         public static function diffInWeeks($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeeks($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInWeeks($dt, $abs);
         }
         
         /**
@@ -17283,7 +17366,7 @@ namespace {
          */
         public static function diffInDays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInDays($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInDays($dt, $abs);
         }
         
         /**
@@ -17297,7 +17380,36 @@ namespace {
          */
         public static function diffInDaysFiltered($callback, $dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInDaysFiltered($callback, $dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInDaysFiltered($callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference in hours using a filter closure
+         *
+         * @param \Closure $callback
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffInHoursFiltered($callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInHoursFiltered($callback, $dt, $abs);
+        }
+        
+        /**
+         * Get the difference by the given interval using a filter closure
+         *
+         * @param \Carbon\CarbonInterval $ci An interval to traverse by
+         * @param \Closure $callback
+         * @param \Carbon\Carbon $dt
+         * @param boolean $abs Get the absolute of the difference
+         * @return int 
+         * @static 
+         */
+        public static function diffFiltered($ci, $callback, $dt = null, $abs = true){
+            //Method inherited from \Carbon\Carbon            
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffFiltered($ci, $callback, $dt, $abs);
         }
         
         /**
@@ -17310,7 +17422,7 @@ namespace {
          */
         public static function diffInWeekdays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeekdays($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInWeekdays($dt, $abs);
         }
         
         /**
@@ -17323,7 +17435,7 @@ namespace {
          */
         public static function diffInWeekendDays($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInWeekendDays($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInWeekendDays($dt, $abs);
         }
         
         /**
@@ -17336,7 +17448,7 @@ namespace {
          */
         public static function diffInHours($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInHours($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInHours($dt, $abs);
         }
         
         /**
@@ -17349,7 +17461,7 @@ namespace {
          */
         public static function diffInMinutes($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInMinutes($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInMinutes($dt, $abs);
         }
         
         /**
@@ -17362,7 +17474,7 @@ namespace {
          */
         public static function diffInSeconds($dt = null, $abs = true){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffInSeconds($dt, $abs);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffInSeconds($dt, $abs);
         }
         
         /**
@@ -17373,7 +17485,7 @@ namespace {
          */
         public static function secondsSinceMidnight(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::secondsSinceMidnight();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::secondsSinceMidnight();
         }
         
         /**
@@ -17384,11 +17496,11 @@ namespace {
          */
         public static function secondsUntilEndOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::secondsUntilEndOfDay();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::secondsUntilEndOfDay();
         }
         
         /**
-         * Get the difference in a human readable format.
+         * Get the difference in a human readable format in the current locale.
          * 
          * When comparing a value in the past to default now:
          * 1 hour ago
@@ -17413,7 +17525,7 @@ namespace {
          */
         public static function diffForHumans($other = null, $absolute = false){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diffForHumans($other, $absolute);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diffForHumans($other, $absolute);
         }
         
         /**
@@ -17424,7 +17536,7 @@ namespace {
          */
         public static function startOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfDay();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfDay();
         }
         
         /**
@@ -17435,7 +17547,7 @@ namespace {
          */
         public static function endOfDay(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfDay();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfDay();
         }
         
         /**
@@ -17446,7 +17558,7 @@ namespace {
          */
         public static function startOfMonth(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfMonth();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfMonth();
         }
         
         /**
@@ -17457,7 +17569,7 @@ namespace {
          */
         public static function endOfMonth(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfMonth();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfMonth();
         }
         
         /**
@@ -17468,7 +17580,7 @@ namespace {
          */
         public static function startOfYear(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfYear();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfYear();
         }
         
         /**
@@ -17479,7 +17591,7 @@ namespace {
          */
         public static function endOfYear(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfYear();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfYear();
         }
         
         /**
@@ -17490,7 +17602,7 @@ namespace {
          */
         public static function startOfDecade(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfDecade();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfDecade();
         }
         
         /**
@@ -17501,7 +17613,7 @@ namespace {
          */
         public static function endOfDecade(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfDecade();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfDecade();
         }
         
         /**
@@ -17512,7 +17624,7 @@ namespace {
          */
         public static function startOfCentury(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfCentury();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfCentury();
         }
         
         /**
@@ -17523,7 +17635,7 @@ namespace {
          */
         public static function endOfCentury(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfCentury();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfCentury();
         }
         
         /**
@@ -17534,7 +17646,7 @@ namespace {
          */
         public static function startOfWeek(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::startOfWeek();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::startOfWeek();
         }
         
         /**
@@ -17545,13 +17657,13 @@ namespace {
          */
         public static function endOfWeek(){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::endOfWeek();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::endOfWeek();
         }
         
         /**
-         * Modify to the next occurance of a given day of the week.
+         * Modify to the next occurence of a given day of the week.
          * 
-         * If no dayOfWeek is provided, modify to the next occurance
+         * If no dayOfWeek is provided, modify to the next occurence
          * of the current day of the week.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
          *
@@ -17561,13 +17673,13 @@ namespace {
          */
         public static function next($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::next($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::next($dayOfWeek);
         }
         
         /**
-         * Modify to the previous occurance of a given day of the week.
+         * Modify to the previous occurence of a given day of the week.
          * 
-         * If no dayOfWeek is provided, modify to the previous occurance
+         * If no dayOfWeek is provided, modify to the previous occurence
          * of the current day of the week.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
          *
@@ -17577,11 +17689,11 @@ namespace {
          */
         public static function previous($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::previous($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::previous($dayOfWeek);
         }
         
         /**
-         * Modify to the first occurance of a given day of the week
+         * Modify to the first occurence of a given day of the week
          * in the current month. If no dayOfWeek is provided, modify to the
          * first day of the current month.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17592,11 +17704,11 @@ namespace {
          */
         public static function firstOfMonth($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfMonth($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::firstOfMonth($dayOfWeek);
         }
         
         /**
-         * Modify to the last occurance of a given day of the week
+         * Modify to the last occurence of a given day of the week
          * in the current month. If no dayOfWeek is provided, modify to the
          * last day of the current month.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17607,12 +17719,12 @@ namespace {
          */
         public static function lastOfMonth($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfMonth($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::lastOfMonth($dayOfWeek);
         }
         
         /**
-         * Modify to the given occurance of a given day of the week
-         * in the current month. If the calculated occurance is outside the scope
+         * Modify to the given occurence of a given day of the week
+         * in the current month. If the calculated occurence is outside the scope
          * of the current month, then return false and no modifications are made.
          * 
          * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17624,11 +17736,11 @@ namespace {
          */
         public static function nthOfMonth($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfMonth($nth, $dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::nthOfMonth($nth, $dayOfWeek);
         }
         
         /**
-         * Modify to the first occurance of a given day of the week
+         * Modify to the first occurence of a given day of the week
          * in the current quarter. If no dayOfWeek is provided, modify to the
          * first day of the current quarter.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17639,11 +17751,11 @@ namespace {
          */
         public static function firstOfQuarter($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfQuarter($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::firstOfQuarter($dayOfWeek);
         }
         
         /**
-         * Modify to the last occurance of a given day of the week
+         * Modify to the last occurence of a given day of the week
          * in the current quarter. If no dayOfWeek is provided, modify to the
          * last day of the current quarter.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17654,12 +17766,12 @@ namespace {
          */
         public static function lastOfQuarter($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfQuarter($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::lastOfQuarter($dayOfWeek);
         }
         
         /**
-         * Modify to the given occurance of a given day of the week
-         * in the current quarter. If the calculated occurance is outside the scope
+         * Modify to the given occurence of a given day of the week
+         * in the current quarter. If the calculated occurence is outside the scope
          * of the current quarter, then return false and no modifications are made.
          * 
          * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17671,11 +17783,11 @@ namespace {
          */
         public static function nthOfQuarter($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfQuarter($nth, $dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::nthOfQuarter($nth, $dayOfWeek);
         }
         
         /**
-         * Modify to the first occurance of a given day of the week
+         * Modify to the first occurence of a given day of the week
          * in the current year. If no dayOfWeek is provided, modify to the
          * first day of the current year.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17686,11 +17798,11 @@ namespace {
          */
         public static function firstOfYear($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::firstOfYear($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::firstOfYear($dayOfWeek);
         }
         
         /**
-         * Modify to the last occurance of a given day of the week
+         * Modify to the last occurence of a given day of the week
          * in the current year. If no dayOfWeek is provided, modify to the
          * last day of the current year.  Use the supplied consts
          * to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17701,12 +17813,12 @@ namespace {
          */
         public static function lastOfYear($dayOfWeek = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::lastOfYear($dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::lastOfYear($dayOfWeek);
         }
         
         /**
-         * Modify to the given occurance of a given day of the week
-         * in the current year. If the calculated occurance is outside the scope
+         * Modify to the given occurence of a given day of the week
+         * in the current year. If the calculated occurence is outside the scope
          * of the current year, then return false and no modifications are made.
          * 
          * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
@@ -17718,7 +17830,7 @@ namespace {
          */
         public static function nthOfYear($nth, $dayOfWeek){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::nthOfYear($nth, $dayOfWeek);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::nthOfYear($nth, $dayOfWeek);
         }
         
         /**
@@ -17730,7 +17842,7 @@ namespace {
          */
         public static function average($dt = null){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::average($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::average($dt);
         }
         
         /**
@@ -17742,7 +17854,7 @@ namespace {
          */
         public static function isBirthday($dt){
             //Method inherited from \Carbon\Carbon            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::isBirthday($dt);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::isBirthday($dt);
         }
         
         /**
@@ -17752,7 +17864,7 @@ namespace {
          */
         public static function getLastErrors(){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getLastErrors();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getLastErrors();
         }
         
         /**
@@ -17762,7 +17874,7 @@ namespace {
          */
         public static function format($format){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::format($format);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::format($format);
         }
         
         /**
@@ -17772,7 +17884,7 @@ namespace {
          */
         public static function modify($modify){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::modify($modify);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::modify($modify);
         }
         
         /**
@@ -17782,7 +17894,7 @@ namespace {
          */
         public static function add($interval){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::add($interval);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::add($interval);
         }
         
         /**
@@ -17792,7 +17904,7 @@ namespace {
          */
         public static function sub($interval){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::sub($interval);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::sub($interval);
         }
         
         /**
@@ -17802,7 +17914,7 @@ namespace {
          */
         public static function getTimezone(){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTimezone();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getTimezone();
         }
         
         /**
@@ -17812,7 +17924,7 @@ namespace {
          */
         public static function getOffset(){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getOffset();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getOffset();
         }
         
         /**
@@ -17822,7 +17934,7 @@ namespace {
          */
         public static function setTime($hour, $minute, $second = null){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTime($hour, $minute, $second);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setTime($hour, $minute, $second);
         }
         
         /**
@@ -17832,7 +17944,7 @@ namespace {
          */
         public static function setDate($year, $month, $day){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setDate($year, $month, $day);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setDate($year, $month, $day);
         }
         
         /**
@@ -17842,7 +17954,7 @@ namespace {
          */
         public static function setISODate($year, $week, $day = null){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setISODate($year, $week, $day);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setISODate($year, $week, $day);
         }
         
         /**
@@ -17852,7 +17964,7 @@ namespace {
          */
         public static function setTimestamp($unixtimestamp){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::setTimestamp($unixtimestamp);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::setTimestamp($unixtimestamp);
         }
         
         /**
@@ -17862,7 +17974,7 @@ namespace {
          */
         public static function getTimestamp(){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::getTimestamp();
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::getTimestamp();
         }
         
         /**
@@ -17872,13 +17984,13 @@ namespace {
          */
         public static function diff($object, $absolute = null){
             //Method inherited from \DateTime            
-            return \Zonapro\Carbonlocalizer\src\Carbonlocalizer::diff($object, $absolute);
+            return \jorgelsaud\Carbonlocalizer\Carbonlocalizer::diff($object, $absolute);
         }
         
     }
 
 
-    class Mercadopago extends \Zonapro\MercadoPago\src\Facades\Mercadopago{
+    class Mercadopago extends \jorgelsaud\Mercadopago\Facades\Mercadopago{
         
         /**
          * 
@@ -17886,7 +17998,7 @@ namespace {
          * @static 
          */
         public static function sandbox_mode($enable = null){
-            return \Zonapro\Mercadopago\src\Mercadopago::sandbox_mode($enable);
+            return \jorgelsaud\Mercadopago\Mercadopago::sandbox_mode($enable);
         }
         
         /**
@@ -17895,18 +18007,18 @@ namespace {
          * @static 
          */
         public static function get_access_token(){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_access_token();
+            return \jorgelsaud\Mercadopago\Mercadopago::get_access_token();
         }
         
         /**
          * Get information for specific payment
          *
          * @param int $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function get_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::get_payment($id);
         }
         
         /**
@@ -17915,51 +18027,51 @@ namespace {
          * @static 
          */
         public static function get_payment_info($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_payment_info($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::get_payment_info($id);
         }
         
         /**
          * Get information for specific authorized payment
          *
-         * @param \Zonapro\Mercadopago\src\id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @param \jorgelsaud\Mercadopago\id
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function get_authorized_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_authorized_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::get_authorized_payment($id);
         }
         
         /**
          * Refund accredited payment
          *
          * @param int $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function refund_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::refund_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::refund_payment($id);
         }
         
         /**
          * Cancel pending payment
          *
          * @param int $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function cancel_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::cancel_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::cancel_payment($id);
         }
         
         /**
          * Cancel preapproval payment
          *
          * @param int $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function cancel_preapproval_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::cancel_preapproval_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::cancel_preapproval_payment($id);
         }
         
         /**
@@ -17968,22 +18080,22 @@ namespace {
          * @param array $filters
          * @param int $offset
          * @param int $limit
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function search_payment($filters, $offset = 0, $limit = 0){
-            return \Zonapro\Mercadopago\src\Mercadopago::search_payment($filters, $offset, $limit);
+            return \jorgelsaud\Mercadopago\Mercadopago::search_payment($filters, $offset, $limit);
         }
         
         /**
          * Create a checkout preference
          *
          * @param array $preference
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function create_preference($preference){
-            return \Zonapro\Mercadopago\src\Mercadopago::create_preference($preference);
+            return \jorgelsaud\Mercadopago\Mercadopago::create_preference($preference);
         }
         
         /**
@@ -17991,103 +18103,103 @@ namespace {
          *
          * @param string $id
          * @param array $preference
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function update_preference($id, $preference){
-            return \Zonapro\Mercadopago\src\Mercadopago::update_preference($id, $preference);
+            return \jorgelsaud\Mercadopago\Mercadopago::update_preference($id, $preference);
         }
         
         /**
          * Get a checkout preference
          *
          * @param string $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function get_preference($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_preference($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::get_preference($id);
         }
         
         /**
          * Create a preapproval payment
          *
          * @param array $preapproval_payment
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function create_preapproval_payment($preapproval_payment){
-            return \Zonapro\Mercadopago\src\Mercadopago::create_preapproval_payment($preapproval_payment);
+            return \jorgelsaud\Mercadopago\Mercadopago::create_preapproval_payment($preapproval_payment);
         }
         
         /**
          * Get a preapproval payment
          *
          * @param string $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function get_preapproval_payment($id){
-            return \Zonapro\Mercadopago\src\Mercadopago::get_preapproval_payment($id);
+            return \jorgelsaud\Mercadopago\Mercadopago::get_preapproval_payment($id);
         }
         
         /**
          * Update a preapproval payment
          *
          * @param string $preapproval_payment , $id
-         * @return \Zonapro\Mercadopago\src\array(json) 
+         * @return \jorgelsaud\Mercadopago\array(json) 
          * @static 
          */
         public static function update_preapproval_payment($id, $preapproval_payment){
-            return \Zonapro\Mercadopago\src\Mercadopago::update_preapproval_payment($id, $preapproval_payment);
+            return \jorgelsaud\Mercadopago\Mercadopago::update_preapproval_payment($id, $preapproval_payment);
         }
         
         /**
          * Generic resource get
          *
-         * @param \Zonapro\Mercadopago\src\uri
-         * @param \Zonapro\Mercadopago\src\params
-         * @param \Zonapro\Mercadopago\src\authenticate  = true
+         * @param \jorgelsaud\Mercadopago\uri
+         * @param \jorgelsaud\Mercadopago\params
+         * @param \jorgelsaud\Mercadopago\authenticate  = true
          * @static 
          */
         public static function get($uri, $params = null, $authenticate = true){
-            return \Zonapro\Mercadopago\src\Mercadopago::get($uri, $params, $authenticate);
+            return \jorgelsaud\Mercadopago\Mercadopago::get($uri, $params, $authenticate);
         }
         
         /**
          * Generic resource post
          *
-         * @param \Zonapro\Mercadopago\src\uri
-         * @param \Zonapro\Mercadopago\src\data
-         * @param \Zonapro\Mercadopago\src\params
+         * @param \jorgelsaud\Mercadopago\uri
+         * @param \jorgelsaud\Mercadopago\data
+         * @param \jorgelsaud\Mercadopago\params
          * @static 
          */
         public static function post($uri, $data, $params = null){
-            return \Zonapro\Mercadopago\src\Mercadopago::post($uri, $data, $params);
+            return \jorgelsaud\Mercadopago\Mercadopago::post($uri, $data, $params);
         }
         
         /**
          * Generic resource put
          *
-         * @param \Zonapro\Mercadopago\src\uri
-         * @param \Zonapro\Mercadopago\src\data
-         * @param \Zonapro\Mercadopago\src\params
+         * @param \jorgelsaud\Mercadopago\uri
+         * @param \jorgelsaud\Mercadopago\data
+         * @param \jorgelsaud\Mercadopago\params
          * @static 
          */
         public static function put($uri, $data, $params = null){
-            return \Zonapro\Mercadopago\src\Mercadopago::put($uri, $data, $params);
+            return \jorgelsaud\Mercadopago\Mercadopago::put($uri, $data, $params);
         }
         
         /**
          * Generic resource delete
          *
-         * @param \Zonapro\Mercadopago\src\uri
-         * @param \Zonapro\Mercadopago\src\data
-         * @param \Zonapro\Mercadopago\src\params
+         * @param \jorgelsaud\Mercadopago\uri
+         * @param \jorgelsaud\Mercadopago\data
+         * @param \jorgelsaud\Mercadopago\params
          * @static 
          */
         public static function delete($uri, $params = null){
-            return \Zonapro\Mercadopago\src\Mercadopago::delete($uri, $params);
+            return \jorgelsaud\Mercadopago\Mercadopago::delete($uri, $params);
         }
         
         /**
@@ -18096,7 +18208,7 @@ namespace {
          * @static 
          */
         public static function create_preference_and_get_url($preference){
-            return \Zonapro\Mercadopago\src\Mercadopago::create_preference_and_get_url($preference);
+            return \jorgelsaud\Mercadopago\Mercadopago::create_preference_and_get_url($preference);
         }
         
     }
