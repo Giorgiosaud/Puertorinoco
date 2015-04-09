@@ -16,7 +16,7 @@
     "simplesoftwareio/simple-qrcode": "1.2.*",
     "barryvdh/laravel-dompdf": "0.5.*",
     "laracasts/utilities": "dev-master",
-    "jorgelsaud/mercado-pago": "1.1",
+    "jorgelsaud/mercado-pago": "1.1.1",
     "jorgelsaud/carbonlocalizer": "1.0.2"
 
   },
