@@ -32,6 +32,7 @@ trait RegistrarPago {
 
     private function crearPago()
     {
+        //dd($this);
         $p = Pago::create([
             'monto'          => $this->montoPagado,
             'reservacion_id' => $this->NumeroDeReservacion,

@@ -90,7 +90,10 @@ use Illuminate\Database\Eloquent\Model;
 class Mercadopago extends Model implements atributosDePago {
 
     use RegistrarPago;
-    protected $fillable = ['idMercadoPago',
+    //protected $primaryKey='idMercadoPago';
+    protected $fillable = [
+        'id',
+        'idMercadoPago',
         'site_id',
         'operation_type',
         'order_id',
@@ -114,6 +117,8 @@ class Mercadopago extends Model implements atributosDePago {
         'payerlast_name',
         'payeremail',
         'payernickname',
+        'identificationType',
+        'identificationNumber',
         'phonearea_code',
         'phonenumber',
         'phoneextension',
@@ -126,9 +131,7 @@ class Mercadopago extends Model implements atributosDePago {
         'collectorphonenumber',
         'collectorphoneextension',
     ];
-    //protected $dates = [
-    //    'date_created'
-    //];
+
 
     public function pagos()
     {
@@ -147,8 +150,5 @@ class Mercadopago extends Model implements atributosDePago {
 
     }
 
-    public function reserva()
-    {
-        // TODO: Implement reserva() method.
-    }
+
 }

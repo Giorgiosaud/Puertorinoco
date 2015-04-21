@@ -27,6 +27,7 @@ trait procesarPago {
     private function procesar()
     {
         $reserva = $this->reserva;
+        //dd($this);
         if ($this->detalles->tipo_de_pago_id == 8)
         {
             $reserva->cliente->credito = $reserva->cliente->credito - $this->monto;
