@@ -6659,3 +6659,11 @@ input[type=checkbox]#condiciones {
 
 input[name='remember'] {
   visibility: visible; }
+
+ul.language_bar_chooser li {
+  list-style: none;
+  float: left;
+  margin: 0 1em; }
+
+ul.language_bar_chooser {
+  float: right; }
