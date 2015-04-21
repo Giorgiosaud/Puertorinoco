@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller {
 
 	public function index(){
-        return view('paginas.inicio');
+        return redirect()->route('loginPanel');
+            //view('paginas.inicio');
     }
 
 }
