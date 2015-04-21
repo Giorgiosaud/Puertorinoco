@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class MercadopagoController extends Controller {
 
-	public function success($id,Request $request){
+	public function success(Request $request){
         dd($request->all());
     }
-    public function failure($id){
+    public function failure(){
 
     }
-    public function pending($id){
+    public function pending(){
 
     }
 

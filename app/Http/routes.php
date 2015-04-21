@@ -33,9 +33,9 @@ Route::group([
     Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
 });
-Route::get('success/{id}','MercadopagoController@success');
-Route::get('failure/{id}','MercadopagoController@failure');
-Route::get('pending/{id}','MercadopagoController@pending');
+Route::get('success','MercadopagoController@success');
+Route::get('failure','MercadopagoController@failure');
+Route::get('pending','MercadopagoController@pending');
 
 Route::get('/logout', ['uses' => 'PanelAdministrativoController@logout', 'as' => 'logout']);
 Route::group(['prefix' => '/PanelAdministrativo'], function ()

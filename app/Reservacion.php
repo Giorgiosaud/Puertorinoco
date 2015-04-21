@@ -352,9 +352,9 @@ class Reservacion extends Model {
                 ]
             ],
             "back_urls"          => [
-                "success" => "http://reservas.puertorinoco.com/success/".$this->id,
-                "failure" => "http://www.puertorinoco.com/failure/".$this->id,
-                "pending" => "http://www.puertorinoco.com/pending/".$this->id
+                "success" => "http://reservas.puertorinoco.com/success",
+                "failure" => "http://www.puertorinoco.com/failure",
+                "pending" => "http://www.puertorinoco.com/pending"
             ],
             "payment_methods"    => [
                 "excluded_payment_methods" => [],
