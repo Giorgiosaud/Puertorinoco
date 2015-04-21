@@ -16,7 +16,7 @@ class MercadopagoController extends Controller {
             $mp = $this->BuscarMercadopagoOCrearlo($d);
         }
 
-        return $mp;
+        return 'pago aceptado';
 
     }
 
