@@ -8,6 +8,7 @@ use App\Paseo;
 use App\Reservacion;
 use Illuminate\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ReservacionController extends Controller {
 
@@ -34,7 +35,7 @@ class ReservacionController extends Controller {
     {
         $embarcaciones = Embarcacion::all();
         $paseos = Paseo::all();
-
+        //dd(LaravelLocalization::getSupportedLanguagesKeys());
         return view('reservacion.create', compact('embarcaciones', 'paseos'));
     }
 

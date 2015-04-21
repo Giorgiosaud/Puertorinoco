@@ -6,6 +6,8 @@
  * Time: 9:25
  **/
 return [
+    'reservacionCrear'=>'reservation/create',
+    'reservacionMostrar'=>'reservation/show/{id}',
     'reservacion'   => 'reservation',
     'crear'         => 'create',
     'embarcaciones' => 'shipment',

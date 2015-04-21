@@ -146,7 +146,7 @@ return [
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
         'App\Providers\VariablesServiceProvider',
-        'jorgelsaud\Mercadopago\Providers\MercadoPagoServiceProvider',
+        'jorgelsaud\Mercadopago\MercadoPagoServiceProvider',
         'Bootstrapper\BootstrapperL5ServiceProvider',
         'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
         'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',

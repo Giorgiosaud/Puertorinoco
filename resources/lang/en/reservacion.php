@@ -1,6 +1,6 @@
 <?php
 return [
-    'Graciasporsureservaciónnumero' => 'Gracias por Su Reserva numero <strong>:reservacion</strong>',
+    'Graciasporsureservaciónnumero' => 'Thanks For Your Reservation <strong>:reservacion</strong>',
     'DatosEn'                       => 'Datos de Su Reservacion En ',
     'alguienReservoAntes'           => 'Un Cliente Se Adelanto y Reservo antes que Usted por Favor Seleccione Otra Fecha',
     'advertenciaTiempoDePago'       => '<strong>Para que esta reservación sea válida, debe cancelar el monto indicado en las próximas 24 Horas, de
