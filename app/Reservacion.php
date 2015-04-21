@@ -352,11 +352,9 @@ class Reservacion extends Model {
                 ]
             ],
             "back_urls"          => [
-                "success" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/sucess.php?idreserva=" . $this->id,
-                "failure" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/failure
-                .php?idreserva=" . $this->id,
-                "pending" => "http://www.puertorinoco.com/reservas/mercadopago/notificaciones/pending
-                .php?idreserva=" . $this->id
+                "success" => "http://reservas.puertorinoco.com/success/".$this->id,
+                "failure" => "http://www.puertorinoco.com/reservas/failure/".$this->id,
+                "pending" => "http://www.puertorinoco.com/reservas/pending/".$this->id
             ],
             "payment_methods"    => [
                 "excluded_payment_methods" => [],

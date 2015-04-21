@@ -627,12 +627,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/giorgiosaud/mercadopagoLaravel.git",
-                "reference": "40540791fbad423465ed3468e512ac6bc5280237"
+                "reference": "5ca192dbbe22e484c7a09b2e505187125b1bb812"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giorgiosaud/mercadopagoLaravel/zipball/40540791fbad423465ed3468e512ac6bc5280237",
-                "reference": "40540791fbad423465ed3468e512ac6bc5280237",
+                "url": "https://api.github.com/repos/giorgiosaud/mercadopagoLaravel/zipball/5ca192dbbe22e484c7a09b2e505187125b1bb812",
+                "reference": "5ca192dbbe22e484c7a09b2e505187125b1bb812",
                 "shasum": ""
             },
             "require": {
@@ -655,7 +655,7 @@
                 }
             ],
             "description": "Metodo de Pago Mercadopago Para Laravel",
-            "time": "2015-04-21 04:11:03"
+            "time": "2015-04-21 12:35:26"
         },
         {
             "name": "laracasts/flash",
