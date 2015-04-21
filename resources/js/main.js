@@ -83,10 +83,14 @@ $(document).ready(function () {
                 clearBtn: true,
                 daysOfWeekDisabled: window.diasNoLaborables,
                 language: 'es',
-                startDate: new Date(new Date().setDate((new Date()).getDate() + parseInt(window.minimoDiasAReservar))),
+                startDate:new Date(),
+                //startDate: new Date(new Date().setDate((new Date()).getDate() + parseInt(window.minimoDiasAReservar))),
                 beforeShowDay: fechasEspecialesx,
                 altField: "#fecha",
+                todayBtn:true,
+                todayHighlight:true,
                 altFormat: "yy-mm-dd",
+
             }).on('changeDate', function (e) {
                 $('#tipoEmbarcacion').slideUp('slow');
                 $('#ayudaEmbarcacion').slideUp('slow');
