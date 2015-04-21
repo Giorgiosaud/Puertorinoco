@@ -20,7 +20,7 @@ Route::group([
 {
 
     Route::get('/', ['as' => 'inicio.index', 'uses' => 'PagesController@index']);
-    Route::get('/mpPayment', ['as' => 'PagoMercadoPago', 'uses' => 'PagesController@index']);
+    //Route::get('/mpPayment', ['as' => 'PagoMercadoPago', 'uses' => 'PagesController@index']);
     //Route::resource(LaravelLocalization::transRoute('routes.embarcaciones'), 'EmbarcacionesController');
     Route::resource(LaravelLocalization::transRoute('routes.variables'), 'VariablesController');
     Route::get(LaravelLocalization::transRoute('routes.reservacionCrear'),
@@ -33,9 +33,9 @@ Route::group([
     Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
 });
-Route::get('success','MercadopagoController@success');
-Route::get('failure','MercadopagoController@failure');
-Route::get('pending','MercadopagoController@pending');
+//Route::get('success','MercadopagoController@success');
+//Route::get('failure','MercadopagoController@failure');
+//Route::get('pending','MercadopagoController@pending');
 
 Route::get('/logout', ['uses' => 'PanelAdministrativoController@logout', 'as' => 'logout']);
 Route::group(['prefix' => '/PanelAdministrativo'], function ()
