@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
@@ -29,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PanelAdministrativoController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PanelAdministrativoController.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32164448" vertical-offset="406" max-vertical-offset="1533">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.074030556" vertical-offset="0" max-vertical-offset="851">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -81,7 +80,6 @@
         <option value="$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/routes/routes.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
         <option value="$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/MercadoPagoServiceProvider.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/mercadopago.php" />
         <option value="$PROJECT_DIR$/config/laravellocalization.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReservacionController.php" />
@@ -98,6 +96,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PanelAdministrativoController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -368,7 +367,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47013888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47013888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -729,14 +728,6 @@
             <marker date="1429589278000" expanded="true" signature="-1:-1" placeholder=" Enable CSS float ..." />
             <marker date="1429589278000" expanded="true" signature="-1:-1" placeholder=" Use the more-than-experimental HTML5 Lib parser ..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02467685" vertical-offset="0" max-vertical-offset="851">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6888,8 +6879,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PanelAdministrativoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32164448" vertical-offset="406" max-vertical-offset="1533">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.3325" vertical-offset="469" max-vertical-offset="1533">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="24" />
+          <folding>
+            <marker date="1429597150000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder=" @var Guard ..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder=" @var Registrar ..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder=" @var Guard ..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429597150000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.074030556" vertical-offset="0" max-vertical-offset="851">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
