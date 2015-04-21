@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +32,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39782345" vertical-offset="154" max-vertical-offset="2058">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.7279323" vertical-offset="133" max-vertical-offset="2058">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -1654,68 +1654,68 @@
         <state vertical-scroll-proportion="0.47037485" vertical-offset="8074" max-vertical-offset="8904">
           <caret line="403" column="20" selection-start-line="403" selection-start-column="20" selection-end-line="403" selection-end-column="20" />
           <folding>
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" MercadoPago Integration Library ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Get Access Token for API use ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Get information for specific payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Get information for specific authorized payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Refund accredited payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Cancel pending payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Cancel preapproval payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Search payments according to filters, with pagination ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Create a checkout preference ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Update a checkout preference ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Get a checkout preference ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Create a preapproval payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Get a preapproval payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Update a preapproval payment ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Generic resource get ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Generic resource post ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Generic resource put ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder=" Generic resource delete ..." />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429620335000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" MercadoPago Integration Library ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Get Access Token for API use ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Get information for specific payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Get information for specific authorized payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Refund accredited payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Cancel pending payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Cancel preapproval payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Search payments according to filters, with pagination ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Create a checkout preference ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Update a checkout preference ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Get a checkout preference ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Create a preapproval payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Get a preapproval payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Update a preapproval payment ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Generic resource get ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Generic resource post ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Generic resource put ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder=" Generic resource delete ..." />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429630244000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -5302,8 +5302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39782345" vertical-offset="154" max-vertical-offset="2058">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7279323" vertical-offset="133" max-vertical-offset="2058">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
           <folding />
         </state>
       </provider>

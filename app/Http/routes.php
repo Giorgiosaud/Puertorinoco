@@ -33,7 +33,7 @@ Route::group([
     Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
 });
-//Route::get('success','MercadopagoController@success');
+Route::get('success2','MercadopagoController@success');
 //Route::get('failure','MercadopagoController@failure');
 //Route::get('pending','MercadopagoController@pending');
 
