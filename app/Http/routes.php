@@ -20,6 +20,7 @@ Route::group([
 {
 
     Route::get('/', ['as' => 'inicio.index', 'uses' => 'PagesController@index']);
+    Route::get('/mpPayment', ['as' => 'PagoMercadoPago', 'uses' => 'PagesController@index']);
     //Route::resource(LaravelLocalization::transRoute('routes.embarcaciones'), 'EmbarcacionesController');
     Route::resource(LaravelLocalization::transRoute('routes.variables'), 'VariablesController');
     Route::get(LaravelLocalization::transRoute('routes.reservacionCrear'),

@@ -33,7 +33,7 @@ class PanelAdministrativoController extends Controller {
             return view('auth.login');
         }
 
-        return view('panelAdministrativo.inicio');
+        return view('PanelAdministrativo.inicio');
     }
 
     protected function getFailedLoginMessage()
