@@ -10,6 +10,7 @@ use jorgelsaud\Mercadopago\MP;
 class MercadopagoController extends Controller {
 
 	public function success(Request $request){
+        dd($request->all());
         //get('https://api.mercadolibre.com/merchant_orders/'.$request->input('collection_id').'?access_token='
         //    .MP::obtenerAccessToken());
 
