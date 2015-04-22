@@ -90,7 +90,7 @@ class MercadopagoController extends Controller {
         $mp->collectorphonearea_code = $respuestaMercadoPago['response']['collection']['collector']['phone']['area_code'];
         $mp->collectorphonenumber = $respuestaMercadoPago['response']['collection']['collector']['phone']['number'];
         $mp->collectorphoneextension = $respuestaMercadoPago['response']['collection']['collector']['phone']['extension'];
-
+        dd($mp);
         return $mp->save();
     }
 
