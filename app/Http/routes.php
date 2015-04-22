@@ -32,6 +32,7 @@ Route::group([
     Route::get('ObtenerVariables', 'VariablesController@fechasEspeciales');
     Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
+    Route::any('success','MercadopagoController@success');
 });
 Route::any('success','MercadopagoController@success');
 Route::any('notificacionMP','MercadopagoController@notification');
