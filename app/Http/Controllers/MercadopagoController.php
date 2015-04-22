@@ -10,7 +10,7 @@ class MercadopagoController extends Controller {
 
     public function success(Request $request)
     {
-         //dd($request->all());
+        //dd($request->all());
         // dd(\Mercadopago::get_access_token());
 
         $d = Mercadopago::get_payment($request->input('collection_id'));
@@ -18,20 +18,35 @@ class MercadopagoController extends Controller {
         if ($d['status'] == 200)
         {
             $mp = $this->BuscarMercadopagoOCrearlo($d);
+
+            return view('reservacion.pagoAceptado', compact($mp));
+
         }
 
-        return view('reservacion.pagoAceptado');
+        return view('reservacion.sinConeccion');
+
 
     }
-    public function notification(Request $request){
-        //$d = Mercadopago::get_payment($request->input('collection_id'));
-        //dd($d['response']);
-        //if ($d['status'] == 200)
-        //{
-        //    $mp = $this->BuscarMercadopagoOCrearlo($d);
-        //}
+
+    public function notification(Request $request)
+    {
+        if ($request->exists('collection_id'))
+        {
+            $d = Mercadopago::get_payment($request->input('collection_id'));
+            dd($d['response']);
+            if ($d['status'] == 200)
+            {
+                $mp = $this->BuscarMercadopagoOCrearlo($d);
+
+                return view('reservacion.pagoAceptado', compact($mp));
+            }
+
+            return view('reservacion.sinConeccion');
+        }
+
         return 'notificado';
     }
+
     public function failure()
     {
 
@@ -90,6 +105,7 @@ class MercadopagoController extends Controller {
         $mp->collectorphonearea_code = $respuestaMercadoPago['response']['collection']['collector']['phone']['area_code'];
         $mp->collectorphonenumber = $respuestaMercadoPago['response']['collection']['collector']['phone']['number'];
         $mp->collectorphoneextension = $respuestaMercadoPago['response']['collection']['collector']['phone']['extension'];
+
         //dd($mp);
         return $mp->save();
     }

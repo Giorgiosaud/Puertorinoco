@@ -35,6 +35,7 @@ Route::group([
 });
 Route::any('success','MercadopagoController@success');
 Route::any('notificacionMP','MercadopagoController@notification');
+Route::any('notificacionMP','MercadopagoController@notification');
 //Route::get('failure','MercadopagoController@failure');
 //Route::get('pending','MercadopagoController@pending');
 

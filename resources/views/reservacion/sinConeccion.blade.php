@@ -4,7 +4,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>
-					{!!Lang::get('pago.aceptado')!!}
+					{!!Lang::get('pago.sinConeccion')!!}
 				</h1>
 			</div>
 		</div>
