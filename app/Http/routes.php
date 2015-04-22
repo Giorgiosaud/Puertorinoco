@@ -34,6 +34,7 @@ Route::group([
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
 });
 Route::any('success','MercadopagoController@success');
+Route::any('notificacionMP','MercadopagoController@success');
 //Route::get('failure','MercadopagoController@failure');
 //Route::get('pending','MercadopagoController@pending');
 
