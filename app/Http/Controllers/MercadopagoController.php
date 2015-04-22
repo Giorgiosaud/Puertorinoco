@@ -14,7 +14,7 @@ class MercadopagoController extends Controller {
         // dd(\Mercadopago::get_access_token());
 
         $d = Mercadopago::get_payment($request->input('collection_id'));
-        dd($d['response']);
+        //dd($d['response']);
         if ($d['status'] == 200)
         {
             $mp = $this->BuscarMercadopagoOCrearlo($d);
@@ -90,7 +90,7 @@ class MercadopagoController extends Controller {
         $mp->collectorphonearea_code = $respuestaMercadoPago['response']['collection']['collector']['phone']['area_code'];
         $mp->collectorphonenumber = $respuestaMercadoPago['response']['collection']['collector']['phone']['number'];
         $mp->collectorphoneextension = $respuestaMercadoPago['response']['collection']['collector']['phone']['extension'];
-        dd($mp);
+        //dd($mp);
         return $mp->save();
     }
 
