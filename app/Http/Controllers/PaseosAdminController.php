@@ -38,7 +38,7 @@ class PaseosAdminController extends Controller {
             array_push($paseosTableStyle, $array);
         }
 
-        return view('paseos.admin.all', compact('paseosTableStyle'));
+        return view('Paseos.admin.all', compact('paseosTableStyle'));
     }
 
     /**
