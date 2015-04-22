@@ -25,6 +25,7 @@ class VerifyCsrfToken extends BaseVerifier {
     {
         $routes = [
             'mpPayment',
+            'success',
         ];
 
         foreach($routes as $route)
