@@ -20,7 +20,7 @@ class MercadopagoController extends Controller {
             $mp = $this->BuscarMercadopagoOCrearlo($d);
         }
 
-        return 'pago aceptado';
+        return view()
 
     }
     public function notification(Request $request){
