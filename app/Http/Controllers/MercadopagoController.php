@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Mercadopago as MercadopagoModel;
 use Illuminate\Http\Request;
+use Mercadopago;
 
 
 class MercadopagoController extends Controller {
@@ -11,7 +12,7 @@ class MercadopagoController extends Controller {
     {
         // dd($request->all());
         // dd(\Mercadopago::get_access_token());
-        $d = \Mercadopago::get_payment($request->input('collection_id'));
+        $d = Mercadopago::get_payment($request->input('collection_id'));
         dd($d['response']);
         if ($d['status'] == 200)
         {
