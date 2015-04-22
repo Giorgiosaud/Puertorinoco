@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Mercadopago.php" afterPath="$PROJECT_DIR$/app/Mercadopago.php" />
     </list>
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MercadopagoController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
+      <file leaf-file-name="RegistrarPago.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Traits/RegistrarPago.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86336154" vertical-offset="1176" max-vertical-offset="2100">
-              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.78718257" vertical-offset="0" max-vertical-offset="1470">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -89,13 +89,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/database/migrations/2015_04_21_165612_add_columns_to_mercadopago.php" />
-        <option value="$PROJECT_DIR$/app/Mercadopago.php" />
         <option value="$PROJECT_DIR$/app/Traits/RegistrarPago.php" />
         <option value="$PROJECT_DIR$/app/Traits/procesarPago.php" />
         <option value="$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/MPRestClient.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
+        <option value="$PROJECT_DIR$/app/Mercadopago.php" />
       </list>
     </option>
   </component>
@@ -2027,32 +2027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Traits/RegistrarPago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07617896" vertical-offset="147" max-vertical-offset="1470">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <marker date="1429653023000" expanded="false" signature="-1:-1" placeholder=" Created by jorgelsaud. ..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429653023000" expanded="true" signature="-1:-1" placeholder=" ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Pago.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.26964933" vertical-offset="223" max-vertical-offset="1050">
@@ -2093,22 +2067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Mercadopago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44377267" vertical-offset="1544" max-vertical-offset="3318">
-          <caret line="93" column="27" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
-          <folding>
-            <marker date="1429652986000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder=" App\Mercadopago ..." />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429652986000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/mercadopago.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
@@ -2119,10 +2077,245 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/Mercadopago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5235792" vertical-offset="0" max-vertical-offset="8904">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="36" />
+          <folding>
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" MercadoPago Integration Library ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get Access Token for API use ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get information for specific payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get information for specific authorized payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Refund accredited payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Cancel pending payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Cancel preapproval payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Search payments according to filters, with pagination ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Create a checkout preference ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Update a checkout preference ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get a checkout preference ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Create a preapproval payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get a preapproval payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Update a preapproval payment ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource get ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource post ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource put ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource delete ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4945586" vertical-offset="6481" max-vertical-offset="7308">
+          <caret line="171" column="6" selection-start-line="171" selection-start-column="6" selection-end-line="171" selection-end-column="6" />
+          <folding>
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Created by typecasting to object. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to detect if a class is traversable using &amp;foreach;. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to create an external Iterator. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface for external iterators or objects that can be iterated ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to provide accessing objects as arrays. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface for customized serializing. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Exception is the base class for ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.3.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" An Error Exception. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Class used to represent anonymous functions. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" This method exists only to disallow instantiation of the Closure class. ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Closure::bindTo � Duplicates the closure with a new bound object and class scope ..." />
+            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" This method is a static version of Closure::bindTo(). ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/MPRestClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025392987" vertical-offset="0" max-vertical-offset="1974">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <marker date="1429664748000" expanded="false" signature="-1:-1" placeholder=" Created by jorgelsaud. ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" MercadoPago cURL RestClient ..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="987">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1424392382000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" A list of the exception types that should not be reported. ..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" Report or log an exception. ..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" Render an exception into an HTTP response. ..." />
+            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/select2/i18n/ro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1426371692000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68561065" vertical-offset="0" max-vertical-offset="924">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <marker date="1429666213000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder=" Handle an incoming request. ..." />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7279323" vertical-offset="133" max-vertical-offset="2079">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="19" />
+          <folding>
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_ide_helper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3675937" vertical-offset="377990" max-vertical-offset="385581">
-          <caret line="18020" column="51" selection-start-line="18020" selection-start-column="51" selection-end-line="18020" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.34220073" vertical-offset="377423" max-vertical-offset="385581">
+          <caret line="17992" column="10" selection-start-line="17992" selection-start-column="10" selection-end-line="17992" selection-end-column="10" />
           <folding>
             <marker date="1428542130000" expanded="false" signature="-1:-1" placeholder=" An helper file for Laravel 5, to provide autocomplete information to your IDE ..." />
             <marker date="1428542130000" expanded="true" signature="-1:-1" placeholder="..." />
@@ -5238,245 +5431,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/Mercadopago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5235792" vertical-offset="0" max-vertical-offset="8904">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" MercadoPago Integration Library ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get Access Token for API use ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get information for specific payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get information for specific authorized payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Refund accredited payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Cancel pending payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Cancel preapproval payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Search payments according to filters, with pagination ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Create a checkout preference ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Update a checkout preference ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get a checkout preference ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Create a preapproval payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Get a preapproval payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Update a preapproval payment ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource get ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource post ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource put ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" Generic resource delete ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4945586" vertical-offset="6481" max-vertical-offset="7308">
-          <caret line="171" column="6" selection-start-line="171" selection-start-column="6" selection-end-line="171" selection-end-column="6" />
-          <folding>
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Created by typecasting to object. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to detect if a class is traversable using &amp;foreach;. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to create an external Iterator. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface for external iterators or objects that can be iterated ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface to provide accessing objects as arrays. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.0.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Interface for customized serializing. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Exception is the base class for ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.3.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" An Error Exception. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" (PHP 5 &amp;gt;= 5.1.0)&lt;br/&gt; ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Class used to represent anonymous functions. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" This method exists only to disallow instantiation of the Closure class. ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" Closure::bindTo � Duplicates the closure with a new bound object and class scope ..." />
-            <marker date="1425595460000" expanded="true" signature="-1:-1" placeholder=" This method is a static version of Closure::bindTo(). ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/MPRestClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025392987" vertical-offset="0" max-vertical-offset="1974">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <marker date="1429664748000" expanded="false" signature="-1:-1" placeholder=" Created by jorgelsaud. ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder=" MercadoPago cURL RestClient ..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664748000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="987">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1424392382000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" A list of the exception types that should not be reported. ..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" Report or log an exception. ..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder=" Render an exception into an HTTP response. ..." />
-            <marker date="1424392382000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/select2/i18n/ro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1426371692000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68561065" vertical-offset="0" max-vertical-offset="924">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <marker date="1429666213000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder=" Handle an incoming request. ..." />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429666213000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7279323" vertical-offset="133" max-vertical-offset="2079">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="19" />
-          <folding>
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86336154" vertical-offset="1176" max-vertical-offset="2100">
-          <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.5078597" vertical-offset="651" max-vertical-offset="2100">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <marker date="1429666891000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder=" @param $respuestaMercadoPago ..." />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666891000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mercadopago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5453446" vertical-offset="1418" max-vertical-offset="3318">
+          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
+          <folding>
+            <marker date="1429666998000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder=" App\Mercadopago ..." />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666998000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Traits/RegistrarPago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78718257" vertical-offset="0" max-vertical-offset="1470">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="50" />
           <folding />
         </state>
       </provider>

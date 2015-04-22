@@ -146,7 +146,7 @@ class Mercadopago extends Model implements atributosDePago {
 
     public function getmontoPagadoAttribute()
     {
-        return $this->attributes['transaction_amount'];
+        return $this->attributes['transaction_amount']/1.1;
 
     }
 
