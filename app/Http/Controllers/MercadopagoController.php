@@ -9,9 +9,9 @@ class MercadopagoController extends Controller {
 
     public function success(Request $request)
     {
-       // dd($request->all());
-        dd(\Mercadopago::get_access_token());
-				$d = \Mercadopago::get_payment($request->input('collection_id'));
+        // dd($request->all());
+        // dd(\Mercadopago::get_access_token());
+        $d = \Mercadopago::get_payment($request->input('collection_id'));
         dd($d['response']);
         if ($d['status'] == 200)
         {
@@ -37,12 +37,13 @@ class MercadopagoController extends Controller {
      */
     private function BuscarMercadopagoOCrearlo($respuestaMercadoPago)
     {
-        $mp = MercadopagoModel::where('idMercadoPago',$respuestaMercadoPago['response']['collection']['id'])->get();
-        if($mp->count()>0){
+        $mp = MercadopagoModel::where('idMercadoPago', $respuestaMercadoPago['response']['collection']['id'])->get();
+        if ($mp->count() > 0)
+        {
             return $mp;
         }
-        $mp=new MercadopagoModel();
-        $mp->idMercadoPago =$respuestaMercadoPago['response']['collection']['id'];
+        $mp = new MercadopagoModel();
+        $mp->idMercadoPago = $respuestaMercadoPago['response']['collection']['id'];
         $mp->site_id = $respuestaMercadoPago['response']['collection']['site_id'];
         $mp->operation_type = $respuestaMercadoPago['response']['collection']['operation_type'];
         $mp->order_id = $respuestaMercadoPago['response']['collection']['order_id'];
