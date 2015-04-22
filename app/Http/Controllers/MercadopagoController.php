@@ -24,12 +24,12 @@ class MercadopagoController extends Controller {
 
     }
     public function notification(Request $request){
-        $d = Mercadopago::get_payment($request->input('collection_id'));
-        dd($d['response']);
-        if ($d['status'] == 200)
-        {
-            $mp = $this->BuscarMercadopagoOCrearlo($d);
-        }
+        //$d = Mercadopago::get_payment($request->input('collection_id'));
+        //dd($d['response']);
+        //if ($d['status'] == 200)
+        //{
+        //    $mp = $this->BuscarMercadopagoOCrearlo($d);
+        //}
         return 'notificado';
     }
     public function failure()
