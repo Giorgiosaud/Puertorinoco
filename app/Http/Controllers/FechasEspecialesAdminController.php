@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\Embarcacion;
 use App\FechaEspecial;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\TipoDePaseo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -72,7 +74,11 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $tiposDePaseos=TipoDePaseo::lists('nombre','id');
+        $embarcaciones=Embarcacion::lists('nombre','id');
+        $fechaEspecial = FechaEspecial::findOrFail($id);
+        //dd($fechaEspecial);
+        return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones'));
 	}
 
 	/**

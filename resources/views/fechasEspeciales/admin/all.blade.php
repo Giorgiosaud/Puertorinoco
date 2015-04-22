@@ -19,5 +19,5 @@
 			!!}
 
 		</div>
-		{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
+		{!!Button::primary('Nueva Fecha')->asLinkTo(route('PanelAdministrativo.fechasEspeciales.create'))->block()!!}
 @endsection
