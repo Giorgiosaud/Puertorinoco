@@ -66,7 +66,7 @@
 	!!}
 	<div class="clearfix"></div>
 	<div class="center-block text-center">
-		{!!Form::Reset('Borrar Cambios',['class'=>'btn btn-danger'])!!}
+		{!!Form::Reset('Borrar Cambios',['class'=>'btn btn-warning'])!!}
 		{!! Button::success('Modificar Info')->addAttributes(['id'=>'modificarReserva'])->submit()!!}
 
 	</div>

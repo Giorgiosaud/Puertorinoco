@@ -33,7 +33,7 @@ class PaseosAdminController extends Controller {
                 'Jueves'    => $paseo->jueves,
                 'Viernes'   => $paseo->viernes,
                 'Sábado'    => $paseo->sabado,
-                'Domingo'   => $paseo->Domingo,
+                'Domingo'   => $paseo->domingo,
             ];
             array_push($paseosTableStyle, $array);
         }

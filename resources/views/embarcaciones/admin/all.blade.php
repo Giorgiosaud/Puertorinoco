@@ -16,75 +16,57 @@
 		})
 		->callback('Público',function($field,$row){
 		if($row['Público']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
 		})
 		->callback('Lunes',function($field,$row){
 		if($row['Lunes']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+
+		return 'Inactivo';
+
+
 		})
 		->callback('Martes',function($field,$row){
 		if($row['Martes']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
+
 		})
 		->callback('Miercoles',function($field,$row){
 		if($row['Miercoles']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
+
 		})
 		->callback('Jueves',function($field,$row){
 		if($row['Jueves']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
 		})
 		->callback('Viernes',function($field,$row){
 		if($row['Viernes']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
 		})
 		->callback('Sábado',function($field,$row){
 		if($row['Sábado']==1){
-		$return='Activo';
+		 return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return 'Inactivo';
+
 		})
 		->callback('Domingo',function($field,$row){
 		if($row['Domingo']==1){
-		$return='Activo';
+		return 'Activo';
 		}
-		else{
-		$return='Inactivo';
-		}
-		return $return;
+		return='Inactivo';
 		})
 		->hover()->render()
 		!!}

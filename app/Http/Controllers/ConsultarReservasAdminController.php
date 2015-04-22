@@ -52,6 +52,12 @@ class ConsultarReservasAdminController extends Controller {
         return view('reservacion.admin.abordaje', compact('paseos', 'embarcaciones'));
     }
 
+    public function delete($id)
+    {
+        $reservacion = Reservacion::findOrFail($id);
+        $reservacion->delete();
+    }
+
     /**
      * @param ConsultarReservacionRequest $request
      * @return string
@@ -105,6 +111,7 @@ class ConsultarReservasAdminController extends Controller {
      * @param $embarcaciones
      * @param $horas
      * @return mixed
+     *
      */
     public function consultarReservaciones(ConsultarReservacionRequest $request, $embarcaciones, $horas)
     {
@@ -122,7 +129,8 @@ class ConsultarReservasAdminController extends Controller {
     public function recibirPago(PagosRequest $request)
     {
         $pf = PagoDirecto::create($request->all());
-        $reserva=Reservacion::find($request->input('reservacion_id'))->touch();
+        $reserva = Reservacion::find($request->input('reservacion_id'))->touch();
+
         return redirect()->route('editarReservas', $request->input('reservacion_id'));
 
         //return view('reservacion.admin.partials.recibido.pago', compact('pago'));
@@ -133,7 +141,8 @@ class ConsultarReservasAdminController extends Controller {
         $pago = Pago::find($r->input('id'));
         $id = $pago->reserva->id;
         $pago->delete();
-        $reserva=Reservacion::find($id)->touch();
+        $reserva = Reservacion::find($id)->touch();
+
         return redirect()->route('editarReservas', $id);
     }
 
@@ -169,6 +178,13 @@ class ConsultarReservasAdminController extends Controller {
         $pasajero->delete();
 
         return redirect()->route('editarReservas', $request->input('reservacion_id'));
+
+    }
+
+    public function borrarReserva($id)
+    {
+        $reservacion=Reservacion::findOrFail($id);
+        $reservacion->delete();
 
     }
 }

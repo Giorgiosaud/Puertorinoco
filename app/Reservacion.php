@@ -2,6 +2,7 @@
 
 use App\Traits\ProcesarReservacion;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Vari;
 
 /**
@@ -62,6 +63,7 @@ use Vari;
 class Reservacion extends Model {
 
     use ProcesarReservacion;
+    use SoftDeletes;
 
     /**
      * @var string
@@ -95,7 +97,7 @@ class Reservacion extends Model {
      * @var array
      */
     protected $dates = [
-        'fecha'
+        'fecha','deleted_at'
     ];
 
     /**
