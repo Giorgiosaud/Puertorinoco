@@ -10,7 +10,7 @@ class MercadopagoController extends Controller {
 
     public function success(Request $request)
     {
-         dd($request->all());
+         //dd($request->all());
         // dd(\Mercadopago::get_access_token());
 
         $d = Mercadopago::get_payment($request->input('collection_id'));
@@ -23,7 +23,15 @@ class MercadopagoController extends Controller {
         return 'pago aceptado';
 
     }
-
+    public function notification(Request $request){
+        $d = Mercadopago::get_payment($request->input('collection_id'));
+        dd($d['response']);
+        if ($d['status'] == 200)
+        {
+            $mp = $this->BuscarMercadopagoOCrearlo($d);
+        }
+        return 'notificado';
+    }
     public function failure()
     {
 

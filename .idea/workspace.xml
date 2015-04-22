@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="Puertorinoco.iws" />
@@ -28,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="MercadopagoController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7533253" vertical-offset="133" max-vertical-offset="2079">
-              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.7363966" vertical-offset="0" max-vertical-offset="2100">
+              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -94,9 +94,9 @@
         <option value="$PROJECT_DIR$/app/Traits/RegistrarPago.php" />
         <option value="$PROJECT_DIR$/app/Traits/procesarPago.php" />
         <option value="$PROJECT_DIR$/vendor/jorgelsaud/mercado-pago/src/MPRestClient.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
       </list>
     </option>
   </component>
@@ -5408,24 +5408,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1777509" vertical-offset="63" max-vertical-offset="1995">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder=" @param $respuestaMercadoPago ..." />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429664838000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66021764" vertical-offset="0" max-vertical-offset="903">
@@ -5455,7 +5437,47 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7533253" vertical-offset="133" max-vertical-offset="2079">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <caret line="36" column="63" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="63" />
+          <folding>
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429666032000" expanded="true" signature="-1:-1" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7363966" vertical-offset="0" max-vertical-offset="2100">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding />
         </state>
       </provider>
