@@ -4,6 +4,7 @@
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pagoAceptado.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php">
+      <file leaf-file-name="MercadopagoController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
-              <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.48246676" vertical-offset="0" max-vertical-offset="2100">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -95,8 +96,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/app/Mercadopago.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
       </list>
     </option>
   </component>
@@ -5528,26 +5529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48246676" vertical-offset="0" max-vertical-offset="2100">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding>
-            <marker date="1429667303000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder=" @param $respuestaMercadoPago ..." />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1429667303000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/PanelAdministrativo/inicio.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.050785974" vertical-offset="0" max-vertical-offset="827">
@@ -5566,6 +5547,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
           <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+          <folding>
+            <marker date="1429667352000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667352000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667352000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667352000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667352000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48246676" vertical-offset="0" max-vertical-offset="2100">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding />
         </state>
       </provider>
