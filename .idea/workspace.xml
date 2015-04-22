@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-    </list>
+    <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="" />
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -27,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="sinConeccion.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/reservacion/sinConeccion.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77871823" vertical-offset="133" max-vertical-offset="2079">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -45,7 +43,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/reservacion/mostrar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Online.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/tabla.blade.php" />
@@ -96,6 +93,7 @@
         <option value="$PROJECT_DIR$/resources/views/reservacion/sinConeccion.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MercadopagoController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/lang/es/pago.php" />
       </list>
     </option>
   </component>
@@ -186,8 +184,22 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Puertorinoco" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -205,73 +217,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reservacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PanelAdministrativo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="es" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,59 +444,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.11" vertical-offset="888" max-vertical-offset="3507">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1427838913000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder=" @var Guard ..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder=" Muestra Formulario para consulta de Reservas ..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder=" @param ConsultarReservacionRequest $request ..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder=" @param ConsultarReservacionRequest $request ..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1427838913000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Opciones.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1428541486000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/reservacion/assets/reservacion/Pagos/Tipos/Oficina.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1827">
@@ -5486,34 +5383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/sinConeccion.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding>
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/select2/i18n/ro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
@@ -5549,6 +5418,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.77871823" vertical-offset="133" max-vertical-offset="2079">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667795000" expanded="true" signature="-1:-1" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/es/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1424958008000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1424958008000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1429667660000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/es/pago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10157195" vertical-offset="0" max-vertical-offset="827">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <folding>
+            <marker date="1429668017000" expanded="false" signature="-1:-1" placeholder=" Created by jorgelsaud. ..." />
+            <marker date="1429668017000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/reservacion/sinConeccion.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15235792" vertical-offset="0" max-vertical-offset="827">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="51" />
           <folding />
         </state>
       </provider>
