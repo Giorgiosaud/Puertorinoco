@@ -66,7 +66,7 @@
 		if($row['Domingo']==1){
 		return 'Activo';
 		}
-		return='Inactivo';
+		return 'Inactivo';
 		})
 		->hover()->render()
 		!!}
