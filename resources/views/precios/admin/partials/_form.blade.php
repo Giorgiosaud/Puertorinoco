@@ -29,10 +29,7 @@ Form::text('adulto')
 		)
 !!}
 {!!
-		ControlGroup::generate(
-			Form::label('aplicar_desde', 'Aplicar desde formato BD: '),
-			Form::text('aplicar_desde',null,['id'=>'fecha','disabled'=>'disabled'])
-		)
+			Form::hidden('aplicar_desde',null,['id'=>'fecha'])
 !!}
 
 
