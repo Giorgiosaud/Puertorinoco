@@ -55,7 +55,8 @@ class PreciosAdminController extends Controller {
 	 */
 	public function store(PrecioRequest $request)
 	{
-		dd($request->all());
+        Precio::create($request);
+		
 	}
 
 	/**
