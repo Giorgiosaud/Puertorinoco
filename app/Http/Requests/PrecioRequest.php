@@ -24,7 +24,7 @@ class PrecioRequest extends Request {
             "adulto"=>'required',
             "mayor"=>'required',
             "nino"=>'required',
-            "aplicar_desde"=>'required|date',
+            //"aplicar_desde"=>'required',
         ];
     }
 
