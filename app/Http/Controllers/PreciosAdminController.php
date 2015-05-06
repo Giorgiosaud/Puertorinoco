@@ -97,6 +97,7 @@ class PreciosAdminController extends Controller {
         $precio = Precio::find($id);
         $precio->fill($request->all());
         $precio->save();
+        return redirect()->route('PanelAdministrativo.precios.index');
 	}
 
 	/**
