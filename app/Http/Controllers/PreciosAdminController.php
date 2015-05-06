@@ -94,7 +94,7 @@ class PreciosAdminController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+	dd($id);
 	}
 
 	/**
