@@ -92,7 +92,7 @@ class PreciosAdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
         $precio = Precio::find($id);
         $precio->fill($request->all());
