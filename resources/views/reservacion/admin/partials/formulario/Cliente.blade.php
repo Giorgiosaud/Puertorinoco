@@ -56,8 +56,8 @@
 	!!}
 	{!!
 			ControlGroup::generate(
-			Form::label('montoCredito', 'Credito: '),
-			Form::text('montoCredito'),
+			Form::label('credito', 'Credito: '),
+			Form::text('credito'),
 			null,
 			4,
 			8
