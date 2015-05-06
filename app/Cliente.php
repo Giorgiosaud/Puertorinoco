@@ -38,6 +38,7 @@ class Cliente extends Model {
         'identificacion',
         'email',
         'telefono',
+        'credito',
     ];
     public function reservas()
     {
