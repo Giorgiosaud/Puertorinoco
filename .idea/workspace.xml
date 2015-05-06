@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Cliente.php" afterPath="$PROJECT_DIR$/app/Cliente.php" />
-    </list>
+    <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="" />
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -114,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/app/Cliente.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5692109" vertical-offset="400" max-vertical-offset="1218">
-              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+              <caret line="40" column="18" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -1023,7 +1021,7 @@
     <entry file="file://$PROJECT_DIR$/app/Cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5692109" vertical-offset="400" max-vertical-offset="1218">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="18" />
           <folding />
         </state>
       </provider>
