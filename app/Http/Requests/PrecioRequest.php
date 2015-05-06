@@ -21,9 +21,9 @@ class PrecioRequest extends Request {
     {
         return [
             "tipo_de_paseo_id"=>'required',
-            "adulto"=>'required|float',
-            "mayor"=>'required|float',
-            "nino"=>'required|float',
+            "adulto"=>'required',
+            "mayor"=>'required',
+            "nino"=>'required',
             "aplicar_desde"=>'required|date',
         ];
     }
