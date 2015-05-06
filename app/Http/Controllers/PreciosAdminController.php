@@ -56,7 +56,8 @@ class PreciosAdminController extends Controller {
 	public function store(PrecioRequest $request)
 	{
         Precio::create($request);
-		
+        return redirect('PanelAdministrativo.precios.index');
+
 	}
 
 	/**
