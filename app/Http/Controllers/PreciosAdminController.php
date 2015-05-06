@@ -94,7 +94,9 @@ class PreciosAdminController extends Controller {
 	 */
 	public function update($id)
 	{
-	dd($id);
+        $precio = Precio::find($id);
+        $precio->fill($request->all());
+        $precio->save();
 	}
 
 	/**
