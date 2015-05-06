@@ -30,6 +30,13 @@ class Precio extends Model {
     protected $dates=[
         'aplicar_desde',
     ];
+    protected $fillable=[
+      'adulto',
+        'mayor',
+        'nino',
+        'aplicar_desde',
+        'tipo_de_paseo_id',
+    ];
     public function tipoDePaseo(){
         return $this->belongsTo('App\TipoDePaseo');
     }
