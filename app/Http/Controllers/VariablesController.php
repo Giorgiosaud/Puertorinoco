@@ -207,13 +207,17 @@ class VariablesController extends Controller {
                     ('embarcacion_id', $embarcacion->id)
                         ->PasajerosReservadosDeLaFecha($fecha, $embarcacion->id);
                     $respuestas['pasajeros'][$embarcacion->id][$paseo->id]['reservados'] = $pasajerosReservadosDeLaFechayEmbarcacion;
-                    $respuestas['pasajeros'][$embarcacion->id][$paseo->id]['disponibles'] =(
+
+                    $respuestas['pasajeros'][$embarcacion->id][$paseo->id]['disponibles'] = (
                         $respuestas['embarcaciones'][$embarcacion->id]['abordajeMaximo'] -
-                        $pasajerosReservadosDeLaFechayEmbarcacion)<0?0:(
+                        $pasajerosReservadosDeLaFechayEmbarcacion) < 0 ? 0 : (
                         $respuestas['embarcaciones'][$embarcacion->id]['abordajeMaximo'] -
                         $pasajerosReservadosDeLaFechayEmbarcacion);
+                    //dd($respuestas);
                 }
+
             }
+
         }
 
         return $respuestas;
@@ -299,12 +303,11 @@ class VariablesController extends Controller {
      */
     public function definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion)
     {
-        if ($autorizacion->check() && $autorizacion->user()
-            ->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
+        if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
         {
             return $embarcacion->paseos()->get();
         }
-
+        //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get();
 
     }

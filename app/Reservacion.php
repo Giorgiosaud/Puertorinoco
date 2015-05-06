@@ -97,7 +97,7 @@ class Reservacion extends Model {
      * @var array
      */
     protected $dates = [
-        'fecha','deleted_at'
+        'fecha', 'deleted_at'
     ];
 
     /**
@@ -165,8 +165,10 @@ class Reservacion extends Model {
      */
     public function scopePasajerosReservadosDeLaFecha($query, $fecha)
     {
-        return $query->whereFecha($fecha)->sum('adultos') + $query->whereFecha($fecha)->sum('mayores') + $query->whereFecha
-        ($fecha)->sum('ninos');
+        $cantidad = $query->whereFecha($fecha)->sum('adultos') + $query->whereFecha($fecha)->sum('mayores') +
+            $query->whereFecha($fecha)->sum('ninos');
+
+        return $cantidad;
     }
 
     /**
@@ -199,7 +201,7 @@ class Reservacion extends Model {
      */
     public function scopeObtenerVecesQueSeRepite($query, $fecha, $clienteId, $embarcacionId, $paseoId)
     {
-        $search= [
+        $search = [
             'fecha'          => $fecha,
             'cliente_id'     => $clienteId,
             'embarcacion_id' => $embarcacionId,
@@ -231,9 +233,10 @@ class Reservacion extends Model {
             return 0;
         }
     }
+
     public function getmontoPagadoAttribute()
     {
-        $tmpmonto = $this->attributes['montoTotal']-$this->deuda;
+        $tmpmonto = $this->attributes['montoTotal'] - $this->deuda;
 
         if ($tmpmonto > 0)
         {

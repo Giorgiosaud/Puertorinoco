@@ -57,7 +57,7 @@
 	{!!
 			ControlGroup::generate(
 			Form::label('montoCredito', 'Credito: '),
-			Form::text('montoCredito',null,['disabled'=>'disabled']),
+			Form::text('montoCredito'),
 			null,
 			4,
 			8
