@@ -37,14 +37,14 @@ elixir(function (mix) {
             'select2/select2.js',
             'select2/i18n/es.js',
             'main.js',
-        ])
+        ],null,'resources/js')
         .styles([
             'less.css',
             'select2/select2.css',
             'sass.css',
 
 
-        ])
+        ],null,'resources/css')
         .version(['css/all.css', 'js/all.js'])
         .copy('vendor/bower_components/bootstrap-sass-official/assets/fonts', 'public/assets/fonts')
         .copy('vendor/bower_components/fontawesome/fonts', 'public/assets/fonts/fontawesome')

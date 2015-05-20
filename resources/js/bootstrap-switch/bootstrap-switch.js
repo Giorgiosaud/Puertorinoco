@@ -687,3 +687,5 @@
   })(window.jQuery, window);
 
 }).call(this);
+
+//# sourceMappingURL=bootstrap-switch.js.map
