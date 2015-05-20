@@ -149,7 +149,7 @@ $(document).ready(function () {
             }
         });
         $('#validarId').on('click', function () {
-            $('[name="identificacion"').val($('[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
+            $('input[name="identificacion"').val($('input[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
             $('#validarId').children('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-refresh glyphicon-refresh-animate');
             $('#advertencias').modal('show');
             $.get("../ObtenerDatosClientes/" + $('[name="identificacion"').val(), function (datosCliente) {
