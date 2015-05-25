@@ -9506,14 +9506,8 @@ body {
   width: 230px; }
 
 .glyphicon-refresh-animate {
-  -animation: spin 0.7s infinite linear;
-  -webkit-animation: spin2 0.7s infinite linear; }
-
-@-webkit-keyframes spin2 {
-  from {
-    -webkit-transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(360deg); } }
+  -webkit-animation: spin 0.7s infinite linear;
+          animation: spin 0.7s infinite linear; }
 
 @-webkit-keyframes spin {
   from {
