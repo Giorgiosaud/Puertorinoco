@@ -19199,9 +19199,7 @@ $(document).ready(function () {
             console.log(e.relatedTarget);
         });
         if ($('input[name="errores"]').length == 1) {
-
-
-            $('#ayudaIdentificacion, #ayudaEmbarcacion, #ayudaPaseo, #ayudaFecha, #tipoEmbarcacion, #fechaform, #horaform, #cedulaForm, #nombresForm, #apellidosForm, #emailForm, #telefonoForm, #datosdePrecios, #datosdeCupos, #SaldosyMontos, #groupcondiciones,#botonEnviarForm').slideDown('fast');
+            $("#ayudaIdentificacion, #ayudaEmbarcacion, #ayudaPaseo, #ayudaFecha, #tipoEmbarcacion, #fechaform, #horaform, #cedulaForm, #nombresForm, #apellidosForm, #emailForm, #telefonoForm, #datosdePrecios, #datosdeCupos, #SaldosyMontos, #groupcondiciones,#botonEnviarForm").slideDown('fast');
             $('.loading,.alert.alert-success').slideUp('slow');
             $("input[name='embarcacion_id']:checked").parent().addClass('active');
             $("input[name='paseo_id']").parent().removeClass('disabled hidden');
@@ -19248,7 +19246,6 @@ $(document).ready(function () {
 
 
         }
-
         $.get("../ObtenerVariables", function (datos) {
             window.diasNoLaborables = datos.diasNoLaborables;
             window.minimoDiasAReservar = datos.minReservar;
@@ -19271,7 +19268,7 @@ $(document).ready(function () {
                 altField: "#fecha",
                 todayBtn:true,
                 todayHighlight:true,
-                altFormat: "yy-mm-dd",
+                altFormat: "yy-mm-dd"
 
             }).on('changeDate', function (e) {
                 $('#tipoEmbarcacion').slideUp('slow');
@@ -19411,7 +19408,7 @@ $(document).ready(function () {
             altField: "#fecha",
             altFormat: "yy-mm-dd",
             todayBtn:true,
-            todayHighlight:true,
+            todayHighlight:true
         }).on('changeDate', function (e) {
             $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
 
