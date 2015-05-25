@@ -149,10 +149,10 @@ $(document).ready(function () {
             }
         });
         $('#validarId').on('click', function () {
-            $('input[name="identificacion"').val($('input[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
+            $('input[name="identificacion"]').val($('input[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
             $('#validarId').children('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-refresh glyphicon-refresh-animate');
             $('#advertencias').modal('show');
-            $.get("../ObtenerDatosClientes/" + $('[name="identificacion"').val(), function (datosCliente) {
+            $.get("../ObtenerDatosClientes/" + $('[name="identificacion"]').val(), function (datosCliente) {
 
                 window.datosCliente = datosCliente;
                 $('#nombre').val(datosCliente.nombre);
