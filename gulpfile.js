@@ -24,6 +24,7 @@ elixir(function (mix) {
         .copy('vendor/bower_components/bootstrap-switch/src/less/bootstrap3', 'resources/assets/less/bootstrap-switch')
 
         .copy('vendor/bower_components/bootstrap-switch/src/coffee', 'resources/assets/coffee/bootstrap-switch')
+        .copy('vendor/bower_components/vue/dist/vue.js', 'resources/js/vue')
 
         .sass('sass.scss', 'resources/css')
         .less('less.less', 'resources/css')
@@ -36,6 +37,7 @@ elixir(function (mix) {
             'bootstrap-switch/bootstrap-switch.js',
             'select2/select2.js',
             'select2/i18n/es.js',
+            'vue/vue.js',
             'main.js',
         ],null,'resources/js')
         .styles([

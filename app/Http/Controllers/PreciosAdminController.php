@@ -44,7 +44,7 @@ class PreciosAdminController extends Controller {
 	 */
 	public function create()
 	{
-        $tiposDePaseos = TipoDePaseo::lists('nombre', 'id');
+        $tiposDePaseos = TipoDePaseo::lists('nombre', 'id')->all();
         return view('precios.admin.create',compact('tiposDePaseos'));
 	}
 

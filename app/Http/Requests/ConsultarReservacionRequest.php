@@ -21,7 +21,7 @@ class ConsultarReservacionRequest extends Request {
     {
         return [
             'numero_de_reserva' => 'exists:reservaciones,id',
-            'fecha'             => 'date|required_without:numero_de_reserva',
+            'fecha'             => 'date|required_without_all:numero_de_reserva,nombreoapellido',
             'horas'             => 'array',
             'embarcaciones'     => 'array',
         ];

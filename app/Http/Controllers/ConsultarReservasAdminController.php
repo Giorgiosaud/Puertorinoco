@@ -13,9 +13,11 @@ use App\Paseo;
 use App\Reservacion;
 use App\TipoDePago;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
-class ConsultarReservasAdminController extends Controller {
+class ConsultarReservasAdminController extends Controller
+{
 
     /**
      * @var Guard
@@ -36,18 +38,18 @@ class ConsultarReservasAdminController extends Controller {
      */
     public function mostrarFormulario()
     {
-        $paseos = Paseo::lists('horaDeSalida', 'id');
+        $paseos = Paseo::lists('horaDeSalida', 'id')->all();
 
-        $embarcaciones = Embarcacion::lists('nombre', 'id');
+        $embarcaciones = Embarcacion::lists('nombre', 'id')->all();
 
         return view('reservacion.admin.consulta', compact('paseos', 'embarcaciones'));
     }
 
     public function mostrarFormularioAbordaje()
     {
-        $paseos = Paseo::lists('horaDeSalida', 'id');
+        $paseos = Paseo::lists('horaDeSalida', 'id')->all();
 
-        $embarcaciones = Embarcacion::lists('nombre', 'id');
+        $embarcaciones = Embarcacion::lists('nombre', 'id')->all();
 
         return view('reservacion.admin.abordaje', compact('paseos', 'embarcaciones'));
     }
@@ -64,45 +66,90 @@ class ConsultarReservasAdminController extends Controller {
      */
     public function consultarReservas(ConsultarReservacionRequest $request)
     {
-        if ($request->input('numero_de_reserva') != '')
-        {
+        if ($request->input('numero_de_reserva') != '') {
             $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->where
             ('id', $request->input('numero_de_reserva'))->get();
 
 
             return view('reservacion.admin.show', compact('reservaciones'));
         }
+        if ($request->input('nombreoapellido') != '') {
+            $reservaciones = Cliente::where('nombre', 'LIKE', $request->input('nombreoapellido'))->reservas()->with([
+                'cliente',
+                'embarcacion',
+                'paseo',
+                'estadoDePago'
+            ])->get();
+
+            return $reservaciones;
+        }
         $horas = $request->input('horas');
         $embarcaciones = $request->input('embarcaciones');
-        if ($request->input('horas') == [])
-        {
-            $horas = Paseo::lists('id');
+        if ($request->input('horas') == []) {
+            $horas = Paseo::lists('id')->all();
         }
-        if ($request->input('embarcacion_id') == [])
-        {
-            $embarcaciones = Embarcacion::lists('id');
+        if ($request->input('embarcacion_id') == []) {
+            $embarcaciones = Embarcacion::lists('id')->all();
         }
         $reservaciones = $this->consultarReservaciones($request, $embarcaciones, $horas);
 
         return view('reservacion.admin.show', compact('reservaciones'));
     }
 
+    public function consultarReservas2(ConsultarReservacionRequest $request)
+    {
+        if ($request->input('numero_de_reserva') != '') {
+            $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->where
+            ('id', $request->input('numero_de_reserva'))->get();
+
+
+            return view('reservacion.admin.show2', compact('reservaciones'));
+        }
+        if ($request->input('nombreoapellido') != '') {
+            $clientes = Cliente::where('nombre', 'LIKE', $request->input('nombreoapellido'))->with('reservas')->get();
+            $reservaciones = new Collection();
+            foreach ($clientes as $cliente) {
+                if ( ! $cliente->reservas->isEmpty()) {
+                    foreach ($cliente->reservas as $reserva) {
+                        $reservaciones->push($reserva);
+                    }
+                }
+            }
+//            $reservaciones=$reservaciones->groupBy('embarcacion.nombre');
+//            dd($reservaciones);
+            return view('reservacion.admin.show2', compact('reservaciones'));
+        }
+
+        $horas = $request->input('horas');
+        $embarcaciones = $request->input('embarcaciones');
+        if ($request->input('horas') == []) {
+            $horas = Paseo::lists('id')->all();
+        }
+        if ($request->input('embarcacion_id') == []) {
+            $embarcaciones = Embarcacion::lists('id')->all();
+        }
+        $reservaciones = $this->consultarReservaciones($request, $embarcaciones, $horas);
+
+        return view('reservacion.admin.show2', compact('reservaciones'));
+    }
+
     public function editarReserva($id)
     {
         $reserva = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->find($id);
-        $embarcaciones = Embarcacion::lists('nombre', 'id');
-        $paseos = Paseo::lists('horaDeSalida', 'id');
-        $tiposDePagos = TipoDePago::where('nombre', '!=', 'Mercadopago')->lists('nombre', 'id');
-        $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha, $reserva->embarcacion_id, $reserva->paseo_id);
+        $embarcaciones = Embarcacion::lists('nombre', 'id')->all();
+        $paseos = Paseo::lists('horaDeSalida', 'id')->all();
+        $tiposDePagos = TipoDePago::where('nombre', '!=', 'Mercadopago')->lists('nombre', 'id')->all();
+        $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha,
+            $reserva->embarcacion_id, $reserva->paseo_id);
         $maximoCupos = $reserva->embarcacion->abordajeNormal;
-        if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra)
-        {
+        if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoCupos = $reserva->embarcacion->abordajeMaximo;
         }
         $cuposDisponibles = $maximoCupos - $pasajerosEnReserva + $reserva->adultos + $reserva->mayores +
             $reserva->ninos;
 
-        return view('reservacion.admin.edit', compact('reserva', 'embarcaciones', 'paseos', 'cuposDisponibles', 'tiposDePagos'));
+        return view('reservacion.admin.edit',
+            compact('reserva', 'embarcaciones', 'paseos', 'cuposDisponibles', 'tiposDePagos'));
 
     }
 
@@ -183,7 +230,7 @@ class ConsultarReservasAdminController extends Controller {
 
     public function borrarReserva($id)
     {
-        $reservacion=Reservacion::findOrFail($id);
+        $reservacion = Reservacion::findOrFail($id);
         $reservacion->delete();
 
     }

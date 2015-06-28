@@ -55,6 +55,8 @@ Route::group(['prefix' => '/PanelAdministrativo'], function ()
 
     Route::get('reservas/consultar', ['uses'=>'ConsultarReservasAdminController@consultarReservas',
                           'as'=>'consultarReservas']);
+    Route::get('reservas/consultar2', ['uses'=>'ConsultarReservasAdminController@consultarReservas2',
+                                      'as'=>'consultarReservas']);
     Route::get('reservas/{idreserva}/editar', ['uses'=>'ConsultarReservasAdminController@editarReserva',
                              'as'=>'editarReservas']);
     Route::delete('reservas/{idreserva}/borrar', ['uses'=>'ConsultarReservasAdminController@borrarReserva',

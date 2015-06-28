@@ -14,7 +14,7 @@ class AddSoftDeletesToReservationsTable extends Migration {
 	{
 		Schema::table('reservaciones', function(Blueprint $table)
 		{
-            $table->softDeletes();
+            $tabmale->softDeletes();
 		});
 	}
 

@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use App\Traits\ProcesarReservacion;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Vari;
@@ -88,6 +89,7 @@ class Reservacion extends Model {
     /**
      * @var array
      */
+    protected $with = ['cliente', 'embarcacion', 'paseo', 'estadoDePago'];
     protected $relations = [
         'cliente',
         'paseo',
@@ -258,7 +260,7 @@ class Reservacion extends Model {
     /**
      * @return mixed
      */
-    public function getTotalPasajerosEnReserva()
+    public function getTotalPasajerosEnReservaAttribute()
     {
         return $this->attributes['adultos'] + $this->attributes['mayores'] + $this->attributes['ninos'];
     }
@@ -372,6 +374,13 @@ class Reservacion extends Model {
         ];
 
         return $preference_data;
+    }
+
+    public function newQuery($excludeDeleted = true)
+    {
+        $builder = new Builder($this->newBaseQueryBuilder());
+        $builder->setModel($this)->with($this->with);
+        return $builder;
     }
 
 
