@@ -64,7 +64,7 @@ class ConsultarReservasAdminController extends Controller
      * @param ConsultarReservacionRequest $request
      * @return string
      */
-    public function consultarReservas(ConsultarReservacionRequest $request)
+    public function consultarReservas2(ConsultarReservacionRequest $request)
     {
         if ($request->input('numero_de_reserva') != '') {
             $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->where
@@ -96,7 +96,7 @@ class ConsultarReservasAdminController extends Controller
         return view('reservacion.admin.show', compact('reservaciones'));
     }
 
-    public function consultarReservas2(ConsultarReservacionRequest $request)
+    public function consultarReservas(ConsultarReservacionRequest $request)
     {
         if ($request->input('numero_de_reserva') != '') {
             $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->where
