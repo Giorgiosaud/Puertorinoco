@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/assets/flash.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Reservacion.php" afterPath="$PROJECT_DIR$/app/Reservacion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/mainInterno.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/mainInterno.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="ConsultarReservasAdminController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="200" max-vertical-offset="1656">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.501355" vertical-offset="2551" max-vertical-offset="5336">
+              <caret line="142" column="152" selection-start-line="142" selection-start-column="152" selection-end-line="142" selection-end-column="152" />
               <folding />
             </state>
           </provider>
@@ -97,10 +92,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/SoftDeletes.php" />
         <option value="$PROJECT_DIR$/app/Reservacion.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/assets/flash.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/mainInterno.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
       </list>
     </option>
   </component>
@@ -6510,59 +6505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62601626" vertical-offset="4667" max-vertical-offset="5405">
-          <caret line="237" column="40" selection-start-line="237" selection-start-column="40" selection-end-line="237" selection-end-column="40" />
-          <folding>
-            <marker date="1435852113000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder=" @var Guard ..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder=" Muestra Formulario para consulta de Reservas ..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder=" @param ConsultarReservacionRequest $request ..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder=" @param ConsultarReservacionRequest $request ..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435852113000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/assets/flash.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18699187" vertical-offset="0" max-vertical-offset="738">
@@ -6592,6 +6534,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="200" max-vertical-offset="1656">
           <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;laravel/laravel&quot;...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{&quot;laravel/framework&quot;: &quot;5.1.*&quot;...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{&quot;barryvdh/laravel-debugbar&quot;: &quot;~2.0&quot;...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{&quot;App\\&quot;: &quot;app/&quot;...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1435852206000" expanded="true" signature="-1:-1" placeholder="{&quot;preferred-install&quot;: &quot;dist&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.501355" vertical-offset="2551" max-vertical-offset="5336">
+          <caret line="142" column="152" selection-start-line="142" selection-start-column="152" selection-end-line="142" selection-end-column="152" />
           <folding />
         </state>
       </provider>

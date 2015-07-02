@@ -15,6 +15,7 @@ use App\TipoDePago;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 
 class ConsultarReservasAdminController extends Controller
 {
@@ -234,10 +235,7 @@ class ConsultarReservasAdminController extends Controller
     {
         $reservacion = Reservacion::destroy($id);
         $reservacion = Reservacion::find($id);
-//        dd($reservacion);
-        Flash::message('Reserva Numero! '.$id.' Borrada');
-//        $reservacion->delete();
+        Flash::error('Reserva Numero! '.$id.' Borrada');
         return redirect()->route('formularioDeConsultaDeReserva');
-//            'listo Borrada la reserva'.$id;
     }
 }
