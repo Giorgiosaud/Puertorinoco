@@ -6,61 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Vari;
 
-/**
- * Class Reservacion
- *
- * @package App
- * @property integer $id
- * @property \Carbon\Carbon $fecha
- * @property integer $cliente_id
- * @property integer $embarcacion_id
- * @property integer $paseo_id
- * @property integer $estado_del_pago_id
- * @property integer $adultos
- * @property integer $mayores
- * @property integer $ninos
- * @property float $montoTotal
- * @property boolean $confirmado
- * @property string $hechoPor
- * @property string $modificadoPor
- * @property string $notas
- * @property string $deleted_at
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @property-read \App\Cliente $cliente
- * @property-read \App\Embarcacion $embarcacion
- * @property-read \App\Paseo $paseo
- * @property-read \App\EstadoDelPago $estadoDePago
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pasajero[] $pasajeros
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Pago[] $pagos
- * @property-read mixed $monto_total_a_pagar
- * @property-read mixed $monto_sin_iva
- * @property-read mixed $monto_i_v_a
- * @property-read mixed $monto_servicio
- * @property-read mixed $monto_con_servicio
- * @property-read mixed $preference_data
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereFecha($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereClienteId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereEmbarcacionId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion wherePaseoId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereEstadoDelPagoId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereAdultos($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereMayores($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereNinos($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereMontoTotal($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereConfirmado($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereHechoPor($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereModificadoPor($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereNotas($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereDeletedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Reservacion whereUpdatedAt($value)
- * @method static \App\Reservacion reservasDeLaFecha($fecha)
- * @method static \App\Reservacion pasajerosReservadosDeLaFecha($fecha)
- * @method static \App\Reservacion pasajerosReservadosDeLaFechaEmbarcacionyPaseo($fecha, $embarcacion_id, $paseo_id)
- * @method static \App\Reservacion obtenerVecesQueSeRepite($fecha, $clienteId, $embarcacionId, $paseoId)
- */
 class Reservacion extends Model {
 
     use ProcesarReservacion;
@@ -98,6 +43,7 @@ class Reservacion extends Model {
     /**
      * @var array
      */
+    protected $softDelete = true;
     protected $dates = [
         'fecha', 'deleted_at'
     ];

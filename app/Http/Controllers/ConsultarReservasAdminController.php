@@ -162,6 +162,7 @@ class ConsultarReservasAdminController extends Controller
      */
     public function consultarReservaciones(ConsultarReservacionRequest $request, $embarcaciones, $horas)
     {
+//        dd($request);
         $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])
             ->whereIn('embarcacion_id', $embarcaciones)
             ->whereIn('paseo_id', $horas)
