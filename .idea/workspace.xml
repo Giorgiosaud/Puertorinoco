@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Reservacion.php" afterPath="$PROJECT_DIR$/app/Reservacion.php" />
     </list>
     <ignored path="Puertorinoco.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +27,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2015_04_22_125441_add_soft_deletes_to_reservations_table.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php">
+      <file leaf-file-name="Reservacion.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2872629" vertical-offset="133" max-vertical-offset="897">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-              <folding />
+            <state vertical-scroll-proportion="0.34281844" vertical-offset="0" max-vertical-offset="7544">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#22#57#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +47,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/lang/en/pago.php" />
         <option value="$PROJECT_DIR$/resources/lang/pt-BR/pago.php" />
         <option value="$PROJECT_DIR$/resources/views/fechasEspeciales/admin/all.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/fechasEspeciales/admin/edit.blade.php" />
@@ -94,8 +95,9 @@
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
-        <option value="$PROJECT_DIR$/app/Reservacion.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/SoftDeletes.php" />
+        <option value="$PROJECT_DIR$/app/Reservacion.php" />
       </list>
     </option>
   </component>
@@ -208,25 +210,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -867,43 +851,6 @@
             <marker date="1430958583000" expanded="true" signature="-1:-1" placeholder="{...}" />
             <marker date="1430958583000" expanded="true" signature="-1:-1" placeholder="{...}" />
             <marker date="1430958583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/SoftDeletes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.97289973" vertical-offset="317" max-vertical-offset="4025">
-          <caret line="45" column="46" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="46" />
-          <folding>
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Indicates if the model is currently force deleting. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Boot the soft deleting trait for a model. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Force a hard delete on a soft deleted model. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Perform the actual delete query on this model instance. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Perform the actual delete query on this model instance. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Restore a soft-deleted model instance. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the model instance has been soft-deleted. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get a new query builder that includes soft deletes. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get a new query builder that only includes soft deletes. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Register a restoring model event with the dispatcher. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Register a restored model event with the dispatcher. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the name of the &quot;deleted at&quot; column. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the fully qualified &quot;deleted at&quot; column. ..." />
-            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -6327,87 +6274,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6544715" vertical-offset="437" max-vertical-offset="7452">
-          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-          <folding>
-            <marker date="1435849583000" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @var string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\HasMany ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\HasMany ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return Reservacion $this ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder=" @return array ..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1435849583000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3401084" vertical-offset="251" max-vertical-offset="989">
@@ -6478,9 +6344,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_04_22_125441_add_soft_deletes_to_reservations_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2872629" vertical-offset="133" max-vertical-offset="897">
+        <state vertical-scroll-proportion="0.46747968" vertical-offset="0" max-vertical-offset="897">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1435849691000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435849691000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/SoftDeletes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.124661244" vertical-offset="0" max-vertical-offset="4025">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Indicates if the model is currently force deleting. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Boot the soft deleting trait for a model. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Force a hard delete on a soft deleted model. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Perform the actual delete query on this model instance. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Perform the actual delete query on this model instance. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Restore a soft-deleted model instance. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Determine if the model instance has been soft-deleted. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Get a new query builder that includes soft deletes. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Get a new query builder that only includes soft deletes. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Register a restoring model event with the dispatcher. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Register a restored model event with the dispatcher. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Get the name of the &quot;deleted at&quot; column. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder=" Get the fully qualified &quot;deleted at&quot; column. ..." />
+            <marker date="1435804102000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34281844" vertical-offset="0" max-vertical-offset="7544">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#22#57#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

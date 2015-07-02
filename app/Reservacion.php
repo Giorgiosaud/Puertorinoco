@@ -9,7 +9,7 @@ use Vari;
 class Reservacion extends Model
 {
 
-    use ProcesarReservacion, SoftDeletes;
+    use ProcesarReservacion;
 
     /**
      * @var string
