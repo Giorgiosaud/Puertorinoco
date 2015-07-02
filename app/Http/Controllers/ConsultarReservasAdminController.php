@@ -164,8 +164,8 @@ class ConsultarReservasAdminController extends Controller
     {
 //        dd($request);
         $reservaciones = Reservacion::where('fecha', $request->input('fecha'))
-            ->orderBy('embarcacion_id')->orderBy('paseo_id')
-            ->orderBy('estado_del_pago_id', 'Desc')
+//            ->orderBy('embarcacion_id')->orderBy('paseo_id')
+//            ->orderBy('estado_del_pago_id', 'Desc')
             ->withTrashed()
             ->get();
         dd($reservaciones);
