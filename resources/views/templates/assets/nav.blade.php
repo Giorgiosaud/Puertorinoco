@@ -10,6 +10,10 @@ Navbar::top()
 				'link' => URL::route('inicio.index'),
 				'title' => 'Inicio'
 			],
+			[
+				'link' => URL::route('loginPanel'),
+				'title' => 'Panel Administrativo'
+			],
 		]
 	)
 )
