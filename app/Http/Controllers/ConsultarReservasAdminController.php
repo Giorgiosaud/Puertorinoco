@@ -183,11 +183,9 @@ class ConsultarReservasAdminController extends Controller
         //return view('reservacion.admin.partials.recibido.pago', compact('pago'));
     }
 
-    public function borrarPago($r)
+    public function borrarPago(Request $r)
     {
-        dd($r);
         $pago = Pago::find($r->input('id'));
-
         $id = $pago->reserva->id;
         $pago->delete();
         $reserva = Reservacion::find($id)->touch();
@@ -232,6 +230,7 @@ class ConsultarReservasAdminController extends Controller
 
     public function borrarReserva($id)
     {
+        dd($id);
         $reservacion = Reservacion::findOrFail($id);
         $reservacion->delete();
 
