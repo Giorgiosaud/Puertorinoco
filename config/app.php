@@ -140,7 +140,7 @@ return [
         /*
          * Application Service Providers...
          */
-				'Illuminate\Broadcasting\BroadcastServiceProvider'
+				'Illuminate\Broadcasting\BroadcastServiceProvider',
         'App\Providers\AppServiceProvider',
         'App\Providers\BusServiceProvider',
         'App\Providers\ConfigServiceProvider',
