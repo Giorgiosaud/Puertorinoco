@@ -30,8 +30,8 @@
       <file leaf-file-name="ConsultarReservasAdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39803094" vertical-offset="3696" max-vertical-offset="5313">
-              <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.9376694" vertical-offset="3241" max-vertical-offset="5313">
+              <caret line="185" column="32" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -384,14 +384,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Pago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2577031" vertical-offset="0" max-vertical-offset="1150">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/PagoDirecto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="406" max-vertical-offset="1495">
@@ -795,10 +787,174 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18699187" vertical-offset="0" max-vertical-offset="19297">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <marker date="1433859239000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" The decoded JSON content for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" The user resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" The route resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Create a new Illuminate HTTP request from server variables. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Return the Request instance. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the request method. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the root URL for the application. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the URL (no query string) for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the full URL for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the current path info for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the current encoded path info for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get a segment from the URI (1 based index). ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get all of the segments for the request path. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the current request URI matches a pattern. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request is the result of an AJAX call. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request is the result of an PJAX call. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request is over HTTPS. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Returns the client IP address. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Returns the client IP addresses. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request contains a given input item key. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request contains a non-empty value for an input item. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the given input key is an empty string for &quot;has&quot;. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get all of the input and files for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve an input item from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get a subset of the items from the input data. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get all of the input except for a specified array of items. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a query string item from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if a cookie is set on the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a cookie from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a file from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the uploaded data contains a file. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Check that the given file is a valid file instance. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a header from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a server variable from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve an old input item. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Flash the input for the current request to the session. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Flash only some of the input to the session. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Flash only some of the input to the session. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Flush all of the old input from the session. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Retrieve a parameter item from a given source. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Merge new input into the current request's input array. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Replace the input for the current request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the JSON payload for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the input source for the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the request is sending JSON. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the current request is asking for JSON in return. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determines whether the current requests accepts a given content type. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determines whether a request accepts JSON. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determines whether a request accepts HTML. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the data format expected in the response. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Create an Illuminate request from a Symfony instance. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" {@inheritdoc} ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the session associated with the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the user making the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the route handling the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the user resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Set the user resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the route resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Set the route resolver callback. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Determine if the given offset exists. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get the value at the given offset. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Set the value at the given offset. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Remove the value at the given offset. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder=" Get an input element from the request. ..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1433859239000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39803094" vertical-offset="3696" max-vertical-offset="5313">
-          <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.9376694" vertical-offset="3241" max-vertical-offset="5313">
+          <caret line="185" column="32" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
           <folding />
         </state>
       </provider>

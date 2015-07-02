@@ -183,7 +183,7 @@ class ConsultarReservasAdminController extends Controller
         //return view('reservacion.admin.partials.recibido.pago', compact('pago'));
     }
 
-    public function borrarPago(Request $r)
+    public function borrarPago(\Request $r)
     {
         dd($r);
         $pago = Pago::find($r->input('id'));
