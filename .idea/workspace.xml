@@ -30,8 +30,8 @@
       <file leaf-file-name="ConsultarReservasAdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43037975" vertical-offset="3696" max-vertical-offset="5290">
-              <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.39803094" vertical-offset="3696" max-vertical-offset="5313">
+              <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -797,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43037975" vertical-offset="3696" max-vertical-offset="5290">
-          <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.39803094" vertical-offset="3696" max-vertical-offset="5313">
+          <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
           <folding />
         </state>
       </provider>
