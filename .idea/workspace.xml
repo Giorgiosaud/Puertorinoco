@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed47c820-4641-4029-967e-db211ba44e79" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Reservacion.php" afterPath="$PROJECT_DIR$/app/Reservacion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Puertorinoco.iws" />
@@ -30,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Reservacion.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Reservacion.php">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46747968" vertical-offset="598" max-vertical-offset="7705">
-              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.090314135" vertical-offset="0" max-vertical-offset="764">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -48,7 +46,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/reservacion/pagoAceptado.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/reservacion/sinConeccion.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/es/pago.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/pago.php" />
@@ -99,6 +96,7 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php" />
         <option value="$PROJECT_DIR$/app/Reservacion.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -198,52 +196,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Puertorinoco" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,21 +353,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Precio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2577031" vertical-offset="0" max-vertical-offset="1219">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TipoDePago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42016807" vertical-offset="68" max-vertical-offset="782">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/TipoDePaseo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48459384" vertical-offset="229" max-vertical-offset="943">
@@ -6062,6 +5999,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46747968" vertical-offset="598" max-vertical-offset="7705">
           <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <marker date="1435847588000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @var string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @var array ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\BelongsTo ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\HasMany ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Database\Eloquent\Relations\HasMany ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return Reservacion $this ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return int|string ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder=" @return array ..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435847588000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="109227">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.090314135" vertical-offset="0" max-vertical-offset="764">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="13" />
           <folding />
         </state>
       </provider>
