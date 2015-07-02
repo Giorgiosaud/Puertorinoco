@@ -31,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.58265585" vertical-offset="2629" max-vertical-offset="5336">
-              <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+              <caret line="147" column="30" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -6427,7 +6427,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ConsultarReservasAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58265585" vertical-offset="2629" max-vertical-offset="5336">
-          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+          <caret line="147" column="30" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
           <folding />
         </state>
       </provider>

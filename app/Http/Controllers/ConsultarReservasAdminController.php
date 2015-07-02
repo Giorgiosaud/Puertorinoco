@@ -145,7 +145,7 @@ class ConsultarReservasAdminController extends Controller
         if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoCupos = $reserva->embarcacion->abordajeMaximo;
         }
-        dd($maximoCupos);
+        dd($pasajerosEnReserva);
         $cuposDisponibles = $maximoCupos - $pasajerosEnReserva + $reserva->adultos + $reserva->mayores + $reserva->ninos;
 
         return view('reservacion.admin.edit',
