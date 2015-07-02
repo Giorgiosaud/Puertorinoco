@@ -167,6 +167,7 @@ class ConsultarReservasAdminController extends Controller
             ->orderBy('embarcacion_id')->orderBy('paseo_id')
             ->orderBy('estado_del_pago_id', 'Desc')
             ->get();
+        dd($reservaciones);
 //        whereIn('embarcacion_id', $embarcaciones)
 //            ->whereIn('paseo_id', $horas)
 
