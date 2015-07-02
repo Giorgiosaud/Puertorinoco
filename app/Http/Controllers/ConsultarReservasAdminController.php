@@ -163,15 +163,12 @@ class ConsultarReservasAdminController extends Controller
     public function consultarReservaciones(ConsultarReservacionRequest $request, $embarcaciones, $horas)
     {
 //        dd($request);
-        $reservaciones = Reservacion::where('fecha', $request->input('fecha'))
-//            ->orderBy('embarcacion_id')->orderBy('paseo_id')
-//            ->orderBy('estado_del_pago_id', 'Desc')
-            ->withTrashed()
+        $reservaciones = Reservacion::whereIn('embarcacion_id', $embarcaciones)
+            ->whereIn('paseo_id', $horas)
+            ->where('fecha', $request->input('fecha'))
+            ->orderBy('embarcacion_id')->orderBy('paseo_id')
+            ->orderBy('estado_del_pago_id', 'Desc')
             ->get();
-        dd($reservaciones);
-//        whereIn('embarcacion_id', $embarcaciones)
-//            ->whereIn('paseo_id', $horas)
-
 
         return $reservaciones;
     }
@@ -233,10 +230,10 @@ class ConsultarReservasAdminController extends Controller
 
     public function borrarReserva($id)
     {
-        $reservacion = Reservacion::findOrFail($id);
+        $reservacion = Reservacion::destroy($id);
 //        dd($reservacion);
 
-        $reservacion->delete();
+//        $reservacion->delete();
         return 'listo Borrada la reserva'.$id;
     }
 }
