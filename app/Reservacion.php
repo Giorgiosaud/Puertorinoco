@@ -128,10 +128,18 @@ class Reservacion extends Model
      */
     public function scopePasajerosReservadosDeLaFechaEmbarcacionyPaseo($query, $fecha, $embarcacion_id, $paseo_id)
     {
+        $q=$query->whereFecha($fecha)
+                ->whereEmbarcacionId($embarcacion_id)
+                ->wherePaseoId($paseo_id)->get();
+        if ($q->count()<=1){
+           return $f=$q->first();
+//        dd($f->ninos+$f->mayores+$f->adultos);
+    };
         return $query->whereFecha($fecha)
             ->whereEmbarcacionId($embarcacion_id)
             ->wherePaseoId($paseo_id)
-            ->sum('adultos') + $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('mayores') + $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('ninos');
+            ->sum('adultos') +
+        $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('mayores') + $query->whereFecha($fecha)->whereEmbarcacionId($embarcacion_id)->wherePaseoId($paseo_id)->sum('ninos');
     }
 
     /**

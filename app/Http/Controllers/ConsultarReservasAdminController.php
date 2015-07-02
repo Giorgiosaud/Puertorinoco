@@ -139,13 +139,15 @@ class ConsultarReservasAdminController extends Controller
         $embarcaciones = Embarcacion::lists('nombre', 'id')->all();
         $paseos = Paseo::lists('horaDeSalida', 'id')->all();
         $tiposDePagos = TipoDePago::where('nombre', '!=', 'Mercadopago')->lists('nombre', 'id')->all();
-        $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha,
-            $reserva->embarcacion_id, $reserva->paseo_id)->get();
+        $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha, $reserva->embarcacion_id, $reserva->paseo_id);
+        if(is_object($pasajerosEnReserva)){
+            $pasajerosEnReserva=$pasajerosEnReserva->adultos+$pasajerosEnReserva->mayore+$pasajerosEnReserva->ninos;
+        }
         $maximoCupos = $reserva->embarcacion->abordajeNormal;
         if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoCupos = $reserva->embarcacion->abordajeMaximo;
         }
-        dd($pasajerosEnReserva);
+//        dd($pasajerosEnReserva);
         $cuposDisponibles = $maximoCupos - $pasajerosEnReserva + $reserva->adultos + $reserva->mayores + $reserva->ninos;
 
         return view('reservacion.admin.edit',
@@ -233,8 +235,9 @@ class ConsultarReservasAdminController extends Controller
         $reservacion = Reservacion::destroy($id);
         $reservacion = Reservacion::find($id);
 //        dd($reservacion);
-
+        Flash::message('Reserva Numero! '.$id.' Borrada');
 //        $reservacion->delete();
-        return 'listo Borrada la reserva'.$id;
+        return redirect()->route('formularioDeConsultaDeReserva');
+//            'listo Borrada la reserva'.$id;
     }
 }
