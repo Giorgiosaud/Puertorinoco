@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Vari;
 
-class Reservacion extends Model {
+class Reservacion extends Model
+{
 
-    use ProcesarReservacion;
-    use SoftDeletes;
+    use ProcesarReservacion, SoftDeletes;
 
     /**
      * @var string
@@ -43,9 +43,10 @@ class Reservacion extends Model {
     /**
      * @var array
      */
-//    protected $softDelete = true;
+    protected $softDelete = true;
     protected $dates = [
-        'fecha'
+        'fecha',
+        'deleted_at'
     ];
 
     /**
@@ -173,11 +174,9 @@ class Reservacion extends Model {
     public function getmontoTotalAPagarAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return 0;
         }
     }
@@ -186,11 +185,9 @@ class Reservacion extends Model {
     {
         $tmpmonto = $this->attributes['montoTotal'] - $this->deuda;
 
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return "0 Bs.";
         }
     }
@@ -217,13 +214,11 @@ class Reservacion extends Model {
     public function getmontoSinIvaAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             $tmpmonto = $tmpmonto / (1 + (Vari::get('iva') / 100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return 0;
         }
     }
@@ -234,13 +229,11 @@ class Reservacion extends Model {
     public function getmontoIVAAttribute()
     {
         $tmpmonto = $this->attributes['montoTotal'];
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             $tmpmonto = $tmpmonto - ($tmpmonto / (1 + (Vari::get('iva') / 100)));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return 0;
         }
     }
@@ -252,13 +245,11 @@ class Reservacion extends Model {
     public function getmontoServicioAttribute()
     {
         $tmpmonto = $this->deuda;
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             $tmpmonto = $tmpmonto * (Vari::get('servicio') / 100);
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return "0 Bs.";
         }
     }
@@ -269,13 +260,11 @@ class Reservacion extends Model {
     public function getmontoConServicioAttribute()
     {
         $tmpmonto = $this->deuda;
-        if ($tmpmonto > 0)
-        {
+        if ($tmpmonto > 0) {
             $tmpmonto = $tmpmonto * (1 + (Vari::get('servicio') / 100));
 
             return number_format($tmpmonto, 2, ',', '.') . " Bs.";
-        } else
-        {
+        } else {
             return "0 Bs.";
         }
     }
@@ -326,6 +315,7 @@ class Reservacion extends Model {
     {
         $builder = new Builder($this->newBaseQueryBuilder());
         $builder->setModel($this)->with($this->with);
+
         return $builder;
     }
 
