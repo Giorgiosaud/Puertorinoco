@@ -186,6 +186,7 @@ class ConsultarReservasAdminController extends Controller
     public function borrarPago(Request $r)
     {
         $pago = Pago::find($r->input('id'));
+        dd($pago);
         $id = $pago->reserva->id;
         $pago->delete();
         $reserva = Reservacion::find($id)->touch();
