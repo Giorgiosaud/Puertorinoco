@@ -140,7 +140,7 @@ class ConsultarReservasAdminController extends Controller
         $paseos = Paseo::lists('horaDeSalida', 'id')->all();
         $tiposDePagos = TipoDePago::where('nombre', '!=', 'Mercadopago')->lists('nombre', 'id')->all();
         $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha,
-            $reserva->embarcacion_id, $reserva->paseo_id);
+            $reserva->embarcacion_id, $reserva->paseo_id)->get();
         $maximoCupos = $reserva->embarcacion->abordajeNormal;
         if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoCupos = $reserva->embarcacion->abordajeMaximo;
