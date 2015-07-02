@@ -230,9 +230,9 @@ class ConsultarReservasAdminController extends Controller
 
     public function borrarReserva(Request $id)
     {
-        dd('hola');
-//        $reservacion = Reservacion::findOrFail($id);
-//        $reservacion->delete();
+        dd($id);
+        $reservacion = Reservacion::findOrFail($id);
+        $reservacion->delete();
 
     }
 }
