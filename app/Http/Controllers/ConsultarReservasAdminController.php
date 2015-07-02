@@ -145,8 +145,8 @@ class ConsultarReservasAdminController extends Controller
         if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoCupos = $reserva->embarcacion->abordajeMaximo;
         }
-        $cuposDisponibles = $maximoCupos - $pasajerosEnReserva + $reserva->adultos + $reserva->mayores +
-            $reserva->ninos;
+        dd($maximoCupos);
+        $cuposDisponibles = $maximoCupos - $pasajerosEnReserva + $reserva->adultos + $reserva->mayores + $reserva->ninos;
 
         return view('reservacion.admin.edit',
             compact('reserva', 'embarcaciones', 'paseos', 'cuposDisponibles', 'tiposDePagos'));
@@ -232,7 +232,7 @@ class ConsultarReservasAdminController extends Controller
     {
         $reservacion = Reservacion::destroy($id);
         $reservacion = Reservacion::find($id);
-        dd($reservacion);
+//        dd($reservacion);
 
 //        $reservacion->delete();
         return 'listo Borrada la reserva'.$id;
