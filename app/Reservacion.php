@@ -45,7 +45,7 @@ class Reservacion extends Model {
      */
     protected $softDelete = true;
     protected $dates = [
-        'fecha', 'deleted_at'
+        'fecha'
     ];
 
     /**
