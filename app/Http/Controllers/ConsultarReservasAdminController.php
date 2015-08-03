@@ -15,6 +15,7 @@ use App\TipoDePago;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use JavaScript;
 use Laracasts\Flash\Flash;
 
 class ConsultarReservasAdminController extends Controller
@@ -99,39 +100,56 @@ class ConsultarReservasAdminController extends Controller
 
     public function consultarReservas(ConsultarReservacionRequest $request)
     {
-        if ($request->input('numero_de_reserva') != '') {
-            $reservaciones = Reservacion::with(['cliente', 'embarcacion', 'paseo', 'estadoDePago'])->where
-            ('id', $request->input('numero_de_reserva'))->get();
 
-
-            return view('reservacion.admin.show2', compact('reservaciones'));
+        if ($request->ajax())
+        {
+            dd(reservaciones);
+            return $reservaciones;
         }
-        if ($request->input('nombreoapellido') != '') {
-            $clientes = Cliente::where('nombre', 'LIKE', $request->input('nombreoapellido'))->with('reservas')->get();
-            $reservaciones = new Collection();
-            foreach ($clientes as $cliente) {
-                if ( ! $cliente->reservas->isEmpty()) {
-                    foreach ($cliente->reservas as $reserva) {
-                        $reservaciones->push($reserva);
+
+
+            if ($this->laConsultatieneNumeroDeReservacion($request)) {
+                $reservaciones = Reservacion::where('id', $request->input('numero_de_reserva'))->get();
+                return view('reservacion.admin.show2', compact('reservaciones'));
+            }
+            if ($this->laConsultaRieneNombreOApellido($request)) {
+                $clientes = $this->obtenerClientesPorNombreOApellido($request);
+                $reservaciones = new Collection();
+                foreach ($clientes as $cliente) {
+                    if (!$cliente->reservas->isEmpty()) {
+                        foreach ($cliente->reservas as $reserva) {
+                            $reservaciones->push($reserva);
+                        }
                     }
                 }
+            } else {
+                $horas = $request->input('horas');
+                $embarcaciones = $request->input('embarcaciones');
+
+                if ($request->input('horas') == []) {
+                    $horas = Paseo::lists('id')->all();
+                }
+                if ($request->input('embarcacion_id') == []) {
+                    $embarcaciones = Embarcacion::lists('id')->all();
+                }
+                $reservaciones = $this->consultarReservaciones($request, $embarcaciones, $horas);
             }
-//            $reservaciones=$reservaciones->groupBy('embarcacion.nombre');
-//            dd($reservaciones);
-            return view('reservacion.admin.show2', compact('reservaciones'));
+        $reservacionesAgrupadasPorEmbarcacion=$reservaciones->groupBy('embarcacion_id');
+        $reservacionesPorEmbarcacionyHora=[];
+        foreach($reservacionesAgrupadasPorEmbarcacion as $rpe){
+            array_push($reservacionesPorEmbarcacionyHora,$rpe->groupby('paseo_id'));
         }
+        $embarcacionesFull=Embarcacion::all();
+        $horariosFull=Paseo::all();
+        JavaScript::put([
+            'reservaciones' => $reservaciones,
+            'reservacionesPorEmbarcacionyHora'=>$reservacionesPorEmbarcacionyHora,
+            'embarcaciones'=>   $embarcacionesFull,
+            'horarios'=>$horariosFull,
+            'editurl'=>route('editarReservas')
+        ]);
 
-        $horas = $request->input('horas');
-        $embarcaciones = $request->input('embarcaciones');
-        if ($request->input('horas') == []) {
-            $horas = Paseo::lists('id')->all();
-        }
-        if ($request->input('embarcacion_id') == []) {
-            $embarcaciones = Embarcacion::lists('id')->all();
-        }
-        $reservaciones = $this->consultarReservaciones($request, $embarcaciones, $horas);
-
-        return view('reservacion.admin.show2', compact('reservaciones'));
+        return view('reservacion.admin.show2',compact('requestType'));
     }
 
     public function editarReserva($id)
@@ -141,8 +159,8 @@ class ConsultarReservasAdminController extends Controller
         $paseos = Paseo::lists('horaDeSalida', 'id')->all();
         $tiposDePagos = TipoDePago::where('nombre', '!=', 'Mercadopago')->lists('nombre', 'id')->all();
         $pasajerosEnReserva = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($reserva->fecha, $reserva->embarcacion_id, $reserva->paseo_id);
-        if(is_object($pasajerosEnReserva)){
-            $pasajerosEnReserva=$pasajerosEnReserva->adultos+$pasajerosEnReserva->mayore+$pasajerosEnReserva->ninos;
+        if (is_object($pasajerosEnReserva)) {
+            $pasajerosEnReserva = $pasajerosEnReserva->adultos + $pasajerosEnReserva->mayore + $pasajerosEnReserva->ninos;
         }
         $maximoCupos = $reserva->embarcacion->abordajeNormal;
         if ($this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
@@ -235,7 +253,37 @@ class ConsultarReservasAdminController extends Controller
     {
         $reservacion = Reservacion::destroy($id);
         $reservacion = Reservacion::find($id);
-        Flash::error('Reserva Numero! '.$id.' Borrada');
+        Flash::error('Reserva Numero! ' . $id . ' Borrada');
         return redirect()->route('formularioDeConsultaDeReserva');
+    }
+
+    /**
+     * @param ConsultarReservacionRequest $request
+     * @return bool
+     */
+    public function laConsultatieneNumeroDeReservacion(ConsultarReservacionRequest $request)
+    {
+        return $request->input('numero_de_reserva') != '';
+    }
+
+    /**
+     * @param ConsultarReservacionRequest $request
+     * @return bool
+     */
+    public function laConsultaRieneNombreOApellido(ConsultarReservacionRequest $request)
+    {
+        return $request->input('nombreoapellido') != '';
+    }
+
+    /**
+     * @param ConsultarReservacionRequest $request
+     * @return mixed
+     */
+    public function obtenerClientesPorNombreOApellido(ConsultarReservacionRequest $request)
+    {
+        $clientes = Cliente::where('nombre', 'LIKE', $request->input('nombreoapellido'))
+            ->orWhere('apellido', 'LIKE', $request->input('nombreoapellido'))
+            ->with('reservas')->get();
+        return $clientes;
     }
 }

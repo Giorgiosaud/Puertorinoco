@@ -1,9 +1,13 @@
-//$bootstrap-sass-asset-helper:true;
-$icon-font-path: "../../assets/fonts/bootstrap/";
+$bootstrap-sass-asset-helper:false;
+$icon-font-path: '/assets/fonts/bootstrap/';
+$fa-font-path:"/assets/fonts/fontawesome/";
+$roboto-font-path: "/assets/fonts/roboto/";
+$icons-font-path: "/assets/fonts/material-design-icons/";
 
-@import 'bootstrap/bootstrap';
-@import 'fontawesome/font-awesome';
-$fa-font-path:"../../assets/fonts/fontawesome/";
+/*! Bootstrap css*/
+@import "vendor/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+//@import "vendor/bower_components/materialize/sass/materialize";
+/*! Font Awesome Css*/
+@import 'vendor/bower_components/fontawesome/scss/font-awesome';
+/*! CustomCss */
 @import 'custom/custom';
-
-//@import 'semantic-ui/semantic-ui';

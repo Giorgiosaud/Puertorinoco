@@ -15,7 +15,7 @@
     "laracasts/flash": "~1.3",
     "simplesoftwareio/simple-qrcode": "1.2.*",
     "barryvdh/laravel-dompdf": "0.5.*",
-    "laracasts/utilities": "dev-master",
+    "laracasts/utilities": "~2.0",
     "jorgelsaud/mercado-pago": "dev-master",
     "jorgelsaud/carbonlocalizer": "dev-master"
 

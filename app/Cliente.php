@@ -42,7 +42,7 @@ class Cliente extends Model {
     ];
     public function reservas()
     {
-       return $this->hasMany('App\Reservacion');
+       return $this->hasMany(Reservacion::class);
     }
     public function getMontoCreditoAttribute(){
         $monto = $this->attributes['credito'];

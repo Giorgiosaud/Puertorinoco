@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use App\Traits\ProcesarReservacion;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -34,7 +35,7 @@ class Reservacion extends Model
     /**
      * @var array
      */
-    protected $with = ['cliente', 'embarcacion', 'paseo', 'estadoDePago'];
+    protected $with = ['cliente', 'embarcacion', 'paseo', 'estadoDePago','pagos'];
     protected $relations = [
         'cliente',
         'paseo',
@@ -53,7 +54,7 @@ class Reservacion extends Model
      */
     public function cliente()
     {
-        return $this->belongsTo('App\Cliente');
+        return $this->belongsTo(Cliente::class);
     }
 
     /**
