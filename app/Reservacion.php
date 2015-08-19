@@ -326,6 +326,11 @@ class Reservacion extends Model
 
         return $builder;
     }
+    public static function BuscarOcupadosEnPaseo($fecha,$paseo,$embarcacion){
+        $reservacion=Reservacion::where('fecha',$fecha)->where('paseo_id',$paseo->id)->where('embarcacion_id',$embarcacion->id)->get();
+        $ocupados=$reservacion->sum('adultos')+$reservacion->sum('mayores')+$reservacion->sum('ninos');
+        return $ocupados;
+    }
 
 
 }

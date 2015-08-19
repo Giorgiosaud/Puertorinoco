@@ -6,7 +6,7 @@
                     {!! Form::label('fecha',Lang::get('formulario.FechaDelPaseo')) !!}
                 </div>
             </div>
-            {!! Form::hidden('fecha',null,['ng-model'=>'formulario.fecha']) !!}
+            {!! Form::hidden('fecha',null) !!}
             <div class="row" id="LoadingEmbarcacionesYPaseos">
             @include('assets.preloader')
             </div>
@@ -24,7 +24,7 @@
                     </div>
                 @endforeach
             </div>
-            {!! Form::hidden('embarcacion_id',null,['id'=>'embarcacion_id','ng-model'=>'formulario.embarcacion_id']) !!}
+            {!! Form::hidden('embarcacion_id',null,['id'=>'embarcacion_id']) !!}
             <div class="row" id="Paseos">
 
                 <h5>
@@ -39,7 +39,10 @@
                     </div>
                 @endforeach
             </div>
-            {!! Form::hidden('paseo_id',null,['id'=>'paseo_id','ng-model'=>'formulario.     paseo_id']) !!}
+            <div class="row" id="CuposDisponibles">
+                <h6>Este Paseo tiene <span class="cupos"></span> Cupos Disponibles</h6>
+            </div>
+            {!! Form::hidden('paseo_id',null,['id'=>'paseo_id']) !!}
         </div>
     </div>
 </div>

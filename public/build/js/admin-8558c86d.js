@@ -24838,43 +24838,15 @@ exports.colorLuminance = colorLuminance;
 
 },{}]},{},[1]);
 
-//var Puertorinoco = angular.module("Puertorinoco", []);
-//Puertorinoco.controller('ControladorDeFormularioDeReservas', function ($scope, $http) {
-//    $scope.localization = (typeof(localization) != "undefined") ? localization.replace("-", "") : 'es';
-//    if (typeof(diasNoLaborables) != "undefined") {
-//        $scope.dias = Object.keys(diasNoLaborables).map(function (k) {
-//            if (Array.isArray(diasNoLaborables[k])) {
-//                if (diasNoLaborables[k].length == 3) {
-//                    return new Date(diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2]);
-//                }
-//                else {
-//                    return [diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2], diasNoLaborables[k][3]];
-//                }
-//            }
-//            return diasNoLaborables[k]
-//        });
-//    }
-//    else {
-//        $scope.dias = null;
-//    };
-//    $scope.master={};
-//    $scope.update = function(formulario) {
-//        $scope.master = angular.copy(formulario);
-//    };
-//    $scope.reset = function() {
-//        $scope.formulario = angular.copy($scope.master);
-//    };
-
-//$scope.reset();
-
-
-//});
 var datos;
 var dd=function(log){console.log(log)};
 (function () {
     //swal("Here's a message!");
 })();
 $(document).ready(function () {
+    $(document).ready(function() {
+        $('select').material_select();
+    });
     $(window).keydown(function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -25033,10 +25005,12 @@ $(document).ready(function () {
         }
     });
     $('.embarcaciones').click(function () {
+        $('#CuposDisponibles').slideUp();
+        $('.paseos').removeClass('accent-4').addClass('lighten-1');
+        $('#paseo_id').val("");
         var $this = $(this);
         if ($this.hasClass('disabled')) {
             swal("Error Embarcacion", "Embarcacion No Valida", "error");
-
             return false;
         }
 
@@ -25045,20 +25019,17 @@ $(document).ready(function () {
         $('#embarcacion_id').val($this.data('idembarcacion'));
         selectedId=$this.data('idembarcacion');
         paseosDeEmbarcacionSeleccionada=datos.paseos[selectedId]
-        //console.log(paseosDeEmbarcacionSeleccionada);
         $('.paseos').addClass('disabled')
         for (i = 0; i < paseosDeEmbarcacionSeleccionada.length; i++) {
             var id = paseosDeEmbarcacionSeleccionada[i].id;
-            //console.log(id);
             $('.paseos[data-idPaseo="'+id+'"').removeClass('disabled');
+            $('.paseos[data-idPaseo="'+id+'"').children('.cupos')
         }
+
         $('#Paseos').slideDown();
-
-
-
-
     });
     $('.paseos').click(function () {
+        $('#CuposDisponibles').slideUp();
         var $this = $(this);
         if ($this.hasClass('disabled')) {
             swal("Error Paseo", "Paseo No Valido", "error");
@@ -25068,11 +25039,39 @@ $(document).ready(function () {
         $this.removeClass('lighten-1').addClass('accent-4');
         $('#paseo_id').val($this.data('idpaseo'));
         var precios=datos.precios[$this.data('idpaseo')][0];
+        var CuposUsados=datos['CuposUtilizados'][$('#embarcacion_id').val()][$this.data('idpaseo')],
+            CuposDisponibles;
+        CapacidadEmbarcar = (datos['esAdministrador']==true) ? datos['embarcaciones'][$('#embarcacion_id').val()-1]['abordajeMaximo'] : datos['embarcaciones'][$('#embarcacion_id').val()-1]['abordajeNormal'];
+
+        CuposDisponibles=CapacidadEmbarcar-CuposUsados;
+        CuposDisponibles=(CuposDisponibles<0)?0:CuposDisponibles;
+        $('span.cupos').text(CuposDisponibles);
         $('#precioAdultos').text(precios.adulto);
         $('#precioMayores').text(precios.mayor);
         $('#precioNinos').text(precios.nino);
-        $('#datosdePrecios').slideDown();
+        $('#datosdePrecios,#CuposDisponibles,#cedulaForm').slideDown();
+    });
+    $('#validarId').click(function(){
+        $('#identificacion').val($('#rifInicio').val()+"-"+$('#identification').val());
+        var valor=$('#identificacion').val();
+        swal({
+                title: "Confirmar Datos de Cliente",
+                text: "Su Identificacion Es: " + valor,
+                type: "info",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true,
+            },
+            function () {
+                var valor=$('#identificacion').val();
+                $.get('/ObtenerDatosClientes/' + valor)
+                    .done(function (data) {
 
+                        swal.close();
+                        console.log(data);
+                    });
+            });
+        console.log('validando');
     });
 });
 var ReservacionesApp = angular.module('ReservacionesApp', []);

@@ -10730,7 +10730,7 @@ ul.language_bar_chooser li {
 ul.language_bar_chooser {
   float: right; }
 
-#Embarcaciones, #Paseos, #LoadingEmbarcacionesYPaseos, #datosdePrecios {
+#Embarcaciones, #Paseos, #LoadingEmbarcacionesYPaseos, #datosdePrecios, #CuposDisponibles, #cedulaForm, #datosInternosCliente {
   display: none; }
 
 /*# sourceMappingURL=sass.css.map */

@@ -5,6 +5,7 @@ use App\FechaEspecial;
 use App\Http\Requests;
 use App\Http\Requests\VariablesRequest;
 use App\Paseo;
+use App\Reservacion;
 use App\Variable;
 use Carbon\Carbon;
 use Illuminate\Auth\Guard;
@@ -170,17 +171,25 @@ class VariablesController extends Controller
         $fecha = Carbon::createFromFormat('Y-m-d', $fecha)->setTime(0, 0, 0);
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
         $respuesta['embarcaciones'] = $this->definirEmbarcacionesAutorizadas($diaDeSemana, $autorizacion);
+        if($respuesta['embarcaciones']->count()==0){
 
+            return 'dia no laborable';
+        };
         foreach ($respuesta['embarcaciones'] as $embarcacion) {
             $respuesta['paseos'][$embarcacion->id] = $this->definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion);
         }
-//        dd($respuesta['paseos'][$embarcacion->id]);
         foreach($respuesta['paseos'] as $paseos){
             foreach($paseos as $paseo){
                 $respuesta['precios'][$paseo->id]=$paseo->tipoDePaseo->precios()->PrecioParaLaFecha($fecha);
+                foreach($respuesta['embarcaciones'] as $embarcacion){
+                    $respuesta['CuposUtilizados'][$embarcacion->id][$paseo->id]=Reservacion::BuscarOcupadosEnPaseo($fecha,$paseo,$embarcacion);
+                }
             }
         }
+        $respuesta['esAdministrador']=$autorizacion->check();
+
         return $respuesta;
+
 
 //        $paseos =
 //        foreach ($embarcaciones as $embarcacion) {
