@@ -15,7 +15,7 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body >
+<body>
 @include('flash::message')
 @yield('carrusel')
 <div class="container">
@@ -31,15 +31,8 @@
 	</ul>
 </div>
 @yield('content')
+
 <!-- Scripts -->
-<footer>
-	<script src="{!! elixir('js/all.js') !!}"></script>
-
-	@yield('footer')
-
-	@include('footer')
-
-
-</footer>
+<script src="{!! elixir('js/all.js') !!}"></script>
 </body>
 </html>

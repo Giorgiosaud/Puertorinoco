@@ -13,5 +13,7 @@ return [
     'Adultos'=>'Adultos',
     'Mayores'=>'Idosos',
     'Niños'=>'Crianças',
+    'FormularioDeReserva'=>'Formulário de Reserva'
+
 
 ];

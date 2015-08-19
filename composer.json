@@ -16,9 +16,9 @@
     "simplesoftwareio/simple-qrcode": "1.2.*",
     "barryvdh/laravel-dompdf": "0.5.*",
     "laracasts/utilities": "~2.0",
+    "laravel/cashier": "~5.0",
     "jorgelsaud/mercado-pago": "dev-master",
     "jorgelsaud/carbonlocalizer": "dev-master"
-
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "~2.0",
@@ -36,6 +36,9 @@
   "autoload": {
     "classmap": [
       "database"
+    ],
+    "files": [
+      "app/helpers.php"
     ],
     "psr-4": {
       "App\\": "app/"

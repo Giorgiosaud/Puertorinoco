@@ -79,5 +79,10 @@ class Embarcacion extends Model {
         return $this->belongsToMany('App\FechaEspecial', 'embarcacion_fecha_especial')
             ->withTimestamps()->withPivot('activa');
     }
+    public function obtenerDiasLaborablesDeLaSemana(){
+        foreach($this as $embarcacion){
+            return 'estas';
+        }
+    }
 
 }

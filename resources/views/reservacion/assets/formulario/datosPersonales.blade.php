@@ -1,14 +1,12 @@
-<div class="form-group" id="datosPersonales">
-	<div class="form-group" id="cedulaForm">
-		<div class="alert alert-success col-xs-11" id="ayudaIdentificacion" role="alert">Ingrese su Numero de Cedula, Rif O
-			Pasaporte</div>
-		{!! Form::label('rifInicio', 'Cedula: ', array('class' => 'col-xs-3 control-label')) !!}
-		<div class="col-xs-3">
+<div class="row" id="datosPersonales">
+	<div class="row" id="cedulaForm">
+		<div class="col s3">
 			{!!Form::select('rifInicio',array('V'=>'V','E'=>'E','J'=>'J','G'=>'G','E'=>'E','P'=>'Pasaporte'),null,[
-			'class'=>'form-control selectpicker'
+			'class'=>''
 			])!!}
+			{!! Form::label('rifInicio', 'Cedula: ', array('class' => 'col s3 control-label')) !!}
 		</div>
-		<div class="col-xs-5">
+		<div class="col s5">
 			{!! Form::text('identificacion_number',Input::old('identificacion_number'),[
 				'id'=>"identification",
 				'placeholder'=>'Numero de Cedula',
@@ -23,7 +21,7 @@
 
 
 		</div>
-		<div class="col-xs-1">
+		<div class="col s1">
 			<button class="btn btn-success" id="validarId" type="button">
 				<span class="glyphicon glyphicon-ok"></span>
 			</button>
@@ -34,11 +32,11 @@
 		('identificacion') !!}</p>@endif
 	</div>
 	<div class="form-group datosInternosCliente" id="nombresForm">
-		<div class="alert alert-success col-xs-11" id="ayudaNombres" role="alert">Verifique o Ingrese Sus Datos
+		<div class="alert alert-success col s11" id="ayudaNombres" role="alert">Verifique o Ingrese Sus Datos
 			Personales</div>
-		{!! Form::label('name', 'Nombres: ', ['class' => 'col-xs-3 control-label']) !!}
+		{!! Form::label('name', 'Nombres: ', ['class' => 'col s3 control-label']) !!}
 
-		<div class="col-xs-8">
+		<div class="col s8">
 			{!! Form::text('nombre',Input::old('nombre'),[
 				'id'=>"nombre",
 				'placeholder'=>'Ingrese Su(s) Nombre(s)',
@@ -57,8 +55,8 @@
 	</div>
 	<div class="form-group datosInternosCliente" id="apellidosForm">
 
-		{!! Form::label('apellido', 'Apellidos: ', array('class' => 'col-xs-3 control-label')) !!}
-		<div class="col-xs-8">
+		{!! Form::label('apellido', 'Apellidos: ', array('class' => 'col s3 control-label')) !!}
+		<div class="col s8">
 			{!! Form::text('apellido',Input::old('Apellido'),array(
 				'id'=>"apellido",
 				'placeholder'=>'Ingrese Su(s) Apellido(s)',
@@ -75,8 +73,8 @@
 	</div>
 	<div class="form-group datosInternosCliente" id="emailForm">
 
-		{!! Form::label('email', 'Email: ', array('class' => 'col-xs-3 control-label')) !!}
-		<div class="col-xs-8">
+		{!! Form::label('email', 'Email: ', array('class' => 'col s3 control-label')) !!}
+		<div class="col s8">
 			{!! Form::text('email',Input::old('email'),array(
 				'id'=>"email",
 				'placeholder'=>'Ingrese Su correo electronico',
@@ -94,8 +92,8 @@
 	</div>
 	<div class="form-group datosInternosCliente" id="telefonoForm">
 
-		{!! Form::label('phone', 'Telefono: ', array('class' => 'col-xs-3 control-label')) !!}
-		<div class="col-xs-8">
+		{!! Form::label('phone', 'Telefono: ', array('class' => 'col s3 control-label')) !!}
+		<div class="col s8">
 			{!! Form::text('telefono',Input::old('telefono'),array(
 				'id'=>"telefono",
 				'placeholder'=>'Ingrese Su correo Telefono',

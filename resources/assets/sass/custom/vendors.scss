@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+// Mixins
+@import "vendor/bower_components/materialize/sass/components/prefixer";
+@import "vendor/bower_components/materialize/sass/components/mixins";
+@import "vendor/bower_components/materialize/sass/components/color";
+
+// Variables;
+@import 'custom/variables';
+@import "vendor/bower_components/materialize/sass/components/variables";
+
+// Reset
+@import "vendor/bower_components/materialize/sass/components/normalize";
+
+// components
+@import "vendor/bower_components/materialize/sass/components/global";
+@import "vendor/bower_components/materialize/sass/components/icons-material-design";
+@import "vendor/bower_components/materialize/sass/components/grid";
+@import "vendor/bower_components/materialize/sass/components/navbar";
+@import "vendor/bower_components/materialize/sass/components/roboto";
+@import "vendor/bower_components/materialize/sass/components/typography";
+@import "vendor/bower_components/materialize/sass/components/cards";
+@import "vendor/bower_components/materialize/sass/components/toast";
+@import "vendor/bower_components/materialize/sass/components/tabs";
+@import "vendor/bower_components/materialize/sass/components/tooltip";
+@import "vendor/bower_components/materialize/sass/components/buttons";
+@import "vendor/bower_components/materialize/sass/components/dropdown";
+@import "vendor/bower_components/materialize/sass/components/waves";
+@import "vendor/bower_components/materialize/sass/components/modal";
+@import "vendor/bower_components/materialize/sass/components/collapsible";
+@import "vendor/bower_components/materialize/sass/components/materialbox";
+@import "vendor/bower_components/materialize/sass/components/form";
+@import "vendor/bower_components/materialize/sass/components/table_of_contents";
+@import "vendor/bower_components/materialize/sass/components/sideNav";
+@import "vendor/bower_components/materialize/sass/components/preloader";
+@import "vendor/bower_components/materialize/sass/components/slider";
+@import "vendor/bower_components/materialize/sass/components/date_picker/default.scss";
+@import "vendor/bower_components/materialize/sass/components/date_picker/default.date.scss";
+@import "vendor/bower_components/materialize/sass/components/date_picker/default.time.scss";
+@import "vendor/bower_components/sweetalert/dev/sweetalert.scss";

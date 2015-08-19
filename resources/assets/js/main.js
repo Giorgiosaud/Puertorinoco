@@ -1,268 +1,237 @@
+//var Puertorinoco = angular.module("Puertorinoco", []);
+//Puertorinoco.controller('ControladorDeFormularioDeReservas', function ($scope, $http) {
+//    $scope.localization = (typeof(localization) != "undefined") ? localization.replace("-", "") : 'es';
+//    if (typeof(diasNoLaborables) != "undefined") {
+//        $scope.dias = Object.keys(diasNoLaborables).map(function (k) {
+//            if (Array.isArray(diasNoLaborables[k])) {
+//                if (diasNoLaborables[k].length == 3) {
+//                    return new Date(diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2]);
+//                }
+//                else {
+//                    return [diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2], diasNoLaborables[k][3]];
+//                }
+//            }
+//            return diasNoLaborables[k]
+//        });
+//    }
+//    else {
+//        $scope.dias = null;
+//    };
+//    $scope.master={};
+//    $scope.update = function(formulario) {
+//        $scope.master = angular.copy(formulario);
+//    };
+//    $scope.reset = function() {
+//        $scope.formulario = angular.copy($scope.master);
+//    };
+
+//$scope.reset();
+
+
+//});
+var datos;
+var dd=function(log){console.log(log)};
+(function () {
+    //swal("Here's a message!");
+})();
 $(document).ready(function () {
-    if($('#formularioDeReserva').length>=1) {
-        $.ajaxSetup({
-            headers: {
-                'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    $(window).keydown(function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
+    $.ajaxSetup({
+        headers: {
+            'X-XSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    var mesesCompletos = {
+            es: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            en: ['Enero', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            ptBR: ['Enero', 'Fevereiro', 'Março', 'April', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'November', 'Dezembro'],
+        },
+        mesesCortos = {
+            es: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            en: ['Ene', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            ptBR: ['Ene', 'Fev', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        },
+        diasDeSemanaCompletos = {
+            es: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            ptBR: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+        },
+        diasDeSemanaCortos = {
+            es: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            ptBR: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        },
+        diasDeSemanaLetras = {
+            es: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+            en: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            ptBR: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        },
+        hoy = {
+            es: 'Hoy',
+            en: 'Today',
+            ptBR: 'Hoje',
+        },
+        SiguienteMes = {
+            es: 'Siguiente Mes',
+            en: 'Next month',
+            ptBR: 'próximo mês',
+        },
+        MesAnterior = {
+            es: 'Mes Anterior',
+            en: 'Previous month',
+            ptBR: 'mês anterior',
+        },
+        SeleccioneMes = {
+            es: 'Seleccione un mes',
+            en: 'Select a month',
+            ptBR: 'Selecione um mês',
+        },
+        SeleccioneAno = {
+            es: 'Seleccione un año',
+            en: 'Select a year',
+            ptBR: 'Escolher um ano',
+        },
+        clearEtiqueta = {
+            es: 'Borar',
+            en: 'Clear',
+            ptBR: 'Limpar',
+        },
+        closeEtiqueta = {
+            es: 'Cerrar',
+            en: 'Close',
+            ptBR: 'Fechar',
+        },
+        primerDia = {
+            es: 1,
+            en: 1,
+            ptBR: 0,
+        }
+    localization = (typeof(localization) != "undefined") ? localization.replace("-", "") : 'es';
+    if (typeof(diasNoLaborables) != "undefined") {
+        dias = Object.keys(diasNoLaborables).map(function (k) {
+            if (Array.isArray(diasNoLaborables[k])) {
+                if (diasNoLaborables[k].length == 3) {
+                    return new Date(diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2]);
+                }
+                else {
+                    return [diasNoLaborables[k][0], diasNoLaborables[k][1] - 1, diasNoLaborables[k][2], diasNoLaborables[k][3]];
+                }
             }
+            return diasNoLaborables[k]
         });
+    }
+    else {
+        dias = null;
+    }
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 1,
+        monthsFull: mesesCompletos[localization],
+        monthsShort: mesesCortos[localization],
+        weekdaysFull: diasDeSemanaCompletos[localization],
+        weekdaysShort: diasDeSemanaCortos[localization],
+        weekdaysLetter: diasDeSemanaLetras[localization],
+        today: hoy[localization],
+        labelMonthNext: SiguienteMes[localization],
+        labelMonthPrev: MesAnterior[localization],
+        labelMonthSelect: SeleccioneMes[localization],
+        labelYearSelect: SeleccioneAno[localization],
+        clear: clearEtiqueta[localization],
+        close: closeEtiqueta[localization],
+        firstDay: primerDia[localization],
+        format: 'd mmmm, yyyy',
+        formatSubmit: 'yyyy-mm-dd',
+        min: new Date(),
+        disable: dias,
+        closeOnSelect: true,
+        closeOnClear: true,
+        onSet: function () {
+            var that = this;
+            var valor = this.get('select', 'yyyy-mm-dd');
+            $('input[name="fecha"]').val(valor);
+            $('#LoadingEmbarcacionesYPaseos').slideDown();
 
-        $(window).keydown(function (event) {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-                return false;
-            }
-        });
-
-        $('#incio').on('slide.bs.carousel', function (e) {
-            console.log(e.relatedTarget);
-        });
-        if ($('input[name="errores"]').length == 1) {
-            $("#ayudaIdentificacion, #ayudaEmbarcacion, #ayudaPaseo, #ayudaFecha, #tipoEmbarcacion, #fechaform, #horaform, #cedulaForm, #nombresForm, #apellidosForm, #emailForm, #telefonoForm, #datosdePrecios, #datosdeCupos, #SaldosyMontos, #groupcondiciones,#botonEnviarForm").slideDown('fast');
-            $('.loading,.alert.alert-success').slideUp('slow');
-            $("input[name='embarcacion_id']:checked").parent().addClass('active');
-            $("input[name='paseo_id']").parent().removeClass('disabled hidden');
-            $("input[name='paseo_id']:checked").parent().addClass('active');
-            if ($("input[name='fecha']").val().length > 0) {
-                $.get("../ObtenerVariables/" + $("input[name='fecha']").val(), function (datosconfecha) {
-
-                    window.datosconfecha = datosconfecha;
-                    cantidad_en_embarcacion = [];
-                    for (key in window.datosconfecha.pasajeros) {
-                        cantidad_en_embarcacion[key] = parseInt(0);
-                        for (key2 in window.datosconfecha.pasajeros[key]) {
-                            cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
-                        }
-                        if (cantidad_en_embarcacion[key] > 0) {
-                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden');
-                        }
-                    }
-                    $('#fechaform').children('.col-xs-1').children().slideUp('slow');
-                    if ($("input[name='embarcacion_id']").is(":checked")) {
-                        embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
-                        for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
-                            if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-                                $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
+            swal({
+                    title: "Confirmar Datos",
+                    text: "Desea realizar el Paseo el dia " + $('#fechaPaseo').val(),
+                    type: "info",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true,
+                },
+                function () {
+                    $.get('/ObtenerVariables/' + valor)
+                        .done(function (data) {
+                            //console.log(data.embarcaciones.length);
+                            for (i = 0; i < data.embarcaciones.length; i++) {
+                                var id = data.embarcaciones[i].id;
+                                $('.embarcaciones[data-idembarcacion="'+id+'"').removeClass('disabled');
                             }
 
-                        }
-                        if ($("input[name='paseo_id']").is(":checked")) {
-                            paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
-                            $('span#precioAdultos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].adulto + ' Bs');
-                            $('#precioMayores').text(window.datosconfecha.precios[paseo_id_seleccionada][0].mayor + ' Bs');
-                            $('#precioNinos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].nino + ' Bs');
-                        }
-                        else {
-                            $('#ayudaPaseo').slideDown('slow');
-                        }
-                    }
-                    else {
-                        $('#ayudaEmbarcacion').slideDown('slow');
-                    }
+                            swal.close();
+                            that.close();
+                            $('#LoadingEmbarcacionesYPaseos').slideUp();
+                            $('#Embarcaciones').slideDown();
+                            datos=data;
+                            //console.log(data);
 
+                            return true;
+                        });
                 });
-            }
 
+        },
+        onStart: function () {
+            $('.loading,.alert.alert-success').slideUp('slow');
+        },
+        onClose: function (context) {
 
         }
-        $.get("../ObtenerVariables", function (datos) {
-            window.diasNoLaborables = datos.diasNoLaborables;
-            window.minimoDiasAReservar = datos.minReservar;
-            window.fechasEspeciales = datos.fechasEspeciales;
-            window.temporadaBaja = datos.temporadaBaja;
-            if ($("input[name='fecha']").val().length == 0) {
-                $('#ayudaFecha').slideDown('slow');
-            }
-            $('#fechaform').slideDown('slow');
-            $('#loadingFormulario').slideUp('slow');
-            $('#fecha2').datepicker({
-                format: "DD, d MM , yyyy",
-                autoclose: true,
-                clearBtn: true,
-                daysOfWeekDisabled: window.diasNoLaborables,
-                language: 'es',
-                startDate:new Date(),
-                //startDate: new Date(new Date().setDate((new Date()).getDate() + parseInt(window.minimoDiasAReservar))),
-                beforeShowDay: fechasEspecialesx,
-                altField: "#fecha",
-                todayBtn:true,
-                todayHighlight:true,
-                altFormat: "yy-mm-dd"
+    });
+    $('.embarcaciones').click(function () {
+        var $this = $(this);
+        if ($this.hasClass('disabled')) {
+            swal("Error Embarcacion", "Embarcacion No Valida", "error");
 
-            }).on('changeDate', function (e) {
-                $('#tipoEmbarcacion').slideUp('slow');
-                $('#ayudaEmbarcacion').slideUp('slow');
-                $('#datosdePrecios').slideUp('slow');
+            return false;
+        }
 
-                $('#horaform').slideUp('slow');
-                $('#ayudaFecha').slideUp('slow');
-                $('.loading').slideDown('slow');
-                $("input[name='embarcacion_id']").removeAttr('checked').parent().removeClass('active').addClass('hidden disabled');
-                $("input[name='paseo_id']").removeAttr('checked').siblings('.cupos').html('').parent().removeClass('active').addClass('disabled hidden')
-                $('#fechaform').children('.col-xs-1').children().slideDown('slow');
-                $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
-                $.get("../ObtenerVariables/" + e.format(0, 'yyyy-mm-dd'), function (datosconfecha) {
+        $('.embarcaciones').removeClass('accent-4').addClass('lighten-1');
+        $this.removeClass('lighten-1').addClass('accent-4');
+        $('#embarcacion_id').val($this.data('idembarcacion'));
+        selectedId=$this.data('idembarcacion');
+        paseosDeEmbarcacionSeleccionada=datos.paseos[selectedId]
+        //console.log(paseosDeEmbarcacionSeleccionada);
+        $('.paseos').addClass('disabled')
+        for (i = 0; i < paseosDeEmbarcacionSeleccionada.length; i++) {
+            var id = paseosDeEmbarcacionSeleccionada[i].id;
+            //console.log(id);
+            $('.paseos[data-idPaseo="'+id+'"').removeClass('disabled');
+        }
+        $('#Paseos').slideDown();
 
-                    window.datosconfecha = datosconfecha;
-                    cantidad_en_embarcacion = [];
-                    for (key in window.datosconfecha.pasajeros) {
-                        cantidad_en_embarcacion[key] = parseInt(0);
-                        for (key2 in window.datosconfecha.pasajeros[key]) {
-                            cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
-                        }
-                        if (cantidad_en_embarcacion[key] > 0) {
-                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden');
-                        }
-                    }
-                    $('#fechaform').children('.col-xs-1').children().slideUp('slow');
-                    $('.loading').slideUp('slow');
 
-                    $('#tipoEmbarcacion,#ayudaEmbarcacion').slideDown('slow');
-                });
-            });
-        }, "json");
-        $("input[name='embarcacion_id']").on("change", function () {
-            embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
-            $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active');
-            for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
-                if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
-                }
-            }
-            $('#ayudaEmbarcacion').slideUp('slow');
-            $('#horaform,#ayudaPaseo').slideDown('slow');
-        });
-        $("input[name='paseo_id']").on("change", function () {
-            paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
-            window.disponible = window.datosconfecha.pasajeros[embarcacion_id_seleccionada][paseo_id_seleccionada].disponibles;
-            $('#ayudaPaseo').slideUp('slow');
-            $('span#precioAdultos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].adulto + ' Bs');
-            $('#precioMayores').text(window.datosconfecha.precios[paseo_id_seleccionada][0].mayor + ' Bs');
-            $('#precioNinos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].nino + ' Bs');
-            $('#datosdePrecios').slideDown('slow');
-            $('#cedulaForm').slideDown('slow');
 
-            if ($("input[name='identificacion_number']").val() == '') {
-                $('#ayudaIdentificacion').slideDown('slow');
-            }
-        });
-        $('#validarId').on('click', function () {
-            $('input[name="identificacion"]').val($('input[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
-            $('#validarId').children('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-refresh glyphicon-refresh-animate');
-            $('#advertencias').modal('show');
-            $.get("../ObtenerDatosClientes/" + $('[name="identificacion"]').val(), function (datosCliente) {
 
-                window.datosCliente = datosCliente;
-                $('#nombre').val(datosCliente.nombre);
-                $('#apellido').val(datosCliente.apellido);
-                $('#email').val(datosCliente.email);
-                $('#telefono').val(datosCliente.telefono);
-                $('.datosInternosCliente').slideDown('slow');
-                $('#ayudaIdentificacion').slideUp('slow');
-                $('.datosInternosCliente').slideDown('slow', function () {
-                    $('#datosdeCupos').slideDown('slow');
-                });
-                $('#validarId').children('.glyphicon').addClass('glyphicon-ok').removeClass('glyphicon-refresh glyphicon-refresh-animate');
+    });
+    $('.paseos').click(function () {
+        var $this = $(this);
+        if ($this.hasClass('disabled')) {
+            swal("Error Paseo", "Paseo No Valido", "error");
+            return false;
+        }
+        $('.paseos').removeClass('accent-4').addClass('lighten-1');
+        $this.removeClass('lighten-1').addClass('accent-4');
+        $('#paseo_id').val($this.data('idpaseo'));
+        var precios=datos.precios[$this.data('idpaseo')][0];
+        $('#precioAdultos').text(precios.adulto);
+        $('#precioMayores').text(precios.mayor);
+        $('#precioNinos').text(precios.nino);
+        $('#datosdePrecios').slideDown();
 
-            });
-        });
-        $('.numeroDeCupos').change(function (event) {
-            paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
-            pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
-            pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
-            pasajesNinos = parseInt($('#ninos').val()) || 0;
-            actual = parseInt($(this).val()) || 0;
-            if (pasajesAdultos + pasajesMayores == 0) {
-                $('#ninos').val(0);
-            }
-            totalPasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
-            maximoActual = window.disponible - totalPasajes + actual;
-            $('.numeroDeCupos').attr('max', maximoActual);
-            if (totalPasajes >= (window.disponible + 1)) {
-                $(this).val(0);
-            }
-            precioAdultos = window.datosconfecha.precios[paseo_id_seleccionada][0].adulto;
-            precioMayor = window.datosconfecha.precios[paseo_id_seleccionada][0].mayor;
-            precioNino = window.datosconfecha.precios[paseo_id_seleccionada][0].nino;
-            totalReserva = (pasajesAdultos * precioAdultos) + (pasajesMayores * precioMayor) + (pasajesNinos * precioNino);
-            saldoAFavor = window.datosCliente.credito;
-            montoAPagar = (totalReserva <= saldoAFavor) ? 0 : totalReserva - saldoAFavor;
-            $('#Giftcards').html(saldoAFavor + ' Bs.');
-            $('#totalReserva').html(totalReserva + ' Bs.');
-            $('#PrecioTotal').html(montoAPagar + ' Bs.');
-
-        });
-        $('#validarCupos').on('click', function () {
-            pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
-            pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
-            pasajesNinos = parseInt($('#ninos').val()) || 0;
-            pasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
-            if (pasajes > 0) {
-                $('#ayudaNombres,#ayudaCupos').slideUp('slow');
-                $('#SaldosyMontos,#groupcondiciones').slideDown('slow');
-                if ($('#condiciones').is(':checked')) {
-                    $('#botonEnviarForm').slideDown('slow');
-                }
-            }
-            else {
-
-            }
-        });
-        $('#condiciones').on('click', function () {
-
-            if ($('#condiciones').is(':checked')) {
-                $('#botonEnviarForm').slideDown('slow');
-            }
-            else {
-                $('#botonEnviarForm').slideUp('slow');
-            }
-        })
-    }
-    if($('#consultarReserva').length>=1){
-        $('#fecha2').datepicker({
-            format: "DD, d MM , yyyy",
-            autoclose: true,
-            clearBtn: true,
-            language: 'es',
-            altField: "#fecha",
-            altFormat: "yy-mm-dd",
-            todayBtn:true,
-            todayHighlight:true
-        }).on('changeDate', function (e) {
-            $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
-
-        });
-    }
-    $(".btswitch").bootstrapSwitch();
-    $('[multiple]').select2();
-
+    });
 });
-function fechasEspecialesx(fechaAComparar) {
-
-    var fechas = window.fechasEspeciales;
-    var Mes = fechaAComparar.getMonth();
-    var Dia = fechaAComparar.getDate();
-    var Ano = fechaAComparar.getFullYear();
-    var $respuesta;
-    for (i = 0; i < fechas.length; i++) {
-        fi = new Date(window.fechasEspeciales[i].fecha.date);
-        if (Dia === fi.getDate() && (Mes === fi.getMonth() && Ano === fi.getFullYear())) {
-            for (var property in window.fechasEspeciales[i].Embarcaciones) {
-                if (window.fechasEspeciales[i].Embarcaciones[property] == 1) {
-                    $respuesta = {
-                        enabled: true,
-                        classes: window.fechasEspeciales[i].clase,
-                        tooltip: window.fechasEspeciales[i].descripcion
-                    };
-                    return $respuesta;
-                }
-            }
-            $respuesta = {
-                enabled: false,
-                classes: window.fechasEspeciales[i].clase,
-                tooltip: window.fechasEspeciales[i].descripcion
-            };
-            return $respuesta;
-        }
-
-    }
-}

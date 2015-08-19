@@ -2,6 +2,7 @@
 
 use App\Cliente;
 use App\Embarcacion;
+use App\FechaEspecial;
 use App\Http\Requests;
 use App\Http\Requests\ReservacionesRequest;
 use App\Paseo;
@@ -9,8 +10,11 @@ use App\Reservacion;
 use Illuminate\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use JavaScript;
 
-class ReservacionController extends Controller {
+
+class ReservacionController extends Controller
+{
 
     /**
      * @var Guard
@@ -35,7 +39,23 @@ class ReservacionController extends Controller {
     {
         $embarcaciones = Embarcacion::all();
         $paseos = Paseo::all();
-        //dd(LaravelLocalization::getSupportedLanguagesKeys());
+        $diasNoLaborablesEmbarcaciones = obtenerDiasNoLaborables($embarcaciones);
+        $diasNoLaborablesPaseos = obtenerDiasNoLaborables($paseos);
+        $fechasEspeciales = FechaEspecial::futuro()->with('embarcaciones')->get();
+        $diasLaborables=obtenerDiasLaborablesDesdeFechasEspeciales($fechasEspeciales);
+        $diasNoLaborablesEspeciales=obtenerDiasNoLaborablesDesdeFechasEspeciales($fechasEspeciales);
+        $diasNoLaborables = array_intersect($diasNoLaborablesEmbarcaciones, $diasNoLaborablesPaseos);
+        foreach($diasLaborables as $anadirdia){
+            array_push($diasNoLaborables,$anadirdia);
+        }
+        foreach($diasNoLaborablesEspeciales as $anadirdia){
+            array_push($diasNoLaborables,$anadirdia);
+        }
+//        dd($diasNoLaborables);
+        JavaScript::put([
+            'localization' => LaravelLocalization::getCurrentLocale(),
+            'diasNoLaborables' => $diasNoLaborables
+        ]);
         return view('reservacion.create', compact('embarcaciones', 'paseos'));
     }
 
@@ -62,30 +82,25 @@ class ReservacionController extends Controller {
         $cliente = $this->ActualizarOCrearCliente($request);
         $vecesRepetida = Reservacion::ObtenerVecesQueSeRepite($request->input('fecha'), $cliente->id, $request->input
         ('embarcacion_id'), $request->input('paseo_id'))->count();
-        if (($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->esAgencia) && $vecesRepetida > 0)
-        {
+        if (($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->esAgencia) && $vecesRepetida > 0) {
             flash()->error(Lang::get('formulario.reservaDuplicada'));
 
             return redirect()->back()->withInput();
         }
         $pasajerosReservados = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($request->input('fecha'),
             $request->input('embarcacion_id'), $request->input('paseo_id'));
-        if (!is_integer($pasajerosReservados))
-        {
+        if (!is_integer($pasajerosReservados)) {
             $pasajerosReservados = 0;
         }
         $pasajerosEnReservaActual = $request->input('adultos') + $request->input('mayores') + $request->input
             ('ninos');
         $totalConEstaReserva = $pasajerosReservados + $pasajerosEnReservaActual;
-        if ($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->cuposExtra)
-        {
+        if ($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->cuposExtra) {
             $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeNormal;
-        } else
-        {
+        } else {
             $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeMaximo;
         }
-        if ($totalConEstaReserva > $maximoEmbarcacion)
-        {
+        if ($totalConEstaReserva > $maximoEmbarcacion) {
             flash()->error(Lang::get('reservacion.alguienReservoAntes'));
 
             return redirect()->back()->withInput();
@@ -123,8 +138,7 @@ class ReservacionController extends Controller {
             ->orWhere('email', '=', $request->input('email'))
             ->orWhere('telefono', '=', $request->input('telefono'))
             ->get();
-        if ($cliente->count() == 0)
-        {
+        if ($cliente->count() == 0) {
 
             return $cliente = Cliente::create($request->all());
         }

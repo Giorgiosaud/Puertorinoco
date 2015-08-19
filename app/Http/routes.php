@@ -26,8 +26,8 @@ Route::group([
         ['as' => 'creandoReservacion', 'uses' => 'ReservacionController@store']);
     Route::get(LaravelLocalization::transRoute('routes.reservacionMostrar'),
         ['as' => 'mostrarReserva', 'uses' => 'ReservacionController@show']);
-    Route::get('ObtenerVariables', 'VariablesController@fechasEspeciales');
     Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
+    Route::get('ObtenerVariables', 'VariablesController@fechasEspeciales');
     Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
     Route::any('success', 'MercadopagoController@success');
 });

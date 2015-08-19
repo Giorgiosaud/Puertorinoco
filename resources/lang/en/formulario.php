@@ -10,5 +10,6 @@ return [
     'Catamaran'=>'Catamaran',
     'Lancha'=>'Boat',
     'Precios Por Persona:'=>'Price Per Person:',
+    'FormularioDeReserva'=>'Reservation Form'
 
 ];
