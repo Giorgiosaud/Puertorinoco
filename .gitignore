@@ -3,3 +3,6 @@
 /.idea
 composer.lock
 .env
+.DS_Store
+.idea/workspace.xml
+app/.DS_Store
