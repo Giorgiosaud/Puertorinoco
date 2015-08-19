@@ -119,7 +119,11 @@ class Reservacion extends Model
 
         return $cantidad;
     }
-
+    public static function ObtenerPasajerosReservadosDeLaFechaEmbarcacionyPaseo($fecha,$embarcacion,$paseo){
+        dd($embarcacion);
+        $reservaciones=Reservacion::where('fecha',$fecha)->where('embarcacion_id',$embarcacion->id)->where('paseo_id',$paseo->id)->get();
+        return $reservaciones;
+    }
     /**
      * @param $query
      * @param $fecha

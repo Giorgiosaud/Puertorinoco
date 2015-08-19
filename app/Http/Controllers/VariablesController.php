@@ -206,6 +206,9 @@ class VariablesController extends Controller {
                     $pasajerosReservadosDeLaFechayEmbarcacion = $paseo->reservas()->where
                     ('embarcacion_id', $embarcacion->id)
                         ->PasajerosReservadosDeLaFecha($fecha, $embarcacion->id);
+                    if(!is_int($pasajerosReservadosDeLaFechayEmbarcacion)){
+                        $pasajerosReservadosDeLaFechayEmbarcacion=0;
+                    };
                     $respuestas['pasajeros'][$embarcacion->id][$paseo->id]['reservados'] = $pasajerosReservadosDeLaFechayEmbarcacion;
 
                     $respuestas['pasajeros'][$embarcacion->id][$paseo->id]['disponibles'] = (
