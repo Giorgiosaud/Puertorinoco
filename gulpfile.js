@@ -16,10 +16,10 @@ elixir(function (mix) {
         'resources/assets/js/sweetalert', 'vendor/bower_components')
         .scripts([
             'jquery/dist/jquery.js',
-            'bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
-            'bootstrap-datepicker/js/bootstrap-datepicker.js',
-            'bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
-            'bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
+            //'bootstrap-sass-official/assets/javascripts/bootstrap.min.js',
+            //'bootstrap-datepicker/js/bootstrap-datepicker.js',
+            //'bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
+            //'bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
             'bootstrap-switch/dist/js/bootstrap-switch.js',
             'select2/dist/js/select2.js',
             'select2/dist/js/i18n/es.js',

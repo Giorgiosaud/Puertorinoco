@@ -1,12 +1,18 @@
 var datos;
-var dd=function(log){console.log(log)};
+var dd = function (log) {
+    console.log(log)
+};
 (function () {
     //swal("Here's a message!");
 })();
 $(document).ready(function () {
-    $(document).ready(function() {
-        $('select').material_select();
+    $('select').material_select();
+    $('.multiselector').select2();
+    $('.slider').slider({full_width: true});
+    $(".dropdown-button").dropdown({
+        belowOrigin: true
     });
+    $(".button-collapse").sideNav();
     $(window).keydown(function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -123,6 +129,14 @@ $(document).ready(function () {
         closeOnSelect: true,
         closeOnClear: true,
         onSet: function () {
+            if ($('.datepicker').hasClass('admin')) {
+                var valor = this.get('select', 'yyyy-mm-dd');
+
+                $('input[name="fecha"]').val(valor);
+                this.close();
+                return true;
+            }
+
             var that = this;
             var valor = this.get('select', 'yyyy-mm-dd');
             $('input[name="fecha"]').val(valor);
@@ -142,14 +156,14 @@ $(document).ready(function () {
                             //console.log(data.embarcaciones.length);
                             for (i = 0; i < data.embarcaciones.length; i++) {
                                 var id = data.embarcaciones[i].id;
-                                $('.embarcaciones[data-idembarcacion="'+id+'"').removeClass('disabled');
+                                $('.embarcaciones[data-idembarcacion="' + id + '"').removeClass('disabled');
                             }
 
                             swal.close();
                             that.close();
                             $('#LoadingEmbarcacionesYPaseos').slideUp();
                             $('#Embarcaciones').slideDown();
-                            datos=data;
+                            datos = data;
                             //console.log(data);
 
                             return true;
@@ -158,10 +172,10 @@ $(document).ready(function () {
 
         },
         onStart: function () {
+            if ($(this).hasClass('admin')) {
+                return true;
+            }
             $('.loading,.alert.alert-success').slideUp('slow');
-        },
-        onClose: function (context) {
-
         }
     });
     $('.embarcaciones').click(function () {
@@ -177,13 +191,13 @@ $(document).ready(function () {
         $('.embarcaciones').removeClass('accent-4').addClass('lighten-1');
         $this.removeClass('lighten-1').addClass('accent-4');
         $('#embarcacion_id').val($this.data('idembarcacion'));
-        selectedId=$this.data('idembarcacion');
-        paseosDeEmbarcacionSeleccionada=datos.paseos[selectedId]
+        selectedId = $this.data('idembarcacion');
+        paseosDeEmbarcacionSeleccionada = datos.paseos[selectedId]
         $('.paseos').addClass('disabled')
         for (i = 0; i < paseosDeEmbarcacionSeleccionada.length; i++) {
             var id = paseosDeEmbarcacionSeleccionada[i].id;
-            $('.paseos[data-idPaseo="'+id+'"').removeClass('disabled');
-            $('.paseos[data-idPaseo="'+id+'"').children('.cupos')
+            $('.paseos[data-idPaseo="' + id + '"').removeClass('disabled');
+            $('.paseos[data-idPaseo="' + id + '"').children('.cupos')
         }
 
         $('#Paseos').slideDown();
@@ -198,22 +212,29 @@ $(document).ready(function () {
         $('.paseos').removeClass('accent-4').addClass('lighten-1');
         $this.removeClass('lighten-1').addClass('accent-4');
         $('#paseo_id').val($this.data('idpaseo'));
-        var precios=datos.precios[$this.data('idpaseo')][0];
-        var CuposUsados=datos['CuposUtilizados'][$('#embarcacion_id').val()][$this.data('idpaseo')],
+        var precios = datos.precios[$this.data('idpaseo')][0];
+        var CuposUsados = datos['CuposUtilizados'][$('#embarcacion_id').val()][$this.data('idpaseo')],
             CuposDisponibles;
-        CapacidadEmbarcar = (datos['esAdministrador']==true) ? datos['embarcaciones'][$('#embarcacion_id').val()-1]['abordajeMaximo'] : datos['embarcaciones'][$('#embarcacion_id').val()-1]['abordajeNormal'];
+        CapacidadEmbarcar = (datos['esAdministrador'] == true) ? datos['embarcaciones'][$('#embarcacion_id').val() - 1]['abordajeMaximo'] : datos['embarcaciones'][$('#embarcacion_id').val() - 1]['abordajeNormal'];
 
-        CuposDisponibles=CapacidadEmbarcar-CuposUsados;
-        CuposDisponibles=(CuposDisponibles<0)?0:CuposDisponibles;
+        CuposDisponibles = CapacidadEmbarcar - CuposUsados;
+        CuposDisponibles = (CuposDisponibles < 0) ? 0 : CuposDisponibles;
+        if (CuposDisponibles == 0) {
+            swal("Disculpanos", "Selecciona Otro Paseo Por Los Momentos No Tenemos Cupos Disponibles", "error");
+            $('#datosdePrecios,#CuposDisponibles,#cedulaForm').slideUp();
+            return false;
+        }
+        swal("Excelente", "Este Paseo tiene " + CuposDisponibles + " Cupos Disponibles", "success");
+
         $('span.cupos').text(CuposDisponibles);
         $('#precioAdultos').text(precios.adulto);
         $('#precioMayores').text(precios.mayor);
         $('#precioNinos').text(precios.nino);
         $('#datosdePrecios,#CuposDisponibles,#cedulaForm').slideDown();
     });
-    $('#validarId').click(function(){
-        $('#identificacion').val($('#rifInicio').val()+"-"+$('#identification').val());
-        var valor=$('#identificacion').val();
+    $('#validarId').click(function () {
+        $('#identificacion').val($('#rifInicio').val() + "-" + $('#identification').val());
+        var valor = $('#identificacion').val();
         swal({
                 title: "Confirmar Datos de Cliente",
                 text: "Su Identificacion Es: " + valor,
@@ -223,9 +244,23 @@ $(document).ready(function () {
                 showLoaderOnConfirm: true,
             },
             function () {
-                var valor=$('#identificacion').val();
+                var valor = $('#identificacion').val();
                 $.get('/ObtenerDatosClientes/' + valor)
                     .done(function (data) {
+                        if (data.nombre == '') {
+                            $('#nombre').val(data.nombre).siblings('label').removeClass('active');
+                            $('#apellido').val(data.apellido).siblings('label').removeClass('active');
+                            $('#telefono').val(data.telefono).siblings('label').removeClass('active');
+                            $('#email').val(data.email).siblings('label').removeClass('active');
+
+                            swal.close();
+                            return false;
+                        }
+                        $('#nombre').val(data.nombre).siblings('label').addClass('active');
+                        $('#apellido').val(data.apellido).siblings('label').addClass('active');
+                        $('#telefono').val(data.telefono).siblings('label').addClass('active');
+                        $('#email').val(data.email).siblings('label').addClass('active');
+                        $('#datosInternosCliente').slideDown();
 
                         swal.close();
                         console.log(data);

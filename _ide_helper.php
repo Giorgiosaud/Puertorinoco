@@ -45,7 +45,7 @@ namespace {
         }
         
         /**
-         * Register a callback to run before a bootstrapper.
+         * Register a callback to run before a materializer.
          *
          * @param string $bootstrapper
          * @param \Closure $callback
@@ -57,7 +57,7 @@ namespace {
         }
         
         /**
-         * Register a callback to run after a bootstrapper.
+         * Register a callback to run after a materializer.
          *
          * @param string $bootstrapper
          * @param \Closure $callback
@@ -12588,7 +12588,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Accordion::withAttributes($attributes);
         }
         
@@ -12600,7 +12600,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Accordion::addClass($classes);
         }
         
@@ -12704,7 +12704,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Alert::withAttributes($attributes);
         }
         
@@ -12716,7 +12716,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Alert::addClass($classes);
         }
         
@@ -12754,7 +12754,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Badge::withAttributes($attributes);
         }
         
@@ -12766,7 +12766,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Badge::addClass($classes);
         }
         
@@ -12808,7 +12808,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Breadcrumb::withAttributes($attributes);
         }
         
@@ -12820,7 +12820,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Breadcrumb::addClass($classes);
         }
         
@@ -13121,7 +13121,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Button::withAttributes($attributes);
         }
         
@@ -13133,7 +13133,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Button::addClass($classes);
         }
         
@@ -13285,7 +13285,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\ButtonGroup::withAttributes($attributes);
         }
         
@@ -13297,7 +13297,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\ButtonGroup::addClass($classes);
         }
         
@@ -13360,7 +13360,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Carousel::withAttributes($attributes);
         }
         
@@ -13372,7 +13372,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Carousel::addClass($classes);
         }
         
@@ -13485,7 +13485,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\ControlGroup::addClass($classes);
         }
         
@@ -13672,7 +13672,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\DropdownButton::withAttributes($attributes);
         }
         
@@ -13684,7 +13684,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\DropdownButton::addClass($classes);
         }
         
@@ -13864,7 +13864,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\InputGroup::withAttributes($attributes);
         }
         
@@ -13876,7 +13876,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\InputGroup::addClass($classes);
         }
         
@@ -13989,7 +13989,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Image::withAttributes($attributes);
         }
         
@@ -14116,7 +14116,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Label::withAttributes($attributes);
         }
         
@@ -14128,7 +14128,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Label::addClass($classes);
         }
         
@@ -14177,7 +14177,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\MediaObject::withAttributes($attributes);
         }
         
@@ -14189,7 +14189,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\MediaObject::addClass($classes);
         }
         
@@ -14271,7 +14271,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Modal::withAttributes($attributes);
         }
         
@@ -14283,7 +14283,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Modal::addClass($classes);
         }
         
@@ -14319,7 +14319,7 @@ namespace {
          * Adds some content to the navbar
          *
          * @param mixed $content Anything that can become a string! If you pass in a
-         *                       Bootstrapper\Navigation object we'll make sure
+         *                       Materializer\Navigation object we'll make sure
          *                       it's a navbar on render.
          * @return $this 
          * @static 
@@ -14424,7 +14424,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Navbar::withAttributes($attributes);
         }
         
@@ -14436,7 +14436,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Navbar::addClass($classes);
         }
         
@@ -14553,7 +14553,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Navigation::withAttributes($attributes);
         }
         
@@ -14565,7 +14565,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Navigation::addClass($classes);
         }
         
@@ -14696,7 +14696,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Panel::withAttributes($attributes);
         }
         
@@ -14708,7 +14708,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Panel::addClass($classes);
         }
         
@@ -14858,7 +14858,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\ProgressBar::withAttributes($attributes);
         }
         
@@ -14870,7 +14870,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\ProgressBar::addClass($classes);
         }
         
@@ -14954,7 +14954,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Tabbable::withAttributes($attributes);
         }
         
@@ -14966,7 +14966,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Tabbable::addClass($classes);
         }
         
@@ -15103,7 +15103,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Table::withAttributes($attributes);
         }
         
@@ -15115,7 +15115,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Table::addClass($classes);
         }
         
@@ -15166,7 +15166,7 @@ namespace {
          * @static 
          */
         public static function withAttributes($attributes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Thumbnail::withAttributes($attributes);
         }
         
@@ -15178,7 +15178,7 @@ namespace {
          * @static 
          */
         public static function addClass($classes){
-            //Method inherited from \Bootstrapper\RenderedObject            
+            //Method inherited from \Materializer\RenderedObject
             return \Bootstrapper\Thumbnail::addClass($classes);
         }
         

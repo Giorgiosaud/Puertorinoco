@@ -22,9 +22,11 @@
 <body>
 @include('templates.assets.navInterno')
 @yield('carrusel')
-<div class="container-fluid">
-    @include('flash::message')
-    @yield('content')
+<div class="row">
+    <div class="col s12">
+        @include('flash::message')
+        @yield('content')
+    </div>
 </div>
 
 <!-- Scripts -->

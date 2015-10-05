@@ -1,5 +1,6 @@
 <div class="row" id="datosPersonales">
     <div class="row" id="cedulaForm">
+
         <label class="col s3 control-label" for="rifInicio">
             Identificacion:
         </label>
@@ -32,25 +33,29 @@
     <div class="col s12" id="datosInternosCliente">
         <div class="row">
             <div class="input-field col s12">
-                {!! Form::text('nombres',Input::old('nombres'))!!}
-                {!! Form::label('nombres', 'Nombres: ') !!}
+                <i class="material-icons prefix">account_circle</i>
+                {!! Form::text('nombre',Input::old('nombre'),['id'=>'nombre'])!!}
+                {!! Form::label('nombre', 'Nombre: ') !!}
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {!! Form::text('apellidos',Input::old('apellidos'))!!}
-                {!! Form::label('apellidos', 'Apellidos: ') !!}
+                <i class="material-icons prefix">account_circle</i>
+                {!! Form::text('apellido',Input::old('apellido'),['id'=>'apellido'])!!}
+                {!! Form::label('apellido', 'Apellido: ') !!}
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {!! Form::email('email',Input::old('email'))!!}
+                <i class="material-icons prefix">email</i>
+                {!! Form::email('email',Input::old('email'),['id'=>'email'])!!}
                 {!! Form::label('email', 'Email: ') !!}
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                {!! Form::text('telefono',Input::old('telefono'))!!}
+                <i class="material-icons prefix">phone</i>
+                {!! Form::text('telefono',Input::old('telefono'),['id'=>'telefono'])!!}
                 {!! Form::label('telefono', 'Telefono: ') !!}
             </div>
         </div>

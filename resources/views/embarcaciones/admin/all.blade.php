@@ -1,6 +1,5 @@
 @extends('templates.mainInterno')
 @section('content')
-	<div class="table-responsive">
 		{!!Table::withContents($embarcacionesTableStyle)
 		->callback('Accion', function ($field, $row) {
 		return Button::primary('Editar '.$row['Nombre'])->asLinkTo(route('PanelAdministrativo.embarcaciones.edit', $row['Id']))->block();
@@ -68,9 +67,8 @@
 		}
 		return 'Inactivo';
 		})
-		->hover()->render()
+		->hover()->responsive()->centered()->render()
 		!!}
 
-	</div>
 	{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
 @endsection

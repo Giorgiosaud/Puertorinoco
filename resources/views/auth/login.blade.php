@@ -1,63 +1,53 @@
 @extends('templates.main')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							{!!Lang::get('formulario.problemasInput')!!}
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+    <div class="row">
+        @include('assets.errors')
+        <h1 class="col s12 center">Login</h1>
+        <hr>
+        <form class="col s12" role="form" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-					<form class="form-horizontal" role="form" method="POST" >
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input id="login" type="text" class="validate" name="login" value="{{ old('login') }}">
+                    <label for="login">Direccion de correo o Alias</label>
+                </div>
+                <div class="input-field col s12 m6 offset-m3">
+                    <input id="password" name="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="col s12 m6 offset-m3">
+                <p>
+                    <input type="checkbox" id="remember" name="remember"/>
+                    <label for="remember">Recordarmelo</label>
+                </p>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="login" class="form-control" name="login" value="{{ old('login') }}">
-							</div>
-						</div>
+                <div class="form-group">
+                    <div class="col m6 offset-m4">
+                        <button type="submit" class="btn btn-primary" style="margin-right: 15px;">
+                            Login
+                        </button>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
+                        <a href="/password/email">Forgot Your Password?</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Login
-								</button>
 
-								<a href="/password/email">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
+
+
+
+
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 @endsection

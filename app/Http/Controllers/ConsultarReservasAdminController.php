@@ -41,7 +41,7 @@ class ConsultarReservasAdminController extends Controller
     public function mostrarFormulario()
     {
         $paseos = Paseo::lists('horaDeSalida', 'id')->all();
-
+//        dd($paseos);
         $embarcaciones = Embarcacion::lists('nombre', 'id')->all();
 
         return view('reservacion.admin.consulta', compact('paseos', 'embarcaciones'));

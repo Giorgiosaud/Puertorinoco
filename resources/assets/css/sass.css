@@ -10697,9 +10697,6 @@ body.stop-scrolling {
   content: ""; }
 
 /*! CustomCss */
-body {
-  padding-top: 70px; }
-
 .header {
   color: #26a69a;
   font-weight: 300; }
