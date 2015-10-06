@@ -20,16 +20,13 @@
     <![endif]-->
 </head>
 <body>
-@include('templates.assets.navInterno')
-@yield('carrusel')
-<div class="row">
-    <div class="col s12">
+    @include('templates.assets.navInterno')
+    <div class="container">
         @include('flash::message')
         @yield('content')
     </div>
-</div>
 
-<!-- Scripts -->
+    <!-- Scripts -->
 </body>
 <footer>
     <script src="{!! elixir('js/admin.js') !!}"></script>

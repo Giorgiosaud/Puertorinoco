@@ -1,9 +1,9 @@
-<div class="panel panel-default">
-
+<div class="row">
 	@include('reservacion.admin.partials.formulario.Cliente')
 	@include('reservacion.admin.partials.formulario.Paseo')
+</div>
+<div class="row">
 	@include('reservacion.admin.partials.formulario.Pagos')
 	@include('reservacion.admin.partials.formulario.Pasajeros')
-	@include('reservacion.admin.partials.formulario.BorrarReserva')
-
 </div>
+@include('reservacion.admin.partials.formulario.BorrarReserva')

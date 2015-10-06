@@ -10730,6 +10730,20 @@ ul.language_bar_chooser {
 #Embarcaciones, #Paseos, #LoadingEmbarcacionesYPaseos, #datosdePrecios, #CuposDisponibles, #cedulaForm, #datosInternosCliente {
   display: none; }
 
+input[type=reset] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
 /*# sourceMappingURL=sass.css.map */
 /*!
  * Datepicker for Bootstrap
