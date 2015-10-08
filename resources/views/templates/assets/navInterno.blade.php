@@ -6,14 +6,14 @@
 		Navigation::links(
 			[
 			[
-			'link' => URL::route('loginPanel'),
+			'link' => '/PanelAdministrativo',
 			'title' => 'Inicio'
 			],
 			['Configuracion',
 			[
 
 			[
-			'link' => URL::route('PanelAdministrativo.embarcaciones.index'),
+			'link' => '#Embarcaciones',
 			'title' => 'Embarcaciones'
 			],
 			[

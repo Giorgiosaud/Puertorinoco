@@ -13,29 +13,30 @@
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => [
-        'localize',
-        'localizationRedirect',
+    'localize',
+    'localizationRedirect',
     ]
-], function () {
+    ], function () {
 
-    Route::get('/', ['as' => 'inicio.index', 'uses' => 'PagesController@index']);
-    Route::resource(LaravelLocalization::transRoute('routes.variables'), 'VariablesController');
-    Route::get(LaravelLocalization::transRoute('routes.reservacionCrear'),
-        ['as' => 'crearReservacion', 'uses' => 'ReservacionController@create']);
-    Route::post(LaravelLocalization::transRoute('routes.reservacionCrear'),
-        ['as' => 'creandoReservacion', 'uses' => 'ReservacionController@store']);
-    Route::get(LaravelLocalization::transRoute('routes.reservacionMostrar'),
-        ['as' => 'mostrarReserva', 'uses' => 'ReservacionController@show']);
-    Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
-    Route::get('ObtenerVariables', 'VariablesController@fechasEspeciales');
-    Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
-    Route::any('success', 'MercadopagoController@success');
-});
+        Route::get('/', ['as' => 'inicio.index', 'uses' => 'PagesController@index']);
+        Route::resource(LaravelLocalization::transRoute('routes.variables'), 'VariablesController');
+        Route::get(LaravelLocalization::transRoute('routes.reservacionCrear'),
+            ['as' => 'crearReservacion', 'uses' => 'ReservacionController@create']);
+        Route::post(LaravelLocalization::transRoute('routes.reservacionCrear'),
+            ['as' => 'creandoReservacion', 'uses' => 'ReservacionController@store']);
+        Route::get(LaravelLocalization::transRoute('routes.reservacionMostrar'),
+            ['as' => 'mostrarReserva', 'uses' => 'ReservacionController@show']);
+        Route::get('ObtenerVariables/{fecha}', 'VariablesController@otrasVariables');
+        Route::get('ObtenerVariables', 'VariablesController@fechasEspeciales');
+        Route::get('ObtenerDatosClientes/{identificacion}', 'ClientesController@obtenerDatos');
+        Route::any('success', 'MercadopagoController@success');
+    });
 Route::any('success', 'MercadopagoController@success');
 Route::any('notificacionMP', 'MercadopagoController@notification');
 Route::get('/logout', ['uses' => 'PanelAdministrativoController@logout', 'as' => 'logout']);
 Route::group(['prefix' => '/PanelAdministrativo'], function () {
-    Route::get('/', ['uses' => 'PanelAdministrativoController@mostrarFormularioEntrada', 'as' => 'loginPanel']);
+    Route::get('/', ['uses' => 'PanelAdministrativoController@mostrarPanelAdministrativo', 'as' => 'PanelAdministrativo']);
+    Route::get('/inicio', ['uses' => 'PanelAdministrativoController@mostrarFormularioEntrada', 'as' => 'loginPanel']);
     Route::post('/', ['uses' => 'PanelAdministrativoController@validarAcceso', 'as' => 'loginAuth']);
     Route::resource('embarcaciones', 'EmbarcacionesAdminController');
     Route::resource('paseos', 'PaseosAdminController');

@@ -1,4 +1,33 @@
-var ReservacionesApp = angular.module('ReservacionesApp', []);
+var ReservacionesApp = angular.module('ReservacionesApp', ['ngRoute']);
+ReservacionesApp.config(function ($routeProvider) {
+    $routeProvider
+    .when('/',{
+        templateUrl: '/PanelAdministrativo/inicio',
+        controller: 'mainController'
+    })
+    .when('/Embarcaciones',{
+        templateUrl: '/PanelAdministrativo/embarcaciones',
+        controller: 'embarcacionesController'
+    })
+
+});
+ReservacionesApp.controller('mainController',['$scope','$http','$log','$route','$location',function($scope,$http,$log,$route,$location){
+    $scope.formData = {};
+    $scope.submit=function(){
+        $http.post('/PanelAdministrativo', $scope.formData).then(function(response){
+            $log.info(response);
+        }, function(response){
+            $log.warn(response);
+        });
+        console.log($location);
+        $location.path('#');
+        
+    }
+
+}]);
+ReservacionesApp.controller('embarcacionesController',['$scope','$log',function($scope,$log){
+    console.log('wro');
+}]);
 ReservacionesApp.controller('ControladorDeConsultaDeReservaciones', function ($scope, $http) {
     $scope.headers = ['Id', 'Nombre', 'Apellido', 'Telefono', 'Adultos', 'Mayores', 'Niños', 'Total Cupos En Reserva','Total', 'Pagado', 'Deuda', 'Hecha Por', 'Modificada Por'];
     $scope.reservacionesPorEmbarcacionyHora=reformatReservas(reservacionesPorEmbarcacionyHora);
@@ -15,7 +44,7 @@ ReservacionesApp.controller('ControladorDeConsultaDeReservaciones', function ($s
         var montoPagado=0;
         reservacion.pagos.forEach(function(pago){
            montoPagado+=pago.monto;
-        });
+       });
         return montoPagado;
     }
     function reformatReservas(reservacionesPorEmbarcacionyHora) {

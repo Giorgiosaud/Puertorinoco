@@ -26,14 +26,18 @@ class PanelAdministrativoController extends Controller {
         $this->registrar = $registrar;
     }
 
+    public function mostrarPanelAdministrativo()
+    {
+        return view('templates.mainInterno');
+    }
     public function mostrarFormularioEntrada()
     {
         if ($this->auth->guest())
         {
             return view('auth.login');
         }
-
         return view('PanelAdministrativo.inicio');
+
     }
 
     protected function getFailedLoginMessage()
@@ -48,7 +52,7 @@ class PanelAdministrativoController extends Controller {
             $this->auth->logout();
         }
 
-        return redirect()->route('loginPanel');
+        return redirect()->route('PanelAdministrativo');
     }
 
     public function validarAcceso(AutenticacionRequest $request)
@@ -59,12 +63,13 @@ class PanelAdministrativoController extends Controller {
         $request->all();
         if ($this->auth->attempt($request->only($field, 'password')))
         {
-            return redirect()->intended(route('loginPanel'));
+            return 'logueado';
+            return redirect()->intended(route('PanelAdministrativo'));
         }
 
-        return redirect()->route('loginPanel')->withErrors([
+        return redirect()->route('PanelAdministrativo')->withErrors([
             'error' => $this->getFailedLoginMessage(),
-        ]);
+            ]);
     }
 
 }
