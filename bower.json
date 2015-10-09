@@ -41,6 +41,8 @@
     "ngLocale-ve": "*",
     "sweetalert": "~1.1.0",
     "materialize": "~0.97.0",
-    "angular-route": "~1.4.7"
+    "angular-route": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "ngAnimate": "*"
   }
 }

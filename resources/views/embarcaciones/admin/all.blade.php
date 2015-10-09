@@ -1,6 +1,7 @@
 		{!!Table::withContents($embarcacionesTableStyle)
 			->callback('Accion', function ($field, $row) {
-				return Button::primary('Editar '.$row['Nombre'])->asLinkTo(route('PanelAdministrativo.embarcaciones.edit', $row['Id']))->block();
+				return Button::primary('Editar '.$row['Nombre'])
+				->asLinkTo('/PanelAdministrativo/#/Embarcaciones/'.$row['Id'].'/edit')->block();
 			})
 			->callback('Borrar', function ($field, $row) {
 				$return=Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route' => ['PanelAdministrativo.embarcaciones.destroy', $row['Id']]]);
@@ -67,5 +68,8 @@
 			})
 			->hover()->responsive()->centered()->render()
 			!!}
-
-			{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
+			<div class="row">
+				<div class="col s12 center-align">
+					{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
+				</div>
+			</div>

@@ -3,6 +3,18 @@
 //body {
 //  padding-top: 70px;
 //}
+.main{
+  -moz-transition:all 30s ease;
+  -webkit-transition:all 30s ease;
+  -o-transition:all 30s ease;
+  transition:all 30s ease;
+  &.ng-enter{
+    @include effect(fadeInUp);
+  }
+  &.ng-leave{
+    @include effect(fadeOutDown);
+  }
+}
 .header {
   color: #26a69a;
   font-weight: 300;
@@ -55,4 +67,28 @@ input[type=reset] {
   cursor: pointer;
   opacity: 0;
   filter: alpha(opacity=0);
+}
+.slide {
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+  -moz-transition: -moz-transform .7s ease-in-out;
+  -o-transition: -o-transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.slide.ng-enter {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.slide.ng-enter.ng-enter-active, .slide.ng-leave {
+  position: absolute;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.slide.ng-leave.ng-leave-active {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
 }

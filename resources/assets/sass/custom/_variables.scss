@@ -5,3 +5,8 @@ $color-de-fuente:#104049;
 $navm-h:70px;
 $primary-color: color("blue", "base");
 $secondary-color: color("amber", "lighten-1") !default;
+
+@mixin effect($effect){
+	-webkit-animation-name:$effect;
+	animation-name:$effect;
+}
