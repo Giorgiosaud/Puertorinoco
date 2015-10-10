@@ -48,7 +48,7 @@ class ReservacionController extends Controller {
     {
 
         $reserva = Reservacion::create($datos);
-        $reserva = Reservacion::find($reserva->id);
+//        $reserva = Reservacion::find($reserva->id);
 
         return $reserva;
     }
@@ -59,24 +59,32 @@ class ReservacionController extends Controller {
      */
     public function store(ReservacionesRequest $request)
     {
+
         $cliente = $this->ActualizarOCrearCliente($request);
+
         $vecesRepetida = Reservacion::ObtenerVecesQueSeRepite($request->input('fecha'), $cliente->id, $request->input
         ('embarcacion_id'), $request->input('paseo_id'))->count();
-        if (($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->esAgencia) && $vecesRepetida > 0)
+
+        if ($this->auth->guest() && $vecesRepetida > 0)
         {
             flash()->error(Lang::get('formulario.reservaDuplicada'));
 
             return redirect()->back()->withInput();
         }
+
         $pasajerosReservados = Reservacion::PasajerosReservadosDeLaFechaEmbarcacionyPaseo($request->input('fecha'),
             $request->input('embarcacion_id'), $request->input('paseo_id'));
+
         if (!is_integer($pasajerosReservados))
         {
             $pasajerosReservados = 0;
         }
+
         $pasajerosEnReservaActual = $request->input('adultos') + $request->input('mayores') + $request->input
             ('ninos');
+
         $totalConEstaReserva = $pasajerosReservados + $pasajerosEnReservaActual;
+
         if ($this->auth->guest() || !$this->auth->user()->nivelDeAcceso->permiso->cuposExtra)
         {
             $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeNormal;
@@ -84,17 +92,20 @@ class ReservacionController extends Controller {
         {
             $maximoEmbarcacion = Embarcacion::find($request->input('embarcacion_id'))->abordajeMaximo;
         }
+
         if ($totalConEstaReserva > $maximoEmbarcacion)
         {
             flash()->error(Lang::get('reservacion.alguienReservoAntes'));
 
             return redirect()->back()->withInput();
         }
+//        dd($totalConEstaReserva > $maximoEmbarcacion);
+
         $respuesta = $request->all() + ['cliente_id' => $cliente->id];
-
         $reservacion = $this->RealizarReserva($respuesta);
-
-        return view('reservacion.mostrar', compact('reservacion'));
+//        dd($reservacion->id);
+        $otros['mercadopago']= $totalConEstaReserva>Embarcacion::find($request->input('embarcacion_id'))->abordajeMinimo;
+        return view('reservacion.mostrar', compact('reservacion','otros'));
 
     }
 
