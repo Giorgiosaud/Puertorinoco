@@ -1,4 +1,4 @@
-var ReservacionesApp = angular.module('ReservacionesApp', ['ngAnimate','ui.router']);
+var ReservacionesApp = angular.module('ReservacionesApp', ['ui.router']);
 ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
     // $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -12,25 +12,25 @@ ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
-    .state('Embarcaciones',{
-        url:'/Embarcaciones',
-        views:{
-            'main':{
-                templateUrl: '/PanelAdministrativo/embarcaciones',
-                controller: 'embarcacionesController'
-            }
-        }
-    })
-    .state('editarEmbarcacion',{
-        url:'/Embarcaciones/:idembarcacion/edit',
-        views:{
-            'main':{
-                templateUrl: function(stateParams){
-                    console.log(stateParams);
-                    return '/PanelAdministrativo/embarcaciones/'+stateParams.idembarcacion+'/edit';
-                },
-                controller: 'editarEmbarcacionesController'
-            }
-        }
-    })
+    //.state('Embarcaciones',{
+    //    url:'/Embarcaciones',
+    //    views:{
+    //        'main':{
+    //            templateUrl: '/PanelAdministrativo/embarcaciones',
+    //            controller: 'embarcacionesController'
+    //        }
+    //    }
+    //})
+    //.state('editarEmbarcacion',{
+    //    url:'/Embarcaciones/:idembarcacion/edit',
+    //    views:{
+    //        'main':{
+    //            templateUrl: function(stateParams){
+    //                console.log(stateParams);
+    //                return '/PanelAdministrativo/embarcaciones/'+stateParams.idembarcacion+'/edit';
+    //            },
+    //            controller: 'editarEmbarcacionesController'
+    //        }
+    //    }
+    //})
 });

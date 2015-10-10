@@ -31,8 +31,9 @@
     "behat/mink": "~1.6",
     "behat/mink-extension": "~2.0",
     "laracasts/generators": "dev-master",
-    "laracasts/testdummy": "dev-master",
-    "jorgelsaud/materializer": "dev-master"
+    "laracasts/testdummy": "~2.1",
+    "jorgelsaud/materializer": "dev-master",
+    "laracasts/integrated":"dev-master"
 
   },
   "autoload": {

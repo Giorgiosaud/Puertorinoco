@@ -9,9 +9,9 @@ class ExampleTest extends TestCase {
 	 */
 	public function testBasicExample()
 	{
-		$response = $this->call('GET', '/');
-
-		$this->assertEquals(200, $response->getStatusCode());
+		$this->visit('/PanelAdministrativo')->assertResponseOk();
+		$this->visit('/PanelAdministrativo/inicio')->see('Login');
+//		$this->assertEquals(200, $response->getStatusCode());
 	}
 
 }

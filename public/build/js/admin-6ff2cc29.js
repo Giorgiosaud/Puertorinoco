@@ -23141,7 +23141,7 @@ exports.colorLuminance = colorLuminance;
 
 },{}]},{},[1]);
 
-var ReservacionesApp = angular.module('ReservacionesApp', ['ngAnimate','ui.router']);
+var ReservacionesApp = angular.module('ReservacionesApp', ['ui.router']);
 ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
     // $urlRouterProvider.otherwise('/');
     $stateProvider
@@ -23155,27 +23155,27 @@ ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
-    .state('Embarcaciones',{
-        url:'/Embarcaciones',
-        views:{
-            'main':{
-                templateUrl: '/PanelAdministrativo/embarcaciones',
-                controller: 'embarcacionesController'
-            }
-        }
-    })
-    .state('editarEmbarcacion',{
-        url:'/Embarcaciones/:idembarcacion/edit',
-        views:{
-            'main':{
-                templateUrl: function(stateParams){
-                    console.log(stateParams);
-                    return '/PanelAdministrativo/embarcaciones/'+stateParams.idembarcacion+'/edit';
-                },
-                controller: 'editarEmbarcacionesController'
-            }
-        }
-    })
+    //.state('Embarcaciones',{
+    //    url:'/Embarcaciones',
+    //    views:{
+    //        'main':{
+    //            templateUrl: '/PanelAdministrativo/embarcaciones',
+    //            controller: 'embarcacionesController'
+    //        }
+    //    }
+    //})
+    //.state('editarEmbarcacion',{
+    //    url:'/Embarcaciones/:idembarcacion/edit',
+    //    views:{
+    //        'main':{
+    //            templateUrl: function(stateParams){
+    //                console.log(stateParams);
+    //                return '/PanelAdministrativo/embarcaciones/'+stateParams.idembarcacion+'/edit';
+    //            },
+    //            controller: 'editarEmbarcacionesController'
+    //        }
+    //    }
+    //})
 });
 // ReservacionesApp.controller('ControladorDeConsultaDeReservaciones', function ($scope, $http) {
 //     $scope.headers = ['Id', 'Nombre', 'Apellido', 'Telefono', 'Adultos', 'Mayores', 'Niños', 'Total Cupos En Reserva','Total', 'Pagado', 'Deuda', 'Hecha Por', 'Modificada Por'];
