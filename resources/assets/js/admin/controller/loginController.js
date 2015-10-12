@@ -1,4 +1,4 @@
-ReservacionesApp.controller('mainController',['$scope','$http','$log','$state',function($scope,$http,$log,$state){
+ReservacionesApp.controller('loginController',['$scope','$http','$log','$state',function($scope,$http,$log,$state){
     $scope.formData = {};
     $log.info('mainController');
     $scope.submit=function(){
