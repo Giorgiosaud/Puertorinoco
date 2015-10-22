@@ -21910,6 +21910,7 @@ Picker.extend( 'pickadate', DatePicker )
 }( jQuery ));
 
 //# sourceMappingURL=all.js.map
+
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // SweetAlert
 // 2014-2015 (c) - Tristan Edwards
@@ -23141,42 +23142,7 @@ exports.colorLuminance = colorLuminance;
 
 },{}]},{},[1]);
 
-var ReservacionesApp = angular.module('ReservacionesApp', ['ui.router']);
-ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
-    // $urlRouterProvider.otherwise('/');
-    $stateProvider
-    .state('home',{
-        url:'/',
-        views:{
-            'main':{
-
-                templateUrl: '/PanelAdministrativo/inicio',
-                controller: 'mainController'
-            }
-        }
-    })
-    //.state('Embarcaciones',{
-    //    url:'/Embarcaciones',
-    //    views:{
-    //        'main':{
-    //            templateUrl: '/PanelAdministrativo/embarcaciones',
-    //            controller: 'embarcacionesController'
-    //        }
-    //    }
-    //})
-    //.state('editarEmbarcacion',{
-    //    url:'/Embarcaciones/:idembarcacion/edit',
-    //    views:{
-    //        'main':{
-    //            templateUrl: function(stateParams){
-    //                console.log(stateParams);
-    //                return '/PanelAdministrativo/embarcaciones/'+stateParams.idembarcacion+'/edit';
-    //            },
-    //            controller: 'editarEmbarcacionesController'
-    //        }
-    //    }
-    //})
-});
+var ReservacionesApp = angular.module('ReservacionesApp',[]);
 // ReservacionesApp.controller('ControladorDeConsultaDeReservaciones', function ($scope, $http) {
 //     $scope.headers = ['Id', 'Nombre', 'Apellido', 'Telefono', 'Adultos', 'Mayores', 'Niños', 'Total Cupos En Reserva','Total', 'Pagado', 'Deuda', 'Hecha Por', 'Modificada Por'];
 //     $scope.reservacionesPorEmbarcacionyHora=reformatReservas(reservacionesPorEmbarcacionyHora);
@@ -23212,26 +23178,51 @@ ReservacionesApp.config(function ($stateProvider, $urlRouterProvider) {
 //         return reservacionesPorEmbarcacionyHora;
 //     };
 // });
-ReservacionesApp.controller('editarEmbarcacionesController',['$scope','$log','$routeParams',function($scope,$log,$routeParams){
-	$scope.idembarcacion=$routeParams.idembarcacion||'na';
-	console.log('editarEmbarcacionesController');
-}]);
-ReservacionesApp.controller('embarcacionesController',['$scope','$log',function($scope,$log){
-	console.log('embarcacionesController');
-}]);
-ReservacionesApp.controller('mainController',['$scope','$http','$log','$state',function($scope,$http,$log,$state){
-    $scope.formData = {};
-    $log.info('mainController');
-    $scope.submit=function(){
-        $http.post('/PanelAdministrativo', $scope.formData).then(function(response){
-            $log.info(response);
-            $log.warn($state.current);
-            $state.go('home');
-        }, function(response){
-            $log.warn(response);
-        });
-    }
-}]);
+//ReservacionesApp.controller('editarEmbarcacionesController',['$scope','$log','$routeParams',function($scope,$log){
+//	$scope.idembarcacion=$routeParams.idembarcacion||'na';
+//	console.log('editarEmbarcacionesController');
+//}]);
+//ReservacionesApp.controller('embarcacionesController',['$scope','$log',function($scope,$log){
+//	console.log('embarcacionesController');
+//}]);
+//ReservacionesApp.controller('loginController',['$scope','$http','$log',function($scope,$http,$log){
+//    $scope.formData = {};
+//    $log.info('mainController');
+//    $scope.reload=function(){
+//        $log.log($state);
+//        console.log('reloading');
+//        $state.go($state.current, {}, {reload: true});
+//    };
+//    $scope.submit=function(){
+//        $http.post('/PanelAdministrativo', $scope.formData)
+//            .then(function(response){
+//                $log.info(response);
+//                $log.warn($state.current);
+//                $state.go($state.current, {}, {reload: true});
+//        }, function(response){
+//            $log.warn(response);
+//        });
+//        console.log('reload');
+//
+//    }
+//}]);
+//ReservacionesApp.controller('inicioController',function(){});
+ReservacionesApp.directive("tablamaterialized",function(){
+        return {
+            restrict: "E",
+            replace: true,
+            transclude: {
+                'paneTitle': '?title',
+            },
+            scope: {
+                clase:"@",
+                'titulos':'='
+            },
+            template:   '<div><table class={{clase}} {{titulo}}><tr><ng-foreach="titulo in titulos"><td>{{titulo}}</td></ng-foreach></tr><ng-transclude></ng-transclude></table></div>',
+        }
+});
+
+
 var datos;
 var dd = function (log) {
     console.log(log)
@@ -23240,8 +23231,11 @@ var dd = function (log) {
     //swal("Here's a message!");
 })();
 $(document).ready(function () {
-    $('select').material_select();
-    $('.multiselector').select2();
+    //$('.selector').material_select();
+    $('.multiselector').select2({
+        dropdownAutoWidth : true
+    });
+
     $('.slider').slider({full_width: true});
     $(".dropdown-button").dropdown({
         belowOrigin: true

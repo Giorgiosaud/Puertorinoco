@@ -1,3 +1,4 @@
+process.env.DISABLE_NOTIFIER = true;
 var elixir = require('laravel-elixir');
 
 elixir(function (mix) {
@@ -31,13 +32,14 @@ elixir(function (mix) {
     .scripts(['all.js','bundle.js', 'main.js'])
 
     .scripts([
-        'all.js',
-        'bundle.js', 
-        'admin/reservasComponent.js',
-        'admin/controller/ControladorDeConsultaDeReservaciones.js',
-        'admin/controller/editarEmbarcacionesController.js',
-        'admin/controller/embarcacionesController.js',
-        'admin/controller/mainController.js',
+            'all.js',
+            'bundle.js',
+            'admin/reservasComponent.js',
+            'admin/controller/ControladorDeConsultaDeReservaciones.js',
+            'admin/controller/editarEmbarcacionesController.js',
+            'admin/controller/embarcacionesController.js',
+            'admin/controller/loginController.js',
+            'admin/directives/tableDirectives.js',
         'main.js', 
         ], 'public/js/admin.js')
 

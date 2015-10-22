@@ -1,7 +1,6 @@
 @extends('templates.mainInterno')
 @section('content')
-
-		<div class="table-responsive">
+<div class="row">
 			{!!Table::withContents($paseosTableStyle)
 			->callback('Accion', function ($field, $row) {
 			return Button::primary('Editar '.$row['Nombre'])->asLinkTo(route('PanelAdministrativo.paseos.edit', $row['Id']))->block();
@@ -87,10 +86,11 @@
 			}
 			return $return;
 			})
-			->hover()->render()
+			->striped()->bordered()->responsive()->hover()->render()
 			!!}
 
+</div>
+		<div class="row center-align">
+		{!!Button::primary('Nuevo Paseo')->asLinkTo(route('PanelAdministrativo.paseos.create'))->block()!!}
 		</div>
-		{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
-
 @endsection

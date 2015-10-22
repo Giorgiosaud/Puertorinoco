@@ -124,7 +124,7 @@
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #ffdb99;
   border-color: #ffb733;
 }
@@ -148,7 +148,7 @@
 .open .dropdown-toggle.datepicker table tr td.today:hover,
 .open .dropdown-toggle.datepicker table tr td.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #ffcd70;
   border-color: #f59e00;
 }
@@ -249,7 +249,7 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.today:hover,
 .open .dropdown-toggle.datepicker table tr td.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #ffcd70;
   border-color: #f59e00;
 }
@@ -335,7 +335,7 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .datepicker table tr td.today.disabled .badge,
 .datepicker table tr td.today.disabled:hover .badge {
   color: #ffdb99;
-  background-color: #000000;
+  background-color: #000;
 }
 .datepicker table tr td.today:hover:hover {
   color: #000;
@@ -354,7 +354,7 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today.disabled,
 .datepicker table tr td.range.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #f7ca77;
   border-color: #f1a417;
   border-radius: 0;
@@ -379,7 +379,7 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.range.today:hover,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #f4bb51;
   border-color: #bf800c;
 }
@@ -480,7 +480,7 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.range.today:hover,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
-  color: #000000;
+  color: #000;
   background-color: #f4bb51;
   border-color: #bf800c;
 }
@@ -566,13 +566,13 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .datepicker table tr td.range.today.disabled .badge,
 .datepicker table tr td.range.today.disabled:hover .badge {
   color: #f7ca77;
-  background-color: #000000;
+  background-color: #000;
 }
 .datepicker table tr td.selected,
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
 .datepicker table tr td.selected.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #999999;
   border-color: #555555;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -597,7 +597,7 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.selected:hover,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #858585;
   border-color: #373737;
 }
@@ -698,7 +698,7 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.selected:hover,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #858585;
   border-color: #373737;
 }
@@ -784,13 +784,13 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .datepicker table tr td.selected.disabled .badge,
 .datepicker table tr td.selected.disabled:hover .badge {
   color: #999999;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -815,7 +815,7 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.active:hover,
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
@@ -916,7 +916,7 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.active:hover,
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
@@ -1002,7 +1002,7 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .datepicker table tr td.active.disabled .badge,
 .datepicker table tr td.active.disabled:hover .badge {
   color: #428bca;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .datepicker table tr td span {
   display: block;
@@ -1027,7 +1027,7 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -1052,7 +1052,7 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td span.active:hover,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
@@ -1153,7 +1153,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td span.active:hover,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
-  color: #ffffff;
+  color: #fff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
@@ -1239,7 +1239,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .datepicker table tr td span.active.disabled .badge,
 .datepicker table tr td span.active.disabled:hover .badge {
   color: #428bca;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {
@@ -1288,7 +1288,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   text-shadow: 0 1px 0 #fff;
   vertical-align: middle;
   background-color: #eeeeee;
-  border: solid #cccccc;
+  border: solid #ccc;
   border-width: 1px 0;
   margin-left: -5px;
   margin-right: -5px;
@@ -1302,7 +1302,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   display: none;
   min-width: 160px;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -1326,7 +1326,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid;
-  border-color: #cccccc;
+  border-color: #ccc;
   position: relative;
   text-align: left;
   overflow: hidden;
@@ -1397,8 +1397,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   margin-top: -1px;
   margin-bottom: -1px;
   z-index: 100;
-  color: #333333;
-  background: #ffffff;
+  color: #333;
+  background: #fff;
 }
 .bootstrap-switch .bootstrap-switch-handle-on {
   border-bottom-left-radius: 3px;

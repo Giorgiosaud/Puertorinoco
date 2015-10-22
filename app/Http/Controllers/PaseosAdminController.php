@@ -85,11 +85,8 @@ class PaseosAdminController extends Controller {
      */
     public function edit($id)
     {
-        $tiposDePaseos=TipoDePaseo::lists('nombre','id');
-        $embarcaciones=Embarcacion::lists('nombre','id');
-
         $paseo = Paseo::findOrFail($id);
-        return view('Paseos.admin.edit', compact('paseo','tiposDePaseos','embarcaciones'));
+        return view('Paseos.admin.edit', compact('paseo'));
 
     }
 

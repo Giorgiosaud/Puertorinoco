@@ -1,3 +1,3 @@
-ReservacionesApp.controller('embarcacionesController',['$scope','$log',function($scope,$log){
-	console.log('embarcacionesController');
-}]);
+//ReservacionesApp.controller('embarcacionesController',['$scope','$log',function($scope,$log){
+//	console.log('embarcacionesController');
+//}]);

@@ -2,7 +2,7 @@
 	<div class="col s12">
 		<div class="card blue darken-1 white-text">
 			<div class="card-content">
-				<div class="row"><span class="card-title">Editar {!!$embarcacion->nombre!!}</span></div>
+				<div class="row"><span class="card-title">{!!$titulo!!}</span></div>
 				<div class="row">
 					<div class="col s12 m6">
 						{!! Form::label('nombre', 'Nombre de la Embarcacion: ',['class'=>'white-text']) !!}
@@ -48,12 +48,19 @@
 			<div class="card-content">
 				<div class="row"><span class="card-title">Dias Disponibles a la Semana</span></div>
 				<div class="row">
+					{!! Form::hidden('lunes',0)!!}
+					{!! Form::hidden('martes',0)!!}
+					{!! Form::hidden('miercoles',0)!!}
+					{!! Form::hidden('jueves',0)!!}
+					{!! Form::hidden('viernes',0)!!}
+					{!! Form::hidden('sabado',0)!!}
+					{!! Form::hidden('domingo',0)!!}
 					<div class="col s4 m4">
 						{!!Form::label('lunes', 'Lunes: ',['class'=>'white-text']) !!}
 						<div class="switch">
 							<label class="white-text">
 								Inactivo
-								{!! Form::checkbox('lunes',1,null,['class'=>'btswitch'])!!}
+								{!! Form::checkbox('lunes',1,false,['class'=>'btswitch'])!!}
 								<span class="lever"></span>
 								Activo
 							</label>
@@ -132,7 +139,9 @@
 </div>
 <div class="row">
 	<div class="col s12 center-align">
-		{!!Button::primary($submit)->large()->block()->submit()!!}
+		<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
+			{{$submit}}
+		</button>
 	</div>
 </div>
 </div>

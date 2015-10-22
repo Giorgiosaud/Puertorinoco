@@ -79,6 +79,6 @@ class Paseo extends Model {
      */
     public function getListaDeEmbarcacionesAttribute()
     {
-        return $this->embarcaciones->lists('id');
+        return $this->embarcaciones->lists('id')->toArray();
     }
 }

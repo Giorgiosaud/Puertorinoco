@@ -2425,7 +2425,6 @@ span.badge {
       bottom: 0;
       will-change: left, right;
       -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-      -ms-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
       animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
     .progress .indeterminate:after {
       content: '';
@@ -2436,10 +2435,8 @@ span.badge {
       bottom: 0;
       will-change: left, right;
       -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-      -ms-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
       -webkit-animation-delay: 1.15s;
-      -ms-animation-delay: 1.15s;
       animation-delay: 1.15s; }
 
 @-webkit-keyframes indeterminate {
@@ -7019,6 +7016,7 @@ select {
   margin: 0;
   height: 100%;
   height: calc(100% + 60px);
+  height: -moz-calc(100%);
   padding-bottom: 60px;
   background-color: #fff;
   z-index: 999;
@@ -11629,5 +11627,15 @@ input[type=reset] {
 .slide.ng-leave.ng-leave-active {
   -webkit-transform: translateX(100%);
   transform: translateX(100%); }
+
+.select2 {
+  width: 100% !important; }
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #1E88E5;
+  border: 1px solid #000c17; }
+
+label {
+  color: #FFF; }
 
 /*# sourceMappingURL=sass.css.map */

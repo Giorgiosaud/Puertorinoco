@@ -6,8 +6,11 @@ var dd = function (log) {
     //swal("Here's a message!");
 })();
 $(document).ready(function () {
-    $('select').material_select();
-    $('.multiselector').select2();
+    //$('.selector').material_select();
+    $('.multiselector').select2({
+        dropdownAutoWidth : true
+    });
+
     $('.slider').slider({full_width: true});
     $(".dropdown-button").dropdown({
         belowOrigin: true

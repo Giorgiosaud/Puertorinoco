@@ -22,8 +22,9 @@
 <body>
     @include('templates.assets.navInterno')
     <div class="container">
-        <div ngView ui-view="main" class="main"></div>
+        {{--<div ngView ui-view="main" class="main"></div>--}}
         @include('flash::message')
+
         @yield('content')
     </div>
 

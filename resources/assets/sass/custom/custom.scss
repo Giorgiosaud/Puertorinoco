@@ -92,3 +92,13 @@ input[type=reset] {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
+.select2{
+  width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+  background-color: #1E88E5;
+  border: 1px solid rgb(0, 12, 23);
+}
+label{
+  color:#FFF;
+}

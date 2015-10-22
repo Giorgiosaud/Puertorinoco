@@ -28,16 +28,11 @@ class PanelAdministrativoController extends Controller {
 
     public function mostrarPanelAdministrativo()
     {
-        return view('templates.mainInterno');
-    }
-    public function mostrarFormularioEntrada()
-    {
         if ($this->auth->guest())
         {
             return view('auth.login');
         }
         return view('PanelAdministrativo.inicio');
-
     }
 
     protected function getFailedLoginMessage()
@@ -52,7 +47,7 @@ class PanelAdministrativoController extends Controller {
             $this->auth->logout();
         }
 
-        return redirect()->route('PanelAdministrativo');
+        return redirect()->route('inicio.index');
     }
 
     public function validarAcceso(AutenticacionRequest $request)
@@ -63,7 +58,6 @@ class PanelAdministrativoController extends Controller {
         $request->all();
         if ($this->auth->attempt($request->only($field, 'password')))
         {
-            return 'logueado';
             return redirect()->intended(route('PanelAdministrativo'));
         }
 
