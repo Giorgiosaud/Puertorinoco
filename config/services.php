@@ -15,23 +15,28 @@ return [
 	*/
 
 	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
+	'domain' => '',
+	'secret' => '',
 	],
 
 	'mandrill' => [
-		'secret' => '',
+	'secret' => '',
 	],
 
 	'ses' => [
-		'key' => '',
-		'secret' => '',
-		'region' => 'us-east-1',
+	'key' => '',
+	'secret' => '',
+	'region' => 'us-east-1',
 	],
 
 	'stripe' => [
-		'model'  => 'User',
-		'secret' => '',
+	'model'  => 'User',
+	'secret' => '',
 	],
+	'mercadopago'=>[
+	'CLIENT_ID'=>env('MERCADOPAGO_CLIENT_ID', ''),
+	'CLIENT_SECRET'=>env('MERCADOPAGO_CLIENT_SECRET', ''),
+	'SANDBOXMODE'=>env('MERCADOPAGO_MP_SANDBOXMODE', ''),
+	]
 
-];
+	];

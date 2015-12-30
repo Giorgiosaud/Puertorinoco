@@ -119,8 +119,8 @@ class ReservacionController extends Controller {
     {
         $reservacion = Reservacion::findOrFail($id);
         //return view('templates.mainSinNav', compact('reservacion'));
-
-        return view('reservacion.mostrar', compact('reservacion'));
+        $otros['mercadopago']=true;
+        return view('reservacion.mostrar', compact('reservacion','otros'));
     }
 
 
