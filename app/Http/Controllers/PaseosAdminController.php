@@ -102,9 +102,9 @@ class PaseosAdminController extends Controller {
     public function update($id,PaseosAdminRequest $request)
     {
         $paseo = Paseo::findOrFail($id);
-
         $paseo->update($request->all());
-        $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
+      //  $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
+			//	dd($paseo);
         return redirect()->route('PanelAdministrativo.paseos.index');
     }
 

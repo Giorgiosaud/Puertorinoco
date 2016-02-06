@@ -89,7 +89,8 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+	$fechaEspecial = FechaEspecial::findOrFail($id);
+
 	}
 
 	/**
