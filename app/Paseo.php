@@ -81,4 +81,14 @@ class Paseo extends Model {
     {
         return $this->embarcaciones->lists('id');
     }
+    public function getHoraSalidaToEventAttribute(){
+        $hora=intval(substr($this->horaDeSalida,0,2));
+        if($hora<8){
+            $ret='T'.($hora+12).':00';
+            return $ret;
+        }
+        $ret='T'.($hora).':00';
+        return $ret;
+    }
+        
 }

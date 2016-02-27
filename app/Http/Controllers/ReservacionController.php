@@ -106,7 +106,7 @@ class ReservacionController extends Controller {
         $reservacion = $this->RealizarReserva($respuesta);
        // dd($reservacion);
         $otros['mercadopago']= $totalConEstaReserva>Embarcacion::find($request->input('embarcacion_id'))->abordajeMinimo;
-        Mail::send('reservacion.mostrar',compact('reservacion','otros'),function($m) use ($reservacion){
+        Mail::send('reservacion.email.enviar',compact('reservacion','otros'),function($m) use ($reservacion){
             $m->from('info@puertorinoco.com', 'Puertorinoco');
             $m->to($reservacion->cliente->email, $reservacion->cliente->nombre.' '.$reservacion->cliente->apellido)->subject('Su Reserva numero '.$reservacion->id.' en Puertorinoco');
         });

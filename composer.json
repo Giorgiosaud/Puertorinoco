@@ -15,7 +15,8 @@
     "laracasts/utilities": "~2.0",
     "jorgelsaud/mercado-pago": "dev-master",
     "jorgelsaud/carbonlocalizer": "dev-master",
-    "jorgelsaud/materializer": "dev-master"
+    "jorgelsaud/materializer": "dev-master",
+    "guzzlehttp/guzzle": "~5.3|~6.0"
 
     },
     "require-dev": {
