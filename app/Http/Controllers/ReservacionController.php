@@ -1,13 +1,14 @@
 <?php namespace App\Http\Controllers;
 
+use App\Paseo;
 use App\Cliente;
 use App\Embarcacion;
-use App\Http\Requests;
-use App\Http\Requests\ReservacionesRequest;
-use App\Paseo;
 use App\Reservacion;
+use App\Http\Requests;
 use Illuminate\Auth\Guard;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ReservacionesRequest;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ReservacionController extends Controller {
@@ -103,8 +104,12 @@ class ReservacionController extends Controller {
 
         $respuesta = $request->all() + ['cliente_id' => $cliente->id];
         $reservacion = $this->RealizarReserva($respuesta);
-//        dd($reservacion->id);
+       // dd($reservacion);
         $otros['mercadopago']= $totalConEstaReserva>Embarcacion::find($request->input('embarcacion_id'))->abordajeMinimo;
+        Mail::send('reservacion.mostrar',compact('reservacion','otros'),function($m) use ($reservacion){
+            $m->from('info@puertorinoco.com', 'Puertorinoco');
+            $m->to($reservacion->cliente->email, $reservacion->cliente->nombre.' '.$reservacion->cliente->apellido)->subject('Su Reserva numero '.$reservacion->id.' en Puertorinoco');
+        });
         return view('reservacion.mostrar', compact('reservacion','otros'));
 
     }
