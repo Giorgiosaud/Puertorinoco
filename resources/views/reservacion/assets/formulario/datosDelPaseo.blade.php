@@ -57,7 +57,7 @@
 					<label class="col-sm-{{ $width }} btn btn-primary botonhora disabled">
 						{!! Form::radio('paseo_id',$paseo->id,false) !!}
 						{!! $paseo->horaDeSalida!!}
-						<br/><span class="cupos"></span>
+						<br/><span class="tipo">{{$paseo->tipoDePaseo->nombre}}</span><br/><span class="cupos"></span>
 					</label>
 				@endforeach
 			</div>
