@@ -120,6 +120,7 @@ class VariablesController extends Controller {
         $fechasEspecialesFinales = [];
         $embarcacionesDisponiblesPorFecha = [];
         $paseos = Paseo::all();
+
         if ($paseos->sum('domingo') == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '0');
@@ -187,7 +188,8 @@ class VariablesController extends Controller {
             $respuestas['embarcaciones'][$embarcacion->id]['orden'] = $embarcacion->orden;
 
             $paseos = $this->definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion);
-            foreach ($paseos as $paseo)
+						$paseosOrdenados=$paseos->sortBy('orden');
+            foreach ($paseosOrdenados as $paseo)
             {
                 $respuestas['paseos'][$paseo->id]['nombre'] = $paseo->nombre;
                 $respuestas['paseos'][$paseo->id]['horaDeSalida'] = $paseo->horaDeSalida;
@@ -311,7 +313,7 @@ class VariablesController extends Controller {
             return $embarcacion->paseos()->get();
         }
         //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
-        return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get();
+        return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
 
     }
 
