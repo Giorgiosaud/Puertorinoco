@@ -1,3 +1,0 @@
-[2016-07-15 09:52:50] development.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Middleware\TokenMismatchException' not found' in /home/ptori/web/reservas.puertorinoco.com/public_html/reservas/app/Http/Middleware/VerifyCsrfToken.php:22
-Stack trace:
-#0 {main}  
