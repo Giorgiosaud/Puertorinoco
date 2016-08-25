@@ -18,7 +18,7 @@
 		Fecha del Paseo:
 	</td>
 	<td class="text-left">
-		{!!CarbonLoc::diffForHumans2($reservacion->fecha)!!}
+		{!!CarbonLoc::diffForHumans2($reservacion->fecha)!!} ({!!$reservacion->fecha->format('d-m-Y')!!})
 	</td>
 
 
