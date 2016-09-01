@@ -155,7 +155,7 @@ return [
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',
-				'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider'
+	'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider'
         ],
 
     /*
@@ -204,8 +204,8 @@ return [
     'Validator' => 'Illuminate\Support\Facades\Validator',
     'View' => 'Illuminate\Support\Facades\View',
     'Form' => 'Collective\Html\FormFacade',
-    'Form'=>'Bootstrapper\Facades\Form',
     'HTML' => 'Collective\Html\HtmlFacade',
+    'Form'=>'Bootstrapper\Facades\Form',
     'Accordion' => 'Bootstrapper\Facades\Accordion',
     'Alert' => 'Bootstrapper\Facades\Alert',
     'Badge' => 'Bootstrapper\Facades\Badge',

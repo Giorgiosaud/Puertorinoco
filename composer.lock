@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9e5ba4d88812be6493c2218e11f31b8",
-    "content-hash": "888b5a1dc6049c478543b6c3d82197b5",
+    "hash": "b8283b67cc46dbd9a1eea3c6d68bc1c3",
+    "content-hash": "06d33aca55690d5283f2820442f0c58f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -520,6 +520,53 @@
             "time": "2016-06-24 23:00:38"
         },
         {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "abandoned": "laravelcollective/html",
+            "time": "2015-01-01 16:31:18"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -663,6 +710,70 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "jorgelsaud/bootstrapper",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giorgiosaud/bootstrapper.git",
+                "reference": "a7e6ba1b446afa4cf09cd167ceea407b2ef71e6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/giorgiosaud/bootstrapper/zipball/a7e6ba1b446afa4cf09cd167ceea407b2ef71e6e",
+                "reference": "a7e6ba1b446afa4cf09cd167ceea407b2ef71e6e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~4.2||~5",
+                "illuminate/html": "~4.2||~5",
+                "illuminate/routing": "~4.2||~5",
+                "illuminate/support": "~4.2||~5",
+                "php": ">=5.4.0",
+                "twbs/bootstrap": "~3"
+            },
+            "require-dev": {
+                "akeneo/phpspec-skip-example-extension": "~1.1",
+                "mockery/mockery": "~0.9",
+                "phpspec/phpspec": "~2",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bootstrapper\\": "src\\Bootstrapper",
+                    "DummyClasses\\": "tests\\DummyClasses"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                },
+                {
+                    "name": "Patrick Talmadge",
+                    "email": "ptalmadge@gmail.com"
+                },
+                {
+                    "name": "Patrick Rose",
+                    "email": "pjr0911025@gmail.com"
+                },
+                {
+                    "name": "Jorge Saud",
+                    "email": "jorgelsaud@gmail.com"
+                }
+            ],
+            "description": "Twitter Bootstrap markup generator",
+            "keywords": [
+                "bootstrap",
+                "laravel"
+            ],
+            "time": "2016-09-01 17:55:58"
         },
         {
             "name": "jorgelsaud/carbonlocalizer",
@@ -1441,66 +1552,6 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
-        },
-        {
-            "name": "patricktalmadge/bootstrapper",
-            "version": "5.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/patricktalmadge/bootstrapper.git",
-                "reference": "4180ddf4bb889ed731478a07fcca3492884eb4c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/patricktalmadge/bootstrapper/zipball/4180ddf4bb889ed731478a07fcca3492884eb4c2",
-                "reference": "4180ddf4bb889ed731478a07fcca3492884eb4c2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "~5",
-                "illuminate/routing": "~5",
-                "illuminate/support": "~5",
-                "laravelcollective/html": "~5",
-                "php": ">=5.6.0",
-                "twbs/bootstrap": "~3"
-            },
-            "require-dev": {
-                "akeneo/phpspec-skip-example-extension": "~1.1",
-                "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "~2",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Bootstrapper\\": "src\\Bootstrapper",
-                    "DummyClasses\\": "tests\\DummyClasses"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Fabre",
-                    "email": "ehtnam6@gmail.com"
-                },
-                {
-                    "name": "Patrick Talmadge",
-                    "email": "ptalmadge@gmail.com"
-                },
-                {
-                    "name": "Patrick Rose",
-                    "email": "pjr0911025@gmail.com"
-                }
-            ],
-            "description": "Twitter Bootstrap markup generator",
-            "keywords": [
-                "bootstrap",
-                "laravel"
-            ],
-            "time": "2016-08-31 21:53:43"
         },
         {
             "name": "phenx/php-font-lib",
@@ -5454,6 +5505,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "jorgelsaud/bootstrapper": 20,
         "jorgelsaud/mercado-pago": 20,
         "jorgelsaud/carbonlocalizer": 20,
         "jorgelsaud/materializer": 20,
