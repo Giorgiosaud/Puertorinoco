@@ -6,3 +6,4 @@ composer.lock
 .DS_Store
 .idea/workspace.xml
 app/.DS_Store
+storage/logs/
