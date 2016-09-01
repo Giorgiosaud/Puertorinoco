@@ -135,7 +135,7 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         /*
          * Application Service Providers...
@@ -203,8 +203,9 @@ return [
     'URL' => 'Illuminate\Support\Facades\URL',
     'Validator' => 'Illuminate\Support\Facades\Validator',
     'View' => 'Illuminate\Support\Facades\View',
-    'Form' => 'Illuminate\Html\FormFacade',
-    'HTML' => 'Illuminate\Html\HtmlFacade',
+    'Form'=>'Bootstrapper\Facades\Form',
+    'Form' => 'Collective\Html\FormFacade',
+    'HTML' => 'Collective\Html\HtmlFacade',
     'Accordion' => 'Bootstrapper\Facades\Accordion',
     'Alert' => 'Bootstrapper\Facades\Alert',
     'Badge' => 'Bootstrapper\Facades\Badge',
@@ -214,7 +215,6 @@ return [
     'Carousel' => 'Bootstrapper\Facades\Carousel',
     'ControlGroup' => 'Bootstrapper\Facades\ControlGroup',
     'DropdownButton' => 'Bootstrapper\Facades\DropdownButton',
-    'Form' => 'Bootstrapper\Facades\Form',
     'Helpers' => 'Bootstrapper\Facades\Helpers',
     'Icon' => 'Bootstrapper\Facades\Icon',
     'InputGroup' => 'Bootstrapper\Facades\InputGroup',
