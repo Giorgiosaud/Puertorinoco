@@ -4,10 +4,16 @@
   "keywords": ["framework","laravel"],
   "license": "MIT",
   "type": "project",
+  "repositories":[
+	  {
+		  "type":"vcs",
+		  "url":"https://github.com/giorgiosaud/bootstrapper.git"
+	  }
+  ],
   "require": {
     "laravel/framework": "5.1.*",
     "laravelcollective/html": "5.1.*",
-    "jorgelsaud/bootstrapper": "dev-master",
+    "patricktalmadge/bootstrapper": "dev-master",
     "mcamara/laravel-localization": "1.0.*",
     "laracasts/flash": "~1.3",
     "simplesoftwareio/simple-qrcode": "1.2.*",
