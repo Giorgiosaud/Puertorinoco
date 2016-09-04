@@ -135,7 +135,7 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        'Illuminate\Html\HtmlServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         /*
          * Application Service Providers...
@@ -204,8 +204,8 @@ return [
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
-        'Form' => 'Illuminate\Html\FormFacade',
-        'HTML' => 'Illuminate\Html\HtmlFacade',
+        'Form' => 'Collective\Html\FormFacade',
+        'HTML' => 'Collective\Html\HtmlFacade',
         'Accordion' => 'Bootstrapper\Facades\Accordion',
         'Alert' => 'Bootstrapper\Facades\Alert',
         'Badge' => 'Bootstrapper\Facades\Badge',
