@@ -105,7 +105,7 @@ class TipoDePaseoController extends Controller
     public function destroy($id)
     {
         $paseo = TipoDePaseo::findOrFail($id);
-        $paseo->destroy();
+        $paseo->delete();
         return redirect()->route('PanelAdministrativo.tipoDePaseo.index');
 
     }
