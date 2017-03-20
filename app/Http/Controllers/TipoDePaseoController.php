@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\TipoDePaseo;
+use Illuminate\Http\Request;
 
 class TipoDePaseoController extends Controller
 {
@@ -16,7 +16,31 @@ class TipoDePaseoController extends Controller
      */
     public function index()
     {
-        //
+        $TiposDePaseos = TipoDePaseo::all();
+        dd($TiposDePaseos);
+        $paseosTableStyle = [];
+        foreach ($TiposDePaseos as $TipoDePaseo)
+        {
+            $array = [
+                'Id'        => $TipoDePaseo->id,
+                'Hora de Salida'    => $paseo->horaDeSalida,
+                'Nombre'    => $paseo->nombre,
+                'Descripcion'    => $paseo->descripcion,
+                'Tipo'    => $paseo->tipoDePaseo->nombre,
+                'Orden'=>$paseo->orden,
+                'Público'   => $paseo->publico,
+                'Lunes'     => $paseo->lunes,
+                'Martes'    => $paseo->martes,
+                'Miercoles' => $paseo->miercoles,
+                'Jueves'    => $paseo->jueves,
+                'Viernes'   => $paseo->viernes,
+                'Sábado'    => $paseo->sabado,
+                'Domingo'   => $paseo->domingo,
+            ];
+            array_push($paseosTableStyle, $array);
+        }
+
+        return view('Paseos.admin.all', compact('paseosTableStyle'));
     }
 
     /**
