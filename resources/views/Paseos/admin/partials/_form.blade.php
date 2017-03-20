@@ -32,7 +32,7 @@ Form::select('tipo_de_paseo_id',$tiposDePaseos,null,['class'=>'form-control'])
 {!!
 ControlGroup::generate(
 Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
-Form::select('lista_de_embarcaciones[]',$embarcaciones,[0,1],['class'=>'form-control','multiple'])
+Form::select('embarcaciones[]',$embarcaciones,null,['class'=>'form-control','multiple'])
 )
 !!}
 
