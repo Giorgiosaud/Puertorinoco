@@ -18,6 +18,10 @@ Navbar::top()
 					'title' => 'Embarcaciones'
 				],
 				[
+					'link' => URL::route('PanelAdministrativo.tipoDePaseo.index'),
+					'title' => 'Tipos De Paseos'
+				],
+				[
 					'link' => URL::route('PanelAdministrativo.paseos.index'),
 					'title' => 'Paseos'
 				],
