@@ -101,7 +101,7 @@ $.get("../ObtenerVariables", function (datos) {
                 $('#fechaform').children('.col-xs-1').children().slideDown('slow');
                 $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
                 $.get("../ObtenerVariables/" + e.format(0, 'yyyy-mm-dd'), function (datosconfecha) {
-
+                    console.info(datosconfecha);
                     window.datosconfecha = datosconfecha;
                     cantidad_en_embarcacion = [];
                     for (key in window.datosconfecha.pasajeros) {
