@@ -52,7 +52,7 @@ class PaseosAdminController extends Controller {
         $tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
         // dd($tiposDePaseos);
         $embarcaciones=TipoDePaseo::lists('nombre','id')->all();
-        dd($embarcaciones);
+        // dd($embarcaciones);
         $embarcacionesSeleccionadas=null;
         return view('paseos.admin.create',compact('tiposDePaseos','embarcaciones','embarcacionesSeleccionadas'));
     }
