@@ -20,7 +20,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\TipoDePaseo whereUpdatedAt($value)
  */
 class TipoDePaseo extends Model {
-
+	protected $fillable = [
+	'nombre',
+	'descripcion',
+	];
 	protected $table='tipos_de_paseos';
 
 	public function precios(){
