@@ -18,7 +18,7 @@ class TipoDePaseoController extends Controller
     {
         $TiposDePaseos = TipoDePaseo::all();
         // dd($TiposDePaseos);
-        $paseosTableStyle = [];
+        $TiposDepaseosTableStyle = [];
         foreach ($TiposDePaseos as $TipoDePaseo)
         {
             $array = [
@@ -26,7 +26,7 @@ class TipoDePaseoController extends Controller
                 'Nombre'    => $TipoDePaseo->nombre,
                 'Descripcion'    => $TipoDePaseo->descripcion,
             ];
-            array_push($paseosTableStyle, $array);
+            array_push($TiposDepaseosTableStyle, $array);
         }
 
         return view('TiposDePaseos.admin.all', compact('TiposDepaseosTableStyle'));
