@@ -57,7 +57,7 @@ class TipoDePaseoController extends Controller
     public function store(Request $request)
     {
         $paseo=TipoDePaseo::create($request->all());
-        return redirect()->route('PanelAdministrativo.tipoDePaseos.index');
+        return redirect()->route('PanelAdministrativo.tipoDePaseo.index');
     }
 
     /**
