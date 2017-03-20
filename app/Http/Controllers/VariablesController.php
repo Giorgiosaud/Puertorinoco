@@ -308,7 +308,7 @@ class VariablesController extends Controller {
      */
     public function definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion)
     {
-        dd($autorizacion);
+        dd($autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos);
         if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
         {
             return $embarcacion->paseos()->get();
