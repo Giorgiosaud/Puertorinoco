@@ -28,11 +28,11 @@ Form::label('tipo_de_paseo_id', 'Tipo de Paseo: '),
 Form::select('tipo_de_paseo_id',$tiposDePaseos,null,['class'=>'form-control'])
 )
 !!}
-{!! var_dump($paseo->embarcaciones) !!}
+{{-- {!! var_dump($paseo->embarcaciones) !!} --}}
 {!!
 ControlGroup::generate(
 Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
-Form::select('lista_de_embarcaciones[]',$embarcaciones,$paseo->embarcaciones,['class'=>'form-control','multiple'])
+Form::select('lista_de_embarcaciones[]',$embarcaciones,[0,1],['class'=>'form-control','multiple'])
 )
 !!}
 
