@@ -94,7 +94,10 @@ class TipoDePaseoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $paseo = TipoDePaseo::findOrFail($id);
+        $paseo->update($request->all());
+        
+        return redirect()->route('PanelAdministrativo.tipoDePaseo.index');
     }
 
     /**
