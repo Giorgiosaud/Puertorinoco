@@ -121,7 +121,9 @@ class PaseosAdminController extends Controller {
      */
     public function destroy($id)
     {
-        //
+        $paseo = Paseo::findOrFail($id);
+        $paseo->delete();
+        return redirect()->route('PanelAdministrativo.paseos.index');
     }
 
 }

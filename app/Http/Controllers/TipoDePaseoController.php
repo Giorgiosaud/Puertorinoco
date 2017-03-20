@@ -81,7 +81,8 @@ class TipoDePaseoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $TipoDePaseo = Paseo::findOrFail($id);
+        return view('TiposDePaseos.admin.edit', compact('TipoDePaseo'));
     }
 
     /**
