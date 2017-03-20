@@ -39,6 +39,12 @@ class TipoDePaseoController extends Controller
      */
     public function create()
     {
+     // $tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
+        // dd($tiposDePaseos);
+        // $embarcaciones=TipoDePaseo::lists('nombre','id')->all();
+        // dd($embarcaciones);
+        // $embarcacionesSeleccionadas=null;
+        return view('TiposDePaseos.admin.create');
         //
     }
 

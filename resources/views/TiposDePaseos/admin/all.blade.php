@@ -19,6 +19,6 @@
 			!!}
 
 		</div>
-		{!!Button::primary('Nuevo Paseo')->asLinkTo(route('PanelAdministrativo.paseos.create'))->block()!!}
+		{!!Button::primary('Nuevo Tipo de Paseo')->asLinkTo(route('PanelAdministrativo.tipoDePaseo.create'))->block()!!}
 
 @endsection
