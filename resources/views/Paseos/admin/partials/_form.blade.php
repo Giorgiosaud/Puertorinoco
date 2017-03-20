@@ -29,6 +29,7 @@ Form::select('tipo_de_paseo_id',$tiposDePaseos,null,['class'=>'form-control'])
 )
 !!}
 {!! var_dump($paseo->embarcaciones->lists('id')) !!}
+{!! var_dump($embarcaciones)!!}
 {!!
 ControlGroup::generate(
 Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
