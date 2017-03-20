@@ -42,7 +42,7 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function create()
 	{
-		$embarcaciones=TipoDePaseo::lists('nombre','id')->all();
+		$embarcaciones=Embarcacion::lists('nombre','id')->all();
 		return view('fechasEspeciales.admin.create',compact('embarcaciones'));
 	}
 
