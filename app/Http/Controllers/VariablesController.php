@@ -311,7 +311,7 @@ class VariablesController extends Controller {
         // dd($autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos);
         if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
         {
-            return $embarcacion->paseos()->orderBy('orden')->get();
+            return $embarcacion->paseos()->orderBy('orden','ASC')->get();
         }
         //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
