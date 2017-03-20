@@ -91,6 +91,6 @@
 			!!}
 
 		</div>
-		{!!Button::primary('Nueva Embarcacion')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
+		{!!Button::primary('Nuevo Paseo')->asLinkTo(route('PanelAdministrativo.embarcaciones.create'))->block()!!}
 
 @endsection
