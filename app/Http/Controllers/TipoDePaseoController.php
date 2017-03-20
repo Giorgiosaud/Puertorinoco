@@ -58,6 +58,8 @@ class TipoDePaseoController extends Controller
     {
         $paseo=TipoDePaseo::create($request->all());
         return redirect()->route('PanelAdministrativo.tipoDePaseo.index');
+        
+
     }
 
     /**
@@ -102,6 +104,9 @@ class TipoDePaseoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paseo = TipoDePaseo::findOrFail($id);
+        $paseo->destroy();
+        return redirect()->route('PanelAdministrativo.tipoDePaseo.index');
+
     }
 }
