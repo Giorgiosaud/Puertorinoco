@@ -53,6 +53,7 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+			dd($request);
 		$paseo=FechaEspecial::create($request->all());
 		return redirect()->route('fechasEspeciales.admin.all');
 	}
