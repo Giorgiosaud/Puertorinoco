@@ -116,7 +116,7 @@ class FechasEspecialesAdminController extends Controller {
         $fechaEspecial->embarcaciones()->detach($fechaEspecial->embaraciones);
         $fechaEspecial->delete();
         //$embarcacion->destroy();
-        return redirect()->route('PanelAdministrativo.embarcaciones.index');
+        return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 	}
 
 }
