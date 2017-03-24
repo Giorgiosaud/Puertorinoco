@@ -25,6 +25,11 @@ class FechaEspecial extends Model {
 
 	protected $table='fechas_especiales';
 	protected $dates=['fecha'];
+	protected $fillable=array(
+		'fecha',
+		'clase',
+		'descripcion',
+		);
 	public function scopeFuturo($query)
 	{
 		return $query->where('fecha','>=',Carbon::now());
