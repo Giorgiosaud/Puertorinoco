@@ -18111,6 +18111,7 @@ function fechasEspecialesx(fechaAComparar) {
     for (i = 0; i < fechasEspeciales.length; i++) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
 
+        console.info(fechaEspecial);
         if (fechaEspecial===fechaAComparar) {
             console.info(fechaAComparar);
             $respuesta = {
