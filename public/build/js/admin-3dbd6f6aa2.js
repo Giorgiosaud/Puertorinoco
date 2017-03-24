@@ -18107,6 +18107,7 @@ function fechasEspecialesx(fechaAComparar) {
     var Dia = fechaAComparar.getDate();
     var Ano = fechaAComparar.getFullYear();
     var $respuesta;
+    console.log(fechaAComparar);
     for (i = 0; i < fechasEspeciales.length; i++) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
 
