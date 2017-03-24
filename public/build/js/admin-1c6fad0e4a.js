@@ -17857,7 +17857,7 @@ $provide.value("$locale", {
 
 $(document).ready(function () {
     $('.datePicker').datepicker({
-        format: "yy-mm-dd",
+        format: "YY-mm-dd",
         autoclose: true,
         clearBtn: true,
         language: 'es',
