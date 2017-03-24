@@ -254,6 +254,7 @@ function fechasEspecialesx(fechaAComparar) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
 
         if (fechaEspecial===fechaAComparar) {
+            console.info(fechaAComparar);
             $respuesta = {
                         enabled: false,
                         classes: fechasEspeciales[i].clase,
