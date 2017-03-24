@@ -112,8 +112,9 @@ class FechasEspecialesAdminController extends Controller {
 	public function destroy($id)
 	{
 		$fechaEspecial=FechaEspecial::find($id);
-        dd($fechaEspecial->embarcaciones);
-        // $fechaEspecial->embarcaciones()->detach($fechaEspecial->embaraciones->)
+        // dd($fechaEspecial->embarcaciones);
+        $fechaEspecial->embarcaciones()->detach($fechaEspecial->embaraciones);
+        $fechaEspecial->delete();
         //$embarcacion->destroy();
         return redirect()->route('PanelAdministrativo.embarcaciones.index');
 	}
