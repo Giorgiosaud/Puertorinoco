@@ -18,21 +18,21 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function index()
 	{
-        $fechasEspeciales = FechaEspecial::all();
-        $fechasEspecialesTableStyle = [];
-        foreach ($fechasEspeciales as $fechaEspecial)
-        {
-            $array = [
-                'Id'        => $fechaEspecial->id,
-                'Fecha'    => $fechaEspecial->fecha->format('d-m-y'),
+		$fechasEspeciales = FechaEspecial::all();
+		$fechasEspecialesTableStyle = [];
+		foreach ($fechasEspeciales as $fechaEspecial)
+		{
+			$array = [
+			'Id'        => $fechaEspecial->id,
+			'Fecha'    => $fechaEspecial->fecha->format('d-m-y'),
 
-                'Clase'    => $fechaEspecial->clase,
-                'Descripcion'    => $fechaEspecial->descripcion,
-            ];
-            array_push($fechasEspecialesTableStyle, $array);
-        }
+			'Clase'    => $fechaEspecial->clase,
+			'Descripcion'    => $fechaEspecial->descripcion,
+			];
+			array_push($fechasEspecialesTableStyle, $array);
+		}
 
-        return view('fechasEspeciales.admin.all', compact('fechasEspecialesTableStyle'));
+		return view('fechasEspeciales.admin.all', compact('fechasEspecialesTableStyle'));
 	}
 
 	/**
@@ -53,7 +53,8 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		$paseo=FechaEspecial::create($request->all());
+		return redirect()->route('fechasEspeciales.admin.all');
 	}
 
 	/**
@@ -75,11 +76,11 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
-        $embarcaciones=Embarcacion::lists('nombre','id')->all();
-        $fechaEspecial = FechaEspecial::findOrFail($id);
+		$tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
+		$embarcaciones=Embarcacion::lists('nombre','id')->all();
+		$fechaEspecial = FechaEspecial::findOrFail($id);
         //dd($fechaEspecial);
-        return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones'));
+		return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones'));
 	}
 
 	/**
@@ -90,7 +91,7 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function update($id)
 	{
-	$fechaEspecial = FechaEspecial::findOrFail($id);
+		$fechaEspecial = FechaEspecial::findOrFail($id);
 
 	}
 
