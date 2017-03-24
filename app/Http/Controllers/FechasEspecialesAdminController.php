@@ -62,7 +62,7 @@ class FechasEspecialesAdminController extends Controller {
 
 		// $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
 		// dd($paseo);
-		return redirect()->route('fechasEspeciales.admin.all');
+		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 	}
 
 	/**
@@ -111,7 +111,10 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$fechaEspecial=FechaEspecial::find($id);
+        dd($fechaEspecial);
+        //$embarcacion->destroy();
+        return redirect()->route('PanelAdministrativo.embarcaciones.index');
 	}
 
 }
