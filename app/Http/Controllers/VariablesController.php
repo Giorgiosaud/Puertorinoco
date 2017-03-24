@@ -150,6 +150,7 @@ class VariablesController extends Controller {
             array_push($diasNoLaborablesDeLaSemana, '6');
         }
         $fechasEspeciales = FechaEspecial::Futuro()->get();
+dd($fechasEspeciales);
         foreach ($fechasEspeciales as $FechaEspecial)
         {
 
