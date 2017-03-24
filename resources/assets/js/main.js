@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    $('.datePicker').datepicker({
+        format: "DD, d MM , yyyy",
+        autoclose: true,
+        clearBtn: true,
+        language: 'es',
+        startDate:new Date(),
+                altField: "#fecha",
+                todayBtn:true,
+                todayHighlight:true,
+                altFormat: "yy-mm-dd"
+            });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {

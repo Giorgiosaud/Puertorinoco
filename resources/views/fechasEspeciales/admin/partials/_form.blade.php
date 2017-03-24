@@ -1,7 +1,7 @@
 {!!
 		ControlGroup::generate(
 		Form::label('fecha', 'Fecha del Paseo: '),
-		Form::text('fecha')
+		Form::text('fecha',['class'=>"datePicker"])
 		)
 		!!}
 {!!
