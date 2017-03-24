@@ -1,13 +1,13 @@
 {!!
 	ControlGroup::generate(
-		Form::label('fecha', 'Fecha del Paseo: '),
-		Form::text('fecha',null,['class'=>"dateFake"])
+		Form::label('dateFake', 'Fecha del Paseo: '),
+		Form::text('dateFake',null,['class'=>"dateFake"])
 		)
 		!!}
 		{!!
 	ControlGroup::generate(
-		Form::label('fecha', 'Fecha del Paseo: '),
-		Form::text('fecha',null,['class'=>"date"])
+		Form::label('date', 'Fecha del Paseo: '),
+		Form::text('date',null,['class'=>"date"])
 		)
 		!!}
 		{!!

@@ -17862,7 +17862,7 @@ $(document).ready(function () {
         clearBtn: true,
         language: 'es',
         // startDate:new Date(),
-        altField: ".date",
+        altField: "#date",
         todayBtn:true,
         todayHighlight:true,
         altFormat: "yy-mm-dd"
