@@ -245,31 +245,29 @@ $(document).ready(function () {
 });
 function fechasEspecialesx(fechaAComparar) {
 
-    var fechas = window.fechasEspeciales;
+    var fechasEspeciales = window.fechasEspeciales;
     var Mes = fechaAComparar.getMonth();
     var Dia = fechaAComparar.getDate();
     var Ano = fechaAComparar.getFullYear();
     var $respuesta;
     for (i = 0; i < fechas.length; i++) {
-        fi = new Date(window.fechasEspeciales[i].fecha.date);
-        if (Dia === fi.getDate() && (Mes === fi.getMonth() && Ano === fi.getFullYear())) {
-            for (var property in window.fechasEspeciales[i].Embarcaciones) {
-                if (window.fechasEspeciales[i].Embarcaciones[property] == 1) {
+        var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
+
+        if (fechaEspecial===fechaAComparar) {
+            $respuesta = {
+                        enabled: false,
+                        classes: fechasEspeciales[i].clase,
+                        tooltip: fechasEspeciales[i].descripcion
+                    };
+            for (var property in fechasEspeciales[i].Embarcaciones) {
+                if (fechasEspeciales[i].Embarcaciones[property] == 1) {
                     $respuesta = {
                         enabled: true,
-                        classes: window.fechasEspeciales[i].clase,
-                        tooltip: window.fechasEspeciales[i].descripcion
                     };
-                    return $respuesta;
-                }
+                }               
             }
-            $respuesta = {
-                enabled: false,
-                classes: window.fechasEspeciales[i].clase,
-                tooltip: window.fechasEspeciales[i].descripcion
-            };
             return $respuesta;
         }
-
     }
+    return;
 }
