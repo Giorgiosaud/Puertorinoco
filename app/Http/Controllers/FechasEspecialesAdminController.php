@@ -57,7 +57,7 @@ class FechasEspecialesAdminController extends Controller {
 		$paseo=FechaEspecial::create($request->all());
 		$embarcaciones=$request->input('lista_de_embarcaciones');
 		foreach ($embarcaciones as $embaracionId){
-			$paseo->embarcaciones()->attach($embaracionId,array('activa'=>true));			
+			$paseo->embarcaciones()->attach($embaracionId,array('activa'=>$request->input('trabaja')));			
 		}
 
 		// $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
