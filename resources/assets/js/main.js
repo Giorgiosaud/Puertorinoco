@@ -250,7 +250,7 @@ function fechasEspecialesx(fechaAComparar) {
     var Dia = fechaAComparar.getDate();
     var Ano = fechaAComparar.getFullYear();
     var $respuesta;
-    for (i = 0; i < fechas.length; i++) {
+    for (i = 0; i < fechasEspeciales.length; i++) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
 
         if (fechaEspecial===fechaAComparar) {
