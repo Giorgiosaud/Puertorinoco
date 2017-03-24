@@ -55,7 +55,12 @@ class FechasEspecialesAdminController extends Controller {
 	{
 		dd($request->all());
 		$paseo=FechaEspecial::create($request->all());
-		$paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
+		$embarcaciones=$request->input('lista_de_embarcaciones');
+		foreach ($embarcaciones as $embaracionId){
+			$paseo->embarcaciones()->attach($embaracionId,array('activa'=>true));			
+		}
+
+		// $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
 		// dd($paseo);
 		return redirect()->route('fechasEspeciales.admin.all');
 	}
