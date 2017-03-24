@@ -17856,16 +17856,11 @@ $provide.value("$locale", {
 //# sourceMappingURL=all.js.map
 
 $(document).ready(function () {
-    $('.dateFake').datepicker({
-        format: "DD, d MM , yyyy",
+    $('.datePicker').datepicker({
+        format: "yy-mm-dd",
         autoclose: true,
         clearBtn: true,
         language: 'es',
-        // startDate:new Date(),
-        altField: "#date",
-        todayBtn:true,
-        todayHighlight:true,
-        altFormat: "yy-mm-dd"
     });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
