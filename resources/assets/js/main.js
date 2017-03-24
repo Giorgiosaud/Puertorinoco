@@ -71,6 +71,7 @@ $(document).ready(function () {
 
         }
         $.get("../ObtenerVariables", function (datos) {
+            console.info('prueba');
             window.diasNoLaborables = datos.diasNoLaborables;
             window.minimoDiasAReservar = datos.minReservar;
             window.fechasEspeciales = datos.fechasEspeciales;
