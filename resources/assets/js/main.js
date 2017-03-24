@@ -1,15 +1,15 @@
 $(document).ready(function () {
-    $('.datePicker').datepicker({
+    $('.dateFake').datepicker({
         format: "DD, d MM , yyyy",
         autoclose: true,
         clearBtn: true,
         language: 'es',
-        startDate:new Date(),
-                altField: "#fecha",
-                todayBtn:true,
-                todayHighlight:true,
-                altFormat: "yy-mm-dd"
-            });
+        // startDate:new Date(),
+        altField: ".date",
+        todayBtn:true,
+        todayHighlight:true,
+        altFormat: "yy-mm-dd"
+    });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {
@@ -71,27 +71,27 @@ $(document).ready(function () {
                     }
 
                 });
-}
+            }
 
 
-}
-$.get("../ObtenerVariables", function (datos) {
-    window.diasNoLaborables = datos.diasNoLaborables;
-    window.minimoDiasAReservar = datos.minReservar;
-    window.fechasEspeciales = datos.fechasEspeciales;
-    window.temporadaBaja = datos.temporadaBaja;
-    if ($("input[name='fecha']").val().length == 0) {
-        $('#ayudaFecha').slideDown('slow');
-    }
-    $('#fechaform').slideDown('slow');
-    $('#loadingFormulario').slideUp('slow');
-    $('#fecha2').datepicker({
-        format: "DD, d MM , yyyy",
-        autoclose: true,
-        clearBtn: true,
-        daysOfWeekDisabled: window.diasNoLaborables,
-        language: 'es',
-        startDate:new Date(),
+        }
+        $.get("../ObtenerVariables", function (datos) {
+            window.diasNoLaborables = datos.diasNoLaborables;
+            window.minimoDiasAReservar = datos.minReservar;
+            window.fechasEspeciales = datos.fechasEspeciales;
+            window.temporadaBaja = datos.temporadaBaja;
+            if ($("input[name='fecha']").val().length == 0) {
+                $('#ayudaFecha').slideDown('slow');
+            }
+            $('#fechaform').slideDown('slow');
+            $('#loadingFormulario').slideUp('slow');
+            $('#fecha2').datepicker({
+                format: "DD, d MM , yyyy",
+                autoclose: true,
+                clearBtn: true,
+                daysOfWeekDisabled: window.diasNoLaborables,
+                language: 'es',
+                startDate:new Date(),
                 //startDate: new Date(new Date().setDate((new Date()).getDate() + parseInt(window.minimoDiasAReservar))),
                 beforeShowDay: fechasEspecialesx,
                 altField: "#fecha",
@@ -129,122 +129,122 @@ $.get("../ObtenerVariables", function (datos) {
 
                     $('#tipoEmbarcacion,#ayudaEmbarcacion').slideDown('slow');
                 });
-});
-}, "json");
-$("input[name='embarcacion_id']").on("change", function () {
-    embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
-    $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled hidden');
-    for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
-        if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-            $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
-        }
-    }
-    $('#ayudaEmbarcacion').slideUp('slow');
-    $('#horaform,#ayudaPaseo').slideDown('slow');
-});
-$("input[name='paseo_id']").on("change", function () {
-    paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
-    window.disponible = window.datosconfecha.pasajeros[embarcacion_id_seleccionada][paseo_id_seleccionada].disponibles;
-    $('#ayudaPaseo').slideUp('slow');
-    $('span#precioAdultos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].adulto + ' Bs');
-    $('#precioMayores').text(window.datosconfecha.precios[paseo_id_seleccionada][0].mayor + ' Bs');
-    $('#precioNinos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].nino + ' Bs');
-    $('#datosdePrecios').slideDown('slow');
-    $('#cedulaForm').slideDown('slow');
-
-    if ($("input[name='identificacion_number']").val() == '') {
-        $('#ayudaIdentificacion').slideDown('slow');
-    }
-});
-$('#validarId').on('click', function () {
-    $('input[name="identificacion"]').val($('select[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
-    $('#validarId').children('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-refresh glyphicon-refresh-animate');
-    $('#advertencias').modal('show');
-    $.get("../ObtenerDatosClientes/" + $('[name="identificacion"]').val(), function (datosCliente) {
-
-        window.datosCliente = datosCliente;
-        $('#nombre').val(datosCliente.nombre);
-        $('#apellido').val(datosCliente.apellido);
-        $('#email').val(datosCliente.email);
-        $('#telefono').val(datosCliente.telefono);
-        $('.datosInternosCliente').slideDown('slow');
-        $('#ayudaIdentificacion').slideUp('slow');
-        $('.datosInternosCliente').slideDown('slow', function () {
-            $('#datosdeCupos').slideDown('slow');
+            });
+        }, "json");
+        $("input[name='embarcacion_id']").on("change", function () {
+            embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
+            $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled hidden');
+            for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
+                if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
+                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
+                }
+            }
+            $('#ayudaEmbarcacion').slideUp('slow');
+            $('#horaform,#ayudaPaseo').slideDown('slow');
         });
-        $('#validarId').children('.glyphicon').addClass('glyphicon-ok').removeClass('glyphicon-refresh glyphicon-refresh-animate');
+        $("input[name='paseo_id']").on("change", function () {
+            paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
+            window.disponible = window.datosconfecha.pasajeros[embarcacion_id_seleccionada][paseo_id_seleccionada].disponibles;
+            $('#ayudaPaseo').slideUp('slow');
+            $('span#precioAdultos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].adulto + ' Bs');
+            $('#precioMayores').text(window.datosconfecha.precios[paseo_id_seleccionada][0].mayor + ' Bs');
+            $('#precioNinos').text(window.datosconfecha.precios[paseo_id_seleccionada][0].nino + ' Bs');
+            $('#datosdePrecios').slideDown('slow');
+            $('#cedulaForm').slideDown('slow');
 
-    });
-});
-$('.numeroDeCupos').change(function (event) {
-    paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
-    pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
-    pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
-    pasajesNinos = parseInt($('#ninos').val()) || 0;
-    actual = parseInt($(this).val()) || 0;
-    if (pasajesAdultos + pasajesMayores == 0) {
-        $('#ninos').val(0);
-    }
-    totalPasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
-    maximoActual = window.disponible - totalPasajes + actual;
-    $('.numeroDeCupos').attr('max', maximoActual);
-    if (totalPasajes >= (window.disponible + 1)) {
-        $(this).val(0);
-    }
-    precioAdultos = window.datosconfecha.precios[paseo_id_seleccionada][0].adulto;
-    precioMayor = window.datosconfecha.precios[paseo_id_seleccionada][0].mayor;
-    precioNino = window.datosconfecha.precios[paseo_id_seleccionada][0].nino;
-    totalReserva = (pasajesAdultos * precioAdultos) + (pasajesMayores * precioMayor) + (pasajesNinos * precioNino);
-    saldoAFavor = window.datosCliente.credito;
-    montoAPagar = (totalReserva <= saldoAFavor) ? 0 : totalReserva - saldoAFavor;
-    $('#Giftcards').html(saldoAFavor + ' Bs.');
-    $('#totalReserva').html(totalReserva + ' Bs.');
-    $('#PrecioTotal').html(montoAPagar + ' Bs.');
+            if ($("input[name='identificacion_number']").val() == '') {
+                $('#ayudaIdentificacion').slideDown('slow');
+            }
+        });
+        $('#validarId').on('click', function () {
+            $('input[name="identificacion"]').val($('select[name="rifInicio"]').val() + "-" + $("input[name='identificacion_number']").val());
+            $('#validarId').children('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-refresh glyphicon-refresh-animate');
+            $('#advertencias').modal('show');
+            $.get("../ObtenerDatosClientes/" + $('[name="identificacion"]').val(), function (datosCliente) {
 
-});
-$('#validarCupos').on('click', function () {
-    pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
-    pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
-    pasajesNinos = parseInt($('#ninos').val()) || 0;
-    pasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
-    if (pasajes > 0) {
-        $('#ayudaNombres,#ayudaCupos').slideUp('slow');
-        $('#SaldosyMontos,#groupcondiciones').slideDown('slow');
-        if ($('#condiciones').is(':checked')) {
-            $('#botonEnviarForm').slideDown('slow');
-        }
-    }
-    else {
+                window.datosCliente = datosCliente;
+                $('#nombre').val(datosCliente.nombre);
+                $('#apellido').val(datosCliente.apellido);
+                $('#email').val(datosCliente.email);
+                $('#telefono').val(datosCliente.telefono);
+                $('.datosInternosCliente').slideDown('slow');
+                $('#ayudaIdentificacion').slideUp('slow');
+                $('.datosInternosCliente').slideDown('slow', function () {
+                    $('#datosdeCupos').slideDown('slow');
+                });
+                $('#validarId').children('.glyphicon').addClass('glyphicon-ok').removeClass('glyphicon-refresh glyphicon-refresh-animate');
 
-    }
-});
-$('#condiciones').on('click', function () {
+            });
+        });
+        $('.numeroDeCupos').change(function (event) {
+            paseo_id_seleccionada = $("input[name='paseo_id']:checked").val();
+            pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
+            pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
+            pasajesNinos = parseInt($('#ninos').val()) || 0;
+            actual = parseInt($(this).val()) || 0;
+            if (pasajesAdultos + pasajesMayores == 0) {
+                $('#ninos').val(0);
+            }
+            totalPasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
+            maximoActual = window.disponible - totalPasajes + actual;
+            $('.numeroDeCupos').attr('max', maximoActual);
+            if (totalPasajes >= (window.disponible + 1)) {
+                $(this).val(0);
+            }
+            precioAdultos = window.datosconfecha.precios[paseo_id_seleccionada][0].adulto;
+            precioMayor = window.datosconfecha.precios[paseo_id_seleccionada][0].mayor;
+            precioNino = window.datosconfecha.precios[paseo_id_seleccionada][0].nino;
+            totalReserva = (pasajesAdultos * precioAdultos) + (pasajesMayores * precioMayor) + (pasajesNinos * precioNino);
+            saldoAFavor = window.datosCliente.credito;
+            montoAPagar = (totalReserva <= saldoAFavor) ? 0 : totalReserva - saldoAFavor;
+            $('#Giftcards').html(saldoAFavor + ' Bs.');
+            $('#totalReserva').html(totalReserva + ' Bs.');
+            $('#PrecioTotal').html(montoAPagar + ' Bs.');
 
-    if ($('#condiciones').is(':checked')) {
-        $('#botonEnviarForm').slideDown('slow');
-    }
-    else {
-        $('#botonEnviarForm').slideUp('slow');
-    }
-})
-}
-if($('#consultarReserva').length>=1){
-    $('#fecha2').datepicker({
-        format: "DD, d MM , yyyy",
-        autoclose: true,
-        clearBtn: true,
-        language: 'es',
-        altField: "#fecha",
-        altFormat: "yy-mm-dd",
-        todayBtn:true,
-        todayHighlight:true
-    }).on('changeDate', function (e) {
-        $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
+        });
+        $('#validarCupos').on('click', function () {
+            pasajesAdultos = parseInt($('#pasajesadultos').val()) || 0;
+            pasajesMayores = parseInt($('#3eraEdad').val()) || 0;
+            pasajesNinos = parseInt($('#ninos').val()) || 0;
+            pasajes = pasajesAdultos + pasajesMayores + pasajesNinos;
+            if (pasajes > 0) {
+                $('#ayudaNombres,#ayudaCupos').slideUp('slow');
+                $('#SaldosyMontos,#groupcondiciones').slideDown('slow');
+                if ($('#condiciones').is(':checked')) {
+                    $('#botonEnviarForm').slideDown('slow');
+                }
+            }
+            else {
 
-    });
-}
-$(".btswitch").bootstrapSwitch();
-$('[multiple]').select2();
+            }
+        });
+        $('#condiciones').on('click', function () {
+
+            if ($('#condiciones').is(':checked')) {
+                $('#botonEnviarForm').slideDown('slow');
+            }
+            else {
+                $('#botonEnviarForm').slideUp('slow');
+            }
+        })
+    }
+    if($('#consultarReserva').length>=1){
+        $('#fecha2').datepicker({
+            format: "DD, d MM , yyyy",
+            autoclose: true,
+            clearBtn: true,
+            language: 'es',
+            altField: "#fecha",
+            altFormat: "yy-mm-dd",
+            todayBtn:true,
+            todayHighlight:true
+        }).on('changeDate', function (e) {
+            $('#fecha').val((e.format(0, 'yyyy-mm-dd')));
+
+        });
+    }
+    $(".btswitch").bootstrapSwitch();
+    $('[multiple]').select2();
 
 });
 function fechasEspecialesx(fechaAComparar) {
