@@ -18110,6 +18110,7 @@ function fechasEspecialesx(fechaAComparar) {
     // console.log(fechaAComparar);
     for (i = 0; i < fechasEspeciales.length; i++) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
+        console.info('Probando si fecha '+fechaEspecial+' es especial al compararla con '+fechaAComparar );
         if(fechaEspecial===fechaAComparar){
             console.log('fechaEspecialCombinada '+fechaEspecial);
             console.info('fecha Especial Encontrada');
