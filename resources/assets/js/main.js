@@ -85,7 +85,7 @@ $(document).ready(function () {
                 format: "DD, d MM , yyyy",
                 autoclose: true,
                 clearBtn: true,
-                daysOfWeekDisabled: window.diasNoLaborables,
+                // daysOfWeekDisabled: window.diasNoLaborables,
                 language: 'es',
                 startDate:new Date(),
                 beforeShowDay: fechasEspecialesx,
@@ -250,9 +250,24 @@ function fechasEspecialesx(fechaAComparar) {
     var Ano = fechaAComparar.getFullYear();
     var $respuesta;
     // console.log(fechaAComparar);
+    diaDeLaSemana=fechaAComparar.getDay();
+    if(window.diasNoLaborables.indexOf(diaDeLaSemana)!=-1){
+        respuesta = {
+            enabled: false,
+            // classes: fechasEspeciales[i].clase,
+            // tooltip: fechasEspeciales[i].descripcion
+        };
+    }
     for (i = 0; i < fechasEspeciales.length; i++) {
+        respuesta = {
+            enabled: true,
+            classes: fechasEspeciales[i].clase,
+            tooltip: fechasEspeciales[i].descripcion
+        };
+
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
         // console.info('Probando si fecha '+fechaEspecial+' es especial al compararla con '+fechaAComparar );
+        
         if(+fechaEspecial===+fechaAComparar){
             // console.log('fechaEspecialCombinada '+fechaEspecial);
             // console.info('fecha Especial Encontrada');
@@ -260,21 +275,17 @@ function fechasEspecialesx(fechaAComparar) {
             respuesta = {
                 enabled: false,
                 classes: fechasEspeciales[i].clase,
-                tooltip: fechasEspeciales[i].descripcion,
-                content:'special',
+                tooltip: fechasEspeciales[i].descripcion
             };
-            console.info(fechaAComparar);
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
                     respuesta.enabled= true;
-                    return true;
                 }               
             }
-            return false;
-            
+            console.info(fechaAComparar);
             console.info(respuesta);
             return respuesta;
         }
     }
-    return;
+    return respuesta;
 }
