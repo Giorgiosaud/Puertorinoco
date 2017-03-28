@@ -250,7 +250,7 @@ function fechasEspecialesx(fechaAComparar) {
     var Ano = fechaAComparar.getFullYear();
     var $respuesta;
     // console.log(fechaAComparar);
-    diaDeLaSemana=fechaAComparar.getDay();
+    diaDeLaSemana=fechaAComparar.getDay().toString();
     // console.log(window.diasNoLaborables);
     respuesta={};
     respuesta.enabled= false;
