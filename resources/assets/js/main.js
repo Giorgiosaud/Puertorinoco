@@ -258,7 +258,7 @@ function fechasEspecialesx(fechaAComparar) {
         console.log(diaDeLaSemana);
         respuesta.enabled= true;
     }
-    return respuesta;
+    // return respuesta;
     for (i = 0; i < fechasEspeciales.length; i++) {
         respuesta = {
             enabled: true,
@@ -283,8 +283,8 @@ function fechasEspecialesx(fechaAComparar) {
                     respuesta.enabled= true;
                 }               
             }
-            console.info(fechaAComparar);
-            console.info(respuesta);
+            // console.info(fechaAComparar);
+            // console.info(respuesta);
             return respuesta;
         }
     }
