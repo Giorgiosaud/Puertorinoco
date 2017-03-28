@@ -260,7 +260,8 @@ function fechasEspecialesx(fechaAComparar) {
             respuesta = {
                         enabled: false,
                         classes: fechasEspeciales[i].clase,
-                        tooltip: fechasEspeciales[i].descripcion
+                        tooltip: fechasEspeciales[i].descripcion,
+                        content:'special',
                     };
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
