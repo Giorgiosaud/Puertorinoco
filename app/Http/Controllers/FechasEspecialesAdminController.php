@@ -106,8 +106,8 @@ class FechasEspecialesAdminController extends Controller {
 		$syncArray=array();
 		foreach ($embarcaciones as $embaracionId){
 			
-				$embarcacion[$embaracionId]=array('activa'=>$req->input('trabaja'));
-				array_push($syncArray,$embarcacion);
+				$syncArray[$embaracionId]=array('activa'=>$req->input('trabaja'));
+				// array_push($syncArray,$embarcacion);
 		}
 		dd($syncArray);
 		$fechaEspecial->embarcaciones()->sync($syncArray);
