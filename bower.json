@@ -38,6 +38,7 @@
     "bootstrap-switch": "~3.3.2",
     "select2": "~4.0.0",
     "angular": "~1.4.3",
-    "ngLocale-ve": "*"
+    "ngLocale-ve": "*",
+    "materialize": "^0.98.1"
   }
 }
