@@ -26349,9 +26349,7 @@ function fechasEspecialesx(fechaAComparar) {
                     };
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
-                    $respuesta = {
-                        enabled: true,
-                    };
+                    $respuesta.enabled= true;
                 }               
             }
             console.info($respuesta);
