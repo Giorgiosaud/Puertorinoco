@@ -255,10 +255,10 @@ function fechasEspecialesx(fechaAComparar) {
     respuesta={};
     respuesta.enabled= false;
     if(window.diasNoLaborables.indexOf(diaDeLaSemana)==-1){
-        console.log(diaDeLaSemana);
+        // console.log(diaDeLaSemana);
         respuesta.enabled= true;
     }
-    return respuesta;
+    // return respuesta;
     for (i = 0; i < fechasEspeciales.length; i++) {
 
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
