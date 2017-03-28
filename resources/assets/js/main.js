@@ -251,6 +251,7 @@ function fechasEspecialesx(fechaAComparar) {
     var $respuesta;
     // console.log(fechaAComparar);
     diaDeLaSemana=fechaAComparar.getDay();
+    console.log(window.diasNoLaborables);
     if(window.diasNoLaborables.indexOf(diaDeLaSemana)!=-1){
         respuesta = {
             enabled: false,
