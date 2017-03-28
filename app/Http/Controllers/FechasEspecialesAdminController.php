@@ -109,7 +109,7 @@ class FechasEspecialesAdminController extends Controller {
 				$syncArray[$embaracionId]=array('activa'=>$req->input('trabaja'));
 				// array_push($syncArray,$embarcacion);
 		}
-		dd($syncArray);
+		// dd($syncArray);
 		$fechaEspecial->embarcaciones()->sync($syncArray);
 		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 
