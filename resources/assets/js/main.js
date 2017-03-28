@@ -254,8 +254,8 @@ function fechasEspecialesx(fechaAComparar) {
     // console.log(window.diasNoLaborables);
     respuesta={};
     respuesta.enabled= false;
-    console.info(diaDeLaSemana);
     if(window.diasNoLaborables.indexOf(diaDeLaSemana)==-1){
+        console.log(diaDeLaSemana);
         respuesta.enabled= true;
     }
     return respuesta;
