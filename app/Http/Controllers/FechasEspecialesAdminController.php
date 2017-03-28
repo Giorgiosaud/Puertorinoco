@@ -106,6 +106,7 @@ class FechasEspecialesAdminController extends Controller {
 		foreach ($embarcaciones as $embaracionId){
 			$fechaEspecial->embarcaciones()->sync($embaracionId,array('activa'=>$request->input('trabaja')));
 		}
+		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 
 	}
 
