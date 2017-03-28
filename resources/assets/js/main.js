@@ -255,9 +255,9 @@ function fechasEspecialesx(fechaAComparar) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
         console.info('Probando si fecha '+fechaEspecial+' es especial al compararla con '+fechaAComparar );
         if(+fechaEspecial===+fechaAComparar){
-            console.log('fechaEspecialCombinada '+fechaEspecial);
-            console.info('fecha Especial Encontrada');
-            console.info(fechaAComparar);
+            // console.log('fechaEspecialCombinada '+fechaEspecial);
+            // console.info('fecha Especial Encontrada');
+            // console.info(fechaAComparar);
             $respuesta = {
                         enabled: false,
                         classes: fechasEspeciales[i].clase,
@@ -270,6 +270,7 @@ function fechasEspecialesx(fechaAComparar) {
                     };
                 }               
             }
+            console.info($respuesta);
             return $respuesta;
         }
     }
