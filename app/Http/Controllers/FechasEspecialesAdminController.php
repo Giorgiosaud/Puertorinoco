@@ -103,9 +103,11 @@ class FechasEspecialesAdminController extends Controller {
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		$fechaEspecial->update($req->all());
 		$embarcaciones=$req->input('lista_de_embarcaciones');
+		$syncArray=array();
 		foreach ($embarcaciones as $embaracionId){
-			$syncArray=array(
-				$embaracionId=>array('activa'=>$req->input('trabaja')));
+			
+				$embarcacion=$embaracionId=>array('activa'=>$req->input('trabaja'));
+				array_push($syncArray,$embarcacion);
 		}
 		dd($syncArray);
 		$fechaEspecial->embarcaciones()->sync($syncArray);
