@@ -116,13 +116,13 @@ class VariablesController extends Controller {
     {
         $minimoDiasAReservar = Vari::get('2minDiasParaReservar');
         $TemporadaBaja = Vari::get('temporadaBaja');
-        $lunes=Vari::get('lunes');
-        $martes=Vari::get('martes');
-        $miercoles=Vari::get('miercoles');
-        $jueves=Vari::get('jueves');
-        $viernes=Vari::get('viernes');
-        $sabado=Vari::get('sabado');
-        $domingo=Vari::get('domingo');
+        $lunes=Vari::get('Lunes');
+        $martes=Vari::get('Martes');
+        $miercoles=Vari::get('Miercoles');
+        $jueves=Vari::get('Jueves');
+        $viernes=Vari::get('Viernes');
+        $sabado=Vari::get('Sabado');
+        $domingo=Vari::get('Domingo');
         $diasNoLaborablesDeLaSemana = [];
         $fechasEspecialesFinales = [];
         $embarcacionesDisponiblesPorFecha = [];
