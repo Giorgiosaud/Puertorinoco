@@ -255,6 +255,7 @@ function fechasEspecialesx(fechaAComparar) {
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
         if(fechaEspecial===fechaAComparar){
             console.log('fechaEspecialCombinada '+fechaEspecial);
+            console.info('fecha Especial Encontrada');
         }
         // console.info(fechaEspecial);
         if (fechaEspecial===fechaAComparar) {
