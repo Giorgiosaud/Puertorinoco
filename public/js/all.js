@@ -18114,9 +18114,6 @@ function fechasEspecialesx(fechaAComparar) {
         if(+fechaEspecial===+fechaAComparar){
             console.log('fechaEspecialCombinada '+fechaEspecial);
             console.info('fecha Especial Encontrada');
-        }
-        // console.info(fechaEspecial);
-        if (fechaEspecial===fechaAComparar) {
             console.info(fechaAComparar);
             $respuesta = {
                         enabled: false,
