@@ -89,6 +89,7 @@ class FechasEspecialesAdminController extends Controller {
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		// $embarcacionesSeleccionadas=$FechaEspecial->lists('nombre','id')->all();
         //dd($fechaEspecial);
+        
 		return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones'));
 	}
 
