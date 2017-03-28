@@ -258,33 +258,21 @@ function fechasEspecialesx(fechaAComparar) {
         console.log(diaDeLaSemana);
         respuesta.enabled= true;
     }
-    // return respuesta;
+    return respuesta;
     for (i = 0; i < fechasEspeciales.length; i++) {
-        respuesta = {
-            enabled: true,
-            classes: fechasEspeciales[i].clase,
-            tooltip: fechasEspeciales[i].descripcion
-        };
 
         var fechaEspecial = new Date(fechasEspeciales[i].fecha.date);
         // console.info('Probando si fecha '+fechaEspecial+' es especial al compararla con '+fechaAComparar );
         
         if(+fechaEspecial===+fechaAComparar){
-            // console.log('fechaEspecialCombinada '+fechaEspecial);
-            // console.info('fecha Especial Encontrada');
-            // console.info(fechaAComparar);
-            respuesta = {
-                enabled: false,
-                classes: fechasEspeciales[i].clase,
-                tooltip: fechasEspeciales[i].descripcion
-            };
+            respuesta.enabled=false;
+            respuesta.classes= fechasEspeciales[i].clase;
+            respuesta.tooltip= fechasEspeciales[i].descripcion;
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
                     respuesta.enabled= true;
                 }               
             }
-            // console.info(fechaAComparar);
-            // console.info(respuesta);
             return respuesta;
         }
     }
