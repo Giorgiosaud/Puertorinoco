@@ -71,7 +71,7 @@ $(document).ready(function () {
 
         }
         $.get("../ObtenerVariables", function (datos) {
-            console.info('prueba');
+            // console.info('prueba');
             window.diasNoLaborables = datos.diasNoLaborables;
             window.minimoDiasAReservar = datos.minReservar;
             window.fechasEspeciales = datos.fechasEspeciales;
@@ -257,19 +257,19 @@ function fechasEspecialesx(fechaAComparar) {
             // console.log('fechaEspecialCombinada '+fechaEspecial);
             // console.info('fecha Especial Encontrada');
             // console.info(fechaAComparar);
-            $respuesta = {
+            respuesta = {
                         enabled: false,
                         classes: fechasEspeciales[i].clase,
                         tooltip: fechasEspeciales[i].descripcion
                     };
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
-                    $respuesta.enabled= true;
+                    respuesta.enabled= true;
                 }               
             }
-            console.info($fechaAComparar);
-            console.info($respuesta);
-            return $respuesta;
+            console.info(fechaAComparar);
+            console.info(respuesta);
+            return respuesta;
         }
     }
     return;
