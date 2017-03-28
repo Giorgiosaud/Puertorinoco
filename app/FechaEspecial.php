@@ -42,6 +42,6 @@ class FechaEspecial extends Model {
         return $this->embarcaciones->lists('id')->toArray();
     }
     public function getTrabaja(){
-    	return $this->embarcaciones->first()->activa;
+    	return $this->embarcaciones->first()->pivot->activa;
     }
 }
