@@ -258,17 +258,20 @@ function fechasEspecialesx(fechaAComparar) {
             // console.info('fecha Especial Encontrada');
             // console.info(fechaAComparar);
             respuesta = {
-                        enabled: false,
-                        classes: fechasEspeciales[i].clase,
-                        tooltip: fechasEspeciales[i].descripcion,
-                        content:'special',
-                    };
+                enabled: false,
+                classes: fechasEspeciales[i].clase,
+                tooltip: fechasEspeciales[i].descripcion,
+                content:'special',
+            };
+            console.info(fechaAComparar);
             for (var property in fechasEspeciales[i].Embarcaciones) {
                 if (fechasEspeciales[i].Embarcaciones[property] == 1) {
                     respuesta.enabled= true;
+                    return true;
                 }               
             }
-            console.info(fechaAComparar);
+            return false;
+            
             console.info(respuesta);
             return respuesta;
         }
