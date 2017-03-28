@@ -7613,6 +7613,10 @@ ul.language_bar_chooser li {
 ul.language_bar_chooser {
   float: right; }
 
+td.day.semanaSanta {
+  background-color: #9C27B0;
+  color: #FFF; }
+
 /*# sourceMappingURL=sass.css.map */
 
 /*!

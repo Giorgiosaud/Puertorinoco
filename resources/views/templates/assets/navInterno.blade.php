@@ -33,6 +33,10 @@ Navbar::top()
 					'link' => URL::route('PanelAdministrativo.precios.index'),
 					'title' => 'Precios'
 				],
+				[
+					'link' => URL::route('PanelAdministrativo.precios.index'),
+					'title' => 'Variables'
+				],
 			]
 			],
 			['Reservas',
