@@ -265,6 +265,7 @@ function fechasEspecialesx(fechaAComparar) {
         // console.info('Probando si fecha '+fechaEspecial+' es especial al compararla con '+fechaAComparar );
         
         if(+fechaEspecial===+fechaAComparar){
+            console.log('fechaEncontrada');
             respuesta.enabled=false;
             respuesta.classes= fechasEspeciales[i].clase;
             respuesta.tooltip= fechasEspeciales[i].descripcion;

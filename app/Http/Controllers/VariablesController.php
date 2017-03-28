@@ -116,36 +116,43 @@ class VariablesController extends Controller {
     {
         $minimoDiasAReservar = Vari::get('2minDiasParaReservar');
         $TemporadaBaja = Vari::get('temporadaBaja');
+        $lunes=Vari::get('lunes');
+        $martes=Vari::get('martes');
+        $miercoles=Vari::get('miercoles');
+        $jueves=Vari::get('jueves');
+        $viernes=Vari::get('viernes');
+        $sabado=Vari::get('sabado');
+        $domingo=Vari::get('domingo');
         $diasNoLaborablesDeLaSemana = [];
         $fechasEspecialesFinales = [];
         $embarcacionesDisponiblesPorFecha = [];
         $paseos = Paseo::all();
 
-        if ($paseos->sum('domingo') == 0)
+        if ($domingo == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '0');
         }
-        if ($paseos->sum('lunes') == 0)
+        if ($lunes == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '1');
         }
-        if ($paseos->sum('martes') == 0)
+        if ($martes == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '2');
         }
-        if ($paseos->sum('miercoles') == 0)
+        if ($miercoles == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '3');
         }
-        if ($paseos->sum('jueves') == 0)
+        if ($jueves == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '4');
         }
-        if ($paseos->sum('viernes') == 0)
+        if ($viernes == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '5');
         }
-        if ($paseos->sum('sabado') == 0)
+        if ($sabado == 0)
         {
             array_push($diasNoLaborablesDeLaSemana, '6');
         }
