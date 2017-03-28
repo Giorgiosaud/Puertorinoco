@@ -26352,8 +26352,8 @@ function fechasEspecialesx(fechaAComparar) {
                     $respuesta.enabled= true;
                 }               
             }
-            console.info([$respuesta.enabled,$respuesta.classes,$respuesta.tooltip]);
-            return [$respuesta.enabled,$respuesta.classes,$respuesta.tooltip];
+            console.info($respuesta);
+            return $respuesta;
         }
     }
     return;
