@@ -267,6 +267,7 @@ function fechasEspecialesx(fechaAComparar) {
                     $respuesta.enabled= true;
                 }               
             }
+            console.info($fechaAComparar);
             console.info($respuesta);
             return $respuesta;
         }

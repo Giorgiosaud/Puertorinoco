@@ -26172,7 +26172,6 @@ $(document).ready(function () {
                 daysOfWeekDisabled: window.diasNoLaborables,
                 language: 'es',
                 startDate:new Date(),
-                //startDate: new Date(new Date().setDate((new Date()).getDate() + parseInt(window.minimoDiasAReservar))),
                 beforeShowDay: fechasEspecialesx,
                 altField: "#fecha",
                 todayBtn:true,
@@ -26352,6 +26351,7 @@ function fechasEspecialesx(fechaAComparar) {
                     $respuesta.enabled= true;
                 }               
             }
+            console.info($fechaAComparar);
             console.info($respuesta);
             return $respuesta;
         }
