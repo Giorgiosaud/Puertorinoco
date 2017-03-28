@@ -26342,6 +26342,7 @@ function fechasEspecialesx(fechaAComparar) {
             // classes: fechasEspeciales[i].clase,
             // tooltip: fechasEspeciales[i].descripcion
         };
+        console.info(respuesta);
     }
     for (i = 0; i < fechasEspeciales.length; i++) {
         respuesta = {
