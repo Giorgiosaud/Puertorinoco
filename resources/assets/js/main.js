@@ -252,14 +252,11 @@ function fechasEspecialesx(fechaAComparar) {
     // console.log(fechaAComparar);
     diaDeLaSemana=fechaAComparar.getDay();
     // console.log(window.diasNoLaborables);
-    respuesta = {
-            enabled: false,
-        };
-        console.info(diaDeLaSemana);
-    if(window.diasNoLaborables.indexOf(diaDeLaSemana)!=-1){
-        respuesta = {
-            enabled: true,
-        };
+    respuesta={};
+    respuesta.enabled= false;
+    console.info(diaDeLaSemana);
+    if(window.diasNoLaborables.indexOf(diaDeLaSemana)==-1){
+        respuesta.enabled= true;
     }
     return respuesta;
     for (i = 0; i < fechasEspeciales.length; i++) {
