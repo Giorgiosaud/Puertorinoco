@@ -1,7 +1,8 @@
 var elixir = require('laravel-elixir');
 
 elixir(function (mix) {
-    mix.sass('sass.scss','resources/assets/css/sass.css')
+    mix
+    .sass('sass.scss','resources/assets/css/sass.css')
     .less('less.less','resources/assets/css/less.css')
     .styles([
         'select2/dist/css/select2.min.css'
@@ -22,19 +23,20 @@ elixir(function (mix) {
         'select2/dist/js/i18n/es.js',
         'select2/dist/js/i18n/pt-BR.js',
         'select2/dist/js/i18n/en.js',
-        'angular/angular.min.js',
-        'ngLocale-ve/angular-locale_es-ve.js',
-        'materialize/dist/js/materialize.js'
-        ],'resources/assets/js','vendor/bower_components')
+        // 'angular/angular.min.js',
+        // 'ngLocale-ve/angular-locale_es-ve.js',
+        // 'materialize/dist/js/materialize.js'
+        ],'public/js/assets.js','vendor/bower_components')
 
-    .scripts(['all.js','main.js'])
+    .scripts('main.js','public/js/main.js','resources/assets/js')
+    .scripts('admin.js','public/js/admin.js','resources/assets/js')
+    // .scripts(['assets.js','main.js'],'public/js/public.js','resources/assets/js')
+    // .scripts(['assets.js','main.js'],'public/js/admin.js')
 
-    .scripts(['all.js','main.js','admin/reservasComponent.js'],'public/js/admin.js')
-
-    .version(['css/all.css', 'js/all.js','js/admin.js'])
-    .copy('vendor/bower_components/materialize/font', 'public/assets/fonts')
-    .copy('vendor/bower_components/bootstrap-sass-official/assets/fonts', 'public/assets/fonts')
-    .copy('vendor/bower_components/fontawesome/fonts', 'public/assets/fonts/fontawesome')
+    .version(['css/all.css', 'js/assets.js','js/main.js','js/admin.js'])
+    // .copy('vendor/bower_components/materialize/font', 'public/assets/fonts')
+    // .copy('vendor/bower_components/bootstrap-sass-official/assets/fonts', 'public/assets/fonts')
+    // .copy('vendor/bower_components/fontawesome/fonts', 'public/assets/fonts/fontawesome')
 //
 
 });

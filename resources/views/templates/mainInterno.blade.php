@@ -30,6 +30,9 @@
 <!-- Scripts -->
 </body>
 <footer>
+    <script src="{!! elixir('js/assets.js') !!}"></script>
+    
+    <script src="{!! elixir('js/main.js') !!}"></script>
     <script src="{!! elixir('js/admin.js') !!}"></script>
     @yield('footer')
 
