@@ -98,9 +98,11 @@ class FechasEspecialesAdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $req)
 	{
 		$fechaEspecial = FechaEspecial::findOrFail($id);
+		$fechaEspecial->update($req->all());
+		dd($req->all());
 
 	}
 
