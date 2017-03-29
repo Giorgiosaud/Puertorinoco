@@ -91,7 +91,7 @@ class ConsultarReservasAdminController extends Controller
         if ($this->laConsultaTieneNombreOApellido($request)) {
             // dd($request->input('nombreoapellido'));
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
-            dd($this->consultarReservacionesDeClientes($clientes));
+            return $this->consultarReservacionesDeClientes($clientes);
         } 
         // dd($request->all());
         $horas = $request->input('horas');
