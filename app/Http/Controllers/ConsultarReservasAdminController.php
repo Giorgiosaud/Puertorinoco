@@ -113,11 +113,12 @@ class ConsultarReservasAdminController extends Controller
         if ($this->laConsultatieneNumeroDeReservacion($request)) {
             return Reservacion::where('id', $request->input('numero_de_reserva'))->get();
         }
-        if ($this->laConsultaRieneNombreOApellido($request)) {
+        if ($this->laConsultaTieneNombreOApellido($request)) {
             // dd($request->input('nombreoapellido'));
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
             dd($this->consultarReservacionesDeClientes($clientes));
         } 
+        dd($request->all());
         $horas = $request->input('horas');
         $embarcaciones = $request->input('embarcaciones');
 
@@ -171,6 +172,7 @@ class ConsultarReservasAdminController extends Controller
     }
     protected function consultarReservacionesDeClientes($clientes){
         return Reservacion::whereIn('cliente_id', $clientes)
+        ->orderBy('fecha','Desc')
         ->orderBy('embarcacion_id')->orderBy('paseo_id')
         ->orderBy('estado_del_pago_id', 'Desc')
         ->get();
@@ -252,7 +254,7 @@ class ConsultarReservasAdminController extends Controller
      * @param ConsultarReservacionRequest $request
      * @return bool
      */
-    public function laConsultaRieneNombreOApellido(ConsultarReservacionRequest $request)
+    public function laConsultaTieneNombreOApellido(ConsultarReservacionRequest $request)
     {
         return $request->input('nombreoapellido') != '';
     }
@@ -264,8 +266,7 @@ class ConsultarReservasAdminController extends Controller
     public function obtenerClientesPorNombreOApellido(ConsultarReservacionRequest $request)
     {
         $clientes = Cliente::where('nombre', 'LIKE', '%'.$request->input('nombreoapellido').'%')
-        ->orWhere('apellido', 'LIKE', '%'.$request->input('nombreoapellido').'%')
-        ->with('reservas')->get();
+        ->orWhere('apellido', 'LIKE', '%'.$request->input('nombreoapellido').'%')->get();
         return $clientes->lists('id');
     }
 }
