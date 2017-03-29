@@ -65,7 +65,7 @@ class ConsultarReservasAdminController extends Controller
 
     public function consultarReservas(ConsultarReservacionRequest $request)
     {
-        $reservaciones=ObtenerReservaciones($request);
+        $reservaciones=$this->ObtenerReservaciones($request);
         dd($reservaciones);
         // if ($this->laConsultatieneNumeroDeReservacion($request)) {
         //     $reservaciones = Reservacion::where('id', $request->input('numero_de_reserva'))->get();
