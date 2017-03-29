@@ -114,8 +114,9 @@ class ConsultarReservasAdminController extends Controller
             return Reservacion::where('id', $request->input('numero_de_reserva'))->get();
         }
         if ($this->laConsultaRieneNombreOApellido($request)) {
-            dd($request->input('nombreoapellido'));
+            // dd($request->input('nombreoapellido'));
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
+            dd($clientes);
             $reservaciones = new Collection();
             foreach ($clientes as $cliente) {
                 if (!$cliente->reservas->isEmpty()) {
