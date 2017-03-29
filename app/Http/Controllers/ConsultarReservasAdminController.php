@@ -66,48 +66,23 @@ class ConsultarReservasAdminController extends Controller
     public function consultarReservas(ConsultarReservacionRequest $request)
     {
         $reservaciones=$this->ObtenerReservaciones($request);
-        dd($reservaciones);
-        // if ($this->laConsultatieneNumeroDeReservacion($request)) {
-        //     $reservaciones = Reservacion::where('id', $request->input('numero_de_reserva'))->get();
+        return view('reservacion.admin.show', compact('reservaciones'));
+        // $reservacionesAgrupadasPorEmbarcacion = $reservaciones->groupBy('embarcacion_id');
+        // $reservacionesPorEmbarcacionyHora = [];
+        // foreach ($reservacionesAgrupadasPorEmbarcacion as $reservacionagrupadaporembarcacion) {
+        //     array_push($reservacionesPorEmbarcacionyHora, $reservacionagrupadaporembarcacion->groupby('paseo_id'));
         // }
-        // elseif ($this->laConsultaRieneNombreOApellido($request)) {
-        //     $clientes = $this->obtenerClientesPorNombreOApellido($request);
-        //     $reservaciones = new Collection();
-        //     foreach ($clientes as $cliente) {
-        //         if (!$cliente->reservas->isEmpty()) {
-        //             foreach ($cliente->reservas as $reserva) {
-        //                 $reservaciones->push($reserva);
-        //             }
-        //         }
-        //     }
-        // } else {
-        //     $horas = $request->input('horas');
-        //     $embarcaciones = $request->input('embarcaciones');
+        // $embarcacionesFull = Embarcacion::all();
+        // $horariosFull = Paseo::all();
+        // JavaScript::put([
+        //     'reservaciones' => $reservaciones,
+        //     'reservacionesPorEmbarcacionyHora' => $reservacionesPorEmbarcacionyHora,
+        //     'embarcaciones' => $embarcacionesFull,
+        //     'horarios' => $horariosFull,
+        //     'editurl' => route('editarReservas')
+        //     ]);
 
-        //     if ($request->input('horas') == []) {
-        //         $horas = Paseo::lists('id')->all();
-        //     }
-        //     if ($request->input('embarcacion_id') == []) {
-        //         $embarcaciones = Embarcacion::lists('id')->all();
-        //     }
-        //     $reservaciones = $this->consultarReservaciones($request, $embarcaciones, $horas);
-        // }
-        $reservacionesAgrupadasPorEmbarcacion = $reservaciones->groupBy('embarcacion_id');
-        $reservacionesPorEmbarcacionyHora = [];
-        foreach ($reservacionesAgrupadasPorEmbarcacion as $reservacionagrupadaporembarcacion) {
-            array_push($reservacionesPorEmbarcacionyHora, $reservacionagrupadaporembarcacion->groupby('paseo_id'));
-        }
-        $embarcacionesFull = Embarcacion::all();
-        $horariosFull = Paseo::all();
-        JavaScript::put([
-            'reservaciones' => $reservaciones,
-            'reservacionesPorEmbarcacionyHora' => $reservacionesPorEmbarcacionyHora,
-            'embarcaciones' => $embarcacionesFull,
-            'horarios' => $horariosFull,
-            'editurl' => route('editarReservas')
-            ]);
-
-        return view('reservacion.admin.show2', compact('requestType'));
+        // return view('reservacion.admin.show2', compact('requestType'));
     }
     protected function ObtenerReservaciones($request){
         if ($this->laConsultatieneNumeroDeReservacion($request)) {
@@ -118,7 +93,7 @@ class ConsultarReservasAdminController extends Controller
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
             dd($this->consultarReservacionesDeClientes($clientes));
         } 
-        dd($request->all());
+        // dd($request->all());
         $horas = $request->input('horas');
         $embarcaciones = $request->input('embarcaciones');
 
