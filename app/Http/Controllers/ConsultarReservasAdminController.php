@@ -116,16 +116,7 @@ class ConsultarReservasAdminController extends Controller
         if ($this->laConsultaRieneNombreOApellido($request)) {
             // dd($request->input('nombreoapellido'));
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
-            dd($clientes);
-            $reservaciones = new Collection();
-            foreach ($clientes as $cliente) {
-                if (!$cliente->reservas->isEmpty()) {
-                    foreach ($cliente->reservas as $reserva) {
-                        $reservaciones->push($reserva);
-                    }
-                }
-            }
-            return $reservaciones;
+            dd($this->consultarReservacionesDeClientes($clientes));
         } 
         $horas = $request->input('horas');
         $embarcaciones = $request->input('embarcaciones');
@@ -171,14 +162,18 @@ class ConsultarReservasAdminController extends Controller
     public function consultarReservaciones(ConsultarReservacionRequest $request, $embarcaciones, $horas)
     {
 //        dd($request);
-        $reservaciones = Reservacion::whereIn('embarcacion_id', $embarcaciones)
+        return Reservacion::whereIn('embarcacion_id', $embarcaciones)
         ->whereIn('paseo_id', $horas)
         ->where('fecha', $request->input('fecha'))
         ->orderBy('embarcacion_id')->orderBy('paseo_id')
         ->orderBy('estado_del_pago_id', 'Desc')
         ->get();
-
-        return $reservaciones;
+    }
+    protected function consultarReservacionesDeClientes($clientes){
+        return Reservacion::whereIn('cliente_id', $clientes)
+        ->orderBy('embarcacion_id')->orderBy('paseo_id')
+        ->orderBy('estado_del_pago_id', 'Desc')
+        ->get();
     }
 
     public function recibirPago(PagosRequest $request)
