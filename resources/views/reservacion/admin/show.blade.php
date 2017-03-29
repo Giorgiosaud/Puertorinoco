@@ -17,6 +17,21 @@
 				@include('reservacion.admin.partials.headersTabla')
 
 				@foreach($reservaciones as $reservacion)
+					
+					@if($fecha != $reservacion->fecha->format('d-m-Y'))
+						<tr>
+							<th colspan="13"
+					    	class="info text-center">{{ $fecha=$reservacion->fecha->format('d-m-Y') }}</th>
+						</tr>
+						<tr>
+							<th colspan="13" class="info text-center">{{ $embarcacion=$reservacion->embarcacion->nombre
+						}}</th>
+						</tr>
+						<tr>
+							<th colspan="13" class="info text-center">{{ $paseo=$reservacion->paseo->horaDeSalida}}</th>
+						</tr>
+						@include('reservacion.admin.partials.headersTabla')
+					@endif
 					@if($embarcacion != $reservacion->embarcacion->nombre)
 
 						<tr>
