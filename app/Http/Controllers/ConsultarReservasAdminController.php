@@ -116,7 +116,7 @@ class ConsultarReservasAdminController extends Controller
         if ($this->laConsultaRieneNombreOApellido($request)) {
             // dd($request->input('nombreoapellido'));
             $clientes = $this->obtenerClientesPorNombreOApellido($request);
-            // dd($clientes);
+            dd($clientes);
             $reservaciones = new Collection();
             foreach ($clientes as $cliente) {
                 if (!$cliente->reservas->isEmpty()) {
