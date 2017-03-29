@@ -268,8 +268,8 @@ class ConsultarReservasAdminController extends Controller
      */
     public function obtenerClientesPorNombreOApellido(ConsultarReservacionRequest $request)
     {
-        $clientes = Cliente::where('nombre', 'LIKE', $request->input('nombreoapellido'))
-        ->orWhere('apellido', 'LIKE', $request->input('nombreoapellido'))
+        $clientes = Cliente::where('nombre', 'LIKE', '%'.$request->input('nombreoapellido').'%')
+        ->orWhere('apellido', 'LIKE', '%'.$request->input('nombreoapellido').'%')
         ->with('reservas')->get();
         return $clientes;
     }
