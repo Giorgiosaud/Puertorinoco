@@ -186,7 +186,7 @@ class VariablesController extends Controller {
     public function otrasVariables($fecha, Guard $autorizacion)
     {
         $fecha = Carbon::createFromFormat('Y-m-d', $fecha)->setTime(0, 0, 0);
-        $diaDeSemana = $this->definirDiaDeSemana($fecha);
+        // $diaDeSemana = $this->definirDiaDeSemana($fecha);
         $embarcaciones = $this->definirEmbarcacionesAutorizadas($fecha, $autorizacion);
         foreach ($embarcaciones as $embarcacion)
         {
