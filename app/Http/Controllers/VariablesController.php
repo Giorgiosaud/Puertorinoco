@@ -288,7 +288,7 @@ class VariablesController extends Controller {
             return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
             'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
-        dd($fechaEspecial);
+        dd($fechaEspecial->first());
         return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
             'abordajeMaximo', 'abordajeNormal', 'orden']);
 
