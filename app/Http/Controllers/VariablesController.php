@@ -25,7 +25,7 @@ class VariablesController extends Controller {
         {
             array_push($valores_de_tabla, ['Nombre de Variable' => '<a href="variables/' . $v->id . '/edit">' . $v->nombre
                 . '</a>',
-                                           'Valor'              => $v->valor]);
+                'Valor'              => $v->valor]);
         }
 
         return view('variables.all', compact('variables', 'valores_de_tabla'));
@@ -171,14 +171,14 @@ class VariablesController extends Controller {
                 'clase'         => $FechaEspecial->clase,
                 'descripcion'   => $FechaEspecial->descripcion,
                 'Embarcaciones' => $embarcacionesDisponiblesPorFecha,
-            ]);
+                ]);
         }
 
         return $fechas = [
-            'diasNoLaborables' => $diasNoLaborablesDeLaSemana,
-            'minReservar'      => $minimoDiasAReservar,
-            'TeporadaBaja'     => $TemporadaBaja,
-            'fechasEspeciales' => $fechasEspecialesFinales
+        'diasNoLaborables' => $diasNoLaborablesDeLaSemana,
+        'minReservar'      => $minimoDiasAReservar,
+        'TeporadaBaja'     => $TemporadaBaja,
+        'fechasEspeciales' => $fechasEspecialesFinales
         ];
 
     }
@@ -186,7 +186,7 @@ class VariablesController extends Controller {
     public function otrasVariables($fecha, Guard $autorizacion)
     {
         $fecha = Carbon::createFromFormat('Y-m-d', $fecha)->setTime(0, 0, 0);
-        $diaDeSemana = $this->definirDiaDeSemana($fecha);
+        // $diaDeSemana = $this->definirDiaDeSemana($fecha);
         $embarcaciones = $this->definirEmbarcacionesAutorizadas($fecha, $autorizacion);
         foreach ($embarcaciones as $embarcacion)
         {
@@ -195,8 +195,8 @@ class VariablesController extends Controller {
             $respuestas['embarcaciones'][$embarcacion->id]['abordajeMaximo'] = $this->obtenerAbordajeMaximoDependiendoDeAutorizacion($embarcacion, $autorizacion);
             $respuestas['embarcaciones'][$embarcacion->id]['orden'] = $embarcacion->orden;
 
-            $paseos = $this->definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion);
-						$paseosOrdenados=$paseos->sortBy('orden');
+            $paseos = $this->definirPaseosAutorizados($embarcacion, $fecha, $autorizacion);
+            $paseosOrdenados=$paseos->sortBy('orden');
             foreach ($paseosOrdenados as $paseo)
             {
                 $respuestas['paseos'][$paseo->id]['nombre'] = $paseo->nombre;
@@ -215,7 +215,7 @@ class VariablesController extends Controller {
                 {
                     $pasajerosReservadosDeLaFechayEmbarcacion = $paseo->reservas()->where
                     ('embarcacion_id', $embarcacion->id)
-                        ->PasajerosReservadosDeLaFecha($fecha, $embarcacion->id);
+                    ->PasajerosReservadosDeLaFecha($fecha, $embarcacion->id);
                     if(!is_int($pasajerosReservadosDeLaFechayEmbarcacion)){
                         $pasajerosReservadosDeLaFechayEmbarcacion=0;
                     };
@@ -227,14 +227,14 @@ class VariablesController extends Controller {
                         $respuestas['embarcaciones'][$embarcacion->id]['abordajeMaximo'] -
                         $pasajerosReservadosDeLaFechayEmbarcacion);
                     //dd($respuestas);
+                    }
+
                 }
 
             }
 
+            return $respuestas;
         }
-
-        return $respuestas;
-    }
 
     /**
      * @param $fecha
@@ -246,26 +246,26 @@ class VariablesController extends Controller {
         switch ($diaDeLaSemanaNumero)
         {
             case 0:
-                $diaDeSemana = 'domingo';
-                break;
+            $diaDeSemana = 'domingo';
+            break;
             case 1:
-                $diaDeSemana = 'lunes';
-                break;
+            $diaDeSemana = 'lunes';
+            break;
             case 2:
-                $diaDeSemana = 'martes';
-                break;
+            $diaDeSemana = 'martes';
+            break;
             case 3:
-                $diaDeSemana = 'miercoles';
-                break;
+            $diaDeSemana = 'miercoles';
+            break;
             case 4:
-                $diaDeSemana = 'jueves';
-                break;
+            $diaDeSemana = 'jueves';
+            break;
             case 5:
-                $diaDeSemana = 'viernes';
-                break;
+            $diaDeSemana = 'viernes';
+            break;
             case 6:
-                $diaDeSemana = 'sabado';
-                break;
+            $diaDeSemana = 'sabado';
+            break;
         }
 
         return $diaDeSemana;
@@ -286,10 +286,10 @@ class VariablesController extends Controller {
         if($fechaEspecial->isEmpty()){
             $diaDeSemana = $this->definirDiaDeSemana($fecha);
             return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
-            'abordajeMaximo', 'abordajeNormal', 'orden']);
+                'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
         return $fechaEspecial->first()->embarcaciones()->where('embarcacion_fecha_especial.activa',1)->get(['id', 'nombre', 'abordajeMinimo','abordajeMaximo', 'abordajeNormal', 'orden']);
-            
+
 
 
     }
@@ -317,16 +317,28 @@ class VariablesController extends Controller {
      * @param $diaDeSemana
      * @return mixed
      */
-    public function definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion)
+    public function definirPaseosAutorizados($embarcacion, $fecha, $autorizacion)
     {
+
 
         // dd($autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos);
         if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
         {
             return $embarcacion->paseos()->orderBy('orden','ASC')->get();
         }
-        //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
+        $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
+        if(!($fechaEspecial->isEmpty())
+        {
+            if($fechaEspecial->embarcaciones->first()->activa==1){
+                return $embarcacion->paseos()->wherePublico(1)->orderBy('orden')->get();
+            }
+
+        }
+        $diaDeSemana = $this->definirDiaDeSemana($fecha);
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
+
+        //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
+        
 
     }
 
