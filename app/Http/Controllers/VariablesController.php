@@ -239,6 +239,7 @@ class VariablesController extends Controller {
     /**
      * @param $fecha
      * @return string
+     */
     public function definirDiaDeSemana($fecha)
     {
         $diaDeLaSemanaNumero = $fecha->dayOfWeek;
@@ -283,9 +284,11 @@ class VariablesController extends Controller {
         }
         $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
         if($fechaEspecial->isEmpty()){
-            dd( 'noEsFechaEspecial');
+            $diaDeSemana = $this->definirDiaDeSemana($fecha);
+            return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
+            'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
-        dd( 'EsFechaEspecial');
+        dd($fechaEspecial);
         return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
             'abordajeMaximo', 'abordajeNormal', 'orden']);
 
