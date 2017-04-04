@@ -327,9 +327,9 @@ class VariablesController extends Controller {
             return $embarcacion->paseos()->orderBy('orden','ASC')->get();
         }
         $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
-        if(!($fechaEspecial->isEmpty())
+        if(!($fechaEspecial->isEmpty()))
         {
-            dd($fechaEspecial);
+            // dd($fechaEspecial->embarcaciones->first()->activa);
             if($fechaEspecial->embarcaciones->first()->activa==1){
                 return $embarcacion->paseos()->wherePublico(1)->orderBy('orden')->get();
             }
