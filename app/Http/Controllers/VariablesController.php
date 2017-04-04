@@ -289,7 +289,7 @@ class VariablesController extends Controller {
             'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
         return $fechaEspecial->first()->embarcaciones()->where('embarcacion_fecha_especial.activa',1)->get(['id', 'nombre', 'abordajeMinimo','abordajeMaximo', 'abordajeNormal', 'orden']);
-            'abordajeMaximo', 'abordajeNormal', 'orden']);
+            
 
 
     }
