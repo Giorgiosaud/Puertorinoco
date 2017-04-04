@@ -282,10 +282,10 @@ class VariablesController extends Controller {
                 'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
         $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
-        if($fechaEspecial){
-            dd( 'esFechaEspecial');
+        if($fechaEspecial->isEmpty()){
+            dd( 'noEsFechaEspecial');
         }
-        dd( 'noEsFechaEspecial');
+        dd( 'EsFechaEspecial');
         return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
             'abordajeMaximo', 'abordajeNormal', 'orden']);
 
