@@ -187,7 +187,7 @@ class VariablesController extends Controller {
     {
         $fecha = Carbon::createFromFormat('Y-m-d', $fecha)->setTime(0, 0, 0);
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
-        $embarcaciones = $this->definirEmbarcacionesAutorizadas($diaDeSemana, $autorizacion);
+        $embarcaciones = $this->definirEmbarcacionesAutorizadas($fecha, $autorizacion);
         foreach ($embarcaciones as $embarcacion)
         {
             $respuestas['embarcaciones'][$embarcacion->id]['nombre'] = $embarcacion->nombre;
@@ -239,7 +239,6 @@ class VariablesController extends Controller {
     /**
      * @param $fecha
      * @return string
-     */
     public function definirDiaDeSemana($fecha)
     {
         $diaDeLaSemanaNumero = $fecha->dayOfWeek;
@@ -275,16 +274,18 @@ class VariablesController extends Controller {
      * @param $diaDeSemana
      * @return mixed
      */
-    public function definirEmbarcacionesAutorizadas($diaDeSemana, Guard $autorizacion)
+    public function definirEmbarcacionesAutorizadas($fecha, Guard $autorizacion)
     {
-        if ($autorizacion->check() && $autorizacion->user()
-                ->nivelDeAcceso->permiso->DisponibilidadTotalDeEmbarcaciones
-        )
+        if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDeEmbarcaciones)
         {
             return Embarcacion::get(['id', 'nombre', 'abordajeMinimo',
                 'abordajeMaximo', 'abordajeNormal', 'orden']);
         }
-
+        $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
+        if($fechaEspecial){
+            dd( 'esFechaEspecial');
+        }
+        dd( 'noEsFechaEspecial');
         return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
             'abordajeMaximo', 'abordajeNormal', 'orden']);
 
@@ -316,6 +317,7 @@ class VariablesController extends Controller {
      */
     public function definirPaseosAutorizados($embarcacion, $diaDeSemana, $autorizacion)
     {
+
         // dd($autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos);
         if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
         {
