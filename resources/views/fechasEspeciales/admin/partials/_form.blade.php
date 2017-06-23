@@ -23,6 +23,12 @@
 								Form::select('lista_de_embarcaciones[]',$embarcaciones,null,['class'=>'form-control','multiple'])
 								)
 								!!}
+								{!!
+							ControlGroup::generate(
+								Form::label('lista_de_paseos', 'Paseos: '),
+								Form::select('lista_de_paseos[]',$paseos,null,['class'=>'form-control','multiple'])
+								)
+								!!}
 								<div class="checkbox">
 									{!!Form::hidden('trabaja',0)!!}
 									{!!

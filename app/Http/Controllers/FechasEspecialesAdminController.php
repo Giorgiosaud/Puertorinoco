@@ -2,9 +2,9 @@
 
 use App\Embarcacion;
 use App\FechaEspecial;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests;
+use App\Paseo;
 use App\TipoDePaseo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -43,7 +43,8 @@ class FechasEspecialesAdminController extends Controller {
 	public function create()
 	{
 		$embarcaciones=Embarcacion::lists('nombre','id')->all();
-		return view('fechasEspeciales.admin.create',compact('embarcaciones'));
+		$paseos=Paseo::lists('nombre','id')->all();
+		return view('fechasEspeciales.admin.create',compact('embarcaciones','paseos'));
 	}
 
 	/**
