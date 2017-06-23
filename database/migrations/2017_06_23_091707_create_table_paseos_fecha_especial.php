@@ -12,7 +12,7 @@ class CreateTablePaseosFechaEspecial extends Migration
      */
     public function up()
     {
-        Schema::table('paseos_fecha_especial', function (Blueprint $table) {
+        Schema::create('paseos_fecha_especial', function (Blueprint $table) {
             $table->unsignedInteger('paseo_id')->index();
             $table->foreign('paseo_id')->references('id')->on('paseos')->onDelete('cascade');
             $table->unsignedInteger('fecha_especial_id')->index();
@@ -29,8 +29,6 @@ class CreateTablePaseosFechaEspecial extends Migration
      */
     public function down()
     {
-        Schema::table('paseos_fecha_especial', function (Blueprint $table) {
-            Schema::drop('paseos_fecha_especial');
-        });
+        Schema::drop('paseos_fecha_especial');
     }
 }
