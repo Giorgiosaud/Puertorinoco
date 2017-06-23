@@ -51,7 +51,7 @@ class PaseosAdminController extends Controller {
         // dd('create Paseo');
         $tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
         // dd($tiposDePaseos);
-        $embarcaciones=TipoDePaseo::lists('nombre','id')->all();
+        $embarcaciones=Embarcacion::lists('nombre','id')->all();
         // dd($embarcaciones);
         $embarcacionesSeleccionadas=null;
         return view('Paseos.admin.create',compact('tiposDePaseos','embarcaciones','embarcacionesSeleccionadas'));
