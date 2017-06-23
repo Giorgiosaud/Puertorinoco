@@ -95,7 +95,7 @@ class FechasEspecialesAdminController extends Controller {
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		// $embarcacionesSeleccionadas=$FechaEspecial->lists('nombre','id')->all();
         //dd($fechaEspecial);
-        
+
 		return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones','paseos'));
 	}
 
@@ -110,14 +110,19 @@ class FechasEspecialesAdminController extends Controller {
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		$fechaEspecial->update($req->all());
 		$embarcaciones=$req->input('lista_de_embarcaciones');
-		$syncArray=array();
+		$embarcaciones=$req->input('lista_de_paseos');
+		$syncEmbarcaciones=array();
+		$syncPaseos=array();
+		foreach ($paseos as $paseosId){
+			$syncPaseos[$paseosId]=array('activa'=>$req->input('trabaja'));
+		}
 		foreach ($embarcaciones as $embaracionId){
-			
-				$syncArray[$embaracionId]=array('activa'=>$req->input('trabaja'));
-				// array_push($syncArray,$embarcacion);
+			$syncEmbarcaciones[$embaracionId]=array('activa'=>$req->input('trabaja'));
 		}
 		// dd($syncArray);
-		$fechaEspecial->embarcaciones()->sync($syncArray);
+		$fechaEspecial->embarcaciones()->sync($syncEmbarcaciones);
+		
+		$fechaEspecial->paseos()->sync($syncPaseos);
 		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 
 	}
@@ -132,10 +137,10 @@ class FechasEspecialesAdminController extends Controller {
 	{
 		$fechaEspecial=FechaEspecial::find($id);
         // dd($fechaEspecial->embarcaciones);
-        $fechaEspecial->embarcaciones()->detach($fechaEspecial->embaraciones);
-        $fechaEspecial->delete();
+		$fechaEspecial->embarcaciones()->detach($fechaEspecial->embaraciones);
+		$fechaEspecial->delete();
         //$embarcacion->destroy();
-        return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
+		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 	}
 
 }
