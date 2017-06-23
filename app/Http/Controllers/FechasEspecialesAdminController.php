@@ -55,14 +55,18 @@ class FechasEspecialesAdminController extends Controller {
 	public function store(Request $request)
 	{
 		// dd($request->all());
-		$paseo=FechaEspecial::create($request->all());
+		$fechaEspecial=FechaEspecial::create($request->all());
 		$embarcaciones=$request->input('lista_de_embarcaciones');
+		$paseos=$request->input('lista_de_paseos');
+		foreach ($paseos as $paseoId){
+			$fechaEspecial->paseos()->attach($paseoId,array('activa'=>$request->input('trabaja')));	
+		}
 		foreach ($embarcaciones as $embaracionId){
-			$paseo->embarcaciones()->attach($embaracionId,array('activa'=>$request->input('trabaja')));			
+			$fechaEspecial->embarcaciones()->attach($embaracionId,array('activa'=>$request->input('trabaja')));	
 		}
 
-		// $paseo->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
-		// dd($paseo);
+		// $fechaEspecial->embarcaciones()->sync($request->input('lista_de_embarcaciones'));
+		// dd($fechaEspecial);
 		return redirect()->route('PanelAdministrativo.fechasEspeciales.index');
 	}
 

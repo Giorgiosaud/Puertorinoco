@@ -37,6 +37,9 @@ class FechaEspecial extends Model {
 	public function embarcaciones(){
 		return $this->belongsToMany('App\Embarcacion','embarcacion_fecha_especial')->withTimestamps()->withPivot('activa');
 	}
+	public function paseos(){
+		return $this->belongsToMany('App\Paseo','embarcacion_fecha_especial')->withTimestamps()->withPivot('activa');
+	}
     public function getListaDeEmbarcacionesAttribute()
     {
         return $this->embarcaciones->lists('id')->toArray();
