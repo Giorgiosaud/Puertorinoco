@@ -44,6 +44,7 @@ class FechasEspecialesAdminController extends Controller {
 	{
 		$embarcaciones=Embarcacion::lists('nombre','id')->all();
 		$paseos=Paseo::lists('nombre','id')->all();
+		dd($paseos);
 		return view('fechasEspeciales.admin.create',compact('embarcaciones','paseos'));
 	}
 
