@@ -44,6 +44,10 @@ class FechaEspecial extends Model {
     {
         return $this->embarcaciones->lists('id')->toArray();
     }
+    public function getListaDePaseosAttribute()
+    {
+        return $this->paseos->lists('id')->toArray();
+    }
     public function getTrabajaAttribute(){
     	return $this->embarcaciones->first()->pivot->activa;
     }
