@@ -44,7 +44,6 @@ class FechasEspecialesAdminController extends Controller {
 	{
 		$embarcaciones=Embarcacion::lists('nombre','id')->all();
 		$paseos=Paseo::lists('nombre','id')->all();
-		dd($paseos);
 		return view('fechasEspeciales.admin.create',compact('embarcaciones','paseos'));
 	}
 
@@ -88,11 +87,12 @@ class FechasEspecialesAdminController extends Controller {
 	{
 		$tiposDePaseos=TipoDePaseo::lists('nombre','id')->all();
 		$embarcaciones=Embarcacion::lists('nombre','id')->all();
+		$paseos=Paseo::lists('nombre','id')->all();
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		// $embarcacionesSeleccionadas=$FechaEspecial->lists('nombre','id')->all();
         //dd($fechaEspecial);
         
-		return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones'));
+		return view('fechasEspeciales.admin.edit', compact('fechaEspecial','tiposDePaseos','embarcaciones','paseos'));
 	}
 
 	/**
