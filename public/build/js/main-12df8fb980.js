@@ -115,8 +115,10 @@ $(document).ready(function () {
                         for (key2 in window.datosconfecha.pasajeros[key]) {
                             cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
                         }
+                        var $cantidadEmbarcaciones=Object.keys(window.datosconfecha.embarcaciones).length,
+                        $anchoEmbarcaciones=Math.floor(12/$cantidadPaseos);
                         if (cantidad_en_embarcacion[key] > 0) {
-                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden');
+                            $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden').addClass('col-sm-'+$anchoEmbarcaciones);
                         }
                     }
                     $('#fechaform').children('.col-xs-1').children().slideUp('slow');
@@ -128,8 +130,8 @@ $(document).ready(function () {
         }, "json");
         $("input[name='embarcacion_id']").on("change", function () {
             embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
-            $cantidadPaseos=Object.keys(window.datosconfecha.paseos).length;
-            var $anchoPaseos=12/$cantidadPaseos;
+            var $cantidadPaseos=Object.keys(window.datosconfecha.paseos).length,
+             $anchoPaseos=Math.floor(12/$cantidadPaseos);
             $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled hidden');
             for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
                 if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
