@@ -12,7 +12,12 @@ $(document).ready(function () {
         language: 'es',
         multidate:true,
     });
-    $('.input-daterange').datepicker();
+    $('.input-daterange').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        clearBtn: true,
+        language: 'es'
+    });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {
