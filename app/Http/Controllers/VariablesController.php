@@ -326,7 +326,7 @@ class VariablesController extends Controller {
         $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
         if(!($fechaEspecial->isEmpty()))
         {
-                return $fechaEspecial->paseos()->wherePublico(1)->orderBy('orden')->get();
+                return $fechaEspecial->first()->paseos()->wherePublico(1)->orderBy('orden')->get();
         }
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
