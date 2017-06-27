@@ -1,7 +1,13 @@
 <div class="input-group input-daterange">
-    <input name="fecha_inicio" type="text" class="form-control">
+    {!!	ControlGroup::generate(
+	Form::label('fecha_inicio', 'Fecha del Paseo: '),
+	Form::text('fecha_inicio',null,['class'=>"datePicker"])
+	)!!}
     <div class="input-group-addon">to</div>
-    <input name="fecha_fin" type="text" class="form-control" >
+    {!!	ControlGroup::generate(
+	Form::label('fecha_fin', 'Fecha del Paseo: '),
+	Form::text('fecha_fin',null,['class'=>"datePicker"])
+	)!!}
 </div>
 {!!	ControlGroup::generate(
 	Form::label('fecha', 'Fecha del Paseo: '),
