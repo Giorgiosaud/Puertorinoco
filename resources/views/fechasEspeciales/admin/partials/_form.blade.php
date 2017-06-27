@@ -22,12 +22,8 @@
 	Form::select('lista_de_paseos[]',$paseos,null,['class'=>'form-control','multiple'])
 	)	!!}
 	<div class="checkbox">
-		{!!Form::hidden('trabaja',0)!!}
-		{!!	ControlGroup::generate(
-			Form::label('Trabaja', 'Tipo de Fecha Especial: '),
-			Form::checkbox('trabaja',1,null,['class'=>'btswitch'])
-			) !!}
-		</div>
-		{!!Button::primary($submit)->large()->block()->submit()!!}
-
+		{!!Form::hidden('trabaja',1)!!}
 	</div>
+	{!!Button::primary($submit)->large()->block()->submit()!!}
+
+</div>
