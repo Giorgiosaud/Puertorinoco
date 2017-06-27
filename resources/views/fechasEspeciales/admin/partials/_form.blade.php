@@ -12,7 +12,13 @@
 	Form::textarea('descripcion')
 	)	!!}
 	@foreach($embarcaciones as $id=>$embarcacion)
-		ID: {{$id}}: Embarcacion:{!!$embarcacion!!}
+	<div class="checkbox">
+		
+		{!!	ControlGroup::generate(
+			Form::label('embarcacion_'.$id, $embarcacion.': '),
+			Form::checkbox('embarcacion_'.$id,1,null,['class'=>'btswitch'])
+			) !!}
+		</div>
 	@endforeach
 {!!	ControlGroup::generate(
 	Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
