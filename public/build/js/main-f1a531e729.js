@@ -5,6 +5,21 @@ $(document).ready(function () {
         clearBtn: true,
         language: 'es',
     });
+    $('.datePickerMultiple').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        clearBtn: true,
+        language: 'es',
+        multidate:true,
+    });
+    $('.input-daterange input').each(function() {
+        $(this).datepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            clearBtn: true,
+            language: 'es',
+        });
+    });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {
