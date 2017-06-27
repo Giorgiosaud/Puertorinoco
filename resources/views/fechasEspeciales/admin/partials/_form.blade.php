@@ -12,20 +12,13 @@
 	Form::textarea('descripcion')
 	)	!!}
 	@foreach($embarcaciones as $id=>$embarcacion)
-	<div class="checkbox">
-		
-		{!!	ControlGroup::generate(
-			Form::label('embarcacion_'.$id, $embarcacion.': '),
-			Form::checkbox('embarcacion_'.$id,1,null,['class'=>'btswitch'])
-			) !!}
-		</div>
-	@endforeach
+	
 {!!	ControlGroup::generate(
-	Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
+	Form::label('lista_de_embarcaciones', 'Embarcaciones Activas En la Fecha: '),
 	Form::select('lista_de_embarcaciones[]',$embarcaciones,null,['class'=>'form-control','multiple'])
 	)		!!}
 {!!	ControlGroup::generate(
-	Form::label('lista_de_paseos', 'Paseos: '),
+	Form::label('lista_de_paseos', 'Paseos Activos en la Fecha: '),
 	Form::select('lista_de_paseos[]',$paseos,null,['class'=>'form-control','multiple'])
 	)	!!}
 	<div class="checkbox">
