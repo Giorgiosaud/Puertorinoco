@@ -108,6 +108,7 @@ class FechasEspecialesAdminController extends Controller {
 	 */
 	public function update($id,Request $req)
 	{
+		dd($req->all());
 		$fechaEspecial = FechaEspecial::findOrFail($id);
 		$fechaEspecial->update($req->all());
 		$embarcaciones=$req->input('lista_de_embarcaciones');
