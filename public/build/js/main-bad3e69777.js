@@ -117,7 +117,7 @@ $(document).ready(function () {
                         }
                         var $cantidadEmbarcaciones=Object.keys(window.datosconfecha.embarcaciones).length,
                         $anchoEmbarcaciones=Math.floor(12/$cantidadEmbarcaciones);
-                        $anchoEmbarcaciones=($anchoEmbarcaciones<2)?$anchoEmbarcaciones:2;
+                        $anchoEmbarcaciones=($anchoEmbarcaciones>=2)?$anchoEmbarcaciones:2;
                         if (cantidad_en_embarcacion[key] > 0) {
                             $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden').addClass('col-sm-'+$anchoEmbarcaciones);
                         }
@@ -133,7 +133,7 @@ $(document).ready(function () {
             embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
             var $cantidadPaseos=Object.keys(window.datosconfecha.paseos).length,
              $anchoPaseos=Math.floor(12/$cantidadPaseos);
-             $anchoPaseos=($anchoPaseos<2)?$anchoPaseos:2;
+             $anchoPaseos=($anchoPaseos>=2)?$anchoPaseos:2;
             $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled hidden');
             for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
                 if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
