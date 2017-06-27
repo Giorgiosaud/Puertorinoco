@@ -11,7 +11,6 @@
 	Form::label('descripcion', 'Descripcion del Paseo: '),
 	Form::textarea('descripcion')
 	)	!!}
-	@foreach($embarcaciones as $id=>$embarcacion)
 	
 {!!	ControlGroup::generate(
 	Form::label('lista_de_embarcaciones', 'Embarcaciones Activas En la Fecha: '),
