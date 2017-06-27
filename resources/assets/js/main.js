@@ -116,7 +116,7 @@ $(document).ready(function () {
                             cantidad_en_embarcacion[key] = cantidad_en_embarcacion[key] + window.datosconfecha.pasajeros[key][key2].disponibles;
                         }
                         var $cantidadEmbarcaciones=Object.keys(window.datosconfecha.embarcaciones).length,
-                        $anchoEmbarcaciones=Math.floor(12/$cantidadPaseos);
+                        $anchoEmbarcaciones=Math.floor(12/$cantidadEmbarcaciones);
                         if (cantidad_en_embarcacion[key] > 0) {
                             $("input[name='embarcacion_id'][value=" + key + "]").parent().removeClass('disabled hidden').addClass('col-sm-'+$anchoEmbarcaciones);
                         }
