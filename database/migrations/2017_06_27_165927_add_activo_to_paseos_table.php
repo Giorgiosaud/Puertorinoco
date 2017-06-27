@@ -13,7 +13,7 @@ class AddActivoToPaseosTable extends Migration
     public function up()
     {
         Schema::table('paseos', function (Blueprint $table) {
-            //
+            $table->boolean('activo')->default(0);
         });
     }
 
@@ -25,7 +25,7 @@ class AddActivoToPaseosTable extends Migration
     public function down()
     {
         Schema::table('paseos', function (Blueprint $table) {
-            $table->boolean('activo')->default(0);
+						$table->dropColumn('activo');
         });
     }
 }
