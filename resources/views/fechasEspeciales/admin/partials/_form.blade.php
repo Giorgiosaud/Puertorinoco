@@ -11,7 +11,9 @@
 	Form::label('descripcion', 'Descripcion del Paseo: '),
 	Form::textarea('descripcion')
 	)	!!}
-	
+	@foreach($embarcaciones as $id=>$embarcacion)
+		ID: {{$id}}: Embarcacion:{!!$embarcacion!!}
+	@endforeach
 {!!	ControlGroup::generate(
 	Form::label('lista_de_embarcaciones', 'Embarcaciones: '),
 	Form::select('lista_de_embarcaciones[]',$embarcaciones,null,['class'=>'form-control','multiple'])
