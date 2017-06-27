@@ -330,10 +330,6 @@ class VariablesController extends Controller {
         }
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
-
-        //dd($embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->get());
-        
-
     }
 
 }

@@ -54,7 +54,7 @@
 			<div id="opcionesHora" data-toggle="buttons" class="col-sm-8 col-xs- btn-group tienepopover"
 			     data-content="Seleccione Hora del Paseo" data-original-title="" title="">
 				@foreach ($paseos as $paseo)
-					<label class="col-sm-{{ $width }} btn btn-primary botonhora disabled">
+					<label class="btn btn-primary botonhora disabled">
 						{!! Form::radio('paseo_id',$paseo->id,false) !!}
 						{!! $paseo->horaDeSalida!!}
 						<br/><span class="tipo">{{$paseo->tipoDePaseo->nombre}}</span><br/><span class="cupos"></span>

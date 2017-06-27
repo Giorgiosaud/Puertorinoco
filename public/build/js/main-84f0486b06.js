@@ -5,19 +5,6 @@ $(document).ready(function () {
         clearBtn: true,
         language: 'es',
     });
-    $('.datePickerMultiple').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        clearBtn: true,
-        language: 'es',
-        multidate:true,
-    });
-    $('.input-daterange').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        clearBtn: true,
-        language: 'es'
-    });
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {
@@ -141,10 +128,12 @@ $(document).ready(function () {
         }, "json");
         $("input[name='embarcacion_id']").on("change", function () {
             embarcacion_id_seleccionada = $("input[name='embarcacion_id']:checked").val();
+            $cantidadPaseos=Object.keys(window.datosconfecha.paseos).length;
+            var $anchoPaseos=12/$cantidadPaseos;
             $("input[name='paseo_id']").removeAttr('checked').parent().removeClass('active').addClass('disabled hidden');
             for (key in window.datosconfecha.pasajeros[embarcacion_id_seleccionada]) {
                 if (window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles > 0) {
-                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden');
+                    $("input[name='paseo_id'][value=" + key + "]").siblings('.cupos').html(window.datosconfecha.pasajeros[embarcacion_id_seleccionada][key].disponibles + ' Pasaje(s)</br> Disponibles').parent().removeClass('disabled hidden').addClass('col-sm-'+$anchoPaseos);
                 }
             }
             $('#ayudaEmbarcacion').slideUp('slow');
