@@ -1,5 +1,5 @@
-<div class="input-group input-daterange">
 {!!Form::label('fecha_inicio', 'Rango de Fecha Especial: ')!!}
+<div class="input-group input-daterange">
     <input name="fecha_inicio" type="text" class="form-control">
     <div class="input-group-addon">a</div>
     <input name="fecha_fin" type="text" class="form-control" >
