@@ -277,14 +277,14 @@ class VariablesController extends Controller {
      */
     public function definirEmbarcacionesAutorizadas($fecha, Guard $autorizacion)
     {
+        $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
+        if(!($fechaEspecial->isEmpty())){
+            return $fechaEspecial->first()->embarcaciones()->where('embarcacion_fecha_especial.activa',1)->get(['id', 'nombre', 'abordajeMinimo','abordajeMaximo', 'abordajeNormal', 'orden']);
+        }
         if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDeEmbarcaciones)
         {
             return Embarcacion::get(['id', 'nombre', 'abordajeMinimo',
                 'abordajeMaximo', 'abordajeNormal', 'orden']);
-        }
-        $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
-        if(!($fechaEspecial->isEmpty())){
-            return $fechaEspecial->first()->embarcaciones()->where('embarcacion_fecha_especial.activa',1)->get(['id', 'nombre', 'abordajeMinimo','abordajeMaximo', 'abordajeNormal', 'orden']);
         }
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
         return Embarcacion::wherePublico(1)->where($diaDeSemana, '1')->get(['id', 'nombre', 'abordajeMinimo',
@@ -319,15 +319,16 @@ class VariablesController extends Controller {
 
 
         // dd($autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos);
-        if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
-        {
-            return $embarcacion->paseos()->orderBy('orden','ASC')->get();
-        }
         $fechaEspecial=FechaEspecial::where('fecha',$fecha)->get();
         if(!($fechaEspecial->isEmpty()))
         {
                 return $fechaEspecial->first()->paseos()->orderBy('orden')->get();
         }
+        if ($autorizacion->check() && $autorizacion->user()->nivelDeAcceso->permiso->DisponibilidadTotalDePaseos)
+        {
+            return $embarcacion->paseos()->orderBy('orden','ASC')->get();
+        }
+        
         $diaDeSemana = $this->definirDiaDeSemana($fecha);
         return $embarcacion->paseos()->wherePublico(1)->where($diaDeSemana, '1')->orderBy('orden')->get();
     }
