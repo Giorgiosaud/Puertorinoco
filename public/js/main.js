@@ -12,9 +12,7 @@ $(document).ready(function () {
         language: 'es',
         multidate:true,
     });
-    $('.input-daterange input').each(function() {
-        $(this).datepicker('clearDates');
-    });
+    $('.input-daterange').datepicker();
     if($('#formularioDeReserva').length>=1) {
         $.ajaxSetup({
             headers: {
