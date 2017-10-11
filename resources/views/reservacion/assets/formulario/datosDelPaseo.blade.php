@@ -10,6 +10,7 @@
 				'class'=>'form-control tienepopover',
 				'data-container'=>'body',
 				'data-toggle'=>'popover',
+				'readonly'=>'true',
 				'data-placement'=>'right',
 				'data-content'=>Lang::get('formulario.SeleccioneFechaDelPaseo'))) !!}
 
