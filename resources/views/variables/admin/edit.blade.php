@@ -2,12 +2,11 @@
 @section('content')
 	@include('templates.errors')
 	<div class="container">
-		<h1>Editar {!!$precio->nombre!!}</h1>
-		{!!Form::horizontalModel($precio,['url'=>URL::route('PanelAdministrativo.precios.update',$precio->id),'role'=>'form','method'=>'PUT'])!!}
-		@include('precios.admin.partials._form',['submit'=>'Modificar Precio'])
+		<h1>Editar {!!$variable->nombre!!}</h1>
+		{!!Form::horizontalModel($variable,['url'=>URL::route('PanelAdministrativo.variables.update',$precio->id),'role'=>'form','method'=>'PUT'])!!}
+		@include('variables.admin.partials._form',['submit'=>'Modificar Variable'])
 		{!!Form::close()!!}
 	</div>
 @endsection
 @section('footer')
-	@include('precios.admin.partials._script')
 @endsection

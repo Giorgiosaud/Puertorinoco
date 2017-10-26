@@ -26,7 +26,7 @@ class VariablesAdminController extends Controller
             ];
             $variablesTableStyle[]=$array;
         }
-         return view('variables.admin.all', compact('variablesTableStyle'));
+        return view('variables.admin.all', compact('variablesTableStyle'));
     }
 
     /**
@@ -36,7 +36,7 @@ class VariablesAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('variables.admin.create');
     }
 
     /**
@@ -47,7 +47,8 @@ class VariablesAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Variable::create($request->all());
+        return redirect()->route('PanelAdministrativo.variables.index');
     }
 
     /**
@@ -70,6 +71,10 @@ class VariablesAdminController extends Controller
     public function edit($id)
     {
         //
+        $variable = Variable::findOrFail($id);
+
+        return view('variables.admin.edit', compact('variable'));
+
     }
 
     /**
@@ -81,7 +86,10 @@ class VariablesAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $variable = Variable::find($id);
+        $variable->fill($request->all());
+        $variable->save();
+        return redirect()->route('PanelAdministrativo.variables.index');   
     }
 
     /**
