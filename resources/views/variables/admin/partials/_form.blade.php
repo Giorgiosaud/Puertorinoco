@@ -1,7 +1,7 @@
 {!!
 	ControlGroup::generate(
 		Form::label('nombre', 'Nombre de Variable: '),
-		Form::text('nombre',null,$name)
+		Form::text('nombre',null,[$name])
 
 	)
 	!!}
