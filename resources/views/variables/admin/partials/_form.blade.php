@@ -1,11 +1,7 @@
 {!!
-	$atts=[];
-	if($name=='hidden'){
-		$atts[]='reandonly';
-	}
 	ControlGroup::generate(
 		Form::label('nombre', 'Nombre de Variable: '),
-		Form::text('nombre',null,$atts)
+		Form::text('nombre',null,$name)
 
 	)
 	!!}
