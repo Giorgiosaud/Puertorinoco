@@ -22,7 +22,7 @@ class VariablesAdminController extends Controller
             $array = [
                 'Id'        => $variable->id,
                 'Nombre'=>$variable->nombre,
-                'Aplicar Desde'    => $variable->valor,
+                'Valor'    => $variable->valor,
             ];
             $variablesTableStyle[]=$array;
         }

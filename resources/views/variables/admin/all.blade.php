@@ -4,7 +4,7 @@
 		<div class="table-responsive">
 			{!!Table::withContents($variablesTableStyle)
 			->callback('Accion', function ($field, $row) {
-			return Button::primary('Editar')->asLinkTo(route('PanelAdministrativo.precios.edit', $row['Id']))->block();
+			return Button::primary('Editar')->asLinkTo(route('PanelAdministrativo.variables.edit', $row['Id']))->block();
 			})
 			->callback('Borrar', function ($field, $row) {
 			$return=Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route' => ['PanelAdministrativo.fechasEspeciales.destroy', $row['Id']]]);
@@ -19,5 +19,5 @@
 			!!}
 
 		</div>
-		{!!Button::primary('Nuevo Precio')->asLinkTo(route('PanelAdministrativo.precios.create'))->block()!!}
+		{!!Button::primary('Nuevo Precio')->asLinkTo(route('PanelAdministrativo.variables.create'))->block()!!}
 @endsection
