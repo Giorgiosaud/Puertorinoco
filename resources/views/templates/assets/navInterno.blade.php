@@ -34,7 +34,7 @@ Navbar::top()
 					'title' => 'Precios'
 				],
 				[
-					'link' => URL::route('PanelAdministrativo.precios.index'),
+					'link' => URL::route('PanelAdministrativo.variables.index'),
 					'title' => 'Variables'
 				],
 			]
