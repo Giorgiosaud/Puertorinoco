@@ -43,6 +43,7 @@ Route::group(['prefix' => '/PanelAdministrativo'], function () {
     Route::resource('paseos', 'PaseosAdminController');
     Route::resource('fechasEspeciales', 'FechasEspecialesAdminController');
     Route::resource('precios', 'PreciosAdminController');
+    Route::resource('variables', 'VariablesAdminController');
     Route::resource('tipoDePaseo', 'TipoDePaseoController');
     Route::get('reservas', ['uses' => 'ConsultarReservasAdminController@mostrarFormulario', 'as' => 'formularioDeConsultaDeReserva']);
 
